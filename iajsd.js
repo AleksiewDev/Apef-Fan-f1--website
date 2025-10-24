@@ -35,7 +35,7 @@ const drivers2025 = [
   { pos: 1, name: "Oscar Piastri", code: "PIA", nationality: "AUS", team: "McLaren", points: 346, wins: 7, poles: 5, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_oscar_team_pic_02.jpg" },
   { pos: 2, name: "Lando Norris", code: "NOR", nationality: "GBR", team: "McLaren", points: 332, wins: 5, poles: 4, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" },
   { pos: 3, name: "Max Verstappen", code: "VER", nationality: "NED", team: "Red Bull Racing", points: 306, wins: 5, poles: 7, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmb-f8vwQW9GTmAejEbUu2JeYUlzkscG8vZoaXwnvmzbJjqInaA7aSEAeB6jRrZRFCxA&usqp=CAU" },
-  { pos: 4, name: "George Russell", code: "RUS", nationality: "GBR", team: "Mercedes", points: 252, wins: 2, poles: 2, photo: "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000000/common/f1/2025/mercedes/georus01/2025mercedesgeorus01right.webp" },
+  { pos: 4, name: "George Russell", code: "RUS", nationality: "GBR", team: "Mercedes", points: 252, wins: 2, poles: 2, photo: "https://images.ctfassets.net/1fvlg6xqnm65/DF8GKGlCgVkML7jYA3lX8/f98a3b6f3fdaff998fa1ee7cdc1fa5c9/GR-EYNTK-IMAGE-MOBILE.jpg?w=626&q=75&fm=webp" },
   { pos: 5, name: "Charles Leclerc", code: "LEC", nationality: "MON", team: "Ferrari", points: 192, wins: 0, poles: 1, photo: "https://aceracegear.com/wp-content/uploads/2025/02/cl-01-2025.jpg" },
   { pos: 6, name: "Lewis Hamilton", code: "HAM", nationality: "GBR", team: "Ferrari", points: 142, wins: 0, poles: 0, photo: "https://store.ferrari.com/dw/image/v2/BGDG_PRD/on/demandware.static/-/Sites-48/default/dw0196a800/images/zoom/LA06Zf_170_2.png?strip=false" },
   { pos: 7, name: "Kimi Antonelli", code: "ANT", nationality: "ITA", team: "Mercedes", points: 89, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/uoiclYPCB7vPlR53OzLou_H9HJ-qDCPRy-OeMqaavDgvSISa7CySyCKsgzl8A0f_3vOf_eH7v7rBt8gaHb8beg.webp" },
@@ -54,6 +54,7 @@ const drivers2025 = [
   { pos: 20, name: "Franco Colapinto", code: "COL", nationality: "ARG", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://instagram.fsof10-1.fna.fbcdn.net/v/t39.30808-6/485158953_122196919394251980_6379425086884951888_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuQ0FST1VTRUxfSVRFTS5pbWFnZV91cmxnZW4uODAyeDEzNzkuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlLmMyIn0&_nc_ht=instagram.fsof10-1.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2QFOF63zKGK_M4W2iLOT5UvcCCUq3UJt_8vW4JYd0rtIlNPzxFhv4uTgFWZF5YPjAtk&_nc_ohc=Hh0BVWNvipMQ7kNvwFeLOqS&_nc_gid=CrJ8NA_nvF6OD7xRYaKgmQ&edm=AKr904kAAAAA&ccb=7-5&ig_cache_key=MzU3MjcxMzU3Njk0MDc5MzMzMA%3D%3D.3-ccb7-5&oh=00_Afe_-uUTtgPM9Al8jg6m8JHD4pz83NrDhXI-6WGGMcPTLg&oe=69017193&_nc_sid=23467f" },
   { pos: 21, name: "Jack Doohan", code: "DOO", nationality: "AUS", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://preview.redd.it/franco-colapinto-in-alpine-2025-will-be-the-deja-vu-of-v0-mfphwgeotvye1.png?width=1320&format=png&auto=webp&s=c67fd2287c94f2ea96a53595c6616976b0e0af20" }
 ];
+
 
 // Constructors 2025
 const constructors2025 = [
@@ -149,39 +150,7 @@ const constructors2025 = [
   }
 ];
 
-// News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
-   const newsAfterUSAGP = [
-  {
-    title: "Leclerc Tops FP1 in Mexico as Rookies Shine",
-    date: "24 October 2025"",
-    image: "https://cdn.racingnews365.com/2025/Leclerc/_1092x683_crop_center-center_85_none/Leclerc-Mex-FP1.jpg?v=1761334306",
-    text: `Charles Leclerc set the pace in Free Practice 1 at the 2025 Mexico City Grand Prix,
-    clocking a 1:18.380. Mercedes rookie Andrea Kimi Antonelli impressed in P2, just a
-    tenth behind. With nine rookies on track, this was one of the most youth-driven
-    sessions in modern F1 history.
-    Results: 
-    "1. Charles Leclerc (Ferrari)",
-    "2. Andrea Kimi Antonelli (Mercedes) [rookie]",
-    "3. Nico Hülkenberg (Sauber)",
-    "4. Oscar Piastri (McLaren)",
-    "5. Gabriel Bortoleto (Sauber) [rookie]",
-    "6. Arvid Lindblad (Red Bull) [rookie]",
-    "7. Esteban Ocon (Haas)",
-    "8. Yuki Tsunoda (Red Bull)",
-    "9. Franco Colapinto (Alpine) [rookie]",
-    "10. Alex Albon (Williams)",
-    "11. Isack Hadjar (Racing Bulls) [rookie]",
-    "12. Fernando Alonso (Aston Martin)",
-    "13. Pato O’Ward (McLaren) [rookie, home hero 🇲🇽]",
-    "14. Frederik Vesti (Mercedes) [rookie]",
-    "15. Paul Aron (Alpine) [rookie]",
-    "16. Ryo Hirakawa (Haas) [rookie]",
-    "17. Ayumu Iwasa (Racing Bulls) [rookie]",
-    "18. Luke Browning (Williams) [rookie]",
-    "19. Antonio Fuoco (Ferrari) [rookie]",
-    "20. Logan Sargeant (Williams)"`
-  },
   {
     title: "Verstappen controls Austin as title fight tightens",
     date: "2025-10-19",
@@ -198,6 +167,41 @@ const newsAfterUSAGP = [
     title: "Mexico setup notes: altitude, cooling, and drag trade-offs",
     date: "2025-10-23",
     image: "https://cdn.prgloo.com/media/7427b744969f43f5b490b93b3644b64e.jpg?width=580&height=870",
+    text: `Teams arrive in Mexico targeting low-drag trims yet mindful of cooling. Brake temps and ERS deployment strategies at altitude shift the energy picture. Watch for trimmed wings, stable braking, and straight-line speed balances defining quali runs.`
+  }
+   title: "Leclerc leads rookie‑heavy FP1 in Mexico City",
+    date: "2025-10-24",
+    image: "https://cdn.racingnews365.com/2025/Leclerc/_1092x683_crop_center-center_85_none/Leclerc-Mex-FP1.jpg?v=1761334306",
+    text: `Ferrari’s Charles Leclerc set the pace in FP1 at the Autódromo Hermanos Rodríguez with a 1:18.380. 
+Mercedes rookie Andrea Kimi Antonelli impressed in P2, just a tenth behind, while Nico Hülkenberg’s Sauber was third. 
+Oscar Piastri slotted into fourth despite a late slide.
+
+Nine rookies were given track time as part of F1’s mandatory FP1 program. Gabriel Bortoleto (Sauber) shone in fifth, Red Bull’s Arvid Lindblad was sixth, and Alpine’s Franco Colapinto placed ninth. 
+McLaren gave home hero Pato O’Ward a run, drawing huge cheers from the Mexican crowd. 
+Other rookies included Frederik Vesti (Mercedes), Paul Aron (Alpine), Ryo Hirakawa (Haas), Ayumu Iwasa (Racing Bulls), and Luke Browning (Williams). 
+
+The session highlighted the next generation’s potential while giving teams valuable high‑altitude data ahead of qualifying.`
+  }
+];
+
+// News after USA GP 2025 (no sources displayed; summaries are descriptive)
+const newsAfterUSAGP = [
+  {
+    title: "Verstappen controls Austin as title fight tightens",
+    date: "2025-10-19",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/92/Circuit_of_the_Americas_2018.jpg",
+    text: `From pole to flag, Verstappen’s pace at COTA set the tone, while Norris overcame Leclerc in a fierce duel for P2. With maximum points across the weekend, the gap to the papaya duo narrows, turning the final stretch into a three-way chase marked by tire delta management and late-stint consistency.`
+  },
+  {
+    title: "McLaren balance: managing intra-team tension post–first-lap clashes",
+    date: "2025-10-20",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/McLaren_MCL60_front.jpg",
+    text: `The Norris–Piastri dynamic remains intense but disciplined. Post-incident reviews emphasize clarified “race-hard, race-fair” guidance, protecting points haul while preserving both title bids. Expect qualifying execution and start procedures to be the new battleground.`
+  },
+  {
+    title: "Mexico setup notes: altitude, cooling, and drag trade-offs",
+    date: "2025-10-23",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Autodromo_Hermanos_Rodriguez.jpg",
     text: `Teams arrive in Mexico targeting low-drag trims yet mindful of cooling. Brake temps and ERS deployment strategies at altitude shift the energy picture. Watch for trimmed wings, stable braking, and straight-line speed balances defining quali runs.`
   }
 ];
@@ -506,7 +510,5 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
-
-
 
 
