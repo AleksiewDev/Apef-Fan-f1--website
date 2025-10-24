@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apex Fan Club — F1 2025</title>
+  <meta name="description" content="Apex Fan Club — the definitive home for F1 fans. 2025 drivers, teams, standings, calendar, results, and deep-dive team histories." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="WHEN YO.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Smooth header -->
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo-mark" aria-hidden="true"></div>
+        <div class="brand-text">
+          <h1 class="brand-title">Apex Fan Club</h1>
+          <p class="brand-subtitle">Precision. Pace. Passion.</p>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+        <ul id="navMenu" class="nav-list">
+          <li><a href="#countdown">Next GP</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#drivers">Drivers</a></li>
+          <li><a href="#constructors">Constructors</a></li>
+          <li><a href="#calendar">Calendar</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#teams">Teams</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero with subtle motion -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <h2 class="hero-title">F1 2025 — The decisive run</h2>
+        <p class="hero-copy">
+          Live standings, verified team profiles, and post–USA GP headlines. Follow every lap with clarity.
+        </p>
+        <a class="hero-cta" href="#countdown">See next Grand Prix</a>
+      </div>
+    </section>
+
+    <!-- Countdown to next GP -->
+    <section id="countdown" class="countdown-section">
+      <h3 class="section-title">Next Grand Prix: Mexico City</h3>
+      <p class="section-subtitle">Autódromo Hermanos Rodríguez</p>
+
+      <div class="countdown-grid">
+        <div class="count-card">
+          <div class="count-value" id="days">00</div>
+          <div class="count-label">Days</div>
+        </div>
+        <div class="count-card">
+          <div class="count-value" id="hours">00</div>
+          <div class="count-label">Hours</div>
+        </div>
+        <div class="count-card">
+          <div class="count-value" id="minutes">00</div>
+          <div class="count-label">Minutes</div>
+        </div>
+        <div class="count-card">
+          <div class="count-value" id="seconds">00</div>
+          <div class="count-label">Seconds</div>
+        </div>
+      </div>
+
+      <div class="event-times" id="eventTimes" aria-live="polite"></div>
+    </section>
+
+    <!-- News: post–USA GP 2025 -->
+    <section id="news" class="news-section">
+      <h3 class="section-title">Latest news</h3>
+      <div class="news-list" id="newsList"></div>
+    </section>
+
+    <!-- Standings split into two sections -->
+    <section id="drivers" class="standings-section">
+      <h3 class="section-title">Drivers’ Championship — 2025</h3>
+      <p class="section-subtitle">Positions 1–20</p>
+      <div class="table-wrap">
+        <table class="standings-table" aria-describedby="drivers-desc">
+          <caption id="drivers-desc" class="visually-hidden">
+            Current 2025 Formula 1 Drivers’ Championship standings from 1 to 20.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Pos</th>
+              <th scope="col">Driver</th>
+              <th scope="col" class="hide-mobile">Team</th>
+              <th scope="col">Points</th>
+              <th scope="col" class="hide-mobile">Wins</th>
+              <th scope="col" class="hide-mobile">Poles</th>
+              <th scope="col">Photo</th>
+            </tr>
+          </thead>
+          <tbody id="driversTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="constructors" class="standings-section">
+      <h3 class="section-title">Constructors’ Championship — 2025</h3>
+      <p class="section-subtitle">Positions 1–10</p>
+      <div class="table-wrap">
+        <table class="standings-table" aria-describedby="constructors-desc">
+          <caption id="constructors-desc" class="visually-hidden">
+            Current 2025 Formula 1 Constructors’ Championship standings from 1 to 10.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Pos</th>
+              <th scope="col">Constructor</th>
+              <th scope="col">Points</th>
+              <th scope="col" class="hide-mobile">Drivers</th>
+              <th scope="col">Photo</th>
+            </tr>
+          </thead>
+          <tbody id="constructorsTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Calendar -->
+    <section id="calendar" class="calendar-section">
+      <h3 class="section-title">2025 season calendar</h3>
+      <div id="calendarGrid" class="calendar-grid"></div>
+    </section>
+
+    <!-- Results (Race + Sprint + Qualifying + Practice) -->
+    <section id="results" class="results-section">
+      <h3 class="section-title">Session results</h3>
+      <p class="section-subtitle">
+        Browse Grand Prix weekends for race, sprint, qualifying, and practice results.
+      </p>
+
+      <div class="results-controls">
+        <label for="gpSelect" class="visually-hidden">Select Grand Prix</label>
+        <select id="gpSelect"></select>
+
+        <label for="sessionSelect" class="visually-hidden">Select session</label>
+        <select id="sessionSelect">
+          <option value="race">Race</option>
+          <option value="sprint">Sprint</option>
+          <option value="qualifying">Qualifying</option>
+          <option value="fp1">FP1</option>
+          <option value="fp2">FP2</option>
+          <option value="fp3">FP3</option>
+        </select>
+      </div>
+
+      <div class="table-wrap">
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Driver</th>
+              <th class="hide-mobile">Team</th>
+              <th>Time / Gap</th>
+              <th class="hide-mobile">Points</th>
+            </tr>
+          </thead>
+          <tbody id="resultsTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Teams hub with deep profiles -->
+    <section id="teams" class="teams-section">
+      <h3 class="section-title">Teams hub</h3>
+      <p class="section-subtitle">Full profiles, heritage, and modern era developments.</p>
+
+      <div class="team-cards" id="teamCards"></div>
+
+      <!-- Team modal -->
+      <dialog id="teamModal" class="team-modal" aria-labelledby="teamName">
+        <form method="dialog">
+          <button class="modal-close" aria-label="Close team profile">&times;</button>
+        </form>
+        <div class="modal-content">
+          <div class="modal-hero">
+            <img id="teamImage" alt="" />
+            <div class="modal-overlay"></div>
+            <h4 id="teamName"></h4>
+            <p id="teamTagline" class="modal-tagline"></p>
+          </div>
+          <div class="modal-body">
+            <div class="modal-columns">
+              <div class="modal-col">
+                <h5>Current lineup</h5>
+                <ul id="teamDrivers" class="modal-list"></ul>
+
+                <h5>Quick facts</h5>
+                <ul id="teamFacts" class="modal-list"></ul>
+              </div>
+              <div class="modal-col">
+                <h5>Full history</h5>
+                <div id="teamHistory" class="modal-history"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h6 class="footer-title">Apex Fan Club</h6>
+          <p>Built for fans who crave clarity, authenticity, and speed.</p>
+        </div>
+        <div>
+          <h6 class="footer-title">Contact</h6>
+          <p>Email: ffans7329@gmail.com</p>
+        </div>
+        <div>
+          <h6 class="footer-title">Credits</h6>
+          <p>F1 2025 data mapped for clarity. Photos: add your preferred real images.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Apex Fan Club. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="iajsd.js"></script>
+</body>
+</html>
