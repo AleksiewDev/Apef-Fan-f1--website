@@ -153,10 +153,10 @@ const constructors2025 = [
 const newsAfterUSAGP = [
    title: "Leclerc Tops FP1 in Mexico as Rookies Shine",
   date: "24 October 2025",
-  location: "Autódromo Hermanos Rodríguez, Mexico City",
+   url: "https://cdn.racingnews365.com/2025/Leclerc/_1092x683_crop_center-center_85_none/Leclerc-Mex-FP1.jpg?v=1761334306"
   headline: "Nine rookies take the spotlight in a historic FP1 session",
 
-  summary: `
+  text: `
     Charles Leclerc set the pace in Free Practice 1 at the 2025 Mexico City Grand Prix,
     clocking a 1:18.380. Mercedes rookie Andrea Kimi Antonelli impressed in P2, just a
     tenth behind. With nine rookies on track, this was one of the most youth-driven
@@ -196,7 +196,7 @@ const newsAfterUSAGP = [
 
   photo: {
     caption: "Charles Leclerc leads the way in FP1 at the Mexico City GP 2025.",
-    url: "https://cdn.racingnews365.com/2025/Leclerc/_1092x683_crop_center-center_85_none/Leclerc-Mex-FP1.jpg?v=1761334306"
+ 
   }
 };
   {
@@ -523,5 +523,6 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
