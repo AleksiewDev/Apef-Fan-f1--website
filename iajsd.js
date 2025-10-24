@@ -153,6 +153,34 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+   newsAfterUSAGP.push({
+  title: "Verstappen sets the pace in Mexico FP2 as rivals close in",
+  date: "2025-10-24",
+  image: "https://cdn-6.motorsport.com/images/amp/6O1GkkG2/s1000/max-verstappen-red-bull-racing.jpg",
+  text: `Max Verstappen returned to his Red Bull after sitting out FP1 and immediately stamped his authority on the Mexico City weekend. 
+The Dutchman’s 1:17.392 lap was enough to top the second practice session, though Ferrari’s Charles Leclerc and Mercedes rookie Andrea Kimi Antonelli kept the gap tight in second and third.
+
+The session began under warm afternoon skies, with teams eager to recover track time after handing cars to rookies in FP1. 
+Verstappen quickly found rhythm, combining straight‑line efficiency with stability through the stadium section. 
+Leclerc’s Ferrari looked sharp on low‑fuel runs, just 0.153s adrift, while Antonelli continued to impress in his debut season, finishing only 0.174s behind Verstappen and ahead of more experienced rivals.
+
+Lando Norris placed fourth for McLaren, a quarter of a second off the pace, while Lewis Hamilton rounded out the top five for Ferrari. 
+George Russell was sixth, followed by Yuki Tsunoda in the second Red Bull. 
+Fernando Alonso and Carlos Sainz slotted into eighth and ninth, with Lance Stroll completing the top ten for Aston Martin.
+
+Further down the order, Liam Lawson led the Racing Bulls effort in 11th, just ahead of Oscar Piastri in 12th, who focused on long‑run pace rather than headline times. 
+Esteban Ocon and rookie Isack Hadjar followed, while Nico Hülkenberg, Alexander Albon, and Oliver Bearman filled the midfield slots. 
+Pierre Gasly, Franco Colapinto, Gabriel Bortoleto, and Jack Doohan rounded out the classification.
+
+The session was notable for the return of full‑time drivers after nine rookies had taken part in FP1. 
+Teams split their FP2 programs between qualifying simulations on soft tyres and heavy‑fuel race runs, with the high altitude continuing to test cooling systems and ERS deployment. 
+Brake temperatures spiked for several cars, forcing careful management during long stints.
+
+With Verstappen back on top, McLaren and Ferrari close behind, and Antonelli proving he belongs in the fight, the stage is set for a fascinating Saturday. 
+The margins at the front suggest qualifying could be decided by hundredths, while the midfield battle remains wide open. 
+The passionate Mexican crowd, already energized by Pato O’Ward’s FP1 cameo, left FP2 buzzing with anticipation for the weekend’s decisive sessions.`
+});
+
     {
     title: "Leclerc leads rookie‑heavy FP1 in Mexico City",
     date: "2025-10-24",
@@ -491,6 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
