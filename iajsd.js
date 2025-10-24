@@ -166,7 +166,7 @@ McLaren gave home hero Pato O’Ward a run, drawing huge cheers from the Mexican
 Other rookies included Frederik Vesti (Mercedes), Paul Aron (Alpine), Ryo Hirakawa (Haas), Ayumu Iwasa (Racing Bulls), and Luke Browning (Williams). 
 
 The session highlighted the next generation’s potential while giving teams valuable high‑altitude data ahead of qualifying.`
-  }
+  },
   {
     title: "Verstappen controls Austin as title fight tightens",
     date: "2025-10-19",
@@ -491,6 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
