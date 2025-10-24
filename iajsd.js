@@ -150,28 +150,31 @@ const constructors2025 = [
   }
 ];
 
+
+// News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
   {
     title: "Verstappen controls Austin as title fight tightens",
     date: "2025-10-19",
-    image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/United%20States%20(Austin)/Verstappen%20Austin%20celebs.webp",
+    image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/United%20States%20(Austin)/GENERAL%20CROP%20-%202025-10-19T214936.855.webp",
     text: `From pole to flag, Verstappen’s pace at COTA set the tone, while Norris overcame Leclerc in a fierce duel for P2. With maximum points across the weekend, the gap to the papaya duo narrows, turning the final stretch into a three-way chase marked by tire delta management and late-stint consistency.`
   },
   {
     title: "McLaren balance: managing intra-team tension post–first-lap clashes",
     date: "2025-10-20",
-    image: "https://r.testifier.nl/Acbs8526SDKI/resizing_type:fit/width:1280/plain/https://s3-newsifier.ams3.digitaloceanspaces.com/gpblog.com/images/2025-10/piastri-norris-crash-f1-68f3cc5ce208d.jpg@webp",
+    image: "https://cdn.racingnews365.com/2025/Piastri/_1092x683_crop_center-center_85_none/Piastri-in-the-air-Cota-Sprint.jpg?v=1760812828",
     text: `The Norris–Piastri dynamic remains intense but disciplined. Post-incident reviews emphasize clarified “race-hard, race-fair” guidance, protecting points haul while preserving both title bids. Expect qualifying execution and start procedures to be the new battleground.`
   },
   {
     title: "Mexico setup notes: altitude, cooling, and drag trade-offs",
     date: "2025-10-23",
-    image: "https://cdn.prgloo.com/media/7427b744969f43f5b490b93b3644b64e.jpg?width=580&height=870",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZY9l_N0vT6RB9UcOOo0y-Tgic4MLHpZaEw&s",
     text: `Teams arrive in Mexico targeting low-drag trims yet mindful of cooling. Brake temps and ERS deployment strategies at altitude shift the energy picture. Watch for trimmed wings, stable braking, and straight-line speed balances defining quali runs.`
-  }
-   title: "Leclerc leads rookie‑heavy FP1 in Mexico City",
+  },
+  {
+    title: "Leclerc leads rookie‑heavy FP1 in Mexico City",
     date: "2025-10-24",
-    image: "https://cdn.racingnews365.com/2025/Leclerc/_1092x683_crop_center-center_85_none/Leclerc-Mex-FP1.jpg?v=1761334306",
+    image: "https://images.ps-aws.com/c?url=https%3A%2F%2Fd3cm515ijfiu6w.cloudfront.net%2Fwp-content%2Fuploads%2F2025%2F10%2F24201624%2FCharles-Leclerc-Formula-1-F1-results-Ferrari-PlanetF1-1320x742.jpg",
     text: `Ferrari’s Charles Leclerc set the pace in FP1 at the Autódromo Hermanos Rodríguez with a 1:18.380. 
 Mercedes rookie Andrea Kimi Antonelli impressed in P2, just a tenth behind, while Nico Hülkenberg’s Sauber was third. 
 Oscar Piastri slotted into fourth despite a late slide.
@@ -181,28 +184,6 @@ McLaren gave home hero Pato O’Ward a run, drawing huge cheers from the Mexican
 Other rookies included Frederik Vesti (Mercedes), Paul Aron (Alpine), Ryo Hirakawa (Haas), Ayumu Iwasa (Racing Bulls), and Luke Browning (Williams). 
 
 The session highlighted the next generation’s potential while giving teams valuable high‑altitude data ahead of qualifying.`
-  }
-];
-
-// News after USA GP 2025 (no sources displayed; summaries are descriptive)
-const newsAfterUSAGP = [
-  {
-    title: "Verstappen controls Austin as title fight tightens",
-    date: "2025-10-19",
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/92/Circuit_of_the_Americas_2018.jpg",
-    text: `From pole to flag, Verstappen’s pace at COTA set the tone, while Norris overcame Leclerc in a fierce duel for P2. With maximum points across the weekend, the gap to the papaya duo narrows, turning the final stretch into a three-way chase marked by tire delta management and late-stint consistency.`
-  },
-  {
-    title: "McLaren balance: managing intra-team tension post–first-lap clashes",
-    date: "2025-10-20",
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/McLaren_MCL60_front.jpg",
-    text: `The Norris–Piastri dynamic remains intense but disciplined. Post-incident reviews emphasize clarified “race-hard, race-fair” guidance, protecting points haul while preserving both title bids. Expect qualifying execution and start procedures to be the new battleground.`
-  },
-  {
-    title: "Mexico setup notes: altitude, cooling, and drag trade-offs",
-    date: "2025-10-23",
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Autodromo_Hermanos_Rodriguez.jpg",
-    text: `Teams arrive in Mexico targeting low-drag trims yet mindful of cooling. Brake temps and ERS deployment strategies at altitude shift the energy picture. Watch for trimmed wings, stable braking, and straight-line speed balances defining quali runs.`
   }
 ];
 
@@ -510,6 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
