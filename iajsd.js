@@ -151,6 +151,54 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+   title: "Leclerc Tops FP1 in Mexico as Rookies Shine",
+  date: "24 October 2025",
+  location: "Autódromo Hermanos Rodríguez, Mexico City",
+  headline: "Nine rookies take the spotlight in a historic FP1 session",
+
+  summary: `
+    Charles Leclerc set the pace in Free Practice 1 at the 2025 Mexico City Grand Prix,
+    clocking a 1:18.380. Mercedes rookie Andrea Kimi Antonelli impressed in P2, just a
+    tenth behind. With nine rookies on track, this was one of the most youth-driven
+    sessions in modern F1 history.
+  `,
+
+  results: [
+    "1. Charles Leclerc (Ferrari)",
+    "2. Andrea Kimi Antonelli (Mercedes) [rookie]",
+    "3. Nico Hülkenberg (Sauber)",
+    "4. Oscar Piastri (McLaren)",
+    "5. Gabriel Bortoleto (Sauber) [rookie]",
+    "6. Arvid Lindblad (Red Bull) [rookie]",
+    "7. Esteban Ocon (Haas)",
+    "8. Yuki Tsunoda (Red Bull)",
+    "9. Franco Colapinto (Alpine) [rookie]",
+    "10. Alex Albon (Williams)",
+    "11. Isack Hadjar (Racing Bulls) [rookie]",
+    "12. Fernando Alonso (Aston Martin)",
+    "13. Pato O’Ward (McLaren) [rookie, home hero 🇲🇽]",
+    "14. Frederik Vesti (Mercedes) [rookie]",
+    "15. Paul Aron (Alpine) [rookie]",
+    "16. Ryo Hirakawa (Haas) [rookie]",
+    "17. Ayumu Iwasa (Racing Bulls) [rookie]",
+    "18. Luke Browning (Williams) [rookie]",
+    "19. Antonio Fuoco (Ferrari) [rookie]",
+    "20. Logan Sargeant (Williams)"
+  ],
+
+  rookieHighlights: `
+    - Antonelli nearly matched Leclerc, showing raw pace and composure.
+    - Bortoleto and Lindblad both slotted into the top 6, proving F2 form translates well.
+    - Colapinto and O’Ward gave fans plenty to cheer, with O’Ward’s home debut a standout.
+    - Vesti, Aron, Hirakawa, Iwasa, Browning, and Fuoco gained valuable mileage, though
+      further down the order.
+  `,
+
+  photo: {
+    caption: "Charles Leclerc leads the way in FP1 at the Mexico City GP 2025.",
+    url: "https://cdn.racingnews365.com/2025/Leclerc/_1092x683_crop_center-center_85_none/Leclerc-Mex-FP1.jpg?v=1761334306"
+  }
+};
   {
     title: "Verstappen controls Austin as title fight tightens",
     date: "2025-10-19",
@@ -475,4 +523,5 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
