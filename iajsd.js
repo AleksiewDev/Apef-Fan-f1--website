@@ -153,7 +153,7 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
-   newsAfterUSAGP.push({
+  {
   title: "Verstappen sets the pace in Mexico FP2 as rivals close in",
   date: "2025-10-24",
   image: "https://cdn-6.motorsport.com/images/amp/6O1GkkG2/s1000/max-verstappen-red-bull-racing.jpg",
@@ -179,7 +179,7 @@ Brake temperatures spiked for several cars, forcing careful management during lo
 With Verstappen back on top, McLaren and Ferrari close behind, and Antonelli proving he belongs in the fight, the stage is set for a fascinating Saturday. 
 The margins at the front suggest qualifying could be decided by hundredths, while the midfield battle remains wide open. 
 The passionate Mexican crowd, already energized by Pato O’Ward’s FP1 cameo, left FP2 buzzing with anticipation for the weekend’s decisive sessions.`
-});
+},
 
     {
     title: "Leclerc leads rookie‑heavy FP1 in Mexico City",
@@ -519,6 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
