@@ -153,6 +153,20 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+    {
+    title: "Leclerc leads rookie‑heavy FP1 in Mexico City",
+    date: "2025-10-24",
+    image: "https://images.ps-aws.com/c?url=https%3A%2F%2Fd3cm515ijfiu6w.cloudfront.net%2Fwp-content%2Fuploads%2F2025%2F10%2F24201624%2FCharles-Leclerc-Formula-1-F1-results-Ferrari-PlanetF1-1320x742.jpg",
+    text: `Ferrari’s Charles Leclerc set the pace in FP1 at the Autódromo Hermanos Rodríguez with a 1:18.380. 
+Mercedes rookie Andrea Kimi Antonelli impressed in P2, just a tenth behind, while Nico Hülkenberg’s Sauber was third. 
+Oscar Piastri slotted into fourth despite a late slide.
+
+Nine rookies were given track time as part of F1’s mandatory FP1 program. Gabriel Bortoleto (Sauber) shone in fifth, Red Bull’s Arvid Lindblad was sixth, and Alpine’s Franco Colapinto placed ninth. 
+McLaren gave home hero Pato O’Ward a run, drawing huge cheers from the Mexican crowd. 
+Other rookies included Frederik Vesti (Mercedes), Paul Aron (Alpine), Ryo Hirakawa (Haas), Ayumu Iwasa (Racing Bulls), and Luke Browning (Williams). 
+
+The session highlighted the next generation’s potential while giving teams valuable high‑altitude data ahead of qualifying.`
+  }
   {
     title: "Verstappen controls Austin as title fight tightens",
     date: "2025-10-19",
@@ -171,20 +185,6 @@ const newsAfterUSAGP = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZY9l_N0vT6RB9UcOOo0y-Tgic4MLHpZaEw&s",
     text: `Teams arrive in Mexico targeting low-drag trims yet mindful of cooling. Brake temps and ERS deployment strategies at altitude shift the energy picture. Watch for trimmed wings, stable braking, and straight-line speed balances defining quali runs.`
   },
-  {
-    title: "Leclerc leads rookie‑heavy FP1 in Mexico City",
-    date: "2025-10-24",
-    image: "https://images.ps-aws.com/c?url=https%3A%2F%2Fd3cm515ijfiu6w.cloudfront.net%2Fwp-content%2Fuploads%2F2025%2F10%2F24201624%2FCharles-Leclerc-Formula-1-F1-results-Ferrari-PlanetF1-1320x742.jpg",
-    text: `Ferrari’s Charles Leclerc set the pace in FP1 at the Autódromo Hermanos Rodríguez with a 1:18.380. 
-Mercedes rookie Andrea Kimi Antonelli impressed in P2, just a tenth behind, while Nico Hülkenberg’s Sauber was third. 
-Oscar Piastri slotted into fourth despite a late slide.
-
-Nine rookies were given track time as part of F1’s mandatory FP1 program. Gabriel Bortoleto (Sauber) shone in fifth, Red Bull’s Arvid Lindblad was sixth, and Alpine’s Franco Colapinto placed ninth. 
-McLaren gave home hero Pato O’Ward a run, drawing huge cheers from the Mexican crowd. 
-Other rookies included Frederik Vesti (Mercedes), Paul Aron (Alpine), Ryo Hirakawa (Haas), Ayumu Iwasa (Racing Bulls), and Luke Browning (Williams). 
-
-The session highlighted the next generation’s potential while giving teams valuable high‑altitude data ahead of qualifying.`
-  }
 ];
 
 // Calendar (2025, concise; dates simplified to local)
@@ -491,6 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
