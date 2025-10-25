@@ -153,6 +153,15 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+   {
+   title: "Red Bull upgrades under scrutiny as Verstappen tops FP2",
+    date: "2025-10-24",
+    image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T000459.547.webp",
+    text: `Red Bull arrived in Mexico with the most extensive upgrade package of the field, including revised floor edges and cooling inlets. 
+Max Verstappen immediately put the parts to good use, setting the fastest time in FP2 with a 1:17.392. 
+Analysts noted improved stability in medium‑speed corners, though rivals McLaren and Ferrari remained within striking distance. 
+The upgrades are seen as pivotal in Verstappen’s late‑season title push, with the Dutchman now only 40 points off championship leader Oscar Piastri.`
+   },
   {
   title: "Verstappen sets the pace in Mexico FP2 as rivals close in",
   date: "2025-10-24",
@@ -519,6 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
