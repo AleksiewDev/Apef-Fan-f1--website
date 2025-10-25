@@ -154,6 +154,24 @@ const constructors2025 = [
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
    {
+       title: "Norris takes stunning pole in Mexico City qualifying",
+  date: "2025-10-25",
+  image: "https://cdn.racingnews365.com/2025/Norris/_1092x683_crop_center-center_85_none/2243102585.jpg?v=1761375627",
+  text: `Lando Norris delivered a sensational lap to secure pole position for the Mexico City Grand Prix, stopping the clocks at 1:16.801. 
+The McLaren driver carried his momentum from FP3 into qualifying, edging out Ferrari’s Lewis Hamilton by just 0.072s. 
+George Russell put Mercedes third on the grid, while Charles Leclerc lined up fourth for Ferrari. 
+
+Max Verstappen struggled to extract pace from his Red Bull and could manage only fifth, ahead of Oscar Piastri in sixth. 
+Rookie Andrea Kimi Antonelli impressed again with seventh, continuing his strong weekend form. 
+Fernando Alonso and Carlos Sainz filled the fourth row, while Yuki Tsunoda rounded out the top ten. 
+
+The session was tight throughout, with less than half a second covering the top six. 
+Altitude and cooling remained key talking points, with several drivers reporting brake fade in Q2. 
+With Norris on pole and Hamilton alongside, Sunday’s race promises a fierce multi‑team battle at the front.`
+   },
+   }
+   
+   {
    title: "Norris dominates FP3 in Mexico",
     date: "2025-10-25",
     image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T193053.711.webp",
@@ -537,6 +555,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
