@@ -154,6 +154,15 @@ const constructors2025 = [
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
    {
+   title: "Norris dominates FP3 in Mexico",
+    date: "2025-10-25",
+    image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T193053.711.webp",
+    text: ` Lando Norris set a blistering 1:16.633 to lead final practice by over three tenths.
+    Hamilton and Russell followed for Ferrari and Mercedes, while Verstappen slipped to P6.
+    McLaren looks strong heading into qualifying, with Ferrari and Mercedes close behind.`
+   },
+   
+   {
    title: "Red Bull upgrades under scrutiny as Verstappen tops FP2",
     date: "2025-10-24",
     image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T000459.547.webp",
@@ -528,6 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
