@@ -169,8 +169,6 @@ The session was tight throughout, with less than half a second covering the top 
 Altitude and cooling remained key talking points, with several drivers reporting brake fade in Q2. 
 With Norris on pole and Hamilton alongside, Sunday’s race promises a fierce multi‑team battle at the front.`
    },
-   }
-   
    {
    title: "Norris dominates FP3 in Mexico",
     date: "2025-10-25",
@@ -555,6 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
