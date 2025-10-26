@@ -153,7 +153,8 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
-     title: "What’s happening with Piastri? From dominance to title pressure",
+  {
+  title: "What’s happening with Piastri? From dominance to title pressure",
   date: "2025-10-26",
   image: "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-26T001210.347.webp",
   text: `Oscar Piastri’s championship campaign has hit turbulence. After a dominant win at Zandvoort, the McLaren driver looked unstoppable — 34 points clear of teammate Lando Norris and 104 ahead of Max Verstappen. But five races later, the gap has shrunk to just 14 and 40 respectively.
@@ -941,6 +942,7 @@ function populateNews() {
     wrap.appendChild(card);
   });
 }
+
 
 
 
