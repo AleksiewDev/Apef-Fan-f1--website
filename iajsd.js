@@ -58,99 +58,16 @@ const drivers2025 = [
 
 // Constructors 2025
 const constructors2025 = [
-  { pos: 1, name: "McLaren", points: 713, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp",
-    facts: [
-      "Constructors’ titles: 10",
-      "Known for operational excellence and sharp aero",
-      "Power unit: Mercedes"
-    ],
-    tagline: "Relentless precision. Papaya charge.",
-    history: `Founded in 1963, McLaren became a titan through the 1970s and 80s with legends like Fittipaldi, Hunt, and Senna. The 1990s featured Senna vs. Prost, then dominant eras with Hakkinen and the Mercedes partnership. After a rebuilding phase post-2015 power shifts, McLaren re-emerged with cutting-edge aero and management alignment, returning to championship contention in 2024–2025 with consistent execution, rapid in-season development, and elite drivers.`
-  },
-   { pos: 2, name: "Ferrari", points: 356, drivers: ["Charles Leclerc", "Lewis Hamilton"], photo: "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg",
-    facts: [
-      "Most iconic heritage brand",
-      "Drivers’ and Constructors’ multiple titles historically",
-      "Strategic volatility improving"
-      ],
-   },
-
-  { pos: 3, name: "Mercedes", points: 355, drivers: ["George Russell", "Kimi Antonelli"], photo: "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp",
-    facts: [
-      "Constructors’ titles: 8 (modern hybrid era dominance)",
-      "Power unit supplier",
-      "Tactical race craft and reliability"
-    ],
-    tagline: "Method. Margin. Mastery.",
-    history: `Mercedes returned as a works team in 2010, dominated the hybrid era from 2014–2020. Post-rule changes, they stabilized with strong operational foundations while integrating next-gen talent. The 2025 campaign blends Russell’s maturity with Antonelli’s debut energy, underpinned by iterative aero and PU efficiency.`
-  },
-     {
-    tagline: "Spirit of Maranello.",
-    history: `Scuderia Ferrari, active since F1’s inception, boasts unmatched legacy. The Leclerc–Hamilton era targets a modern reset of Ferrari’s operational sharpness: consolidating aero coherence, tire management, and strategic resilience while capitalizing on driver synergy and race pace recovery.`
-  },
-    { pos: 4, name: "Red Bull Racing", points: 346, drivers: ["Max Verstappen", "Yuki tsunoda"], photo: "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626",
-    facts: [
-      "Known for aggressive development cycles",
-      "Top-tier pit stop and strategy execution",
-      "Honda RBPT powertrain"
-    ],
-    tagline: "Attack. Adapt. Overdeliver.",
-    history: `RBR transformed the 2010s with Vettel’s four titles, then ushered in Verstappen’s era. The 2022–2023 ground-effect mastery set benchmarks. In 2025, versatility and upgrades sustain a late-season charge as Tsunoda steps into a bigger role alongside Verstappen’s relentless pace.`
-  },
-   { pos: 5, name: "Williams", points: 111, drivers: ["Alexander Albon", "Carlos Sainz"], photo: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Williams/williams-2025-launch-6.webp",
-    facts: [
-      "Historic champions of the 1990s",
-      "Modern resurgence through data-centric ops",
-      "Mercedes power"
-    ],
-    tagline: "Blueprint of a comeback.",
-    history: `Williams rose to prominence with active suspension innovations and champion lineups. After lean years, strategic leadership and technical rebuilds have produced a sharp uptick. The 2025 pairing of Albon–Sainz amplifies points consistency and qualifying potency.`
-  },
-   { pos: 6, name: "Racing Bulls", points: 72, drivers: ["Isack Hadjar", "Liam  Lawson"], photo: "https://media.tudorwatch.com/image/upload/v1/tudormag/SI202503140201",
-    facts: [
-      "Talent incubator for Red Bull system",
-      "Agile updates and experimental packages",
-      "Honda RBPT support"
-    ],
-    tagline: "Crafting tomorrow’s pace.",
-    history: `Formerly Toro Rosso/AlphaTauri, the Faenza outfit spotlights rising talent. The 2025 season doubles down on grooming future stars, executing bold setups and opportunistic strategies to punch above weight.`
-  },
-  { pos: 7, name: "Aston Martin", points: 69, drivers: ["Fernando Alonso", "Lance Stroll"], photo: "https://upload.wikimedia.org/wikipedia/commons/3/33/2025_Japan_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP1.jpg",
-    facts: [
-     "High-investment growth plan",
-      "Aerodynamics campus expansion",
-      "Mercedes power"
-    ],
-    tagline: "Green surge.",
-    history: `Aston Martin’s modern F1 venture accelerated with major infrastructure and aero hires. With Alonso’s racecraft and Stroll’s continuity, 2025 focuses on consistency and tire behavior stabilization to reclaim podium proximity.`
-  },
-  { pos: 8, name: "Haas F1 Team", points: 62, drivers: ["Oliver Bearman", "Esteban Ocon"], photo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FIA_F1_Austria_2025_Nr._87_Bearman.jpg",
-    facts: [
-     "US-based outfit with lean structure",
-      "Ferrari technical ties",
-      "Focus on tire preservation"
-      ],
-    tagline: "Racing with resilience, competing with courage.",
-    history: `Haas F1 Team entered Formula 1 in 2016, founded by American businessman Gene Haas. Partnered with Ferrari for engines and Dallara for chassis, they shocked the paddock by scoring points on debut. Their peak came in 2018 with 5th in the Constructors’ Championship. After tough years in 2020–21, Haas rebuilt with Kevin Magnussen’s return and young talents like Mick Schumacher, later Ollie Bearman and Kimi Antonelli. In 2025, Bearman’s stunning P4 in Mexico marked a new high point, proving Haas’s resilience and ambition as the only American‑licensed team on the grid.`
-  },
-    { pos: 9, name: "Kick Sauber", points: 59, drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"], photo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/2025_Japan_GP_-_Sauber_-_Nico_Hulkenberg_-_FP1.jpg",
-    facts: [
-     "Independent backbone with manufacturer phases",
-      "Noted for strategic bravery and tire calls",
-      "Ferrari power"
-      ],
-    tagline: "Independent intelligence.",
-    history: `Sauber’s journey spans manufacturer partnerships and independent grit. 2025 marks a transition year balancing experienced racecraft (Hülkenberg) with rookie momentum (Bortoleto), targeting Q2-Q3 progression and opportunistic points.`
-    },
-    { pos: 10, name: "Alpine", points: 20, drivers: ["Piere Gasly", "Franco Colapinto"], photo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/FIA_F1_Austria_2025_Nr._10_Gasly.jpg",
-    facts: [
-      "Works team lineage from Renault",
-      "In-house power unit legacy",
-      "Rebuild focus on ops and reliability"
-      ],
-    tagline: "Factory-perspective resilience.",
-    history: `The Enstone-Viry axis has seen title highs (Renault) and modern transitions. 2025 emphasizes operational resets and driver rotation, targeting reliability improvements and foundational aero coherence.`
-  }
+  { pos: 1, name: "Mclaren F1 Team", points: 713, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp" },
+  { pos: 2, name: "Scuderia Ferrari HP", points: 356, drivers: ["Charles Leclerc", "Lewis Hamilton"], photo: "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg" },
+  { pos: 3, name: "Mercedes-Amg Petronas F1 Team", points: 355, drivers: ["George Russell", "Kimi Antonelli"], photo: "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp" },
+  { pos: 4, name: "Oracle Red Bull Racing ", points: 346, drivers: ["Max Verstappen", "Yuki tsunoda"], photo: "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626" },
+  { pos: 5, name: "Atlassian Williams Racing", points: 111, drivers: ["Alexander Albon", "Carlos Sainz"], photo: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Williams/williams-2025-launch-6.webp" },
+  { pos: 6, name: "Racing Bulls", points: 72, drivers: ["Isack Hadjar", "Liam  Lawson"], photo: "https://media.tudorwatch.com/image/upload/v1/tudormag/SI202503140201" },
+  { pos: 7, name: "Aston Martin Aramco Cognizant Formula One Team", points: 69, drivers: ["Fernando Alonso", "Lance Stroll"], photo: "https://upload.wikimedia.org/wikipedia/commons/3/33/2025_Japan_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP1.jpg" },
+  { pos: 8, name: "MoneyGram Haas F1 Team", points: 62, drivers: ["Oliver Bearman", "Esteban Ocon"], photo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FIA_F1_Austria_2025_Nr._87_Bearman.jpg" },
+  { pos: 9, name: "Kick Sauber", points: 59, drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"], photo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/2025_Japan_GP_-_Sauber_-_Nico_Hulkenberg_-_FP1.jpg" },
+  { pos: 10, name: "BWT Alpine F1 Team", points: 20, drivers: ["Piere Gasly", "Franco Colapinto"], photo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/FIA_F1_Austria_2025_Nr._10_Gasly.jpg" },
 ];
 
 
@@ -161,7 +78,7 @@ const newsAfterUSAGP = [
    {
       title: "Mexico GP 2025 – Norris dominates, takes championship lead",
   date: "2025-10-26",
-  image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Autodromo_Hermanos_Rodriguez.jpg",
+  image: "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T231214.912.webp",
   text: `Lando Norris produced a flawless drive at the Autódromo Hermanos Rodríguez, converting pole into a dominant victory and seizing the lead of the Drivers’ Championship. The McLaren driver controlled the race from lights to flag, finishing over half a minute clear of his rivals.
 
 **Full Race Classification**
@@ -1046,7 +963,6 @@ function initF1Background() {
 }
 
 document.addEventListener('DOMContentLoaded', initF1Background);
-
 
 
 
