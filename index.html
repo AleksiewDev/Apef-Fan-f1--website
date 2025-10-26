@@ -29,6 +29,8 @@
           <li><a href="#drivers">Drivers</a></li>
           <li><a href="#constructors">Constructors</a></li>
           <li><a href="#calendar">Calendar</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#teams">Teams</a></li>
         </ul>
       </nav>
     </header>
@@ -130,19 +132,6 @@
       <h3 class="section-title">2025 season calendar</h3>
       <div id="calendarGrid" class="calendar-grid"></div>
     </section>
-
-      <div class="table-wrap">
-        <table class="standings-table">
-          <thead>
-            <tr>
-           
-            </tr>
-          </thead>
-          <tbody id="resultsTable"></tbody>
-        </table>
-      </div>
-    </section>
-
     <!-- Teams hub with deep profiles -->
     <section id="teams" class="teams-section">
       <h3 class="section-title">Teams hub</h3>
@@ -150,7 +139,39 @@
 
       <div class="team-cards" id="teamCards"></div>
 
-    
+      <!-- Team modal -->
+      <dialog id="teamModal" class="team-modal" aria-labelledby="teamName">
+        <form method="dialog">
+          <button class="modal-close" aria-label="Close team profile">&times;</button>
+        </form>
+        <div class="modal-content">
+          <div class="modal-hero">
+            <img id="teamImage" alt="" />
+            <div class="modal-overlay"></div>
+            <h4 id="teamName"></h4>
+            <p id="teamTagline" class="modal-tagline"></p>
+          </div>
+          <div class="modal-body">
+            <div class="modal-columns">
+              <div class="modal-col">
+                <h5>Current lineup</h5>
+                <ul id="teamDrivers" class="modal-list"></ul>
+
+                <h5>Quick facts</h5>
+                <ul id="teamFacts" class="modal-list"></ul>
+              </div>
+              <div class="modal-col">
+                <h5>Full history</h5>
+                <div id="teamHistory" class="modal-history"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
+    </section>
+    <script src="iajsd.js"></script>
+<script src="iajsd.js"></script>
+
 
     <footer class="site-footer">
       <div class="footer-grid">
@@ -176,6 +197,8 @@
   <script src="iajsd.js"></script>
 </body>
 </html>
+
+
 
 
 
