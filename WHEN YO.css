@@ -466,3 +466,99 @@ select {
   margin: 0 auto; padding: 0 20px 20px 20px;
   color: var(--muted);
 }
+.news-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.news-modal::backdrop {
+  background: rgba(0,0,0,0.6);
+  animation: fadeIn 0.3s ease forwards;
+}
+.news-modal .modal-content {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  animation: slideUp 0.4s ease forwards;
+}
+.modal-close {
+  float: right;
+  font-size: 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { background: rgba(0,0,0,0); }
+  to { background: rgba(0,0,0,0.6); }
+}
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.news-media {
+  width: 100%;
+  height: 200px; /* adjust to your design */
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.news-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ensures image fills container */
+  object-position: center; /* centers the crop */
+  display: block;
+}
+.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: linear-gradient(135deg, #ff7a18 0%, #ff3c00 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.read-more::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: rgba(255,255,255,0.25);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.read-more:hover::after {
+  left: 125%;
+}
+
+.read-more:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.read-more:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+
+
