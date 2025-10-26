@@ -581,13 +581,337 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+function populateNews() {
+  const wrap = document.getElementById('newsList');
+  newsAfterUSAGP.forEach((n, i) => {
+    const card = document.createElement('article');
+    card.className = 'news-card';
+    card.style.animationDelay = `${i * 0.08}s`;
+    card.innerHTML = `
+      <div class="news-media" style="background-image:url('${n.image}'); background-size:cover; background-position:center;"></div>
+      <div class="news-body">
+        <h4 class="news-title">${n.title}</h4>
+        <div class="news-meta">${fmt.date(n.date)}</div>
+        <p class="news-text">${n.text.length > 160 ? n.text.substring(0, 160) + "..." : n.text}</p>
+        <button class="read-more">Read full article →</button>
+      </div>
+    `;
+    card.querySelector('.read-more').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openArticleInNewTab(i);
+    });
+    wrap.appendChild(card);
+  });
+}
+function openArticleInNewTab(index) {
+  const article = newsAfterUSAGP[index];
+  const win = window.open("", "_blank");
 
+  // Clone your current CSS links and <style> tags into the new document head
+  const headLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
+    .map(link => `<link rel="stylesheet" href="${link.href}">`)
+    .join('\n');
+  const inlineStyles = Array.from(document.head.querySelectorAll('style'))
+    .map(style => `<style>${style.innerHTML}</style>`)
+    .join('\n');
 
+  // Inline fallback styles to ensure consistent rendering, even if external CSS loads late
+  const fallbackCSS = `
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0f1115; color: #e8eaed; }
+      .page { max-width: 1080px; margin: 0 auto; padding: 24px; }
+      .article-card { background: #151821; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.35); animation: fadeIn 0.4s ease; }
+      .news-media { width: 100%; height: 360px; background-size: cover; background-position: center; background-repeat: no-repeat; }
+      .news-body { padding: 20px; }
+      .news-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; color: #fff; }
+      .news-meta { color: #9aa0a6; font-size: 14px; margin-bottom: 14px; }
+      .news-text { font-size: 17px; color: #e8eaed; white-space: pre-line; }
+      .back-link { display: inline-block; margin-top: 18px; color: #ff7a18; text-decoration: none; font-weight: 700; }
+      .back-link:hover { color: #ff9a4d; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
+    </style>
+  `;
 
+  // Build the HTML using the SAME classes you use on the site
+  const html = `
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>${article.title}</title>
+        ${headLinks}
+        ${inlineStyles}
+        ${fallbackCSS}
+      </head>
+      <body>
+        <div class="page">
+          <article class="article-card">
+            <div class="news-media" style="background-image:url('${article.image}');"></div>
+            <div class="news-body">
+              <h1 class="news-title">${article.title}</h1>
+              <div class="news-meta">${fmt.date(article.date)}</div>
+              <div class="news-text">${article.text.replace(/\n\s*\n/g, '\n\n')}</div>
+              <a class="back-link" href="javascript:window.close()">Close tab</a>
+            </div>
+          </article>
+        </div>
+      </body>
+    </html>
+  `;
 
+  win.document.open();
+  win.document.write(html);
+  win.document.close();
+}
+function populateNews() {
+  const wrap = document.getElementById('newsList');
+  newsAfterUSAGP.forEach((n, i) => {
+    const card = document.createElement('article');
+    card.className = 'news-card';
+    card.style.animationDelay = `${i * 0.08}s`;
+    card.innerHTML = `
+      <div class="news-media" style="background-image:url('${n.image}');"></div>
+      <div class="news-body">
+        <h4 class="news-title">${n.title}</h4>
+        <div class="news-meta">${fmt.date(n.date)}</div>
+        <p class="news-text">${n.text.length > 160 ? n.text.substring(0, 160) + "..." : n.text}</p>
+        <button class="read-more">Read full article →</button>
+      </div>
+    `;
+    card.querySelector('.read-more').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openArticleInNewTab(i);
+    });
+    wrap.appendChild(card);
+  });
+}
+function openArticleInNewTab(index) {
+  const article = newsAfterUSAGP[index];
+  const win = window.open("", "_blank");
 
+  const headLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
+    .map(link => `<link rel="stylesheet" href="${link.href}">`)
+    .join('\n');
 
+  const fallbackCSS = `
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 0; background: #0f1115; color: #e8eaed; }
+      .page { max-width: 1080px; margin: 0 auto; padding: 24px; }
+      .article-card { background: #151821; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.35); animation: fadeIn 0.4s ease; }
+      .news-media { width: 100%; height: 360px; background-size: cover; background-position: center; }
+      .news-body { padding: 20px; }
+      .news-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; color: #fff; }
+      .news-meta { color: #9aa0a6; font-size: 14px; margin-bottom: 14px; }
+      .news-text { font-size: 17px; color: #e8eaed; white-space: pre-line; }
+      .btn { display: inline-block; margin-top: 20px; padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.25s ease; }
+      .btn-primary { background: #ff7a18; color: #fff; border: none; }
+      .btn-primary:hover { background: #ff9a4d; transform: translateY(-2px); }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
+    </style>
+  `;
 
+  const html = `
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <title>${article.title}</title>
+        ${headLinks}
+        ${fallbackCSS}
+      </head>
+      <body>
+        <div class="page">
+          <article class="article-card">
+            <div class="news-media" style="background-image:url('${article.image}');"></div>
+            <div class="news-body">
+              <h1 class="news-title">${article.title}</h1>
+              <div class="news-meta">${fmt.date(article.date)}</div>
+              <div class="news-text">${article.text.replace(/\n\s*\n/g, '<br><br>')}</div>
+              <button class="btn btn-primary" onclick="window.close()">← Back to Website</button>
+            </div>
+          </article>
+        </div>
+      </body>
+    </html>
+  `;
+
+  win.document.open();
+  win.document.write(html);
+  win.document.close();
+}
+function openArticleInNewTab(index) {
+  const article = newsAfterUSAGP[index];
+  const win = window.open("", "_blank");
+
+  const headLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
+    .map(link => `<link rel="stylesheet" href="${link.href}">`)
+    .join('\n');
+
+  const fallbackCSS = `
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0f1115; color: #e8eaed; }
+      .page { max-width: 1080px; margin: 0 auto; padding: 24px; }
+      .article-card { background: #151821; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.35); animation: fadeIn 0.4s ease; }
+      .hero-wrap { width: 100%; height: 360px; background: #0b0d12; display: grid; place-items: center; overflow: hidden; }
+      .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+      .news-body { padding: 20px; }
+      .news-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; color: #fff; }
+      .news-meta { color: #9aa0a6; font-size: 14px; margin-bottom: 14px; }
+      .news-text { font-size: 17px; color: #e8eaed; white-space: pre-line; }
+      .btn { display: inline-block; margin-top: 20px; padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.25s ease; }
+      .btn-primary { background: #ff7a18; color: #fff; border: none; }
+      .btn-primary:hover { background: #ff9a4d; transform: translateY(-2px); }
+      .hero-fallback { color: #9aa0a6; font-size: 14px; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
+    </style>
+  `;
+
+  const safeText = (article.text || "").replace(/\n\s*\n/g, "<br><br>");
+
+  const html = `
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <title>${article.title}</title>
+        ${headLinks}
+        ${fallbackCSS}
+      </head>
+      <body>
+        <div class="page">
+          <article class="article-card">
+            <div class="hero-wrap">
+              <img id="heroImg" class="hero-img" src="${article.image}" alt="Article image" referrerpolicy="no-referrer">
+              <span id="heroFallback" class="hero-fallback" style="display:none;">Image failed to load.</span>
+            </div>
+            <div class="news-body">
+              <h1 class="news-title">${article.title}</h1>
+              <div class="news-meta">${fmt.date(article.date)}</div>
+              <div class="news-text">${safeText}</div>
+              <button class="btn btn-primary" onclick="window.close()">← Back to Website</button>
+            </div>
+          </article>
+        </div>
+        <script>
+          (function() {
+            const img = document.getElementById('heroImg');
+            const fb = document.getElementById('heroFallback');
+            // Ensure correct sizing once decoded
+            img.decode?.().catch(() => {}).finally(() => {
+              img.style.visibility = 'visible';
+            });
+            // Robust error fallback: try switching to the same URL without query, else hide img
+            img.addEventListener('error', () => {
+              try {
+                const url = new URL(img.src);
+                const stripped = url.origin + url.pathname; // remove query params that sometimes block hotlinking
+                if (stripped !== img.src) {
+                  img.src = stripped;
+                } else {
+                  img.style.display = 'none';
+                  fb.style.display = 'inline';
+                }
+              } catch (e) {
+                img.style.display = 'none';
+                fb.style.display = 'inline';
+              }
+            });
+          })();
+        </script>
+      </body>
+    </html>
+  `;
+
+  win.document.open();
+  win.document.write(html);
+  win.document.close();
+}
+function openArticleInNewTab(index) {
+  const article = newsAfterUSAGP[index];
+  const win = window.open("", "_blank");
+
+  // Clone your current CSS links and <style> tags into the new document head
+  const headLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
+    .map(link => `<link rel="stylesheet" href="${link.href}">`)
+    .join('\n');
+  const inlineStyles = Array.from(document.head.querySelectorAll('style'))
+    .map(style => `<style>${style.innerHTML}</style>`)
+    .join('\n');
+
+  // Inline fallback styles to ensure consistent rendering, even if external CSS loads late
+  const fallbackCSS = `
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0f1115; color: #e8eaed; }
+      .page { max-width: 1080px; margin: 0 auto; padding: 24px; }
+      .article-card { background: #151821; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.35); animation: fadeIn 0.4s ease; }
+      .news-media { width: 100%; height: 360px; background-size: cover; background-position: center; background-repeat: no-repeat; }
+      .news-body { padding: 20px; }
+      .news-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; color: #fff; }
+      .news-meta { color: #9aa0a6; font-size: 14px; margin-bottom: 14px; }
+      .news-text { font-size: 17px; color: #e8eaed; white-space: pre-line; }
+      .back-link { display: inline-block; margin-top: 18px; color: #ff7a18; text-decoration: none; font-weight: 700; }
+      .back-link:hover { color: #ff9a4d; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
+    </style>
+  `;
+
+  // Build the HTML using the SAME classes you use on the site
+  const html = `
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>${article.title}</title>
+        ${headLinks}
+        ${inlineStyles}
+        ${fallbackCSS}
+      </head>
+      <body>
+        <div class="page">
+          <article class="article-card">
+            <div class="news-media" style="background-image:url('${article.image}');"></div>
+            <div class="news-body">
+              <h1 class="news-title">${article.title}</h1>
+              <div class="news-meta">${fmt.date(article.date)}</div>
+              <div class="news-text">${article.text.replace(/\n\s*\n/g, '\n\n')}</div>
+              <a class="back-link" href="javascript:window.close()">Close tab</a>
+            </div>
+          </article>
+        </div>
+      </body>
+    </html>
+  `;
+
+  win.document.open();
+  win.document.write(html);
+  win.document.close();
+}
+function populateNews() {
+  const wrap = document.getElementById('newsList');
+  newsAfterUSAGP.forEach((n, i) => {
+    const card = document.createElement('article');
+    card.className = 'news-card';
+    card.style.animationDelay = `${i * 0.08}s`;
+    card.innerHTML = `
+      <div class="news-media">
+        <img src="${n.image}" alt="${n.title}" class="news-img">
+      </div>
+      <div class="news-body">
+        <h4 class="news-title">${n.title}</h4>
+        <div class="news-meta">${fmt.date(n.date)}</div>
+        <p class="news-text">${n.text.length > 160 ? n.text.substring(0, 160) + "..." : n.text}</p>
+        <button class="read-more">Read full article →</button>
+      </div>
+    `;
+    card.querySelector('.read-more').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openArticleInNewTab(i);
+    });
+    wrap.appendChild(card);
+  });
+}
 
 
 
