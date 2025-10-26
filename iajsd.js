@@ -103,23 +103,23 @@ NC. Fernando Alonso (Aston Martin)
 NC. Nico Hulkenberg (Sauber)  
 NC. Liam Lawson (Racing Bulls)  
 
-**Key moments**
+Key moments
 - Start: Norris launched cleanly and defended Turn 1 from Leclerc.  
 - Mid‑race: Verstappen’s strategy secured him P3, but he lacked the pace to challenge Norris.  
 - Breakthrough: Bearman stunned with a composed run to P4, Haas’s best finish of the season.  
 - Damage limitation: Piastri salvaged P5 but lost the championship lead.  
 - **Rising star:** Antonelli impressed with P6, showing maturity beyond his years.  
 
-**Championship impact**
+Championship impact
 - Norris is now the **new championship leader**, 6 points ahead of Piastri.  
 - Piastri drops to P2 after a difficult run of results.  
 - Verstappen remains in contention, 36 points back.  
 - Haas and Mercedes both gained valuable Constructors’ points through Bearman and Antonelli.  
 
-**Atmosphere**
+Atmosphere
 Over 400,000 fans created a carnival atmosphere in Mexico City. Local hero Sergio Pérez finished P8, drawing the loudest cheers of the day.  
 
-**Looking ahead**
+Looking ahead
 With Brazil and Qatar sprint weekends next, the title fight is wide open. Norris has momentum, Piastri must regroup, and Verstappen is waiting to strike.`
    },
   {
@@ -963,6 +963,7 @@ function initF1Background() {
 }
 
 document.addEventListener('DOMContentLoaded', initF1Background);
+
 
 
 
