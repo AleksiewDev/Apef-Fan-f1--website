@@ -185,8 +185,8 @@ With the championship battle between Norris, Piastri, and Verstappen tightening,
   date: "2025-10-25",
   image: "https://cdn.racingnews365.com/2025/Norris/_1092x683_crop_center-center_85_none/2243102585.jpg?v=1761375627",
   text: `Lando Norris delivered a sensational lap to secure pole position for the Mexico City Grand Prix, stopping the clocks at 1:16.801. 
-The McLaren driver carried his momentum from FP3 into qualifying, edging out Ferrari’s Lewis Hamilton by just 0.072s. 
-George Russell put Mercedes third on the grid, while Charles Leclerc lined up fourth for Ferrari. 
+The McLaren driver carried his momentum from FP3 into qualifying, edging out Ferrari’s Lewis Hamilton . 
+George Russell put Mercedes fourth on the grid, while Charles Leclerc lined up third for Ferrari. 
 
 Max Verstappen struggled to extract pace from his Red Bull and could manage only fifth, ahead of Oscar Piastri in sixth. 
 Rookie Andrea Kimi Antonelli impressed again with seventh, continuing his strong weekend form. 
@@ -580,6 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
