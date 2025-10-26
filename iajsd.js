@@ -942,9 +942,58 @@ function populateNews() {
     wrap.appendChild(card);
   });
 }
+function initF1Background() {
+  const canvas = document.getElementById('f1Background');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
 
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+  camera.position.set(0, 1.5, 5);
 
+  // Lighting
+  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.2);
+  hemiLight.position.set(0, 20, 0);
+  scene.add(hemiLight);
 
+  const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  dirLight.position.set(5, 10, 7.5);
+  scene.add(dirLight);
+
+  // Load F1 model (replace URL with your .glb/.gltf model)
+  const loader = new THREE.GLTFLoader();
+  loader.load(
+    'path/to/f1car.glb',
+    function (gltf) {
+      const car = gltf.scene;
+      car.scale.set(0.8, 0.8, 0.8);
+      car.position.set(0, -0.5, 0);
+      scene.add(car);
+
+      // Animate rotation
+      function animate() {
+        requestAnimationFrame(animate);
+        car.rotation.y += 0.002; // slow spin
+        renderer.render(scene, camera);
+      }
+      animate();
+    },
+    undefined,
+    function (error) {
+      console.error('Error loading F1 model:', error);
+    }
+  );
+
+  // Handle resize
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initF1Background);
 
 
 
