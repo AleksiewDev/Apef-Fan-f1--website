@@ -18,39 +18,39 @@ const fmt = {
 
 // Next GP: Mexico City (Anton in EEST, event Sunday evening local)
 const nextGp = {
-  name: "Mexico City Grand Prix",
-  venue: "Autódromo Hermanos Rodríguez",
-  startISO: "2025-10-26T22:00:00+02:00",
+   name: "São Paulo Grand Prix",
+  venue: "Autódromo José Carlos Pace (Interlagos)",
+  startISO: "2025-11-09T14:00:00-03:00", // Local race start time in Brazil (UTC-3)
   sessions: [
-    { key: "fp1", label: "FP1", iso: "2025-10-24T17:30:00+02:00" },
-    { key: "fp2", label: "FP2", iso: "2025-10-25T17:30:00+02:00" },
-    { key: "fp3", label: "FP3", iso: "2025-10-26T15:00:00+02:00" },
-    { key: "qualifying", label: "Qualifying", iso: "2025-10-25T21:00:00+02:00" },
-    { key: "race", label: "Race", iso: "2025-10-26T22:00:00+02:00" }
+    { key: "fp1", label: "FP1", iso: "2025-11-07T11:30:00-03:00" },
+    { key: "sprintQualifying", label: "Sprint Qualifying", iso: "2025-11-07T15:30:00-03:00" },
+    { key: "sprint", label: "Sprint", iso: "2025-11-08T11:00:00-03:00" },
+    { key: "qualifying", label: "Qualifying", iso: "2025-11-08T15:00:00-03:00" },
+    { key: "race", label: "Race", iso: "2025-11-09T14:00:00-03:00" }
   ]
 };
 
 // Drivers 2025 (name, code, team, points, wins, poles, photo)
 const drivers2025 = [
-  { pos: 1, name: "Oscar Piastri", code: "PIA", nationality: "AUS", team: "McLaren", points: 346, wins: 7, poles: 5, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_oscar_team_pic_02.jpg" },
-  { pos: 2, name: "Lando Norris", code: "NOR", nationality: "GBR", team: "McLaren", points: 332, wins: 5, poles: 4, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" },
-  { pos: 3, name: "Max Verstappen", code: "VER", nationality: "NED", team: "Red Bull Racing", points: 306, wins: 5, poles: 7, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmb-f8vwQW9GTmAejEbUu2JeYUlzkscG8vZoaXwnvmzbJjqInaA7aSEAeB6jRrZRFCxA&usqp=CAU" },
-  { pos: 4, name: "George Russell", code: "RUS", nationality: "GBR", team: "Mercedes", points: 252, wins: 2, poles: 2, photo: "https://images.ctfassets.net/1fvlg6xqnm65/DF8GKGlCgVkML7jYA3lX8/f98a3b6f3fdaff998fa1ee7cdc1fa5c9/GR-EYNTK-IMAGE-MOBILE.jpg?w=626&q=75&fm=webp" },
-  { pos: 5, name: "Charles Leclerc", code: "LEC", nationality: "MON", team: "Ferrari", points: 192, wins: 0, poles: 1, photo: "https://aceracegear.com/wp-content/uploads/2025/02/cl-01-2025.jpg" },
-  { pos: 6, name: "Lewis Hamilton", code: "HAM", nationality: "GBR", team: "Ferrari", points: 142, wins: 0, poles: 0, photo: "https://store.ferrari.com/dw/image/v2/BGDG_PRD/on/demandware.static/-/Sites-48/default/dw0196a800/images/zoom/LA06Zf_170_2.png?strip=false" },
-  { pos: 7, name: "Kimi Antonelli", code: "ANT", nationality: "ITA", team: "Mercedes", points: 89, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/uoiclYPCB7vPlR53OzLou_H9HJ-qDCPRy-OeMqaavDgvSISa7CySyCKsgzl8A0f_3vOf_eH7v7rBt8gaHb8beg.webp" },
+  { pos: 1, name: "Lando Norris", code: "NOR", nationality: "GBR", team: "McLaren", points: 357, wins: 6, poles: 5, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" },
+  { pos: 2, name: "Oscar Piastri", code: "PIA", nationality: "AUS", team: "McLaren", points: 356, wins: 7, poles: 5, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_oscar_team_pic_02.jpg" },
+  { pos: 3, name: "Max Verstappen", code: "VER", nationality: "NED", team: "Red Bull Racing", points: 321, wins: 5, poles: 7, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmb-f8vwQW9GTmAejEbUu2JeYUlzkscG8vZoaXwnvmzbJjqInaA7aSEAeB6jRrZRFCxA&usqp=CAU" },
+  { pos: 4, name: "George Russell", code: "RUS", nationality: "GBR", team: "Mercedes", points: 258, wins: 2, poles: 2, photo: "https://images.ctfassets.net/1fvlg6xqnm65/DF8GKGlCgVkML7jYA3lX8/f98a3b6f3fdaff998fa1ee7cdc1fa5c9/GR-EYNTK-IMAGE-MOBILE.jpg?w=626&q=75&fm=webp" },
+  { pos: 5, name: "Charles Leclerc", code: "LEC", nationality: "MON", team: "Ferrari", points: 210, wins: 0, poles: 1, photo: "https://aceracegear.com/wp-content/uploads/2025/02/cl-01-2025.jpg" },
+  { pos: 6, name: "Lewis Hamilton", code: "HAM", nationality: "GBR", team: "Ferrari", points: 146, wins: 0, poles: 0, photo: "https://store.ferrari.com/dw/image/v2/BGDG_PRD/on/demandware.static/-/Sites-48/default/dw0196a800/images/zoom/LA06Zf_170_2.png?strip=false" },
+  { pos: 7, name: "Kimi Antonelli", code: "ANT", nationality: "ITA", team: "Mercedes", points: 97, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/uoiclYPCB7vPlR53OzLou_H9HJ-qDCPRy-OeMqaavDgvSISa7CySyCKsgzl8A0f_3vOf_eH7v7rBt8gaHb8beg.webp" },
   { pos: 8, name: "Alexander Albon", code: "ALB", nationality: "THA", team: "Williams", points: 73, wins: 0, poles: 0, photo: "https://static.independent.co.uk/2024/02/05/19/e52f9590a04d09ef4bf873e9c5122f2eY29udGVudHNlYXJjaGFwaSwxNzA3MjQ2MzI3-2.75253307.jpg?width=1200&height=1200&fit=crop" },
   { pos: 9, name: "Nico Hülkenberg", code: "HUL", nationality: "GER", team: "Kick Sauber", points: 41, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GMrCz6GWEAASYks?format=jpg&name=large" },
   { pos: 10, name: "Isack Hadjar", code: "HAD", nationality: "FRA", team: "Racing Bulls", points: 39, wins: 0, poles: 0, photo: "https://framerusercontent.com/images/R4z6H2nIMtXBpFzkL4qJ2Jny88.jpg?width=3072&height=3840" },
   { pos: 11, name: "Carlos Sainz", code: "SAI", nationality: "ESP", team: "Williams", points: 38, wins: 0, poles: 0, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RyGKN7IWY5i31pK8yXLVDcwvjYRS0XLQGufGNCztDziweEHsWkzIomBsjgbi96XzIx8&usqp=CAU" },
   { pos: 12, name: "Fernando Alonso", code: "ALO", nationality: "ESP", team: "Aston Martin", points: 37, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/am-fa-2025-1.jpg" },
-  { pos: 13, name: "Lance Stroll", code: "STR", nationality: "CAN", team: "Aston Martin", points: 32, wins: 0, poles: 0, photo: "https://aurupteur.com/uploads/brefs/4511/4511_gkeojbrwyaijt58.jpg" },
-  { pos: 14, name: "Liam Lawson", code: "LAW", nationality: "NZL", team: "Racing Bulls", points: 30, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/-QcAd3hXRJrSMq9n1bSfMYrnGVDHN2BJ3JLMhGXs1PkMfc3Jyd9A2Gy-ugqDmfQkZgM9BJ22pYbg711lUdV-sw.webp" },
-  { pos: 15, name: "Esteban Ocon", code: "OCO", nationality: "FRA", team: "Haas F1 Team", points: 28, wins: 0, poles: 0, photo: "https://i.redd.it/esteban-ocons-helmet-for-the-2025-season-v0-u52c357k3wje1.jpg?width=3277&format=pjpg&auto=webp&s=eb145ca50e5bc3f1154fb9efa9636832904de868" },
-  { pos: 16, name: "Yuki Tsunoda", code: "TSU", nationality: "JPN", team: "Red Bull Racing", points: 28, wins: 0, poles: 0, photo: "https://newsgpcdn.vshcdn.net/i/images/1586/yuki-tsunoda-f1-post-season-test-with-red-bull_f.jpg" },
-  { pos: 17, name: "Pierre Gasly", code: "GAS", nationality: "FRA", team: "Alpine", points: 20, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/alpine-pg-2025-1.jpg" },
-  { pos: 18, name: "Oliver Bearman", code: "BEA", nationality: "GBR", team: "Haas F1 Team", points: 20, wins: 0, poles: 0, photo: "https://preview.redd.it/ollie-bearmans-helmet-for-the-2025-season-v0-jhzkvievzoje1.jpg?width=1080&crop=smart&auto=webp&s=26282e9b98b9a85596672ff152d03c332782c82c" },
-  { pos: 19, name: "Gabriel Bortoleto", code: "BOR", nationality: "BRA", team: "Kick Sauber", points: 18, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GjLwdydW4AATow-.jpg:large" },
+  { pos: 13, name: "Oliver Bearman", code: "BEA", nationality: "GBR", team: "Haas F1 Team", points: 22, wins: 0, poles: 0, photo: "https://preview.redd.it/ollie-bearmans-helmet-for-the-2025-season-v0-jhzkvievzoje1.jpg?width=1080&crop=smart&auto=webp&s=26282e9b98b9a85596672ff152d03c332782c82c" },
+  { pos: 14, name: "Lance Stroll", code: "STR", nationality: "CAN", team: "Aston Martin", points: 32, wins: 0, poles: 0, photo: "https://aurupteur.com/uploads/brefs/4511/4511_gkeojbrwyaijt58.jpg" },
+  { pos: 15, name: "Liam Lawson", code: "LAW", nationality: "NZL", team: "Racing Bulls", points: 30, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/-QcAd3hXRJrSMq9n1bSfMYrnGVDHN2BJ3JLMhGXs1PkMfc3Jyd9A2Gy-ugqDmfQkZgM9BJ22pYbg711lUdV-sw.webp" },
+  { pos: 16, name: "Esteban Ocon", code: "OCO", nationality: "FRA", team: "Haas F1 Team", points: 30, wins: 0, poles: 0, photo: "https://i.redd.it/esteban-ocons-helmet-for-the-2025-season-v0-u52c357k3wje1.jpg?width=3277&format=pjpg&auto=webp&s=eb145ca50e5bc3f1154fb9efa9636832904de868" },
+  { pos: 17, name: "Yuki Tsunoda", code: "TSU", nationality: "JPN", team: "Red Bull Racing", points: 28, wins: 0, poles: 0, photo: "https://newsgpcdn.vshcdn.net/i/images/1586/yuki-tsunoda-f1-post-season-test-with-red-bull_f.jpg" },
+  { pos: 18, name: "Pierre Gasly", code: "GAS", nationality: "FRA", team: "Alpine", points: 20, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/alpine-pg-2025-1.jpg" },
+  { pos: 19, name: "Gabriel Bortoleto", code: "BOR", nationality: "BRA", team: "Kick Sauber", points: 19, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GjLwdydW4AATow-.jpg:large" },
   { pos: 20, name: "Franco Colapinto", code: "COL", nationality: "ARG", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://instagram.fsof10-1.fna.fbcdn.net/v/t39.30808-6/485158953_122196919394251980_6379425086884951888_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuQ0FST1VTRUxfSVRFTS5pbWFnZV91cmxnZW4uODAyeDEzNzkuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlLmMyIn0&_nc_ht=instagram.fsof10-1.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2QFOF63zKGK_M4W2iLOT5UvcCCUq3UJt_8vW4JYd0rtIlNPzxFhv4uTgFWZF5YPjAtk&_nc_ohc=Hh0BVWNvipMQ7kNvwFeLOqS&_nc_gid=CrJ8NA_nvF6OD7xRYaKgmQ&edm=AKr904kAAAAA&ccb=7-5&ig_cache_key=MzU3MjcxMzU3Njk0MDc5MzMzMA%3D%3D.3-ccb7-5&oh=00_Afe_-uUTtgPM9Al8jg6m8JHD4pz83NrDhXI-6WGGMcPTLg&oe=69017193&_nc_sid=23467f" },
   { pos: 21, name: "Jack Doohan", code: "DOO", nationality: "AUS", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://preview.redd.it/franco-colapinto-in-alpine-2025-will-be-the-deja-vu-of-v0-mfphwgeotvye1.png?width=1320&format=png&auto=webp&s=c67fd2287c94f2ea96a53595c6616976b0e0af20" }
 ];
@@ -58,7 +58,7 @@ const drivers2025 = [
 
 // Constructors 2025
 const constructors2025 = [
-  { pos: 1, name: "McLaren", points: 678, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp",
+  { pos: 1, name: "McLaren", points: 713, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp",
     facts: [
       "Constructors’ titles: 10",
       "Known for operational excellence and sharp aero",
@@ -67,7 +67,15 @@ const constructors2025 = [
     tagline: "Relentless precision. Papaya charge.",
     history: `Founded in 1963, McLaren became a titan through the 1970s and 80s with legends like Fittipaldi, Hunt, and Senna. The 1990s featured Senna vs. Prost, then dominant eras with Hakkinen and the Mercedes partnership. After a rebuilding phase post-2015 power shifts, McLaren re-emerged with cutting-edge aero and management alignment, returning to championship contention in 2024–2025 with consistent execution, rapid in-season development, and elite drivers.`
   },
-  { pos: 2, name: "Mercedes", points: 341, drivers: ["George Russell", "Kimi Antonelli"], photo: "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp",
+   { pos: 2, name: "Ferrari", points: 356, drivers: ["Charles Leclerc", "Lewis Hamilton"], photo: "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg",
+    facts: [
+      "Most iconic heritage brand",
+      "Drivers’ and Constructors’ multiple titles historically",
+      "Strategic volatility improving"
+      ],
+   },
+
+  { pos: 3, name: "Mercedes", points: 355, drivers: ["George Russell", "Kimi Antonelli"], photo: "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp",
     facts: [
       "Constructors’ titles: 8 (modern hybrid era dominance)",
       "Power unit supplier",
@@ -76,16 +84,11 @@ const constructors2025 = [
     tagline: "Method. Margin. Mastery.",
     history: `Mercedes returned as a works team in 2010, dominated the hybrid era from 2014–2020. Post-rule changes, they stabilized with strong operational foundations while integrating next-gen talent. The 2025 campaign blends Russell’s maturity with Antonelli’s debut energy, underpinned by iterative aero and PU efficiency.`
   },
-  { pos: 3, name: "Ferrari", points: 334, drivers: ["Charles Leclerc", "Lewis Hamilton"], photo: "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg",
-    facts: [
-      "Most iconic heritage brand",
-      "Drivers’ and Constructors’ multiple titles historically",
-      "Strategic volatility improving"
-    ],
+     {
     tagline: "Spirit of Maranello.",
     history: `Scuderia Ferrari, active since F1’s inception, boasts unmatched legacy. The Leclerc–Hamilton era targets a modern reset of Ferrari’s operational sharpness: consolidating aero coherence, tire management, and strategic resilience while capitalizing on driver synergy and race pace recovery.`
   },
-  { pos: 4, name: "Red Bull Racing", points: 331, drivers: ["Max Verstappen", "Yuki Tsunoda"], photo: "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626",
+  { pos: 4, name: "Red Bull Racing", points: 346, drivers: ["Max Verstappen", "Yuki Tsunoda"], photo: "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626",
     facts: [
       "Known for aggressive development cycles",
       "Top-tier pit stop and strategy execution",
@@ -121,7 +124,15 @@ const constructors2025 = [
     tagline: "Green surge.",
     history: `Aston Martin’s modern F1 venture accelerated with major infrastructure and aero hires. With Alonso’s racecraft and Stroll’s continuity, 2025 focuses on consistency and tire behavior stabilization to reclaim podium proximity.`
   },
-  { pos: 8, name: "Kick Sauber", points: 59, drivers: ["Nico Hülkenberg", "Gabriel Bortoleto"], photo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/2025_Japan_GP_-_Sauber_-_Nico_Hulkenberg_-_FP1.jpg",
+   { pos: 8, name: "Haas F1 Team", points: 62, drivers: ["Esteban Ocon", "Oliver Bearman"], photo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FIA_F1_Austria_2025_Nr._87_Bearman.jpg",
+    facts: [
+      "US-based outfit with lean structure",
+      "Ferrari technical ties",
+      "Focus on tire preservation"
+    
+    ],
+  },
+  { pos: 9, name: "Kick Sauber", points: 59, drivers: ["Nico Hülkenberg", "Gabriel Bortoleto"], photo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/2025_Japan_GP_-_Sauber_-_Nico_Hulkenberg_-_FP1.jpg",
     facts: [
       "Independent backbone with manufacturer phases",
       "Noted for strategic bravery and tire calls",
@@ -129,13 +140,8 @@ const constructors2025 = [
     ],
     tagline: "Independent intelligence.",
     history: `Sauber’s journey spans manufacturer partnerships and independent grit. 2025 marks a transition year balancing experienced racecraft (Hülkenberg) with rookie momentum (Bortoleto), targeting Q2-Q3 progression and opportunistic points.`
-  },
-  { pos: 9, name: "Haas F1 Team", points: 48, drivers: ["Esteban Ocon", "Oliver Bearman"], photo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FIA_F1_Austria_2025_Nr._87_Bearman.jpg",
-    facts: [
-      "US-based outfit with lean structure",
-      "Ferrari technical ties",
-      "Focus on tire preservation"
-    ],
+  }, 
+   {
     tagline: "American grit.",
     history: `Haas entered F1 in 2016 with a cost-effective model. The 2025 duo blends Ocon’s consistency with Bearman’s emergence. The aim: stabilize race pace across stints and maximize undercut/overcut windows.`
   },
@@ -153,6 +159,53 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+   {
+      title: "Mexico GP 2025 – Norris dominates, takes championship lead",
+  date: "2025-10-26",
+  image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Autodromo_Hermanos_Rodriguez.jpg",
+  text: `Lando Norris produced a flawless drive at the Autódromo Hermanos Rodríguez, converting pole into a dominant victory and seizing the lead of the Drivers’ Championship. The McLaren driver controlled the race from lights to flag, finishing over half a minute clear of his rivals.
+
+**Full Race Classification**
+1. Lando Norris (McLaren) – Winner  
+2. Charles Leclerc (Ferrari)  
+3. Max Verstappen (Red Bull Racing)  
+4. Ollie Bearman (Haas) – career‑best finish  
+5. Oscar Piastri (McLaren)  
+6. Kimi Antonelli (Mercedes)  
+7. George Russell (Mercedes)  
+8. Lewis Hamilton (Ferrari)  
+9. Esteban Ocon (Haas)  
+10. Garbiel Bortoleto (Sauber)  
+11. Yuki Tsunoda (Red Bull Racing)  
+12. Alexander Albon (Williams)  
+13. Isack Hadjar (Racing Bulls)  
+14. Lance Stroll (Aston Martin)  
+15. Piere Gasly (Alpine)  
+16. Franco Colapinto (Alpine)  
+17. Carlos Sainz (Williams)  
+NC. Fernando Alonso (Aston Martin)  
+NC. Nico Hulkenberg (Sauber)  
+NC. Liam Lawson (Racing Bulls)  
+
+**Key moments**
+- Start: Norris launched cleanly and defended Turn 1 from Leclerc.  
+- Mid‑race: Verstappen’s strategy secured him P3, but he lacked the pace to challenge Norris.  
+- Breakthrough: Bearman stunned with a composed run to P4, Haas’s best finish of the season.  
+- Damage limitation: Piastri salvaged P5 but lost the championship lead.  
+- **Rising star:** Antonelli impressed with P6, showing maturity beyond his years.  
+
+**Championship impact**
+- Norris is now the **new championship leader**, 6 points ahead of Piastri.  
+- Piastri drops to P2 after a difficult run of results.  
+- Verstappen remains in contention, 36 points back.  
+- Haas and Mercedes both gained valuable Constructors’ points through Bearman and Antonelli.  
+
+**Atmosphere**
+Over 400,000 fans created a carnival atmosphere in Mexico City. Local hero Sergio Pérez finished P8, drawing the loudest cheers of the day.  
+
+**Looking ahead**
+With Brazil and Qatar sprint weekends next, the title fight is wide open. Norris has momentum, Piastri must regroup, and Verstappen is waiting to strike.`
+   },
   {
   title: "What’s happening with Piastri? From dominance to title pressure",
   date: "2025-10-26",
@@ -994,6 +1047,10 @@ function initF1Background() {
 }
 
 document.addEventListener('DOMContentLoaded', initF1Background);
+
+
+
+
 
 
 
