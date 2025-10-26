@@ -153,6 +153,33 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+ title: "Mexico City GP Race Preview: Strategies, battles, and what to expect",
+  date: "2025-10-26",
+  image: "https://cdn.prgloo.com/media/download/698867f28fe045979c64dcdcf1527ddd",
+  text: `After three practice sessions and a thrilling qualifying, the stage is set for a high‑stakes Mexico City Grand Prix. 
+The weekend has already delivered drama: rookies dominated FP1, Verstappen re‑asserted himself in FP2, Ferrari showed consistency in FP3, and Lando Norris stunned the field with pole in qualifying.
+
+Session recap
+- FP1: Charles Leclerc topped the times in a rookie‑heavy session, with Kimi Antonelli and Gabriel Bortoleto impressing. 
+- FP2: Max Verstappen returned to the cockpit and immediately set the fastest lap of the weekend so far (1:17.392), underlining Red Bull’s pace. 
+- FP3: Ferrari looked strong on long runs, with Hamilton and Leclerc both inside the top three, while McLaren focused on race balance. 
+- Qualifying: Norris delivered a near‑perfect lap to take pole, with Hamilton alongside and Russell in third. Verstappen could manage only fifth, setting up a fascinating grid.
+
+What to expect in the race
+- Start battles: Norris vs. Hamilton on the front row promises fireworks into Turn 1, with Russell and Leclerc poised to capitalize. Verstappen, starting fifth, will be aggressive in the opening laps. 
+- Altitude factor: At 2,200m above sea level, cooling and ERS deployment remain critical. Brake temperatures will be a constant concern, especially in traffic. 
+- Tyre strategies: Pirelli has brought the C3–C5 compounds. Expect a two‑stop race to be the default, with soft–medium–medium or soft–hard–medium as likely options. Teams may gamble on a one‑stop if degradation proves lower than expected. 
+- Undercut potential: The long pit lane makes timing crucial. An early stop could leapfrog rivals, but overheating tyres in traffic could undo gains. 
+- **Safety car risk: The stadium section and tight first chicane often trigger incidents. Teams will keep one eye on opportunistic pit stops under yellow flags. 
+
+Key storylines
+- McLaren’s intra‑team tension: Norris on pole, Piastri down the order, but both still in the title fight. 
+- Ferrari’s resurgence: Hamilton and Leclerc both look capable of podiums, with strong long‑run pace. 
+- Verstappen’s recovery: Starting fifth, but with Red Bull’s upgrades and his racecraft, he remains a major threat. 
+- Rookie spotlight: Antonelli starts inside the top 10 again, aiming to convert qualifying form into points.
+
+With the championship battle between Norris, Piastri, and Verstappen tightening, every point in Mexico could prove decisive. Expect strategy gambles, wheel‑to‑wheel fights, and the passionate Foro Sol crowd roaring every lap.`
+  },
    {
        title: "Norris takes stunning pole in Mexico City qualifying",
   date: "2025-10-25",
@@ -553,6 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
