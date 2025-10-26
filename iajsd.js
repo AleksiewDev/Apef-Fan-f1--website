@@ -153,6 +153,7 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+   {
  title: "Mexico City GP Race Preview: Strategies, battles, and what to expect",
   date: "2025-10-26",
   image: "https://cdn.prgloo.com/media/download/698867f28fe045979c64dcdcf1527ddd",
@@ -580,6 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModalClose();
   observeSections();
 });
+
 
 
 
