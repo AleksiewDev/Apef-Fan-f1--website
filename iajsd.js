@@ -153,6 +153,35 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+     title: "What’s happening with Piastri? From dominance to title pressure",
+  date: "2025-10-26",
+  image: "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-26T001210.347.webp",
+  text: `Oscar Piastri’s championship campaign has hit turbulence. After a dominant win at Zandvoort, the McLaren driver looked unstoppable — 34 points clear of teammate Lando Norris and 104 ahead of Max Verstappen. But five races later, the gap has shrunk to just 14 and 40 respectively.
+
+**Post-Zandvoort results**
+- 🇮🇹 Monza: P3, solid but outpaced by Norris
+- 🇦🇿 Baku: DNF, double crash weekend
+- 🇸🇬 Singapore: P4, decent recovery
+- 🇺🇸 Austin: P5, worst dry race finish of the season
+- 🇲🇽 Mexico: Qualifying struggles, race TBD
+
+Piastri’s form dipped sharply in Baku, where he crashed out of both the sprint and the main race. That weekend alone cost him 30+ points. In Austin, he finished fifth — 22 seconds behind Norris — and admitted setup issues and poor tyre management.
+
+Meanwhile, Norris has surged with consistent podiums and a pole in Mexico. Verstappen, once 104 points behind, has won the US GP and sprint, slashing the deficit to 40.
+
+**What’s going wrong?**
+- Qualifying pace has dropped: Piastri’s average grid position since Zandvoort is P5.
+- Tyre degradation: He’s struggled in high-deg races like Singapore and Austin.
+- Pressure: With Norris and Verstappen charging, every mistake is amplified.
+
+**Déjà vu from 2010?**
+This season is starting to echo Mark Webber’s 2010 campaign. Back then, Webber led the championship for much of the year, only to see it slip away in the final races. Mistakes, pressure, and rivals peaking at the right time cost him the title — and Piastri now faces a similar storm.
+
+**Championship outlook**
+With five rounds left — including sprints in Brazil and Qatar — the title fight is wide open. Piastri still leads, but momentum is shifting. Norris is just 14 points behind, and Verstappen is within striking distance. If McLaren can’t stabilize Piastri’s form, the Australian may lose a title that once looked inevitable.
+
+The next few races will define the season. Can Piastri respond under pressure, or will Norris and Verstappen complete the comeback?`
+  },
    {
  title: "Mexico City GP Race Preview: Strategies, battles, and what to expect",
   date: "2025-10-26",
@@ -912,6 +941,7 @@ function populateNews() {
     wrap.appendChild(card);
   });
 }
+
 
 
 
