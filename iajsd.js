@@ -77,7 +77,7 @@ const constructors2025 = [
 const newsAfterUSAGP = [
    {
   title: "Driver Reactions – Mexico GP 2025",
-  date: "2025-10-26",
+  date: "2025-10-27",
   image: "https://i.ytimg.com/vi/GbG_Y9bCitU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAl4n8j-M4MCZcqnKDc9I8R8XzhDw",
   text: `Here’s what the grid had to say after a dramatic Mexico City Grand Prix:
 
@@ -143,7 +143,7 @@ Liam Lawson (Racing Bulls, DNF):
    },
    {
    title: "Mexico GP 2025 – Full Weekend Report & São Paulo Preview",
-  date: "2025-10-26",
+  date: "2025-10-27",
   image: "https://cdni.autocarindia.com/ExtraImages/20251027125339_f1_norris_mexico_gp.jpg",
   text: `The Mexico City Grand Prix 2025 delivered one of the defining weekends of the season. 
 From practice to the chequered flag, the Autódromo Hermanos Rodríguez was alive with drama, dominance, and breakthrough performances.
@@ -1043,6 +1043,7 @@ function initF1Background() {
 }
 
 document.addEventListener('DOMContentLoaded', initF1Background);
+
 
 
 
