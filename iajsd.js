@@ -78,7 +78,7 @@ const newsAfterUSAGP = [
    {
    title: "Mexico GP 2025 – Full Weekend Report & São Paulo Preview",
   date: "2025-10-26",
-  image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Mexico/Triple%20split%20(2).webp",
+  image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-26T215146.055.webp",
   text: `The Mexico City Grand Prix 2025 delivered one of the defining weekends of the season. 
 From practice to the chequered flag, the Autódromo Hermanos Rodríguez was alive with drama, dominance, and breakthrough performances.
 
@@ -983,6 +983,7 @@ function initF1Background() {
 }
 
 document.addEventListener('DOMContentLoaded', initF1Background);
+
 
 
 
