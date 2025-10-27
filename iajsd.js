@@ -76,6 +76,72 @@ const constructors2025 = [
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
    {
+  title: "Driver Reactions – Mexico GP 2025",
+  date: "2025-10-26",
+  image: "https://i.ytimg.com/vi/GbG_Y9bCitU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAl4n8j-M4MCZcqnKDc9I8R8XzhDw",
+  text: `Here’s what the grid had to say after a dramatic Mexico City Grand Prix:
+
+Lando Norris (McLaren, Winner):
+"It felt like the perfect race. Great launch, great pace, and the car was incredible. To win like this and take the championship lead is special."
+
+Charles Leclerc (Ferrari, 2nd):
+"We didn’t expect to be this strong here. P2 is a great result, but Lando was untouchable today."
+
+Max Verstappen (Red Bull, 3rd):
+"We maximized what we had. Strategy worked, but McLaren were simply too quick. Still, these points keep us in the fight."
+
+Ollie Bearman (Haas, 4th):
+"Unbelievable. To finish P4 here is the best moment of my career so far. The team gave me a great car and we executed perfectly."
+
+Oscar Piastri (McLaren, 5th):
+"A tough race. I struggled with balance and tyre wear. Losing the championship lead hurts, but there are still races to fight back."
+
+Kimi Antonelli (Mercedes, 6th): 
+"It was tough physically, but I’m happy with P6. Every race I’m learning more, and scoring points like this is a big step."
+
+George Russell (Mercedes, 7th):
+"We had the pace for more, but tyre degradation hurt us. Still, both cars in the points is positive."
+
+Lewis Hamilton (Ferrari, 8th): 
+"Not the result I wanted, but we fought hard. The car was tricky in traffic, and we’ll regroup for Brazil."
+
+Esteban Ocon (Haas, 9th):
+"Double points for Haas is fantastic. Ollie’s P4 shows what this team can do, and I’m proud to contribute."
+
+Gabriel Bortoleto (Sauber, 10th):
+"Scoring a point here feels great. It was a tough race, but we managed tyres well and capitalized on opportunities."
+
+Yuki Tsunoda (Red Bull, 11th):  
+"Frustrating to miss out on points. The pace was there, but traffic and strategy didn’t work in our favor."
+
+Alex Albon (Williams, 12th):  
+"We fought hard, but lacked the pace to challenge for points. Still, encouraging signs for the team."
+
+Isack Hadjar (Racing Bulls, 13th): 
+"It was a learning race. Not easy, but I gained experience and kept it clean."
+
+Lance Stroll (Aston Martin, 14th): 
+"We didn’t have the speed this weekend. Just damage limitation."
+
+Pierre Gasly (Alpine, 15th):
+"A tough race. We struggled with balance and couldn’t fight in the midfield."
+
+Franco Colapinto (Alpine, 16th):
+"Not the result I wanted, but every lap is valuable experience."
+
+Carlos Sainz (Williams, 17th):  
+"We lacked pace all weekend. Frustrating, but we’ll keep pushing."
+
+Fernando Alonso (Aston Martin, DNF):
+"A shame to retire. We had the pace for points, but reliability let us down."
+
+Nico Hülkenberg (Sauber, DNF):
+"Disappointing to retire. We’ll regroup and come back stronger."
+
+Liam Lawson (Racing Bulls, DNF):
+"Not the way I wanted the weekend to end. We’ll reset for Brazil."`
+   },
+   {
    title: "Mexico GP 2025 – Full Weekend Report & São Paulo Preview",
   date: "2025-10-26",
   image: "https://cdni.autocarindia.com/ExtraImages/20251027125339_f1_norris_mexico_gp.jpg",
@@ -977,6 +1043,7 @@ function initF1Background() {
 }
 
 document.addEventListener('DOMContentLoaded', initF1Background);
+
 
 
 
