@@ -133,7 +133,7 @@ With Brazil and Qatar sprint weekends next, the title fight is wide open. Norris
 - 🇦🇿 Baku: DNF, double crash weekend
 - 🇸🇬 Singapore: P4, decent recovery
 - 🇺🇸 Austin: P5, worst dry race finish of the season
-- 🇲🇽 Mexico: Qualifying struggles, race TBD
+- 🇲🇽 Mexico: Qualifying struggles, race P5
 
 Piastri’s form dipped sharply in Baku, where he crashed out of both the sprint and the main race. That weekend alone cost him 30+ points. In Austin, he finished fifth — 22 seconds behind Norris — and admitted setup issues and poor tyre management.
 
@@ -151,34 +151,6 @@ This season is starting to echo Mark Webber’s 2010 campaign. Back then, Webber
 With five rounds left — including sprints in Brazil and Qatar — the title fight is wide open. Piastri still leads, but momentum is shifting. Norris is just 14 points behind, and Verstappen is within striking distance. If McLaren can’t stabilize Piastri’s form, the Australian may lose a title that once looked inevitable.
 
 The next few races will define the season. Can Piastri respond under pressure, or will Norris and Verstappen complete the comeback?`
-  },
-   {
- title: "Mexico City GP Race Preview: Strategies, battles, and what to expect",
-  date: "2025-10-26",
-  image: "https://cdn.prgloo.com/media/download/698867f28fe045979c64dcdcf1527ddd",
-  text: `After three practice sessions and a thrilling qualifying, the stage is set for a high‑stakes Mexico City Grand Prix. 
-The weekend has already delivered drama: rookies dominated FP1, Verstappen re‑asserted himself in FP2, Ferrari showed consistency in FP3, and Lando Norris stunned the field with pole in qualifying.
-
-Session recap
-- FP1: Charles Leclerc topped the times in a rookie‑heavy session, with Kimi Antonelli and Gabriel Bortoleto impressing. 
-- FP2: Max Verstappen returned to the cockpit and immediately set the fastest lap of the weekend so far (1:17.392), underlining Red Bull’s pace. 
-- FP3: Ferrari looked strong on long runs, with Hamilton and Leclerc both inside the top three, while McLaren focused on race balance. 
-- Qualifying: Norris delivered a near‑perfect lap to take pole, with Hamilton alongside and Russell in third. Verstappen could manage only fifth, setting up a fascinating grid.
-
-What to expect in the race
-- Start battles: Norris vs. Hamilton on the front row promises fireworks into Turn 1, with Russell and Leclerc poised to capitalize. Verstappen, starting fifth, will be aggressive in the opening laps. 
-- Altitude factor: At 2,200m above sea level, cooling and ERS deployment remain critical. Brake temperatures will be a constant concern, especially in traffic. 
-- Tyre strategies: Pirelli has brought the C3–C5 compounds. Expect a two‑stop race to be the default, with soft–medium–medium or soft–hard–medium as likely options. Teams may gamble on a one‑stop if degradation proves lower than expected. 
-- Undercut potential: The long pit lane makes timing crucial. An early stop could leapfrog rivals, but overheating tyres in traffic could undo gains. 
-- **Safety car risk: The stadium section and tight first chicane often trigger incidents. Teams will keep one eye on opportunistic pit stops under yellow flags. 
-
-Key storylines
-- McLaren’s intra‑team tension: Norris on pole, Piastri down the order, but both still in the title fight. 
-- Ferrari’s resurgence: Hamilton and Leclerc both look capable of podiums, with strong long‑run pace. 
-- Verstappen’s recovery: Starting fifth, but with Red Bull’s upgrades and his racecraft, he remains a major threat. 
-- Rookie spotlight: Antonelli starts inside the top 10 again, aiming to convert qualifying form into points.
-
-With the championship battle between Norris, Piastri, and Verstappen tightening, every point in Mexico could prove decisive. Expect strategy gambles, wheel‑to‑wheel fights, and the passionate Foro Sol crowd roaring every lap.`
   },
    {
        title: "Norris takes stunning pole in Mexico City qualifying",
@@ -263,17 +235,6 @@ The session highlighted the next generation’s potential while giving teams val
     text: `From pole to flag, Verstappen’s pace at COTA set the tone, while Norris overcame Leclerc in a fierce duel for P2. With maximum points across the weekend, the gap to the papaya duo narrows, turning the final stretch into a three-way chase marked by tire delta management and late-stint consistency.`
   },
   {
-    title: "McLaren balance: managing intra-team tension post–first-lap clashes",
-    date: "2025-10-20",
-    image: "https://cdn.racingnews365.com/2025/Piastri/_1092x683_crop_center-center_85_none/Piastri-in-the-air-Cota-Sprint.jpg?v=1760812828",
-    text: `The Norris–Piastri dynamic remains intense but disciplined. Post-incident reviews emphasize clarified “race-hard, race-fair” guidance, protecting points haul while preserving both title bids. Expect qualifying execution and start procedures to be the new battleground.`
-  },
-  {
-    title: "Mexico setup notes: altitude, cooling, and drag trade-offs",
-    date: "2025-10-23",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZY9l_N0vT6RB9UcOOo0y-Tgic4MLHpZaEw&s",
-    text: `Teams arrive in Mexico targeting low-drag trims yet mindful of cooling. Brake temps and ERS deployment strategies at altitude shift the energy picture. Watch for trimmed wings, stable braking, and straight-line speed balances defining quali runs.`
-  },
 ];
 
 // Calendar (2025, concise; dates simplified to local)
@@ -963,6 +924,7 @@ function initF1Background() {
 }
 
 document.addEventListener('DOMContentLoaded', initF1Background);
+
 
 
 
