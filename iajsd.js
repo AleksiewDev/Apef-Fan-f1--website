@@ -234,7 +234,6 @@ The session highlighted the next generation’s potential while giving teams val
     image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/United%20States%20(Austin)/GENERAL%20CROP%20-%202025-10-19T214936.855.webp",
     text: `From pole to flag, Verstappen’s pace at COTA set the tone, while Norris overcame Leclerc in a fierce duel for P2. With maximum points across the weekend, the gap to the papaya duo narrows, turning the final stretch into a three-way chase marked by tire delta management and late-stint consistency.`
   },
-  {
 ];
 
 // Calendar (2025, concise; dates simplified to local)
@@ -924,6 +923,7 @@ function initF1Background() {
 }
 
 document.addEventListener('DOMContentLoaded', initF1Background);
+
 
 
 
