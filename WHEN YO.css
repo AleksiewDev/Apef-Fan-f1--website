@@ -353,101 +353,82 @@ select {
 }
 
 /* Teams grid */
-.team-cards {
-  max-width: var(--maxw);
-  margin: 8px auto 24px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-@media (max-width: 960px) {
-  .team-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 640px) {
-  .team-cards { grid-template-columns: 1fr; }
-}
-.team-card {
-  background: var(--surface);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 10px 24px var(--shadow);
-  cursor: pointer;
-  transform: translateY(12px);
-  opacity: 0;
-  animation: teamIn var(--speed-2) var(--easing) forwards;
-}
-@keyframes teamIn {
-  to { transform: translateY(0); opacity: 1; }
-}
-.team-card img {
-  width: 100%; height: 160px; object-fit: cover;
-}
-.team-card .team-card-body {
-  padding: 12px;
-}
-.team-card .team-name { margin: 0 0 6px 0; font-weight: 700; }
-.team-card .team-blurb { color: var(--muted); font-size: 14px; }
+/* ============================
+   Formula 1 Championship Styles
+   Scoped ONLY to .championship
+   ============================ */
 
-/* Modal */
-.team-modal {
-  width: min(920px, 96vw);
-  border: none; border-radius: var(--radius-lg);
-  background: var(--surface);
-  color: var(--text);
-  box-shadow: 0 40px 80px var(--shadow);
-  padding: 0; overflow: hidden;
+.championship {
+  font-family: 'Poppins', sans-serif;
+  color: #f5f5f5;
+  background: #0b0f1a;
+  padding: 20px;
+  border-radius: 12px;
+  overflow: hidden;
 }
-.team-modal::backdrop {
-  background: rgba(0, 0, 0, 0.6);
+
+/* Board wrapper (drivers or constructors) */
+.championship .board {
+  margin-bottom: 40px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
 }
-.modal-close {
-  position: absolute; top: 12px; right: 12px;
-  background: var(--surface-2);
-  color: var(--text);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 999px;
-  font-size: 22px; line-height: 22px;
-  width: 36px; height: 36px;
-  cursor: pointer;
+
+/* Header */
+.championship .board-header {
+  padding: 16px 20px;
+  border-bottom: 2px solid #5cc8ff;
 }
-.modal-hero {
-  position: relative; height: 240px; overflow: hidden;
+.championship .board-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #5cc8ff;
 }
-.modal-hero img {
-  width: 100%; height: 100%; object-fit: cover;
-  transform: scale(1.08);
-  filter: saturate(1.1) contrast(1.05);
+
+/* Table grid */
+.championship .board-table {
+  display: grid;
+  grid-template-columns: 60px 1.5fr 80px 80px 80px;
 }
-.modal-overlay {
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
-    radial-gradient(800px 300px at 100% 0%, rgba(0,224,255,0.15), transparent 60%);
+.championship .board-table .cell {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.95rem;
 }
-.modal-hero h4 {
-  position: absolute; bottom: 20px; left: 20px;
-  margin: 0; font-size: 26px; z-index: 2;
+.championship .board-table .cell.pos {
+  text-align: center;
+  font-weight: 700;
 }
-.modal-tagline {
-  position: absolute; bottom: 4px; left: 20px;
-  margin: 0; color: var(--muted); z-index: 2; font-size: 14px;
+.championship .board-table .cell.points,
+.championship .board-table .cell.wins,
+.championship .board-table .cell.poles {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
-.modal-content .modal-body {
-  padding: 16px;
+
+/* Podium highlight */
+.championship .row.p1 .cell.pos { color: gold; }
+.championship .row.p2 .cell.pos { color: silver; }
+.championship .row.p3 .cell.pos { color: #cd7f32; }
+
+/* Hover effect */
+.championship .row:hover .cell {
+  background: rgba(255,255,255,0.08);
 }
-.modal-columns {
-  display: grid; grid-template-columns: 1fr 1.2fr; gap: 14px;
-}
-.modal-list {
-  list-style: none; margin: 0; padding: 0;
-}
-.modal-list li {
-  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.modal-history {
-  line-height: 1.6; color: #e7e9ee; white-space: pre-wrap;
+
+/* Responsive */
+@media (max-width: 600px) {
+  .championship .board-table {
+    grid-template-columns: 50px 1fr 70px;
+  }
+  .championship .cell.wins,
+  .championship .cell.poles {
+    display: none;
+  }
 }
 
 /* Footer */
@@ -560,5 +541,652 @@ select {
   transform: translateY(0);
   box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
+
+/* Section styling */
+.f1-news {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animated gradient title */
+.section-title {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(270deg, #ff0000, #ffcc00, #ff0000);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Grid layout */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeInUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Card styling */
+.news-card {
+  background: #111;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  transform: translateY(0);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+.news-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(255,0,0,0.5);
+}
+
+/* Image with zoom + overlay */
+.news-image {
+  position: relative;
+  overflow: hidden;
+}
+.news-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.news-card:hover .news-image img {
+  transform: scale(1.1) rotate(1deg);
+}
+.news-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(90deg, #ff0000, #ffcc00);
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* Content */
+.news-content {
+  padding: 1.6rem;
+  animation: fadeSlide 1s ease forwards;
+  opacity: 0;
+}
+.news-card:hover .news-content {
+  animation: fadeSlide 0.6s ease forwards;
+}
+@keyframes fadeSlide {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.news-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #ffcc00;
+  transition: color 0.3s ease;
+}
+.news-card:hover .news-title {
+  color: #ff0000;
+}
+.news-excerpt {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+
+/* Read More button with glow */
+.read-more {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(90deg, #ff0000, #ffcc00);
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255,0,0,0.6);
+}
+.read-more:hover {
+  background: linear-gradient(90deg, #ffcc00, #ff0000);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255,204,0,0.9);
+}
+/* ========== Championship Leaderboard: Cinematic Glass Style ========== */
+/* Structure expects:
+   .championship (wrapper) 
+     .board[data-type="drivers"|"constructors"]
+       .board-header
+       .board-table
+         .row.p1 | .row.p2 | .row.p3 | .row (others)
+           .cell.pos
+           .cell.name
+           .cell.points
+           .cell.wins
+           .cell.poles
+*/
+
+/* Root tokens */
+:root {
+  --bg: #0b0f1a;
+  --card: rgba(255, 255, 255, 0.06);
+  --card-strong: rgba(255, 255, 255, 0.12);
+  --text: #e8edf7;
+  --muted: #a9b3c8;
+  --accent: #5cc8ff;
+  --accent-2: #ff5c93;
+  --gold: #ffd66b;
+  --silver: #d6dee8;
+  --bronze: #cc8f57;
+  --win: #5bdb87;
+  --pole: #f3a54a;
+  --shadow-1: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-2: 0 16px 48px rgba(0, 0, 0, 0.45);
+  --blur: saturate(1.1) blur(8px);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --sp-1: 8px;
+  --sp-2: 12px;
+  --sp-3: 18px;
+  --sp-4: 24px;
+  --sp-5: 36px;
+  --col-w-pos: 64px;
+  --col-w-metric: 88px;
+}
+
+/* Dark gradient backdrop with subtle grid */
+.championship {
+  position: relative;
+  padding: var(--sp-5) var(--sp-4);
+  background:
+    radial-gradient(1200px 600px at 10% 0%, #13203a 10%, transparent 60%),
+    radial-gradient(900px 500px at 90% 100%, #231436 10%, transparent 60%),
+    linear-gradient(180deg, #080c16 0%, #0b0f1a 100%);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.championship::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  filter: blur(2px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Board wrapper */
+.board {
+  max-width: 1080px;
+  margin: 0 auto var(--sp-5) auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+  backdrop-filter: var(--blur);
+  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 100%);
+  border: 1px solid rgba(255,255,255,0.14);
+  overflow: hidden;
+}
+
+/* Header with neon underline */
+.board-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  position: relative;
+}
+
+.board-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin: 0;
+  color: var(--text);
+  text-shadow: 0 0 16px rgba(92, 200, 255, 0.25);
+}
+
+.board-header .subtitle {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.board-header::after {
+  content: "";
+  position: absolute;
+  left: var(--sp-4);
+  right: var(--sp-4);
+  bottom: 0;
+  height: 2px;
+  background:
+    linear-gradient(90deg, transparent 0%, var(--accent) 20%, var(--accent-2) 50%, var(--accent) 80%, transparent 100%);
+  filter: blur(0.6px);
+  opacity: 0.9;
+}
+
+/* Table */
+.board-table {
+  display: grid;
+  grid-template-columns: var(--col-w-pos) 1.6fr repeat(3, var(--col-w-metric));
+  align-items: stretch;
+}
+
+/* Column labels row (optional) */
+.board-table .labels {
+  display: contents;
+}
+
+.labels .cell {
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+
+/* Rows */
+.row {
+  display: contents;
+  --row-bg: rgba(255,255,255,0.03);
+}
+
+.cell {
+  padding: var(--sp-3) var(--sp-3);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  background: var(--row-bg);
+  position: relative;
+}
+
+/* Hover lift + speedline */
+.row:hover .cell {
+  background: rgba(255,255,255,0.06);
+}
+
+.row:hover .cell.name::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  width: 3px;
+  height: 36px;
+  transform: translateY(-50%);
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 16px rgba(92,200,255,0.6);
+  border-radius: 3px;
+}
+
+/* Position cell with podium styling */
+.cell.pos {
+  font-weight: 800;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
+}
+
+.row.p1 .cell.pos {
+  color: #1c1a12;
+  background:
+    linear-gradient(180deg, rgba(255,214,107,0.35) 0%, rgba(255,214,107,0.08) 100%),
+    var(--row-bg);
+  box-shadow: inset 0 0 0 1px rgba(255,214,107,0.6);
+}
+.row.p2 .cell.pos {
+  color: #14161a;
+  background:
+    linear-gradient(180deg, rgba(214,222,232,0.35) 0%, rgba(214,222,232,0.08) 100%),
+    var(--row-bg);
+  box-shadow: inset 0 0 0 1px rgba(214,222,232,0.6);
+}
+.row.p3 .cell.pos {
+  color: #1a140f;
+  background:
+    linear-gradient(180deg, rgba(204,143,87,0.35) 0%, rgba(204,143,87,0.08) 100%),
+    var(--row-bg);
+  box-shadow: inset 0 0 0 1px rgba(204,143,87,0.6);
+}
+
+/* Name cell supports avatar + team chip */
+.cell.name {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.cell.name .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 36px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.18);
+  background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.02));
+}
+
+.cell.name .label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.cell.name .label .primary {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.cell.name .label .secondary {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.cell.name .team-chip {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, rgba(92,200,255,0.22), rgba(92,200,255,0.08));
+  border: 1px solid rgba(92,200,255,0.35);
+  box-shadow: 0 6px 16px rgba(92,200,255,0.25);
+}
+
+/* Metrics: points, wins, poles */
+.cell.points,
+.cell.wins,
+.cell.poles {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.cell.points .value {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.cell.wins .value {
+  color: var(--win);
+  font-weight: 700;
+}
+
+.cell.poles .value {
+  color: var(--pole);
+  font-weight: 700;
+}
+
+/* Micro badges for spikes */
+.cell.wins .badge,
+.cell.poles .badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: var(--muted);
+}
+
+/* Podium glow line across the row */
+.row.p1 .cell,
+.row.p2 .cell,
+.row.p3 .cell {
+  position: relative;
+}
+.row.p1 .cell.name::before,
+.row.p2 .cell.name::before,
+.row.p3 .cell.name::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  opacity: 0.6;
+}
+.row.p2 .cell.name::before { background: linear-gradient(90deg, var(--silver), transparent); }
+.row.p3 .cell.name::before { background: linear-gradient(90deg, var(--bronze), transparent); }
+
+/* Constructors variant: swap chip accent and allow logo squares */
+.board[data-type="constructors"] .cell.name .avatar {
+  border-radius: 8px;
+}
+.board[data-type="constructors"] .cell.name .team-chip {
+  background: linear-gradient(180deg, rgba(243,165,74,0.22), rgba(243,165,74,0.08));
+  border: 1px solid rgba(243,165,74,0.35);
+  box-shadow: 0 6px 16px rgba(243,165,74,0.25);
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .board-table {
+    grid-template-columns: var(--col-w-pos) 1.2fr repeat(3, 80px);
+  }
+  .cell.name .secondary,
+  .cell.name .team-chip {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .board-table {
+    grid-template-columns: var(--col-w-pos) 1fr 84px;
+  }
+  .cell.wins,
+  .cell.poles { display: none; }
+}
+
+/* Motion: subtle row reveal */
+@keyframes rowEnter {
+  from { transform: translateY(6px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.board-table .cell { animation: rowEnter 320ms ease both; }
+
+/* Optional: theme toggle via data-theme */
+.championship[data-theme="light"] {
+  --bg: #f7f9fc;
+  --text: #0d1020;
+  --muted: #485063;
+  --card: rgba(0,0,0,0.04);
+  --card-strong: rgba(0,0,0,0.08);
+  background:
+    radial-gradient(1000px 500px at 10% 0%, #ffffff 10%, transparent 60%),
+    radial-gradient(800px 450px at 90% 100%, #f0f4ff 10%, transparent 60%),
+    linear-gradient(180deg, #f7f9fc 0%, #e9eef8 100%);
+}
+.championship[data-theme="light"] .board {
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03));
+  border-color: rgba(0,0,0,0.1);
+}
+/* ============================
+   Formula 1 Championship Styles
+   Scoped ONLY to .championship
+   ============================ */
+
+.championship {
+  font-family: 'Poppins', sans-serif;
+  color: #f5f5f5;
+  background: #0b0f1a;
+  padding: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Board wrapper (drivers or constructors) */
+.championship .board {
+  margin-bottom: 40px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+
+/* Header */
+.championship .board-header {
+  padding: 16px 20px;
+  border-bottom: 2px solid #5cc8ff;
+}
+.championship .board-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #5cc8ff;
+}
+
+/* Table grid */
+.championship .board-table {
+  display: grid;
+  grid-template-columns: 60px 1.5fr 80px 80px 80px;
+}
+.championship .board-table .cell {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.95rem;
+}
+.championship .board-table .cell.pos {
+  text-align: center;
+  font-weight: 700;
+}
+.championship .board-table .cell.points,
+.championship .board-table .cell.wins,
+.championship .board-table .cell.poles {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Podium highlight */
+.championship .row.p1 .cell.pos { color: gold; }
+.championship .row.p2 .cell.pos { color: silver; }
+.championship .row.p3 .cell.pos { color: #cd7f32; }
+
+/* Hover effect */
+.championship .row:hover .cell {
+  background: rgba(255,255,255,0.08);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .championship .board-table {
+    grid-template-columns: 50px 1fr 70px;
+  }
+  .championship .cell.wins,
+  .championship .cell.poles {
+    display: none;
+  }
+}
+.championship .row {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+.championship .row.animate-in {
+  animation: slideIn 0.6s ease forwards;
+}
+@keyframes slideIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Podium glow */
+.championship .row.p1:hover { box-shadow: 0 0 20px gold; }
+.championship .row.p2:hover { box-shadow: 0 0 20px silver; }
+.championship .row.p3:hover { box-shadow: 0 0 20px #cd7f32; }
+
+/* Counter highlight */
+.championship .cell.points,
+.championship .cell.wins,
+.championship .cell.poles {
+  font-weight: 700;
+  transition: color 0.3s;
+}
+.championship .cell.points.active { color: #5cc8ff; }
+.championship .cell.wins.active { color: #5bdb87; }
+.championship .cell.poles.active { color: #f3a54a; }
+/* Shared base */
+.championship .board {
+  margin-bottom: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+/* Drivers: neon blue HUD */
+.championship .board[data-type="drivers"] {
+  background: linear-gradient(180deg, rgba(92,200,255,0.15), rgba(0,0,0,0.6));
+  border: 1px solid rgba(92,200,255,0.4);
+  box-shadow: 0 0 20px rgba(92,200,255,0.3);
+}
+.championship .board[data-type="drivers"] .board-header h2 {
+  color: #5cc8ff;
+}
+
+/* Constructors: fiery red/orange */
+.championship .board[data-type="constructors"] {
+  background: linear-gradient(180deg, rgba(255,92,147,0.15), rgba(0,0,0,0.6));
+  border: 1px solid rgba(255,92,147,0.4);
+  box-shadow: 0 0 20px rgba(255,92,147,0.3);
+}
+.championship .board[data-type="constructors"] .board-header h2 {
+  color: #ff5c93;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes riseUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.championship .board[data-type="drivers"] .row.animate-in {
+  animation: slideInLeft 0.6s ease forwards;
+}
+.championship .board[data-type="constructors"] .row.animate-in {
+  animation: riseUp 0.6s ease forwards;
+}
+
+/* Counter glow differences */
+.championship .board[data-type="drivers"] .cell.points.active {
+  color: #5cc8ff;
+  text-shadow: 0 0 12px #5cc8ff;
+}
+.championship .board[data-type="constructors"] .cell.points.active {
+  color: #ff5c93;
+  text-shadow: 0 0 12px #ff5c93;
+}
+
 
 
