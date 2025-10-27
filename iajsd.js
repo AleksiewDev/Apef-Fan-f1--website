@@ -1043,13 +1043,67 @@ function initF1Background() {
 }
 
 document.addEventListener('DOMContentLoaded', initF1Background);
+document.addEventListener("DOMContentLoaded", () => {
+  const rows = document.querySelectorAll(".championship .row");
 
+  // Animate rows in sequence
+  rows.forEach((row, i) => {
+    setTimeout(() => {
+      row.classList.add("animate-in");
+    }, i * 200); // stagger 200ms
+  });
 
+  // Animate counters
+  function animateCounter(el, target, duration = 1200) {
+    let start = 0;
+    const stepTime = Math.abs(Math.floor(duration / target));
+    const timer = setInterval(() => {
+      start += 1;
+      el.textContent = start;
+      if (start >= target) {
+        clearInterval(timer);
+        el.textContent = target;
+        el.classList.add("active");
+      }
+    }, stepTime);
+  }
 
+  document.querySelectorAll(".cell.points, .cell.wins, .cell.poles").forEach(el => {
+    const target = parseInt(el.dataset.points || el.dataset.wins || el.dataset.poles, 10);
+    animateCounter(el, target);
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  // Animate rows differently for drivers vs constructors
+  document.querySelectorAll(".board").forEach(board => {
+    const rows = board.querySelectorAll(".row");
+    rows.forEach((row, i) => {
+      setTimeout(() => {
+        row.classList.add("animate-in");
+      }, i * 200);
+    });
+  });
 
+  // Counter animation with glow
+  function animateCounter(el, target, duration = 1200) {
+    let start = 0;
+    const stepTime = Math.max(20, Math.floor(duration / target));
+    const timer = setInterval(() => {
+      start += 1;
+      el.textContent = start;
+      if (start >= target) {
+        clearInterval(timer);
+        el.textContent = target;
+        el.classList.add("active");
+      }
+    }, stepTime);
+  }
 
-
-
+  document.querySelectorAll(".cell.points, .cell.wins, .cell.poles").forEach(el => {
+    const target = parseInt(el.dataset.points || el.dataset.wins || el.dataset.poles, 10);
+    animateCounter(el, target);
+  });
+});
 
 
 
