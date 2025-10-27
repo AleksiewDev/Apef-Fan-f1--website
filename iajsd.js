@@ -76,6 +76,66 @@ const constructors2025 = [
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
    {
+      title: "Mexico GP 2025 – Full Weekend Report & São Paulo Preview",
+  date: "2025-10-26",
+  image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Autodromo_Hermanos_Rodriguez.jpg",
+  text: `The Mexico City Grand Prix 2025 delivered one of the defining weekends of the season. 
+From practice to the chequered flag, the Autódromo Hermanos Rodríguez was alive with drama, dominance, and breakthrough performances.
+
+**Weekend Recap**
+- FP1: Charles Leclerc topped the opening session, Ferrari showing strong one‑lap pace.  
+- FP2: Max Verstappen responded with the fastest time, Red Bull looking sharp in race trim.  
+- FP3: Lando Norris struck back, setting the tone for qualifying.  
+- Qualifying: Norris delivered a stunning 1:15.586 to take pole, ahead of Leclerc and Verstappen.  
+- Race: Norris launched perfectly, defended Turn 1, and never looked back. He won by over 30 seconds, taking the **championship lead**.  
+
+**Race Classification (Top 10)**
+1. Lando Norris (McLaren) – Winner  
+2. Charles Leclerc (Ferrari)  
+3. Max Verstappen (Red Bull Racing)  
+4. Ollie Bearman (Haas) – career‑best finish  
+5. Oscar Piastri (McLaren)  
+6. Kimi Antonelli (Mercedes)  
+7. George Russell (Mercedes)  
+8. Lewis Hamilton (Ferrari)  
+9. Esteban Ocon (Haas)  
+10. Garbiel Bortoleto (Sauber)  
+
+**Key Storylines**
+- **Norris Dominates:** A lights‑to‑flag win, his most commanding performance yet, and enough to seize the championship lead.  
+- **Piastri Falters:** Only P5, losing the title lead for the first time since Spa.  
+- **Verstappen Resilient:** A solid P3 keeps him in range.  
+- **Bearman Breakthrough:** Haas’s rookie delivered P4, their best result in years.  
+
+**Championship Impact**
+- Norris leads the Drivers’ Championship by 1 points over Piastri.  
+- Verstappen sits 32 points back, still a threat with sprints ahead.  
+- Haas leapfrogs rivals in the Constructors’ thanks to Bearman’s heroics.  
+
+
+
+---
+
+**Looking Ahead – São Paulo GP (Nov 7–9, 2025)**
+- Venue: Autódromo José Carlos Pace (Interlagos), Brazil.  
+- Format: Sprint weekend (FP1 + Sprint Qualifying on Friday, Sprint + Qualifying on Saturday, Race on Sunday).  
+- What to expect:  
+  - McLaren momentum: Norris arrives as championship leader.  
+  - Piastri under pressure: must respond to stop the slide.  
+  - Verstappen threat: Interlagos is one of his strongest circuits.  
+  - Mercedes wildcard: Antonelli and Russell could disrupt the podium fight.  
+  - Haas confidence: Bearman’s P4 gives them belief in more points.  
+
+**São Paulo GP Timetable (local Brazil time, UTC‑3)**
+- FP1: Fri Nov 7, 11:30  
+- Sprint Qualifying: Fri Nov 7, 15:30  
+- Sprint: Sat Nov 8, 11:00  
+- Qualifying: Sat Nov 8, 15:00  
+- Race: Sun Nov 9, 14:00  
+
+The title fight is now a three‑way battle. Norris has momentum, Piastri must regroup, and Verstappen is lurking. Interlagos could be the weekend that decides the balance of power heading into the final rounds.`
+   },
+   {
       title: "Mexico GP 2025 – Norris dominates, takes championship lead",
   date: "2025-10-26",
   image: "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T231214.912.webp",
@@ -923,6 +983,7 @@ function initF1Background() {
 }
 
 document.addEventListener('DOMContentLoaded', initF1Background);
+
 
 
 
