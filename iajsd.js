@@ -105,7 +105,7 @@ Whether his F2 debut comes in the last two races of 2025 or officially in 2026, 
    },
    {
   title: "Hamilton’s Mexico GP penalty vs. Verstappen: what the stewards saw",
-  date: "2025-10-27",
+  date: "2025-10-28",
   image: "https://cdn.racingnews365.com/2025/Hamilton/_1092x683_crop_center-center_85_none/Hamilton-Verstappen-Mexico-race.jpg?v=1761524658",
   text: `
 Lewis Hamilton’s 10-second time penalty in Mexico came from one specific moment: he left the track at Turn 4 while battling Max Verstappen and rejoined ahead, which the stewards judged as “leaving the track and gaining a lasting advantage.” That call, not the start-line chaos, defined his race and dropped him to eighth at the flag.
@@ -1150,6 +1150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animateCounter(el, target);
   });
 });
+
 
 
 
