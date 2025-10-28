@@ -104,8 +104,9 @@ Whether his F2 debut comes in the last two races of 2025 or officially in 2026, 
 `
    },
    {
+     
   title: "Hamilton’s Mexico GP penalty vs. Verstappen: what the stewards saw",
-  date: "2025-10-28",
+  date: "2025-10-27",
   image: "https://cdn.racingnews365.com/2025/Hamilton/_1092x683_crop_center-center_85_none/Hamilton-Verstappen-Mexico-race.jpg?v=1761524658",
   text: `
 Lewis Hamilton’s 10-second time penalty in Mexico came from one specific moment: he left the track at Turn 4 while battling Max Verstappen and rejoined ahead, which the stewards judged as “leaving the track and gaining a lasting advantage.” That call, not the start-line chaos, defined his race and dropped him to eighth at the flag.
@@ -1151,16 +1152,328 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.querySelectorAll('.points').forEach(el => {
+  let final = parseInt(el.dataset.points);
+  let count = 0;
+  let step = Math.ceil(final / 60);
+  let interval = setInterval(() => {
+    count += step;
+    if (count >= final) {
+      count = final;
+      clearInterval(interval);
+    }
+    el.textContent = count + " pts";
+  }, 30);
+});
+document.querySelectorAll('.points').forEach(el => {
+  let final = parseInt(el.dataset.points);
+  let count = 0;
+  let step = Math.ceil(final / 50);
+  let interval = setInterval(() => {
+    count += step;
+    if (count >= final) {
+      count = final;
+      clearInterval(interval);
+    }
+    el.textContent = count;
+  }, 30);
+});
+// === THEME ENHANCEMENTS ===
+// Inject global styles dynamically for colors, backgrounds, and animations
+function injectThemeStyles() {
+  const style = document.createElement("style");
+  style.innerHTML = `
+    body {
+      background: linear-gradient(135deg, #0f1115, #1a1d29);
+      color: #e8eaed;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+    }
 
+    section {
+      padding: 40px 20px;
+      margin: 20px auto;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #151821, #1f2230);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+    }
 
+    h2, h3, h4 {
+      color: #ff7a18;
+      text-shadow: 0 0 6px rgba(255,122,24,0.6);
+    }
 
+    .news-card {
+      background: linear-gradient(160deg, #1c1f2b, #2a2e3f);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.6s forwards;
+    }
+    .news-card.in-view {
+      animation: fadeUp 0.6s forwards;
+    }
+    .news-media {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.9);
+      transition: filter 0.4s ease;
+    }
+    .news-card:hover .news-media {
+      filter: brightness(1.1);
+    }
+    .news-body {
+      padding: 18px;
+    }
+    .news-title {
+      font-size: 20px;
+      margin: 0 0 8px;
+      color: #fff;
+    }
+    .news-meta {
+      font-size: 13px;
+      color: #9aa0a6;
+      margin-bottom: 10px;
+    }
+    .news-text {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #d1d5db;
+    }
+    .read-more {
+      margin-top: 12px;
+      background: #ff7a18;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .read-more:hover {
+      background: #ff9a4d;
+      transform: translateY(-2px);
+    }
 
+    .calendar-card {
+      background: linear-gradient(145deg, #202433, #2c3145);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 12px;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transform: scale(0.95);
+      opacity: 0;
+      animation: fadeScale 0.6s forwards;
+    }
 
+    .team-card {
+      background: linear-gradient(160deg, #1c1f2b, #2a2e3f);
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.6s forwards;
+    }
+    .team-card img {
+      width: 100%;
+      display: block;
+    }
+    .team-card-body {
+      padding: 14px;
+      color: #fff;
+    }
 
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeScale {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  `;
+  document.head.appendChild(style);
+}
 
+// Call this early in DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+  injectThemeStyles();
+});
+// === THEME ENHANCEMENTS v2 ===
+function injectThemeStyles() {
+  const style = document.createElement("style");
+  style.innerHTML = `
+    /* Prevent white flash on load */
+    html, body {
+      background: #0f1115; /* dark base immediately */
+      color: #e8eaed;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+    }
 
+    section {
+      padding: 40px 20px;
+      margin: 20px auto;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #151821, #1f2230);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+    }
 
+    h2, h3, h4 {
+      color: #ff7a18;
+      text-shadow: 0 0 6px rgba(255,122,24,0.6);
+    }
 
+    /* News card styling */
+    .news-card {
+      background: linear-gradient(160deg, #1c1f2b, #2a2e3f);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.6s forwards;
+    }
+    .news-media {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.9);
+      transition: filter 0.4s ease;
+    }
+    .news-card:hover .news-media {
+      filter: brightness(1.1);
+    }
+    .news-body {
+      padding: 18px;
+    }
+    .news-title {
+      font-size: 20px;
+      margin: 0 0 8px;
+      color: #fff;
+    }
+    .news-meta {
+      font-size: 13px;
+      color: #9aa0a6;
+      margin-bottom: 10px;
+    }
+
+    /* === Colored article text === */
+    .news-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #d1d5db;
+    }
+    .news-text strong {
+      color: #4dd0e1; /* teal for emphasis */
+    }
+    .news-text em {
+      color: #ff7a18; /* orange for italics */
+    }
+    .news-text ul li::marker {
+      color: #ff4081; /* pink bullets */
+    }
+    .news-text blockquote {
+      border-left: 4px solid #ff7a18;
+      padding-left: 12px;
+      color: #c792ea; /* purple quotes */
+      font-style: italic;
+    }
+
+    .read-more {
+      margin-top: 12px;
+      background: #ff7a18;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .read-more:hover {
+      background: #ff9a4d;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+// Inject styles as early as possible
+document.addEventListener("DOMContentLoaded", injectThemeStyles);
+function injectNewsTextColors() {
+  const style = document.createElement("style");
+  style.innerHTML = `
+    /* Base news text */
+    .news-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #d0d3d8; /* softer grey instead of white */
+    }
+
+    /* Add variation for emphasis */
+    .news-text strong {
+      color: #ff7a18; /* orange for bold words */
+    }
+    .news-text em {
+      color: #4dd0e1; /* teal for italics */
+    }
+    .news-text mark {
+      background: transparent;
+      color: #c792ea; /* purple highlight */
+      font-weight: 600;
+    }
+
+    /* Headings inside news */
+    .news-title {
+      color: #ff4081; /* pink for titles */
+    }
+
+    /* Meta info (date, author, etc.) */
+    .news-meta {
+      color: #8bc34a; /* green accent */
+    }
+
+    /* Links inside news */
+    .news-text a {
+      color: #4fc3f7;
+      text-decoration: none;
+    }
+    .news-text a:hover {
+      color: #81d4fa;
+      text-decoration: underline;
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+document.addEventListener("DOMContentLoaded", injectNewsTextColors);
 
 
 
