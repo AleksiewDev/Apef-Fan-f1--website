@@ -76,6 +76,27 @@ const constructors2025 = [
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
    {
+     export const article = {
+  title: "Hamilton’s Mexico GP penalty vs. Verstappen: what the stewards saw",
+  date: "2025-10-27",
+  image: "https://cdn.racingnews365.com/2025/Hamilton/_1092x683_crop_center-center_85_none/Hamilton-Verstappen-Mexico-race.jpg?v=1761524658",
+  text: `
+Lewis Hamilton’s 10-second time penalty in Mexico came from one specific moment: he left the track at Turn 4 while battling Max Verstappen and rejoined ahead, which the stewards judged as “leaving the track and gaining a lasting advantage.” That call, not the start-line chaos, defined his race and dropped him to eighth at the flag.
+
+At the start, multiple drivers cut the Turn 1–2 complex as they went four-wide into the opening corner. Charles Leclerc and Max Verstappen both ran off and rejoined, with Leclerc ceding position and Verstappen slotting in behind Hamilton. Because positions were restored and no lasting advantage was deemed to have been gained there, no penalties were issued for those start incidents.
+
+The flashpoint was lap six: Verstappen sent a late move down the inside of Turn 1, contacted Hamilton on exit, ran onto the grass through Turn 2, and rejoined at Turn 3. The pair continued side-by-side to Turn 4, where Hamilton tried the outside, locked up, and cut the escape road—emerging ahead. Stewards ruled that specific sequence gave Hamilton a lasting advantage off-track, triggering the 10-second penalty.
+
+Why Verstappen didn’t get penalized for the Turn 1 lunge or the contact: the stewards viewed it as hard racing with both drivers contributing, no clear “causing a collision,” and crucially, Verstappen didn’t retain an off-track gain—he went to the grass and fell into a position that didn’t net him an advantage. In contrast, Hamilton’s Turn 4 cut directly resulted in an overtake completed off the circuit, which is treated differently under the “lasting advantage” standard.
+
+Hamilton called the decision “kind of nuts,” pointing to inconsistency with the start incidents where others went off without sanction. The stewards’ distinction, though, rests on outcome: off-track but no net gain at the start versus off-track and a completed pass later. That outcome-based consistency—rather than identical treatment of all off-track moments—explains the split between no action for Verstappen and a time penalty for Hamilton.
+
+Ferrari boss Fred Vasseur highlighted how the penalty compromised Hamilton’s podium shot despite strong pace, underscoring how fine margins in stewarding decisions can swing results. Whether one agrees with the threshold for “lasting advantage,” Mexico’s calls followed a familiar FIA pattern: tolerate first-lap chaos when positions are restored, clamp down when passes are finished off-track under green-flag duels.
+`
+};
+ 
+   },
+   {
   title: "Driver Reactions – Mexico GP 2025",
   date: "2025-10-27",
   image: "https://i.ytimg.com/vi/GbG_Y9bCitU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAl4n8j-M4MCZcqnKDc9I8R8XzhDw",
@@ -1104,6 +1125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animateCounter(el, target);
   });
 });
+
 
 
 
