@@ -84,13 +84,13 @@ const newsAfterUSAGP = [
 A Meteoric Rise 
 From his karting days, Tsolov displayed a rare blend of precision and aggression. His 2022 Spanish F4 season was nothing short of dominant: **13 wins in 21 races**, a record-breaking campaign that announced him as a generational talent. Mentored by Fernando Alonso, he quickly became a driver to watch.  
 
-Formula 3 Brilliance
+Formula 3 Brilliance 
 In FIA Formula 3, Tsolov proved his F4 success was no fluke. With Campos Racing, he became the **most successful driver in F3 history with five career wins**, finishing runner-up in the 2025 championship. His qualifying pace, tire management, and fearless overtakes set him apart from his peers.  
 
-The Speed Factor*
+The Speed Factor  
 Telemetry and sector data consistently place Tsolov among the fastest on the grid. He thrives under pressure, often delivering his best laps in the final moments of qualifying or in high-stakes race scenarios. His adaptability — from street circuits to high-speed classics — makes him a complete driver.  
 
-On the Verge of Formula 2
+On the Verge of Formula 2  
 Campos Racing has already confirmed Tsolov’s promotion to **Formula 2 in 2026** as part of the Red Bull Junior Team. Yet, insiders suggest he could debut even earlier. If a seat opens for the final two races of the 2025 season, Tsolov is the natural choice: he knows the team, he has the speed, and Red Bull has every reason to accelerate his development.  
 
 Why He’s the Next Big Champion
@@ -1150,6 +1150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animateCounter(el, target);
   });
 });
+
 
 
 
