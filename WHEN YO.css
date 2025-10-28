@@ -1067,56 +1067,425 @@ select {
 }
 
 /* Table grid */
-.championship .board-table {
+/* =========================================================
+   F1 RGB Championship Themes — Drivers vs Constructors
+   Sponsor-ready, cinematic neon RGB with glassmorphism,
+   modular utility classes, and subtle motion.
+   ---------------------------------------------------------
+   How to use (HTML structure example):
+   <section class="championship drivers">
+     <header class="championship-header">
+       <h1 class="title">Drivers' Championship</h1>
+       <div class="meta"><span>Season 2025</span><span>Round 19</span></div>
+     </header>
+
+     <div class="leaderboard">
+       <article class="entry p1">
+         <div class="rank">1</div>
+         <div class="name">Max Verstappen</div>
+         <div class="team">Red Bull Racing</div>
+         <div class="points">356 pts</div>
+       </article>
+       <!-- more .entry items -->
+     </div>
+   </section>
+
+   <section class="championship constructors">
+     <!-- similar structure; classes switch styling automatically -->
+   </section>
+   ========================================================= */
+
+/* ---------- Root variables ---------- */
+:root {
+  --bg: #0a0a0f;
+  --text: #e6e6f2;
+  --muted: #9aa0b4;
+  --card: rgba(18, 18, 26, 0.7);
+  --border: rgba(255, 255, 255, 0.12);
+  --surface: rgba(255, 255, 255, 0.06);
+
+  /* Primary RGB cycle */
+  --rgb-1: #00eaff;  /* Cyan */
+  --rgb-2: #ff00ea;  /* Magenta */
+  --rgb-3: #00ff88;  /* Neo green */
+
+  /* Accent spectrums for drivers vs constructors */
+  --drivers-a: #16a1ff;
+  --drivers-b: #ff2d8f;
+  --drivers-c: #7cffd6;
+
+  --constructors-a: #ff8f1a;
+  --constructors-b: #9b6dff;
+  --constructors-c: #00ffd1;
+
+  /* Glow intensities */
+  --glow-soft: 0 0 18px rgba(255, 255, 255, 0.08);
+  --glow-strong: 0 0 48px rgba(255, 255, 255, 0.18);
+
+  /* Timing */
+  --t-fast: 220ms cubic-bezier(.2, .8, .2, 1);
+  --t-mid: 420ms cubic-bezier(.2, .8, .2, 1);
+  --t-slow: 3200ms linear;
+}
+
+/* ---------- Global stage ---------- */
+html, body {
+  background: radial-gradient(1200px 800px at 70% -10%, #141420 0%, #0a0a0f 40%, #07070b 100%);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  letter-spacing: .02em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ---------- RGB ambient sweep ---------- */
+.rgb-ambient {
+  position: fixed;
+  inset: -20vmax;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(64px) saturate(1.15);
+  opacity: .5;
+  background:
+    radial-gradient(35vmax 35vmax at 15% 20%, var(--rgb-1) 0%, transparent 60%),
+    radial-gradient(35vmax 35vmax at 85% 10%, var(--rgb-2) 0%, transparent 60%),
+    radial-gradient(35vmax 35vmax at 50% 85%, var(--rgb-3) 0%, transparent 60%);
+  animation: ambientShift var(--t-slow) infinite alternate;
+}
+
+@keyframes ambientShift {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%  { transform: translate3d(-4vmax, 2vmax, 0) rotate(8deg); }
+  100% { transform: translate3d(4vmax, -3vmax, 0) rotate(-6deg); }
+}
+
+/* ---------- Championship wrapper ---------- */
+.championship {
+  position: relative;
+  margin: 3.5rem auto;
+  max-width: 1100px;
+  padding: 1.25rem;
+}
+
+.championship::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,0) 40%, rgba(255,255,255,.04));
+  mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+  padding: 2px;
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Glass panel with RGB edge */
+.panel {
+  background: linear-gradient(180deg, var(--card), rgba(12, 12, 18, 0.65));
+  backdrop-filter: blur(16px) saturate(1.15);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--glow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255,255,255,.02), rgba(255,255,255,0), rgba(255,255,255,.02));
+  mix-blend-mode: soft-light;
+}
+
+/* ---------- Championship header ---------- */
+.championship-header {
+  composes: panel;
   display: grid;
-  grid-template-columns: 60px 1.5fr 80px 80px 80px;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
 }
-.championship .board-table .cell {
-  padding: 12px 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  font-size: 0.95rem;
+
+.title {
+  font-weight: 800;
+  font-size: clamp(1.6rem, 2.2vw + .6rem, 2.6rem);
+  letter-spacing: .01em;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
-.championship .board-table .cell.pos {
-  text-align: center;
+
+.meta {
+  display: inline-flex;
+  gap: .75rem;
+  align-items: center;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: .95rem;
+}
+.meta > span {
+  padding: .4rem .65rem;
+  border: 1px solid var(--surface);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+}
+
+/* Animated RGB underline */
+.title {
+  position: relative;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 120px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--rgb-1), var(--rgb-2), var(--rgb-3));
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.18));
+  animation: hueRun 3200ms linear infinite;
+}
+
+@keyframes hueRun {
+  0%   { filter: hue-rotate(0deg) brightness(1); }
+  50%  { filter: hue-rotate(140deg) brightness(1.05); }
+  100% { filter: hue-rotate(280deg) brightness(1); }
+}
+
+/* ---------- Leaderboard panel ---------- */
+.leaderboard {
+  composes: panel;
+  margin-top: 1rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .65rem;
+  border-radius: 18px;
+}
+
+/* Entry card */
+.entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1.3fr 1fr auto;
+  align-items: center;
+  gap: .9rem;
+  padding: .85rem 1rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+  border: 1px solid var(--surface);
+  transition: transform var(--t-fast), box-shadow var(--t-fast), border-color var(--t-fast);
+}
+
+.entry:hover {
+  transform: translate3d(0, -2px, 0);
+  box-shadow: var(--glow-strong);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* Rank pill with RGB gradient */
+.rank {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #0202e9;
+  background: conic-gradient(from 180deg, var(--rgb-1), var(--rgb-2), var(--rgb-3), var(--rgb-1));
+  box-shadow: 0 6px 18px rgba(17, 0, 255, 0.35);
+}
+
+.name {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: .01em;
+}
+
+.team {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.points {
+  font-weight: 900;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, var(--rgb-1), var(--rgb-2), var(--rgb-3));
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,.14));
+}
+
+/* Podium highlighting */
+.entry.p1 { border-color: rgba(255, 255, 255, .22); }
+.entry.p1::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--rgb-1), var(--rgb-2), var(--rgb-3));
+  mask: linear-gradient(#e61a1a, #000) content-box, linear-gradient(#000, #000);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+.entry.p2 { border-color: rgba(255, 255, 255, .16); }
+.entry.p3 { border-color: rgba(255, 255, 255, .12); }
+
+/* ---------- Drivers theme ---------- */
+.championship.drivers .championship-header {
+  background:
+    linear-gradient(180deg, rgba(22, 161, 255, .14), rgba(22, 161, 255, 0)),
+    linear-gradient(180deg, var(--card), rgba(12, 12, 18, 0.65));
+}
+.championship.drivers .title {
+  background: linear-gradient(90deg, var(--drivers-a), var(--drivers-b), var(--drivers-c));
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.championship.drivers .leaderboard {
+  outline: 1px solid rgba(22, 161, 255, .18);
+  box-shadow: 0 0 32px rgba(22, 161, 255, .08);
+}
+.championship.drivers .entry:hover {
+  box-shadow:
+    0 0 28px rgba(22, 161, 255, .18),
+    0 0 12px rgba(255, 45, 143, .12),
+    var(--glow-soft);
+}
+
+/* ---------- Constructors theme ---------- */
+.championship.constructors .championship-header {
+  background:
+    linear-gradient(180deg, rgba(255, 143, 26, .14), rgba(255, 143, 26, 0)),
+    linear-gradient(180deg, var(--card), rgba(24, 24, 228, 0.65));
+}
+.championship.constructors .title {
+  background: linear-gradient(90deg, var(--constructors-a), var(--constructors-b), var(--constructors-c));
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.championship.constructors .leaderboard {
+  outline: 1px solid rgba(255, 143, 26, .18);
+  box-shadow: 0 0 32px rgba(255, 143, 26, .08);
+}
+.championship.constructors .entry:hover {
+  box-shadow:
+    0 0 28px rgba(255, 143, 26, .18),
+    0 0 12px rgba(155, 109, 255, .12),
+    var(--glow-soft);
+}
+
+/* ---------- Utility badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  border: 1px solid var(--surface);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+  color: var(--text);
   font-weight: 700;
-}
-.championship .board-table .cell.points,
-.championship .board-table .cell.wins,
-.championship .board-table .cell.poles {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
+  font-size: .85rem;
 }
 
-/* Podium highlight */
-.championship .row.p1 .cell.pos { color: gold; }
-.championship .row.p2 .cell.pos { color: silver; }
-.championship .row.p3 .cell.pos { color: #cd7f32; }
-
-/* Hover effect */
-.championship .row:hover .cell {
-  background: rgba(255,255,255,0.08);
+.badge.r {
+  background: linear-gradient(90deg, #ff3b3b 0%, rgba(255,255,255,0) 100%);
+  border-color: rgba(255, 59, 59, .22);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .championship .board-table {
-    grid-template-columns: 50px 1fr 70px;
+.badge.fast {
+  background: linear-gradient(90deg, #7cffd6 0%, rgba(255,255,255,0) 100%);
+  border-color: rgba(124, 255, 214, .22);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .championship { padding: .75rem; }
+  .leaderboard { padding: .75rem; }
+  .entry {
+    grid-template-columns: 48px 1.2fr 1fr auto;
+    padding: .75rem .85rem;
   }
-  .championship .cell.wins,
-  .championship .cell.poles {
-    display: none;
+  .rank { width: 48px; height: 48px; }
+}
+
+@media (max-width: 560px) {
+  .entry {
+    grid-template-columns: 40px 1fr auto;
+    grid-template-areas:
+      "rank name points"
+      "rank team points";
   }
+  .rank   { grid-area: rank; width: 40px; height: 40px; font-size: 1rem; }
+  .name   { grid-area: name; font-size: 1rem; }
+  .team   { grid-area: team; font-size: .9rem; }
+  .points { grid-area: points; font-size: 1rem; }
 }
-.championship .row {
-  opacity: 0;
-  transform: translateX(-40px);
+
+/* ---------- Optional: subtle stripe texture for speed ---------- */
+.speed-stripes {
+  position: absolute;
+  inset: 0;
+  opacity: .08;
+  background:
+    repeating-linear-gradient(
+      100deg,
+      rgba(255,255,255,.08) 0px,
+      rgba(255,255,255,.08) 2px,
+      transparent 2px,
+      transparent 12px
+    );
+  mix-blend-mode: soft-light;
+  pointer-events: none;
 }
-.championship .row.animate-in {
-  animation: slideIn 0.6s ease forwards;
+
+/* ---------- Optional: glow separators ---------- */
+.separator {
+  height: 1px;
+  margin: .75rem 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  filter: blur(.4px);
 }
-@keyframes slideIn {
-  to { opacity: 1; transform: translateX(0); }
+
+/* ---------- Accent controls (live theming) ---------- */
+/* You can tweak hues live via these classes on <body> or the .championship wrapper */
+.theme-cool {
+  --rgb-1: #00eaff;
+  --rgb-2: #6b6bff;
+  --rgb-3: #00ff88;
 }
+.theme-warm {
+  --rgb-1: #ff5e5e;
+  --rgb-2: #ffa200;
+  --rgb-3: #ffd86b;
+}
+
+/* ---------- Minimal dark-scrollbar ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0f; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--rgb-1), var(--rgb-2));
+  border-radius: 10px;
+  border: 2px solid #2626e8;
+}
+
 
 /* Podium glow */
 .championship .row.p1:hover { box-shadow: 0 0 20px gold; }
@@ -1153,7 +1522,7 @@ select {
 
 /* Constructors: fiery red/orange */
 .championship .board[data-type="constructors"] {
-  background: linear-gradient(180deg, rgba(255,92,147,0.15), rgba(0,0,0,0.6));
+  background: linear-gradient(180deg, rgba(255,92,147,0.15), rgba(135, 26, 26, 0.6));
   border: 1px solid rgba(255,92,147,0.4);
   box-shadow: 0 0 20px rgba(255,92,147,0.3);
 }
@@ -1187,6 +1556,317 @@ select {
   color: #ff5c93;
   text-shadow: 0 0 12px #ff5c93;
 }
+.championship {
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+}
 
+.championship h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 2rem 0 1rem;
+  border-left: 5px solid #e10600; /* F1 red */
+  padding-left: 10px;
+}
+
+.standings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #111;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(225, 6, 0, 0.4);
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #e10600;
+}
+
+.card .position {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e10600;
+}
+
+.card.first {
+  background: linear-gradient(145deg, #e10600, #ff3c00);
+  color: #fff;
+}
+
+.card.first img {
+  border-color: #fff;
+}
+body {
+  background: radial-gradient(circle at top, #0d0d0d, #000);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 2rem;
+}
+
+.leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(225, 6, 0, 0.4);
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+}
+
+.leaderboard thead {
+  background: #e10600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.leaderboard th, .leaderboard td {
+  padding: 1rem;
+  text-align: center;
+}
+
+.leaderboard tbody tr {
+  position: relative;
+  transform: translateX(-50px);
+  opacity: 0;
+  animation: slideIn 0.8s forwards;
+}
+
+.leaderboard tbody tr:nth-child(1) { animation-delay: 0.2s; }
+.leaderboard tbody tr:nth-child(2) { animation-delay: 0.4s; }
+.leaderboard tbody tr:nth-child(3) { animation-delay: 0.6s; }
+
+.leaderboard tbody tr:hover {
+  background: rgba(225, 6, 0, 0.2);
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(225, 6, 0, 0.5);
+}
+
+.leaderboard img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #e10600;
+  animation: glow 3s infinite alternate;
+}
+
+/* Animations */
+@keyframes slideIn {
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px #e10600; }
+  to { box-shadow: 0 0 25px #ff3c00; }
+}
+
+@keyframes countUp {
+  from { color: #fff; }
+  to { color: #ffd700; }
+}
+/* Formula 1 2025 Calendar - Pop-up RGB Animation */
+
+body {
+  background: #0d0d0d;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Calendar grid */
+.calendar-2025 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+}
+
+/* Race card base */
+.race-card {
+  background: #111;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Pop-up animation */
+.race-card:hover {
+  transform: translateY(-15px) scale(1.08) rotateX(8deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6),
+              0 0 30px rgba(255,0,0,0.6),
+              0 0 50px rgba(0,255,0,0.6),
+              0 0 70px rgba(0,0,255,0.6);
+}
+
+/* Animated RGB background overlay */
+.race-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, red, lime, blue, red);
+  background-size: 400% 400%;
+  animation: rgbShift 8s linear infinite;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+/* Text styling */
+.race-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+  position: relative;
+  z-index: 1;
+}
+
+.race-card p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #f0f0f0;
+  position: relative;
+  z-index: 1;
+}
+
+/* RGB shifting animation */
+@keyframes rgbShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Formula 1 2025 Calendar - RGB Container + Pop-up Cards */
+
+body {
+  background: #000000;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Calendar container with RGB border */
+.calendar-2025 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  border-radius: 20px;
+  position: relative;
+  background: #2707f5;
+  z-index: 1;
+}
+
+/* RGB glowing border around the whole calendar */
+.calendar-2025::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 24px;
+  background: linear-gradient(90deg, red, lime, blue, red);
+  background-size: 400% 400%;
+  animation: rgbBorder 10s linear infinite;
+  z-index: -1;
+}
+
+/* Race card base */
+.race-card {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Pop-up animation */
+.race-card:hover {
+  transform: translateY(-15px) scale(1.08) rotateX(8deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6),
+              0 0 30px rgba(255,0,0,0.6),
+              0 0 50px rgba(0,255,0,0.6),
+              0 0 70px rgba(0,0,255,0.6);
+}
+
+/* Animated RGB overlay inside cards */
+.race-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, red, lime, blue, red);
+  background-size: 400% 400%;
+  animation: rgbShift 8s linear infinite;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Text styling */
+.race-card h2,
+.race-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.race-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+.race-card p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #f0f0f0;
+}
+
+/* Animations */
+@keyframes rgbShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes rgbBorder {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
 
 
