@@ -81,20 +81,20 @@ const newsAfterUSAGP = [
   image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Mexico/2243486274.webp",
   text: `For much of the 2025 Formula 1 season, McLaren looked untouchable. Oscar Piastri’s early dominance and Lando Norris’ mid-season surge gave the Woking team a commanding lead in both championships. At one point, Verstappen trailed by more than 100 points, and many believed the fight was over. Yet, as the season enters its final stretch, the Dutchman has slashed the gap to just 36 points, reigniting the title battle.
 
-**How did Red Bull turn the tide?**
+How did Red Bull turn the tide?
 
 The answer lies in a combination of relentless development and McLaren’s plateau in performance. Since the summer break, Red Bull introduced a series of aerodynamic and floor upgrades that unlocked nearly half a second per lap in race trim. These updates debuted at Monza and Baku, where Verstappen delivered back-to-back victories, and were refined further in Austin, where he dominated from lights to flag. Even on high-downforce tracks like Singapore, where McLaren had been supreme, Red Bull’s RB21 showed newfound competitiveness.
 
 Meanwhile, McLaren’s advantage has eroded. After a blistering first half of the season, their development curve flattened. Red Bull boss Laurent Mekies noted that McLaren “no longer has the relative performance edge” they enjoyed earlier in the year. In raw numbers, Red Bull has won three of the last five races—more than in the entire first 15 rounds combined.
 
-**Why was Verstappen faster and more dominant?**
+Why was Verstappen faster and more dominant?
 
-1. **Upgrades at the right time** – Red Bull’s late-season package improved tyre management and stability, allowing Verstappen to push harder in long stints without degradation.
-2. **Strategic execution** – In Austin and Baku, Red Bull outmaneuvered McLaren on pit strategy, controlling track position and dictating race pace.
-3. **Driver consistency** – Verstappen has maximized every opportunity, finishing on the podium even when the car wasn’t the fastest, such as in Mexico City.
+1. Upgrades at the right time – Red Bull’s late-season package improved tyre management and stability, allowing Verstappen to push harder in long stints without degradation.
+2. Strategic execution – In Austin and Baku, Red Bull outmaneuvered McLaren on pit strategy, controlling track position and dictating race pace.
+3. Driver consistency – Verstappen has maximized every opportunity, finishing on the podium even when the car wasn’t the fastest, such as in Mexico City.
 4. **McLaren under pressure** – With Norris and Piastri now fighting each other as well as Verstappen, small mistakes and setup missteps have cost them valuable points.
 
-**The bigger picture**
+The bigger picture
 
 From a 104-point deficit after the Dutch Grand Prix to just 36 points now, Verstappen’s comeback is one of the most dramatic in modern Formula 1. With four races left, the championship is wide open. McLaren still holds the lead, but the momentum is firmly with Red Bull. If Verstappen maintains this form, the papaya cars may find themselves watching another Red Bull title celebration slip through their fingers.
 
@@ -1500,6 +1500,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
