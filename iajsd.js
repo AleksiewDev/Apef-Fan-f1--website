@@ -75,8 +75,35 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+{
+  title: "Nikola Tsolov – The Next Big Champion",
+  date: "2025-10-28",
+  image: "https://dizzyriders.bg/uploads/avtomobili/07_2025/GettyImages-2209871496.jpg",
+  text: `Nikola Tsolov, *The Bulgarian Lion*, is no longer just a rising star — he is the next big champion in the making. At only 18 years old, he has already carved his name into the history books of junior single-seaters, and the motorsport world is watching closely as he edges toward Formula 2 and, ultimately, Formula 1.  
+
+**A Meteoric Rise**  
+From his karting days, Tsolov displayed a rare blend of precision and aggression. His 2022 Spanish F4 season was nothing short of dominant: **13 wins in 21 races**, a record-breaking campaign that announced him as a generational talent. Mentored by Fernando Alonso, he quickly became a driver to watch.  
+
+**Formula 3 Brilliance**  
+In FIA Formula 3, Tsolov proved his F4 success was no fluke. With Campos Racing, he became the **most successful driver in F3 history with five career wins**, finishing runner-up in the 2025 championship. His qualifying pace, tire management, and fearless overtakes set him apart from his peers.  
+
+**The Speed Factor**  
+Telemetry and sector data consistently place Tsolov among the fastest on the grid. He thrives under pressure, often delivering his best laps in the final moments of qualifying or in high-stakes race scenarios. His adaptability — from street circuits to high-speed classics — makes him a complete driver.  
+
+**On the Verge of Formula 2**  
+Campos Racing has already confirmed Tsolov’s promotion to **Formula 2 in 2026** as part of the Red Bull Junior Team. Yet, insiders suggest he could debut even earlier. If a seat opens for the final two races of the 2025 season, Tsolov is the natural choice: he knows the team, he has the speed, and Red Bull has every reason to accelerate his development.  
+
+**Why He’s the Next Big Champion**  
+- **Talent:** Proven across multiple categories with dominant results.  
+- **Speed:** Among the fastest in qualifying and race pace metrics.  
+- **Mentality:** Calm under pressure, aggressive when it counts.  
+- **Support:** Backed by Campos, Red Bull, and Fernando Alonso’s mentorship.  
+- **National Pride:** The first Bulgarian to reach this level, carrying the hopes of a nation.  
+
+Whether his F2 debut comes in the last two races of 2025 or officially in 2026, one thing is clear: Nikola Tsolov is not just another prospect. He is the next big champion — and the motorsport world should be ready for the roar of the Bulgarian Lion.
+`
+   },
    {
-     
   title: "Hamilton’s Mexico GP penalty vs. Verstappen: what the stewards saw",
   date: "2025-10-27",
   image: "https://cdn.racingnews365.com/2025/Hamilton/_1092x683_crop_center-center_85_none/Hamilton-Verstappen-Mexico-race.jpg?v=1761524658",
@@ -1123,6 +1150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animateCounter(el, target);
   });
 });
+
 
 
 
