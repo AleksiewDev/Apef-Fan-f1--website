@@ -76,7 +76,7 @@ const constructors2025 = [
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
    {
-     export const article = {
+     
   title: "Hamilton’s Mexico GP penalty vs. Verstappen: what the stewards saw",
   date: "2025-10-27",
   image: "https://cdn.racingnews365.com/2025/Hamilton/_1092x683_crop_center-center_85_none/Hamilton-Verstappen-Mexico-race.jpg?v=1761524658",
@@ -1123,6 +1123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animateCounter(el, target);
   });
 });
+
 
 
 
