@@ -93,8 +93,6 @@ Hamilton called the decision “kind of nuts,” pointing to inconsistency with 
 
 Ferrari boss Fred Vasseur highlighted how the penalty compromised Hamilton’s podium shot despite strong pace, underscoring how fine margins in stewarding decisions can swing results. Whether one agrees with the threshold for “lasting advantage,” Mexico’s calls followed a familiar FIA pattern: tolerate first-lap chaos when positions are restored, clamp down when passes are finished off-track under green-flag duels.
 `
-};
- 
    },
    {
   title: "Driver Reactions – Mexico GP 2025",
@@ -1125,6 +1123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animateCounter(el, target);
   });
 });
+
 
 
 
