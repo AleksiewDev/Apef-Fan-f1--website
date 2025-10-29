@@ -76,7 +76,7 @@ const constructors2025 = [
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
   {
-  title: "Who Will Drive for Red Bull Racing and Racing Bulls in 2026?yj",
+  title: "Who Will Drive for Red Bull Racing and Racing Bulls in 2026?",
   date: "2025-10-29",
   image: "https://cdn.racingnews365.com/2024/Tsunoda/_1800x945_crop_center-center_75_none/Tsunoda-Red-Bull-Abu-Dhabi-test.jpg?v=1733815211",
   text: `As the 2025 Formula 1 season nears its conclusion, all eyes are on Red Bull Racing and its sister team, Racing Bulls, to confirm their driver line-ups for 2026. With the new regulations arriving next year, the decisions made now will shape the future of both teams.
@@ -1521,6 +1521,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
