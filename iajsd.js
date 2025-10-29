@@ -75,32 +75,29 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
-    {
-  title: "Who Will Drive for Red Bull Racing and Racing Bulls in 2026?",
-  date: "2025-10-29",
-  image: "",
-  text: `As the 2025 Formula 1 season winds down, all ey
    {
-  title: "The Road to 2026: F1’s Bold Leap into the Future",
-  date: "2025-10-29",
-  image: "https://www.autohebdo.fr/app/uploads/2025/04/tC7UNwE-scaled.jpeg",
-  text: `As the 2025 Formula 1 season nears its conclusion, all eyes are on Red Bull Racing and its sister team, Racing Bulls, to confirm their driver line-ups for 2026. With the new regulations arriving next year, the decisions made now will shape the future of both teams.
+  title:"Who Will Drive for Red Bull Racing and Racing Bulls in 2026?",
+  date: "2025-10-28",
+  image: "https://cdn.racingnews365.com/2024/Tsunoda/_1800x945_crop_center-center_75_none/Tsunoda-Red-Bull-Abu-Dhabi-test.jpg?v=1733815211",
+  text: `
+As the 2025 Formula 1 season nears its conclusion, all eyes are on Red Bull Racing and its sister team, Racing Bulls, to confirm their driver line-ups for 2026. With the new regulations arriving next year, the decisions made now will shape the future of both teams.
 
-Red Bull Racing: Verstappen + Hadjar?
+**Red Bull Racing: Verstappen + Hadjar?**
 Max Verstappen is already confirmed with Red Bull until 2028, making him the undisputed anchor of the team. The real question has been who will partner him. For months, speculation has swirled around Yuki Tsunoda, Liam Lawson, and rookie sensation Isack Hadjar. According to multiple reports, Red Bull is leaning toward **promoting Hadjar to the senior team**. His strong performances in 2025 and his reputation as one of the most promising young drivers in the Red Bull program make him the frontrunner. This would give Verstappen his fourth teammate in just over a year, but one that Red Bull hopes can finally provide stability.
 
-Racing Bulls: Lawson, Tsunoda… or Lindblad?
+**Racing Bulls: Lawson, Tsunoda… or Lindblad?**
 The Faenza-based Racing Bulls squad faces an equally intriguing decision. Liam Lawson has impressed with consistency and adaptability, while Yuki Tsunoda has shown flashes of brilliance that recently revived his chances of staying on the grid. However, the wildcard is **Arvid Lindblad**, the teenage prodigy from Formula 2, who is pushing hard for a promotion. If Red Bull promotes Hadjar, Racing Bulls could field a Lawson–Tsunoda partnership, but Lindblad’s rapid rise means a reshuffle is still possible.
 
-The Bigger Picture
+**The Bigger Picture**
 Helmut Marko and Red Bull management have delayed final announcements until after the Abu Dhabi Grand Prix, prioritizing the championship fight before locking in their 2026 line-ups. What is clear, however, is that Red Bull’s driver academy remains central to their strategy. With Verstappen as the benchmark, the team is searching for the next long-term star who can carry the brand into the new era of Formula 1.
 
-Prediction
-- Red Bull Racing (2026): Max Verstappen & Isack Hadjar
-- Racing Bulls (2026): Liam Lawson & Yuki Tsunoda (with Arvid Lindblad waiting in the wings) 
+**Prediction**
+- **Red Bull Racing (2026): Max Verstappen & Isack Hadjar**  
+- **Racing Bulls (2026): Liam Lawson & Yuki Tsunoda (with Arvid Lindblad waiting in the wings)**  
 
-The final word will come in December, but the direction is clear: Red Bull is betting on youth, speed, and continuity to stay ahead in the new regulations era.`
-   },
+The final word will come in December, but the direction is clear: Red Bull is betting on youth, speed, and continuity to stay ahead in the new regulations era.
+`
+  },
    {
   title: "Verstappen Strikes Back: How Red Bull Cut McLaren’s Championship Edge",
   date: "2025-10-28",
@@ -1526,6 +1523,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
