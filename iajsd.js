@@ -75,42 +75,31 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+    {
+  title: "Who Will Drive for Red Bull Racing and Racing Bulls in 2026?",
+  date: "2025-10-29",
+  image: "",
+  text: `As the 2025 Formula 1 season winds down, all ey
    {
   title: "The Road to 2026: F1’s Bold Leap into the Future",
   date: "2025-10-29",
   image: "https://www.autohebdo.fr/app/uploads/2025/04/tC7UNwE-scaled.jpeg",
-  text: `As the 2025 Formula 1 season winds down, all eyes are turning toward 2026—a year set to redefine the sport with sweeping changes in car design, team lineups, and technical regulations. Whether you're a die-hard fan or a curious newcomer, here's what you need to know before the lights go out in 2026.
+  text: `As the 2025 Formula 1 season nears its conclusion, all eyes are on Red Bull Racing and its sister team, Racing Bulls, to confirm their driver line-ups for 2026. With the new regulations arriving next year, the decisions made now will shape the future of both teams.
 
-🏎️ New Cars, New Philosophy
-The FIA has unveiled a radically different set of technical regulations aimed at making F1 cars lighter, more agile, and more sustainable. Key changes include:
+Red Bull Racing: Verstappen + Hadjar?
+Max Verstappen is already confirmed with Red Bull until 2028, making him the undisputed anchor of the team. The real question has been who will partner him. For months, speculation has swirled around Yuki Tsunoda, Liam Lawson, and rookie sensation Isack Hadjar. According to multiple reports, Red Bull is leaning toward **promoting Hadjar to the senior team**. His strong performances in 2025 and his reputation as one of the most promising young drivers in the Red Bull program make him the frontrunner. This would give Verstappen his fourth teammate in just over a year, but one that Red Bull hopes can finally provide stability.
 
-Weight reduction: Cars will shed 30kg, bringing the minimum weight down to 768kg.
+Racing Bulls: Lawson, Tsunoda… or Lindblad?
+The Faenza-based Racing Bulls squad faces an equally intriguing decision. Liam Lawson has impressed with consistency and adaptability, while Yuki Tsunoda has shown flashes of brilliance that recently revived his chances of staying on the grid. However, the wildcard is **Arvid Lindblad**, the teenage prodigy from Formula 2, who is pushing hard for a promotion. If Red Bull promotes Hadjar, Racing Bulls could field a Lawson–Tsunoda partnership, but Lindblad’s rapid rise means a reshuffle is still possible.
 
-Smaller dimensions: Length and width will shrink by 200mm and 100mm respectively, improving maneuverability.
+The Bigger Picture
+Helmut Marko and Red Bull management have delayed final announcements until after the Abu Dhabi Grand Prix, prioritizing the championship fight before locking in their 2026 line-ups. What is clear, however, is that Red Bull’s driver academy remains central to their strategy. With Verstappen as the benchmark, the team is searching for the next long-term star who can carry the brand into the new era of Formula 1.
 
-Tyre tweaks: While the 18-inch wheels remain, front and rear tyre widths will be reduced by 25mm and 30mm.
+Prediction
+- Red Bull Racing (2026): Max Verstappen & Isack Hadjar
+- Racing Bulls (2026): Liam Lawson & Yuki Tsunoda (with Arvid Lindblad waiting in the wings) 
 
-Active aerodynamics: Moveable front and rear wings will replace the traditional DRS, allowing for dynamic downforce adjustments during races.
-
-Power unit overhaul: A 50/50 split between internal combustion and electric power will be introduced, with increased battery output and sustainable fuels becoming mandatory.
-
-🏁 New Teams and Powerhouses
-The grid will expand to 11 teams, welcoming fresh competition and innovation:
-
-Cadillac enters the fray, bringing American muscle and ambition to the paddock.
-
-Audi joins as a power unit supplier, marking its full commitment to F1 after years of speculation.
-
-Red Bull Ford Powertrains will debut their new engine collaboration, blending Red Bull’s racing pedigree with Ford’s engineering muscle.
-
-🧪 Testing and Development
-Teams will have 10 days of pre-season testing, including a private session in Barcelona (Jan 26–30) and two public tests in Bahrain (Feb 11–13 and Feb 18–20). These will be the first glimpses of the 2026 machines in action, offering fans and analysts a chance to assess performance before the season opener.
-
-🌍 Sustainability and Innovation
-The 2026 regulations reflect F1’s commitment to a greener future. With advanced sustainable fuels, enhanced electric power, and reduced drag, the sport aims to balance high performance with environmental responsibility.
-
-🔮 What to Expect
-While the changes promise closer racing and more strategic depth, they also introduce uncertainty. Will traditional powerhouses adapt quickly, or will newcomers disrupt the status quo? One thing is certain: the 2026 season will be unlike anything we've seen before.`
+The final word will come in December, but the direction is clear: Red Bull is betting on youth, speed, and continuity to stay ahead in the new regulations era.`
    },
    {
   title: "Verstappen Strikes Back: How Red Bull Cut McLaren’s Championship Edge",
@@ -1537,6 +1526,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
