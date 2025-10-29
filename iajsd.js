@@ -76,6 +76,43 @@ const constructors2025 = [
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
    {
+  title: "The Road to 2026: F1’s Bold Leap into the Future",
+  date: "2025-10-29",
+  image: "https://www.autohebdo.fr/app/uploads/2025/04/tC7UNwE-scaled.jpeg",
+  text: `As the 2025 Formula 1 season winds down, all eyes are turning toward 2026—a year set to redefine the sport with sweeping changes in car design, team lineups, and technical regulations. Whether you're a die-hard fan or a curious newcomer, here's what you need to know before the lights go out in 2026.
+
+🏎️ New Cars, New Philosophy
+The FIA has unveiled a radically different set of technical regulations aimed at making F1 cars lighter, more agile, and more sustainable. Key changes include:
+
+Weight reduction: Cars will shed 30kg, bringing the minimum weight down to 768kg.
+
+Smaller dimensions: Length and width will shrink by 200mm and 100mm respectively, improving maneuverability.
+
+Tyre tweaks: While the 18-inch wheels remain, front and rear tyre widths will be reduced by 25mm and 30mm.
+
+Active aerodynamics: Moveable front and rear wings will replace the traditional DRS, allowing for dynamic downforce adjustments during races.
+
+Power unit overhaul: A 50/50 split between internal combustion and electric power will be introduced, with increased battery output and sustainable fuels becoming mandatory.
+
+🏁 New Teams and Powerhouses
+The grid will expand to 11 teams, welcoming fresh competition and innovation:
+
+Cadillac enters the fray, bringing American muscle and ambition to the paddock.
+
+Audi joins as a power unit supplier, marking its full commitment to F1 after years of speculation.
+
+Red Bull Ford Powertrains will debut their new engine collaboration, blending Red Bull’s racing pedigree with Ford’s engineering muscle.
+
+🧪 Testing and Development
+Teams will have 10 days of pre-season testing, including a private session in Barcelona (Jan 26–30) and two public tests in Bahrain (Feb 11–13 and Feb 18–20). These will be the first glimpses of the 2026 machines in action, offering fans and analysts a chance to assess performance before the season opener.
+
+🌍 Sustainability and Innovation
+The 2026 regulations reflect F1’s commitment to a greener future. With advanced sustainable fuels, enhanced electric power, and reduced drag, the sport aims to balance high performance with environmental responsibility.
+
+🔮 What to Expect
+While the changes promise closer racing and more strategic depth, they also introduce uncertainty. Will traditional powerhouses adapt quickly, or will newcomers disrupt the status quo? One thing is certain: the 2026 season will be unlike anything we've seen before.`
+   },
+   {
   title: "Verstappen Strikes Back: How Red Bull Cut McLaren’s Championship Edge",
   date: "2025-10-28",
   image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Mexico/2243486274.webp",
@@ -100,7 +137,7 @@ From a 104-point deficit after the Dutch Grand Prix to just 36 points now, Verst
 
 The final rounds will decide whether McLaren’s early-season dominance was enough, or if Verstappen’s late charge will deliver him a fifth consecutive world championship. One thing is certain: the balance of power has shifted, and Red Bull has proven once again that they are never out of the fight.
 `
-   },
+},
 {
   title: "Nikola Tsolov – The Next Big Champion",
   date: "2025-10-28",
@@ -1500,6 +1537,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
