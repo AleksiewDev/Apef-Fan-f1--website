@@ -75,6 +75,38 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+   {
+       title: "Aston Martin’s 2026 Outlook with Adrian Newey",
+  date: "2025-10-30",
+  image: "https://media.formula1.com/image/upload/t_16by9South/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/F1_Grand_Prix_of_Abu_Dhabi___Practice/2188517983.webp",
+  text: `🚀 The Newey Factor
+Adrian Newey, regarded as the most successful designer in F1 history, joined Aston Martin in 2025 after leaving Red Bull.
+
+He has been described as entering a “design trance” while working on the 2026 car, focusing obsessively on exploiting the new regulations.
+
+Newey himself has said the 2026 rules offer “more flexibility for innovation than first meets the eye”, suggesting Aston Martin could spring surprises with radical aero and packaging solutions.
+
+🔋 Honda Works Partnership
+From 2026, Aston Martin becomes the exclusive Honda works team, ending Red Bull’s long-standing partnership with the Japanese manufacturer.
+
+If Honda delivers a competitive hybrid power unit, Aston Martin will have a rare advantage: a fully integrated chassis–engine package designed in tandem with Newey’s aero philosophy.
+
+🏢 Infrastructure & Investment
+Lawrence Stroll’s heavy investment has transformed Aston Martin’s Silverstone HQ into one of the most advanced facilities in F1.
+
+A new wind tunnel, expanded design offices, and a recruitment drive (including Enrico Cardile from Ferrari) mean the team now has the resources to match its ambitions.
+
+👥 Driver Line-Up
+Fernando Alonso, still performing at a high level, is expected to continue into 2026, motivated by the chance to drive a Newey car again.
+
+Lance Stroll remains a fixture, though the pressure will be on him to deliver results worthy of the machinery.
+
+⚖️ Expectations vs Reality
+Optimists believe Aston Martin could challenge for wins immediately if Newey and Honda hit the ground running.
+
+However, even Newey has cautioned against expecting an instant title fight, suggesting 2026 may be more about establishing themselves as consistent podium contenders before mounting a full championship challenge.`
+  },
+   },
   {
   title: "Who Will Drive for Red Bull Racing and Racing Bulls in 2026?",
   date: "2025-10-29",
@@ -1521,6 +1553,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
