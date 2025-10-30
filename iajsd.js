@@ -75,6 +75,20 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+      {
+   title: "Fernando Alonso: The Relentless Warrior Who Refuses to Surrender",
+  date: "2025-10-30",
+  image: "https://e0.365dm.com/23/05/1600x900/skysports-f1-fernando-alonso_6160775.jpg?20230519165637",
+  text: `In the high-octane world of Formula 1, where milliseconds define legacies, Fernando Alonso continues to embody the spirit of a true warrior. At 44 years old, the two-time world champion has faced setbacks that would have broken the resolve of many drivers—mechanical failures, crashes, and seasons without a competitive car. Yet, Alonso’s story is not one of defeat, but of unyielding determination and resilience.
+
+From his early days in Oviedo to his current chapter with Aston Martin, Alonso has built a reputation as a driver who never bows to circumstance. Even in races where victory seems out of reach, he fights for every position, every lap, and every point. As he once declared, he wants to be remembered “as a fighter, as a man that never gives up”.
+
+The 2025 season has tested him more than most. With two DNFs and a string of disappointing results, Alonso could have chosen to fade quietly into the background. Instead, he has doubled down on his commitment, vowing to “fight for small victories” even when the bigger prize appears distant. This mindset has not only inspired fans but also earned admiration from rivals. Max Verstappen himself recently praised Alonso’s spirit, noting that “he doesn’t have a car to win the championship, but he never gives up”.
+
+Alonso’s resilience is more than just a personal trait—it’s a philosophy that resonates across the sport. His relentless pursuit of excellence, regardless of the odds, has made him a symbol of perseverance. For younger drivers, he is proof that greatness is not only measured in titles but in the refusal to surrender when the world expects you to.
+
+As the Formula 1 circus looks ahead to another season, one thing is certain: Fernando Alonso will continue to fight, lap after lap, race after race. He may not always stand on the top step of the podium, but in the eyes of fans and competitors alike, he has already secured his place as one of the sport’s most enduring warriors.`
+  },
    {
    title: "Cadillac’s Formula 1 Entry: What to Expect in 2026",
   date: "2025-10-30",
@@ -1575,6 +1589,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
