@@ -106,7 +106,6 @@ Optimists believe Aston Martin could challenge for wins immediately if Newey and
 
 However, even Newey has cautioned against expecting an instant title fight, suggesting 2026 may be more about establishing themselves as consistent podium contenders before mounting a full championship challenge.`
   },
-   },
   {
   title: "Who Will Drive for Red Bull Racing and Racing Bulls in 2026?",
   date: "2025-10-29",
@@ -1553,6 +1552,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
