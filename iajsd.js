@@ -76,6 +76,29 @@ const constructors2025 = [
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
    {
+   title: "Cadillac’s Formula 1 Entry: What to Expect in 2026",
+  date: "2025-10-30",
+  image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Miscellaneous/684.webp",
+  text: `When the lights go out in 2026, Cadillac will officially join the Formula 1 grid, marking one of the most ambitious entries in recent motorsport history. Backed by General Motors and TWG Global, the American luxury brand is preparing to showcase its engineering prowess on the world’s biggest racing stage. But what can fans realistically expect from Cadillac’s debut season?
+
+Aiming for Respect, Not Immediate Victories
+Cadillac’s team principal, Graeme Lowdon, has emphasized that the first year will be about execution and credibility rather than instant podiums. The team is determined to avoid overpromising, acknowledging that breaking into F1’s fiercely competitive midfield will take time. Early races are expected to be a learning curve, with the focus on building operational excellence and earning respect from rivals and fans alike.
+
+Driver Line-Up with Experience and Ambition
+The team has already secured a strong driver pairing, with Valtteri Bottas and Sergio Pérez set to lead the charge. Both bring years of experience, race wins, and technical feedback skills that will be crucial in guiding Cadillac through its rookie season. Bottas has described the project as one with “limitless potential,” while also stressing the need for patience as the team finds its footing.
+
+Technical Development and Long-Term Vision
+Cadillac’s 2026 car will be built under the new F1 regulations, designed to promote closer racing and sustainability. While the team will initially rely on existing power unit partnerships, General Motors is developing its own F1 engine for 2029, signaling a long-term commitment to the sport. This future engine program could transform Cadillac from a newcomer into a serious contender.
+
+Commercial and Cultural Impact
+Beyond the track, Cadillac’s entry is expected to boost Formula 1’s presence in the United States, adding another American brand alongside Haas. With its luxury image and motorsport heritage, Cadillac aims to connect with a new generation of fans while reinforcing its global identity. The project is also seen as a strategic move to align the brand with cutting-edge technology and sustainability goals.
+
+The Road Ahead
+In 2026, fans should expect Cadillac to start at the back of the grid but steadily climb as experience, data, and development accumulate. The first season will be about laying foundations, but the long-term ambition is clear: Cadillac wants to evolve into a front-running team capable of challenging the established giants of Formula 1.
+
+In short, Cadillac’s arrival won’t rewrite the pecking order overnight—but it will inject fresh energy, American pride, and a bold vision into the sport.
+  },
+   {
        title: "Aston Martin’s 2026 Outlook with Adrian Newey",
   date: "2025-10-30",
   image: "https://media.formula1.com/image/upload/t_16by9South/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/F1_Grand_Prix_of_Abu_Dhabi___Practice/2188517983.webp",
@@ -1552,6 +1575,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
