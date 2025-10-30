@@ -96,7 +96,7 @@ Beyond the track, Cadillac’s entry is expected to boost Formula 1’s presence
 The Road Ahead
 In 2026, fans should expect Cadillac to start at the back of the grid but steadily climb as experience, data, and development accumulate. The first season will be about laying foundations, but the long-term ambition is clear: Cadillac wants to evolve into a front-running team capable of challenging the established giants of Formula 1.
 
-In short, Cadillac’s arrival won’t rewrite the pecking order overnight—but it will inject fresh energy, American pride, and a bold vision into the sport.
+In short, Cadillac’s arrival won’t rewrite the pecking order overnight—but it will inject fresh energy, American pride, and a bold vision into the sport.`
   },
    {
        title: "Aston Martin’s 2026 Outlook with Adrian Newey",
@@ -1575,6 +1575,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
