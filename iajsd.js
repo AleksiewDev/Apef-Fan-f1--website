@@ -1606,23 +1606,130 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+document.addEventListener('DOMContentLoaded', () => {
+  const lights = document.querySelectorAll('.pit-lights .light');
+  const msg = document.getElementById('lightsMessage');
 
+  // Sequentially light up each red light
+  lights.forEach((light, i) => {
+    setTimeout(() => {
+      light.style.background = 'red';
+      light.style.opacity = '1';
+      light.style.boxShadow = '0 0 25px red';
+    }, i * 1000);
+  });
 
+  // After all lights are on, turn them off and show message
+  setTimeout(() => {
+    lights.forEach(light => {
+      light.style.background = '#330000';
+      light.style.opacity = '0.3';
+      light.style.boxShadow = 'none';
+    });
+    msg.style.opacity = 1;
+  }, 6000);
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.pit-lights-wrapper');
+  const lights = document.querySelectorAll('.pit-lights .light');
+  const msg = document.querySelector('.lights-message');
+  let cycleTimeouts = [];
 
+  function resetLights() {
+    lights.forEach(l => l.className = 'light');
+    msg.style.opacity = 0;
+  }
 
+  function clearCycle() {
+    cycleTimeouts.forEach(t => clearTimeout(t));
+    cycleTimeouts = [];
+  }
 
+  function runSequence() {
+    resetLights();
 
+    // Turn lights red one by one
+    lights.forEach((light, i) => {
+      cycleTimeouts.push(setTimeout(() => {
+        light.classList.add('red');
+      }, i * 1000));
+    });
 
+    const allRedTime = lights.length * 1000;
 
+    // Turn all green and show message
+    cycleTimeouts.push(setTimeout(() => {
+      lights.forEach(l => {
+        l.classList.remove('red');
+        l.classList.add('green');
+      });
+      msg.style.opacity = 1;
+    }, allRedTime));
 
+    // Reset after green phase and loop
+    cycleTimeouts.push(setTimeout(() => {
+      runSequence();
+    }, allRedTime + 2000)); // 2s green before reset
+  }
 
+  // Show/hide on scroll
+  function handleScroll() {
+    if (window.scrollY > 0) {
+      wrapper.classList.add('hidden');
+      clearCycle();
+      resetLights();
+    } else {
+      if (wrapper.classList.contains('hidden')) {
+        wrapper.classList.remove('hidden');
+        runSequence();
+      }
+    }
+  }
 
+  handleScroll();
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  function startSequence() {
+  // Step 1: Turn lights red one by one
+  lights.forEach((light, i) => {
+    setTimeout(() => {
+      light.style.background = 'red';
+      light.style.opacity = '1';
+      light.style.boxShadow = '0 0 25px red';
+    }, i * 1000);
+  });
 
+  // Step 2: After all are red, turn them green
+  setTimeout(() => {
+    lights.forEach(light => {
+      light.style.background = 'limegreen';
+      light.style.boxShadow = '0 0 25px limegreen';
+    });
 
+    // Show the text AFTER the lights are green
+    msg.style.opacity = 1;
 
+    // Step 3: After a short delay, turn them black
+    setTimeout(() => {
+      lights.forEach(light => {
+        light.style.background = 'black';
+        light.style.boxShadow = 'none';
+      });
 
+      // Hide the text again when lights go black
+      msg.style.opacity = 0;
 
+      // Step 4: Restart the sequence after a pause
+      setTimeout(startSequence, 1000);
 
+    }, 1000); // how long they stay green before going black
+
+  }, lights.length * 1000);
+}
+
+// Start the loop
+startSequence();
+
+});
 
 
 
