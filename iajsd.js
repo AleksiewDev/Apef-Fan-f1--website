@@ -75,6 +75,23 @@ const constructors2025 = [
 
 // News after USA GP 2025 (no sources displayed; summaries are descriptive)
 const newsAfterUSAGP = [
+    {
+  title: "George Russell Slams Stewards’ Decisions After Chaotic Mexican GP",
+  date: "2025-10-31",
+  image: "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/Formula_1_Testing_in_Abu_Dhabi/2189166681.webp",
+  text: `In the aftermath of a dramatic Mexican Grand Prix at the Autódromo Hermanos Rodríguez, Mercedes driver George Russell voiced strong frustration over what he described as inconsistent and unfair stewarding decisions. The Briton, who finished a disappointing seventh, was particularly angered by the lack of penalties for rivals who cut the opening corners on lap one, while his teammate Lewis Hamilton was later handed a 10-second penalty for a similar infringement.
+
+Russell branded the opening sequence of the race as “lawnmower racing,” pointing out that Max Verstappen and Charles Leclerc both went off track at Turn 1 without consequence. “I struggle to understand how three drivers can just cut the first corner and carry on as if nothing happened,” he said over team radio, later repeating his criticism in post-race interviews.
+
+The Mercedes driver’s frustration was compounded by a tense exchange with his race engineer, as he was asked to manage tyres behind teammate Andrea Kimi Antonelli while being pressured by McLaren’s Oscar Piastri. Russell snapped back, highlighting that he was already under attack and felt “hung out to dry” in the strategy calls.
+
+Adding to the controversy, Russell also questioned the FIA’s handling of penalties, noting the disparity between Hamilton’s punishment and Verstappen’s escape. “It just doesn’t make sense,” he argued. “We need consistency. Fans and drivers deserve clarity on what’s allowed and what isn’t”.
+
+The race itself was dominated by Lando Norris, who stormed to victory and seized the lead of the Drivers’ Championship, while Russell and Mercedes were left licking their wounds after another difficult weekend.
+
+With the season entering its final stretch, Russell’s comments have reignited debate over track limits, corner-cutting rules, and stewarding consistency—issues that have plagued Formula 1 throughout 2025. For Mercedes, the focus now shifts to Brazil, but Russell’s words will continue to echo as the FIA faces mounting pressure to address the growing discontent among drivers.
+`
+},
       {
    title: "Fernando Alonso: The Relentless Warrior Who Refuses to Surrender",
   date: "2025-10-30",
@@ -1589,6 +1606,7 @@ function injectNewsTextColors() {
 }
 
 document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+
 
 
 
