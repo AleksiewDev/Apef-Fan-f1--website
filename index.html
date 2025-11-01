@@ -8,19 +8,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="WHEN YO.css" />
+
+  <!-- Spline 3D background -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.90/build/spline-viewer.js"></script>
 </head>
 <body>
+  <!-- Fixed 3D background behind all content -->
+  <spline-viewer class="spline-bg" url="https://prod.spline.design/Pcd-l9JNPWo6kAiG/scene.splinecode"></spline-viewer>
+
   <div id="app">
-    <!-- Smooth header -->
+    <!-- Header -->
     <header class="site-header">
       <div class="brand">
         <div class="logo-mark" aria-hidden="true"></div>
         <div class="brand-text">
           <h1 class="brand-title">F1 - Apex Fan Club</h1>
-          <p class="brand-subtitle">Precision. Pace. Passion.</p>
         </div>
       </div>
-
       <nav class="main-nav" aria-label="Primary">
         <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
         <ul id="navMenu" class="nav-list">
@@ -33,23 +37,23 @@
       </nav>
     </header>
 
-    <!-- Hero with subtle motion -->
-    <section class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <h2 class="hero-title">F1 2025 — The decisive run</h2>
-        <p class="hero-copy">
-          Live standings, verified team profiles, and post–USA GP headlines. Follow every lap with clarity.
-        </p>
-        <a class="hero-cta" href="#countdown">See next Grand Prix</a>
-      </div>
-    </section>
+  <!-- Fixed 3D background -->
+  <spline-viewer class="spline-bg" url="https://prod.spline.design/Pcd-l9JNPWo6kAiG/scene.splinecode"></spline-viewer>
 
-    <!-- Countdown to next GP -->
+  <div id="app">
+
+    <!-- Hero section (just shows the background words) -->
+    <section class="hero"></section>
+
+    <!-- Countdown -->
+    <section id="countdown" class="countdown-section">  </section>
+
+
+    
+    <!-- Countdown -->
     <section id="countdown" class="countdown-section">
-      <h3 class="section-title">Next Grand Prix: FORMULA 1 MSC Cruises Grande Prêmio de São Paulo 2025 </h3>
+      <h3 class="section-title">Next Grand Prix: FORMULA 1 MSC Cruises Grande Prêmio de São Paulo 2025</h3>
       <p class="section-subtitle">Autódromo José Carlos Pace (Interlagos)</p>
-
       <div class="countdown-grid">
         <div class="count-card">
           <div class="count-value" id="days">00</div>
@@ -68,25 +72,22 @@
           <div class="count-label">Seconds</div>
         </div>
       </div>
-
       <div class="event-times" id="eventTimes" aria-live="polite"></div>
     </section>
 
-    <!-- News: post–USA GP 2025 -->
+    <!-- News -->
     <section id="news" class="news-section">
       <h3 class="section-title">Latest news</h3>
       <div class="news-list" id="newsList"></div>
     </section>
 
-    <!-- Standings split into two sections -->
+    <!-- Drivers -->
     <section id="drivers" class="standings-section">
       <h3 class="section-title">Drivers’ Championship — 2025</h3>
       <p class="section-subtitle">Positions 1–20</p>
       <div class="table-wrap">
         <table class="standings-table" aria-describedby="drivers-desc">
-          <caption id="drivers-desc" class="visually-hidden">
-            Current 2025 Formula 1 Drivers’ Championship standings from 1 to 20.
-          </caption>
+          <caption id="drivers-desc" class="visually-hidden">Current 2025 Formula 1 Drivers’ Championship standings from 1 to 20.</caption>
           <thead>
             <tr>
               <th scope="col">Pos</th>
@@ -103,14 +104,13 @@
       </div>
     </section>
 
+    <!-- Constructors -->
     <section id="constructors" class="standings-section">
       <h3 class="section-title">Constructors’ Championship — 2025</h3>
       <p class="section-subtitle">Positions 1–10</p>
       <div class="table-wrap">
         <table class="standings-table" aria-describedby="constructors-desc">
-          <caption id="constructors-desc" class="visually-hidden">
-            Current 2025 Formula 1 Constructors’ Championship standings from 1 to 10.
-          </caption>
+          <caption id="constructors-desc" class="visually-hidden">Current 2025 Formula 1 Constructors’ Championship standings from 1 to 10.</caption>
           <thead>
             <tr>
               <th scope="col">Pos</th>
@@ -129,12 +129,11 @@
     <section id="calendar" class="calendar-section">
       <h3 class="section-title">2025 season calendar</h3>
       <div id="calendarGrid" class="calendar-grid"></div>
+
+    
     </section>
-    <!-- Teams hub with deep profiles -->
-    <script src="iajsd.js"></script>
-<script src="iajsd.js"></script>
 
-
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-grid">
         <div>
@@ -156,16 +155,10 @@
     </footer>
   </div>
 
+  <!-- Scripts -->
   <script src="iajsd.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
