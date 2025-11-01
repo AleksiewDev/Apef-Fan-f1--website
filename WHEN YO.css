@@ -388,4 +388,78 @@ html {
 #calendar {
   scroll-margin-top: 80px; /* adjust to your header height */
 }
+.countdown-grid {
+  max-width: 900px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.count-card {
+  flex: 1 1 120px;
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  border: 2px solid #ff6a00;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255,106,0,0.4);
+  transition: transform 0.3s ease;
+}
+.count-card:hover {
+  transform: translateY(-6px);
+}
+.count-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #00e0ff;
+  text-shadow: 0 0 8px #00e0ff;
+}
+.count-label {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.calendar-grid {
+  max-width: 1100px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.calendar-card {
+  background: linear-gradient(160deg, rgba(255,106,0,0.15), rgba(0,224,255,0.15));
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #ff6a00, #00e0ff) 1;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 0 20px rgba(0,224,255,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.calendar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(255,106,0,0.5);
+}
+.calendar-gp {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.calendar-meta {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+@media (max-width: 768px) {
+  .countdown-grid { gap: 12px; }
+  .count-card { flex: 1 1 45%; }
+  .calendar-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .count-card { flex: 1 1 100%; }
+  .calendar-grid { grid-template-columns: 1fr; }
+}
+
 
