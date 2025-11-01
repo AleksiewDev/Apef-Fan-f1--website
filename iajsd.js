@@ -71,6 +71,26 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+   {
+    title: "Mercedes Poised for Formula 1 Dominance as 2026 Rule Changes Shake the Grid",
+    date: "2025-11-01",
+    image: "https://images.ctfassets.net/1fvlg6xqnm65/26vPSAKk780vphDZdGWcrL/ede13dc23ee9d9842bdd20eb6bbb1b73/Barcelona-Testing-2026.jpg?w=1920&q=75&fm=webp",
+    text: `⚡ The 2026 Revolution
+The upcoming season will introduce radical new power units that are expected to be 50% battery-powered, running on fully sustainable fuels. Cars will also be lighter, smaller, and equipped with active aerodynamics, allowing for more overtaking opportunities and closer racing. These changes are designed not only to make the sport greener but also to level the playing field between teams.
+
+🏎 Mercedes in the Spotlight
+Mercedes, who dominated the hybrid era from 2014 to 2020, are once again tipped as the favorites for the new regulations. According to George Russell, only one rival team would refuse to swap cars with Mercedes heading into 2026. The Silver Arrows’ engineering strength, particularly in internal combustion efficiency, could give them a decisive edge.
+
+🔥 The Driver Market Drama
+While the technical shake-up dominates headlines, the driver market is equally turbulent. Red Bull’s future lineup remains uncertain, with Yuki Tsunoda linked to a potential move to IndyCar, leaving Liam Lawson and rising star Arvid Lindblad in contention for coveted seats. Meanwhile, Ferrari and Alpine are juggling their own young talents, setting the stage for one of the most unpredictable grids in years.
+
+🔒 Off-Track Turmoil
+Formula 1 has also faced challenges away from the circuit. A recent cybersecurity breach exposed passport and license details of every driver on the grid, highlighting vulnerabilities even in one of the world’s most technologically advanced sports. While the FIA has since patched the flaw, the incident underscores the growing importance of digital security in global motorsport.
+
+🌍 What It Means for Fans
+For fans, the 2026 season promises a blend of nostalgia and innovation. The return of smaller, more agile cars recalls the sport’s golden eras, while the push toward sustainability reflects F1’s commitment to the future. With rivalries intensifying and uncertainty in the driver market, the next chapter of Formula 1 could be one of its most thrilling yet.
+`
+  },
   {
     title: "George Russell Slams Stewards’ Decisions After Chaotic Mexican GP",
     date: "2025-10-31",
@@ -931,6 +951,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateOffsets();
   window.addEventListener('resize', updateOffsets);
 });
+
 
 
 
