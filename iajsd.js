@@ -16,11 +16,11 @@ const fmt = {
   }
 };
 
-// Next GP: Mexico City (Anton in EEST, event Sunday evening local)
+// Next GP: São Paulo (Anton in EEST, event local Brazil UTC-3)
 const nextGp = {
-   name: "São Paulo Grand Prix",
+  name: "São Paulo Grand Prix",
   venue: "Autódromo José Carlos Pace (Interlagos)",
-  startISO: "2025-11-09T14:00:00-03:00", // Local race start time in Brazil (UTC-3)
+  startISO: "2025-11-09T14:00:00-03:00",
   sessions: [
     { key: "fp1", label: "FP1", iso: "2025-11-07T11:30:00-03:00" },
     { key: "sprintQualifying", label: "Sprint Qualifying", iso: "2025-11-07T15:30:00-03:00" },
@@ -55,7 +55,6 @@ const drivers2025 = [
   { pos: 21, name: "Jack Doohan", code: "DOO", nationality: "AUS", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://preview.redd.it/franco-colapinto-in-alpine-2025-will-be-the-deja-vu-of-v0-mfphwgeotvye1.png?width=1320&format=png&auto=webp&s=c67fd2287c94f2ea96a53595c6616976b0e0af20" }
 ];
 
-
 // Constructors 2025
 const constructors2025 = [
   { pos: 1, name: "Mclaren F1 Team", points: 713, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp" },
@@ -70,16 +69,13 @@ const constructors2025 = [
   { pos: 10, name: "BWT Alpine F1 Team", points: 20, drivers: ["Piere Gasly", "Franco Colapinto"], photo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/FIA_F1_Austria_2025_Nr._10_Gasly.jpg" },
 ];
 
-
- 
-
-// News after USA GP 2025 (no sources displayed; summaries are descriptive)
+// News after USA GP 2025
 const newsAfterUSAGP = [
-    {
-  title: "George Russell Slams Stewards’ Decisions After Chaotic Mexican GP",
-  date: "2025-10-31",
-  image: "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/Formula_1_Testing_in_Abu_Dhabi/2189166681.webp",
-  text: `In the aftermath of a dramatic Mexican Grand Prix at the Autódromo Hermanos Rodríguez, Mercedes driver George Russell voiced strong frustration over what he described as inconsistent and unfair stewarding decisions. The Briton, who finished a disappointing seventh, was particularly angered by the lack of penalties for rivals who cut the opening corners on lap one, while his teammate Lewis Hamilton was later handed a 10-second penalty for a similar infringement.
+  {
+    title: "George Russell Slams Stewards’ Decisions After Chaotic Mexican GP",
+    date: "2025-10-31",
+    image: "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/Formula_1_Testing_in_Abu_Dhabi/2189166681.webp",
+    text: `In the aftermath of a dramatic Mexican Grand Prix at the Autódromo Hermanos Rodríguez, Mercedes driver George Russell voiced strong frustration over what he described as inconsistent and unfair stewarding decisions. The Briton, who finished a disappointing seventh, was particularly angered by the lack of penalties for rivals who cut the opening corners on lap one, while his teammate Lewis Hamilton was later handed a 10-second penalty for a similar infringement.
 
 Russell branded the opening sequence of the race as “lawnmower racing,” pointing out that Max Verstappen and Charles Leclerc both went off track at Turn 1 without consequence. “I struggle to understand how three drivers can just cut the first corner and carry on as if nothing happened,” he said over team radio, later repeating his criticism in post-race interviews.
 
@@ -91,12 +87,12 @@ The race itself was dominated by Lando Norris, who stormed to victory and seized
 
 With the season entering its final stretch, Russell’s comments have reignited debate over track limits, corner-cutting rules, and stewarding consistency—issues that have plagued Formula 1 throughout 2025. For Mercedes, the focus now shifts to Brazil, but Russell’s words will continue to echo as the FIA faces mounting pressure to address the growing discontent among drivers.
 `
-},
-      {
-   title: "Fernando Alonso: The Relentless Warrior Who Refuses to Surrender",
-  date: "2025-10-30",
-  image: "https://e0.365dm.com/23/05/1600x900/skysports-f1-fernando-alonso_6160775.jpg?20230519165637",
-  text: `In the high-octane world of Formula 1, where milliseconds define legacies, Fernando Alonso continues to embody the spirit of a true warrior. At 44 years old, the two-time world champion has faced setbacks that would have broken the resolve of many drivers—mechanical failures, crashes, and seasons without a competitive car. Yet, Alonso’s story is not one of defeat, but of unyielding determination and resilience.
+  },
+  {
+    title: "Fernando Alonso: The Relentless Warrior Who Refuses to Surrender",
+    date: "2025-10-30",
+    image: "https://e0.365dm.com/23/05/1600x900/skysports-f1-fernando-alonso_6160775.jpg?20230519165637",
+    text: `In the high-octane world of Formula 1, where milliseconds define legacies, Fernando Alonso continues to embody the spirit of a true warrior. At 44 years old, the two-time world champion has faced setbacks that would have broken the resolve of many drivers—mechanical failures, crashes, and seasons without a competitive car. Yet, Alonso’s story is not one of defeat, but of unyielding determination and resilience.
 
 From his early days in Oviedo to his current chapter with Aston Martin, Alonso has built a reputation as a driver who never bows to circumstance. Even in races where victory seems out of reach, he fights for every position, every lap, and every point. As he once declared, he wants to be remembered “as a fighter, as a man that never gives up”.
 
@@ -106,11 +102,11 @@ Alonso’s resilience is more than just a personal trait—it’s a philosophy t
 
 As the Formula 1 circus looks ahead to another season, one thing is certain: Fernando Alonso will continue to fight, lap after lap, race after race. He may not always stand on the top step of the podium, but in the eyes of fans and competitors alike, he has already secured his place as one of the sport’s most enduring warriors.`
   },
-   {
-   title: "Cadillac’s Formula 1 Entry: What to Expect in 2026",
-  date: "2025-10-30",
-  image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Miscellaneous/684.webp",
-  text: `When the lights go out in 2026, Cadillac will officially join the Formula 1 grid, marking one of the most ambitious entries in recent motorsport history. Backed by General Motors and TWG Global, the American luxury brand is preparing to showcase its engineering prowess on the world’s biggest racing stage. But what can fans realistically expect from Cadillac’s debut season?
+  {
+    title: "Cadillac’s Formula 1 Entry: What to Expect in 2026",
+    date: "2025-10-30",
+    image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Miscellaneous/684.webp",
+    text: `When the lights go out in 2026, Cadillac will officially join the Formula 1 grid, marking one of the most ambitious entries in recent motorsport history. Backed by General Motors and TWG Global, the American luxury brand is preparing to showcase its engineering prowess on the world’s biggest racing stage. But what can fans realistically expect from Cadillac’s debut season?
 
 Aiming for Respect, Not Immediate Victories
 Cadillac’s team principal, Graeme Lowdon, has emphasized that the first year will be about execution and credibility rather than instant podiums. The team is determined to avoid overpromising, acknowledging that breaking into F1’s fiercely competitive midfield will take time. Early races are expected to be a learning curve, with the focus on building operational excellence and earning respect from rivals and fans alike.
@@ -129,11 +125,11 @@ In 2026, fans should expect Cadillac to start at the back of the grid but steadi
 
 In short, Cadillac’s arrival won’t rewrite the pecking order overnight—but it will inject fresh energy, American pride, and a bold vision into the sport.`
   },
-   {
-       title: "Aston Martin’s 2026 Outlook with Adrian Newey",
-  date: "2025-10-30",
-  image: "https://media.formula1.com/image/upload/t_16by9South/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/F1_Grand_Prix_of_Abu_Dhabi___Practice/2188517983.webp",
-  text: `🚀 The Newey Factor
+  {
+    title: "Aston Martin’s 2026 Outlook with Adrian Newey",
+    date: "2025-10-30",
+    image: "https://media.formula1.com/image/upload/t_16by9South/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/F1_Grand_Prix_of_Abu_Dhabi___Practice/2188517983.webp",
+    text: `🚀 The Newey Factor
 Adrian Newey, regarded as the most successful designer in F1 history, joined Aston Martin in 2025 after leaving Red Bull.
 
 He has been described as entering a “design trance” while working on the 2026 car, focusing obsessively on exploiting the new regulations.
@@ -161,10 +157,10 @@ Optimists believe Aston Martin could challenge for wins immediately if Newey and
 However, even Newey has cautioned against expecting an instant title fight, suggesting 2026 may be more about establishing themselves as consistent podium contenders before mounting a full championship challenge.`
   },
   {
-  title: "Who Will Drive for Red Bull Racing and Racing Bulls in 2026?",
-  date: "2025-10-29",
-  image: "https://cdn.racingnews365.com/2024/Tsunoda/_1800x945_crop_center-center_75_none/Tsunoda-Red-Bull-Abu-Dhabi-test.jpg?v=1733815211",
-  text: `As the 2025 Formula 1 season nears its conclusion, all eyes are on Red Bull Racing and its sister team, Racing Bulls, to confirm their driver line-ups for 2026. With the new regulations arriving next year, the decisions made now will shape the future of both teams.
+    title: "Who Will Drive for Red Bull Racing and Racing Bulls in 2026?",
+    date: "2025-10-29",
+    image: "https://cdn.racingnews365.com/2024/Tsunoda/_1800x945_crop_center-center_75_none/Tsunoda-Red-Bull-Abu-Dhabi-test.jpg?v=1733815211",
+    text: `As the 2025 Formula 1 season nears its conclusion, all eyes are on Red Bull Racing and its sister team, Racing Bulls, to confirm their driver line-ups for 2026. With the new regulations arriving next year, the decisions made now will shape the future of both teams.
 
 Red Bull Racing: Verstappen + Hadjar?
 Max Verstappen is already confirmed with Red Bull until 2028, making him the undisputed anchor of the team. The real question has been who will partner him. For months, speculation has swirled around Yuki Tsunoda, Liam Lawson, and rookie sensation Isack Hadjar. According to multiple reports, Red Bull is leaning toward **promoting Hadjar to the senior team**. His strong performances in 2025 and his reputation as one of the most promising young drivers in the Red Bull program make him the frontrunner. This would give Verstappen his fourth teammate in just over a year, but one that Red Bull hopes can finally provide stability.
@@ -181,11 +177,11 @@ Prediction
 
 The final word will come in December, but the direction is clear: Red Bull is betting on youth, speed, and continuity to stay ahead in the new regulations era.`
   },
-   {
-  title: "Verstappen Strikes Back: How Red Bull Cut McLaren’s Championship Edge",
-  date: "2025-10-28",
-  image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Mexico/2243486274.webp",
-  text: `For much of the 2025 Formula 1 season, McLaren looked untouchable. Oscar Piastri’s early dominance and Lando Norris’ mid-season surge gave the Woking team a commanding lead in both championships. At one point, Verstappen trailed by more than 100 points, and many believed the fight was over. Yet, as the season enters its final stretch, the Dutchman has slashed the gap to just 36 points, reigniting the title battle.
+  {
+    title: "Verstappen Strikes Back: How Red Bull Cut McLaren’s Championship Edge",
+    date: "2025-10-28",
+    image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Mexico/2243486274.webp",
+    text: `For much of the 2025 Formula 1 season, McLaren looked untouchable. Oscar Piastri’s early dominance and Lando Norris’ mid-season surge gave the Woking team a commanding lead in both championships. At one point, Verstappen trailed by more than 100 points, and many believed the fight was over. Yet, as the season enters its final stretch, the Dutchman has slashed the gap to just 36 points, reigniting the title battle.
 
 How did Red Bull turn the tide?
 
@@ -206,12 +202,12 @@ From a 104-point deficit after the Dutch Grand Prix to just 36 points now, Verst
 
 The final rounds will decide whether McLaren’s early-season dominance was enough, or if Verstappen’s late charge will deliver him a fifth consecutive world championship. One thing is certain: the balance of power has shifted, and Red Bull has proven once again that they are never out of the fight.
 `
-},
-{
-  title: "Nikola Tsolov – The Next Big Champion",
-  date: "2025-10-28",
-  image: "https://dizzyriders.bg/uploads/avtomobili/07_2025/GettyImages-2209871496.jpg",
-  text: `Nikola Tsolov, The Bulgarian Lion, is no longer just a rising star — he is the next big champion in the making. At only 18 years old, he has already carved his name into the history books of junior single-seaters, and the motorsport world is watching closely as he edges toward Formula 2 and, ultimately, Formula 1.  
+  },
+  {
+    title: "Nikola Tsolov – The Next Big Champion",
+    date: "2025-10-28",
+    image: "https://dizzyriders.bg/uploads/avtomobili/07_2025/GettyImages-2209871496.jpg",
+    text: `Nikola Tsolov, The Bulgarian Lion, is no longer just a rising star — he is the next big champion in the making. At only 18 years old, he has already carved his name into the history books of junior single-seaters, and the motorsport world is watching closely as he edges toward Formula 2 and, ultimately, Formula 1.  
 
 A Meteoric Rise 
 From his karting days, Tsolov displayed a rare blend of precision and aggression. His 2022 Spanish F4 season was nothing short of dominant: **13 wins in 21 races**, a record-breaking campaign that announced him as a generational talent. Mentored by Fernando Alonso, he quickly became a driver to watch.  
@@ -234,13 +230,12 @@ Why He’s the Next Big Champion
 
 Whether his F2 debut comes in the last two races of 2025 or officially in 2026, one thing is clear: Nikola Tsolov is not just another prospect. He is the next big champion — and the motorsport world should be ready for the roar of the Bulgarian Lion.
 `
-   },
-   {
-     
-  title: "Hamilton’s Mexico GP penalty vs. Verstappen: what the stewards saw",
-  date: "2025-10-27",
-  image: "https://cdn.racingnews365.com/2025/Hamilton/_1092x683_crop_center-center_85_none/Hamilton-Verstappen-Mexico-race.jpg?v=1761524658",
-  text: `
+  },
+  {
+    title: "Hamilton’s Mexico GP penalty vs. Verstappen: what the stewards saw",
+    date: "2025-10-27",
+    image: "https://cdn.racingnews365.com/2025/Hamilton/_1092x683_crop_center-center_85_none/Hamilton-Verstappen-Mexico-race.jpg?v=1761524658",
+    text: `
 Lewis Hamilton’s 10-second time penalty in Mexico came from one specific moment: he left the track at Turn 4 while battling Max Verstappen and rejoined ahead, which the stewards judged as “leaving the track and gaining a lasting advantage.” That call, not the start-line chaos, defined his race and dropped him to eighth at the flag.
 
 At the start, multiple drivers cut the Turn 1–2 complex as they went four-wide into the opening corner. Charles Leclerc and Max Verstappen both ran off and rejoined, with Leclerc ceding position and Verstappen slotting in behind Hamilton. Because positions were restored and no lasting advantage was deemed to have been gained there, no penalties were issued for those start incidents.
@@ -253,12 +248,12 @@ Hamilton called the decision “kind of nuts,” pointing to inconsistency with 
 
 Ferrari boss Fred Vasseur highlighted how the penalty compromised Hamilton’s podium shot despite strong pace, underscoring how fine margins in stewarding decisions can swing results. Whether one agrees with the threshold for “lasting advantage,” Mexico’s calls followed a familiar FIA pattern: tolerate first-lap chaos when positions are restored, clamp down when passes are finished off-track under green-flag duels.
 `
-   },
-   {
-  title: "Driver Reactions – Mexico GP 2025",
-  date: "2025-10-27",
-  image: "https://i.ytimg.com/vi/GbG_Y9bCitU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAl4n8j-M4MCZcqnKDc9I8R8XzhDw",
-  text: `Here’s what the grid had to say after a dramatic Mexico City Grand Prix:
+  },
+  {
+    title: "Driver Reactions – Mexico GP 2025",
+    date: "2025-10-27",
+    image: "https://i.ytimg.com/vi/GbG_Y9bCitU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAl4n8j-M4MCZcqnKDc9I8R8XzhDw",
+    text: `Here’s what the grid had to say after a dramatic Mexico City Grand Prix:
 
 Lando Norris (McLaren, Winner):
 "It felt like the perfect race. Great launch, great pace, and the car was incredible. To win like this and take the championship lead is special."
@@ -319,12 +314,12 @@ Nico Hülkenberg (Sauber, DNF):
 
 Liam Lawson (Racing Bulls, DNF):
 "Not the way I wanted the weekend to end. We’ll reset for Brazil."`
-   },
-   {
-   title: "Mexico GP 2025 – Full Weekend Report & São Paulo Preview",
-  date: "2025-10-27",
-  image: "https://cdni.autocarindia.com/ExtraImages/20251027125339_f1_norris_mexico_gp.jpg",
-  text: `The Mexico City Grand Prix 2025 delivered one of the defining weekends of the season. 
+  },
+  {
+    title: "Mexico GP 2025 – Full Weekend Report & São Paulo Preview",
+    date: "2025-10-27",
+    image: "https://cdni.autocarindia.com/ExtraImages/20251027125339_f1_norris_mexico_gp.jpg",
+    text: `The Mexico City Grand Prix 2025 delivered one of the defining weekends of the season. 
 From practice to the chequered flag, the Autódromo Hermanos Rodríguez was alive with drama, dominance, and breakthrough performances.
 
 **Weekend Recap**
@@ -379,12 +374,12 @@ From practice to the chequered flag, the Autódromo Hermanos Rodríguez was aliv
 - Race: Sun Nov 9, 14:00  
 
 The title fight is now a three‑way battle. Norris has momentum, Piastri must regroup, and Verstappen is lurking. Interlagos could be the weekend that decides the balance of power heading into the final rounds.`
-   },
-   {
-      title: "Mexico GP 2025 – Norris dominates, takes championship lead",
-  date: "2025-10-26",
-  image: "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T231214.912.webp",
-  text: `Lando Norris produced a flawless drive at the Autódromo Hermanos Rodríguez, converting pole into a dominant victory and seizing the lead of the Drivers’ Championship. The McLaren driver controlled the race from lights to flag, finishing over half a minute clear of his rivals.
+  },
+  {
+    title: "Mexico GP 2025 – Norris dominates, takes championship lead",
+    date: "2025-10-26",
+    image: "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T231214.912.webp",
+    text: `Lando Norris produced a flawless drive at the Autódromo Hermanos Rodríguez, converting pole into a dominant victory and seizing the lead of the Drivers’ Championship. The McLaren driver controlled the race from lights to flag, finishing over half a minute clear of his rivals.
 
 **Full Race Classification**
 1. Lando Norris (McLaren) – Winner  
@@ -426,12 +421,12 @@ Over 400,000 fans created a carnival atmosphere in Mexico City. Local hero Sergi
 
 Looking ahead
 With Brazil and Qatar sprint weekends next, the title fight is wide open. Norris has momentum, Piastri must regroup, and Verstappen is waiting to strike.`
-   },
+  },
   {
-  title: "What’s happening with Piastri? From dominance to title pressure",
-  date: "2025-10-26",
-  image: "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-26T001210.347.webp",
-  text: `Oscar Piastri’s championship campaign has hit turbulence. After a dominant win at Zandvoort, the McLaren driver looked unstoppable — 34 points clear of teammate Lando Norris and 104 ahead of Max Verstappen. But five races later, the gap has shrunk to just 14 and 40 respectively.
+    title: "What’s happening with Piastri? From dominance to title pressure",
+    date: "2025-10-26",
+    image: "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-26T001210.347.webp",
+    text: `Oscar Piastri’s championship campaign has hit turbulence. After a dominant win at Zandvoort, the McLaren driver looked unstoppable — 34 points clear of teammate Lando Norris and 104 ahead of Max Verstappen. But five races later, the gap has shrunk to just 14 and 40 respectively.
 
 **Post-Zandvoort results**
 - 🇮🇹 Monza: P3, solid but outpaced by Norris
@@ -457,11 +452,11 @@ With five rounds left — including sprints in Brazil and Qatar — the title fi
 
 The next few races will define the season. Can Piastri respond under pressure, or will Norris and Verstappen complete the comeback?`
   },
-   {
-       title: "Norris takes stunning pole in Mexico City qualifying",
-  date: "2025-10-25",
-  image: "https://cdn.racingnews365.com/2025/Norris/_1092x683_crop_center-center_85_none/2243102585.jpg?v=1761375627",
-  text: `Lando Norris delivered a sensational lap to secure pole position for the Mexico City Grand Prix, stopping the clocks at 1:16.801. 
+  {
+    title: "Norris takes stunning pole in Mexico City qualifying",
+    date: "2025-10-25",
+    image: "https://cdn.racingnews365.com/2025/Norris/_1092x683_crop_center-center_85_none/2243102585.jpg?v=1761375627",
+    text: `Lando Norris delivered a sensational lap to secure pole position for the Mexico City Grand Prix, stopping the clocks at 1:16.801. 
 The McLaren driver carried his momentum from FP3 into qualifying, edging out Ferrari’s Lewis Hamilton . 
 George Russell put Mercedes fourth on the grid, while Charles Leclerc lined up third for Ferrari. 
 
@@ -472,30 +467,29 @@ Fernando Alonso and Carlos Sainz filled the fourth row, while Yuki Tsunoda round
 The session was tight throughout, with less than half a second covering the top six. 
 Altitude and cooling remained key talking points, with several drivers reporting brake fade in Q2. 
 With Norris on pole and Hamilton alongside, Sunday’s race promises a fierce multi‑team battle at the front.`
-   },
-   {
-   title: "Norris dominates FP3 in Mexico",
+  },
+  {
+    title: "Norris dominates FP3 in Mexico",
     date: "2025-10-25",
     image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T193053.711.webp",
     text: ` Lando Norris set a blistering 1:16.633 to lead final practice by over three tenths.
     Hamilton and Russell followed for Ferrari and Mercedes, while Verstappen slipped to P6.
     McLaren looks strong heading into qualifying, with Ferrari and Mercedes close behind.`
-   },
-   
-   {
-   title: "Red Bull upgrades under scrutiny as Verstappen tops FP2",
+  },
+  {
+    title: "Red Bull upgrades under scrutiny as Verstappen tops FP2",
     date: "2025-10-24",
     image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T000459.547.webp",
     text: `Red Bull arrived in Mexico with the most extensive upgrade package of the field, including revised floor edges and cooling inlets. 
 Max Verstappen immediately put the parts to good use, setting the fastest time in FP2 with a 1:17.392. 
 Analysts noted improved stability in medium‑speed corners, though rivals McLaren and Ferrari remained within striking distance. 
 The upgrades are seen as pivotal in Verstappen’s late‑season title push, with the Dutchman now only 40 points off championship leader Oscar Piastri.`
-   },
+  },
   {
-  title: "Verstappen sets the pace in Mexico FP2 as rivals close in",
-  date: "2025-10-24",
-  image: "https://cdn-6.motorsport.com/images/amp/6O1GkkG2/s1000/max-verstappen-red-bull-racing.jpg",
-  text: `Max Verstappen returned to his Red Bull after sitting out FP1 and immediately stamped his authority on the Mexico City weekend. 
+    title: "Verstappen sets the pace in Mexico FP2 as rivals close in",
+    date: "2025-10-24",
+    image: "https://cdn-6.motorsport.com/images/amp/6O1GkkG2/s1000/max-verstappen-red-bull-racing.jpg",
+    text: `Max Verstappen returned to his Red Bull after sitting out FP1 and immediately stamped his authority on the Mexico City weekend. 
 The Dutchman’s 1:17.392 lap was enough to top the second practice session, though Ferrari’s Charles Leclerc and Mercedes rookie Andrea Kimi Antonelli kept the gap tight in second and third.
 
 The session began under warm afternoon skies, with teams eager to recover track time after handing cars to rookies in FP1. 
@@ -517,9 +511,8 @@ Brake temperatures spiked for several cars, forcing careful management during lo
 With Verstappen back on top, McLaren and Ferrari close behind, and Antonelli proving he belongs in the fight, the stage is set for a fascinating Saturday. 
 The margins at the front suggest qualifying could be decided by hundredths, while the midfield battle remains wide open. 
 The passionate Mexican crowd, already energized by Pato O’Ward’s FP1 cameo, left FP2 buzzing with anticipation for the weekend’s decisive sessions.`
-},
-
-    {
+  },
+  {
     title: "Leclerc leads rookie‑heavy FP1 in Mexico City",
     date: "2025-10-24",
     image: "https://images.ps-aws.com/c?url=https%3A%2F%2Fd3cm515ijfiu6w.cloudfront.net%2Fwp-content%2Fuploads%2F2025%2F10%2F24201624%2FCharles-Leclerc-Formula-1-F1-results-Ferrari-PlanetF1-1320x742.jpg",
@@ -535,7 +528,7 @@ The session highlighted the next generation’s potential while giving teams val
   },
 ];
 
-// Calendar (2025, concise; dates simplified to local)
+// Calendar (2025)
 const calendar2025 = [
   { round: 1, gp: "Australia", circuit: "Melbourne", date: "2025-03-16" },
   { round: 2, gp: "China", circuit: "Shanghai", date: "2025-03-23" },
@@ -563,7 +556,7 @@ const calendar2025 = [
   { round: 24, gp: "Abu Dhabi", circuit: "Yas Marina", date: "2025-12-07" }
 ];
 
-// Results scaffold: add detailed entries as needed (example for USA Race Top 10)
+// Results scaffold
 const resultsData = {
   "USA": {
     race: [
@@ -579,7 +572,6 @@ const resultsData = {
       { pos: 10, driver: "Isack Hadjar", team: "Racing Bulls", time: "+44.9s", points: 1 }
     ],
     sprint: [
-      // Example sprint ordering from weekend trend — adjust to real data if needed
       { pos: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "30:12.003", points: 8 },
       { pos: 2, driver: "Lando Norris", team: "McLaren", time: "+2.4s", points: 7 },
       { pos: 3, driver: "Charles Leclerc", team: "Ferrari", time: "+6.2s", points: 6 },
@@ -593,7 +585,6 @@ const resultsData = {
       { pos: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:32.001" },
       { pos: 2, driver: "Charles Leclerc", team: "Ferrari", time: "1:32.112" },
       { pos: 3, driver: "Lando Norris", team: "McLaren", time: "1:32.203" }
-      // … add the rest
     ],
     fp1: [],
     fp2: [],
@@ -601,69 +592,170 @@ const resultsData = {
   }
 };
 
-// Teams cards
-function buildTeamCards() {
-  const wrap = document.getElementById('teamCards');
-  constructors2025.forEach(team => {
-    const card = document.createElement('div');
-    card.className = 'team-card';
+/* KEEPING YOUR EXACT FUNCTIONS FOR NEWS, DRIVERS, CONSTRUCTORS */
+
+// Populate news (version that uses <div class="news-media"><img ... /></div> and read-more -> openArticleInNewTab)
+function populateNews() {
+  const wrap = document.getElementById('newsList');
+  newsAfterUSAGP.forEach((n, i) => {
+    const card = document.createElement('article');
+    card.className = 'news-card';
+    card.style.animationDelay = `${i * 0.08}s`;
     card.innerHTML = `
-      <img src="${team.photo}" alt="${team.name} car photo">
-      <div class="team-card-body">
-        <h4 class="team-name">${team.name}</h4>
-        <p class="team-blurb">${team.tagline}</p>
+      <div class="news-media">
+        <img src="${n.image}" alt="${n.title}" class="news-img">
+      </div>
+      <div class="news-body">
+        <h4 class="news-title">${n.title}</h4>
+        <div class="news-meta">${fmt.date(n.date)}</div>
+        <p class="news-text">${n.text.length > 160 ? n.text.substring(0, 160) + "..." : n.text}</p>
+        <button class="read-more">Read full article →</button>
       </div>
     `;
-    card.addEventListener('click', () => openTeamModal(team));
+    card.querySelector('.read-more').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openArticleInNewTab(i);
+    });
     wrap.appendChild(card);
   });
 }
 
-// Team modal
-function openTeamModal(team) {
-  const modal = document.getElementById('teamModal');
-  document.getElementById('teamImage').src = team.photo;
-  document.getElementById('teamImage').alt = `${team.name} team image`;
-  document.getElementById('teamName').textContent = team.name;
-  document.getElementById('teamTagline').textContent = team.tagline;
+// Open article in new tab (final robust version from your code)
+function openArticleInNewTab(index) {
+  const article = newsAfterUSAGP[index];
+  const win = window.open("", "_blank");
 
-  const driversUl = document.getElementById('teamDrivers');
-  driversUl.innerHTML = '';
-  team.drivers.forEach(d => {
-    const li = document.createElement('li');
-    li.textContent = d;
-    driversUl.appendChild(li);
-  });
+  const headLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
+    .map(link => `<link rel="stylesheet" href="${link.href}">`)
+    .join('\n');
+  const inlineStyles = Array.from(document.head.querySelectorAll('style'))
+    .map(style => `<style>${style.innerHTML}</style>`)
+    .join('\n');
 
-  const factsUl = document.getElementById('teamFacts');
-  factsUl.innerHTML = '';
-  team.facts.forEach(f => {
-    const li = document.createElement('li');
-    li.textContent = f;
-    factsUl.appendChild(li);
-  });
+  const fallbackCSS = `
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0f1115; color: #e8eaed; }
+      .page { max-width: 1080px; margin: 0 auto; padding: 24px; }
+      .article-card { background: #151821; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.35); animation: fadeIn 0.4s ease; }
+      .hero-wrap { width: 100%; height: 360px; background: #0b0d12; display: grid; place-items: center; overflow: hidden; }
+      .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+      .news-body { padding: 20px; }
+      .news-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; color: #fff; }
+      .news-meta { color: #9aa0a6; font-size: 14px; margin-bottom: 14px; }
+      .news-text { font-size: 17px; color: #e8eaed; white-space: pre-line; }
+      .btn { display: inline-block; margin-top: 20px; padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.25s ease; }
+      .btn-primary { background: #ff7a18; color: #fff; border: none; }
+      .btn-primary:hover { background: #ff9a4d; transform: translateY(-2px); }
+      .hero-fallback { color: #9aa0a6; font-size: 14px; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
+    </style>
+  `;
 
-  const hist = document.getElementById('teamHistory');
-  hist.textContent = team.history;
+  const safeText = (article.text || "").replace(/\n\s*\n/g, "<br><br>");
 
-  modal.showModal();
+  const html = `
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>${article.title}</title>
+        ${headLinks}
+        ${inlineStyles}
+        ${fallbackCSS}
+      </head>
+      <body>
+        <div class="page">
+          <article class="article-card">
+            <div class="hero-wrap">
+              <img id="heroImg" class="hero-img" src="${article.image}" alt="Article image" referrerpolicy="no-referrer">
+              <span id="heroFallback" class="hero-fallback" style="display:none;">Image failed to load.</span>
+            </div>
+            <div class="news-body">
+              <h1 class="news-title">${article.title}</h1>
+              <div class="news-meta">${fmt.date(article.date)}</div>
+              <div class="news-text">${safeText}</div>
+              <button class="btn btn-primary" onclick="window.close()">← Back to Website</button>
+            </div>
+          </article>
+        </div>
+        <script>
+          (function() {
+            const img = document.getElementById('heroImg');
+            const fb = document.getElementById('heroFallback');
+            img.decode?.().catch(() => {}).finally(() => { img.style.visibility = 'visible'; });
+            img.addEventListener('error', () => {
+              try {
+                const url = new URL(img.src);
+                const stripped = url.origin + url.pathname;
+                if (stripped !== img.src) {
+                  img.src = stripped;
+                } else {
+                  img.style.display = 'none';
+                  fb.style.display = 'inline';
+                }
+              } catch (e) {
+                img.style.display = 'none';
+                fb.style.display = 'inline';
+              }
+            });
+          })();
+        </script>
+      </body>
+    </html>
+  `;
+
+  win.document.open();
+  win.document.write(html);
+  win.document.close();
 }
-function bindModalClose() {
-  const modal = document.getElementById('teamModal');
-  const closeBtn = modal.querySelector('.modal-close');
-  closeBtn.addEventListener('click', () => modal.close());
-  modal.addEventListener('click', (e) => {
-    const rect = modal.querySelector('.modal-content').getBoundingClientRect();
-    const clickedInContent = e.clientX >= rect.left && e.clientX <= rect.right
-      && e.clientY >= rect.top && e.clientY <= rect.bottom;
-    if (!clickedInContent) modal.close();
-  });
+
+// Populate drivers (unchanged)
+function populateDrivers() {
+  const tbody = document.getElementById('driversTable');
+  drivers2025
+    .filter(d => d.pos <= 20)
+    .sort((a, b) => a.pos - b.pos)
+    .forEach(d => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${d.pos}</td>
+        <td>${d.name} <span style="color:#9aa0a6; font-size:13px;">(${d.code})</span></td>
+        <td class="hide-mobile">${d.team}</td>
+        <td>${d.points}</td>
+        <td class="hide-mobile">${d.wins}</td>
+        <td class="hide-mobile">${d.poles}</td>
+        <td><img class="driver-photo" src="${d.photo}" alt="${d.name} photo"></td>
+      `;
+      tbody.appendChild(tr);
+    });
 }
 
-// Navigation toggle
+// Populate constructors (unchanged)
+function populateConstructors() {
+  const tbody = document.getElementById('constructorsTable');
+  constructors2025
+    .sort((a, b) => a.pos - b.pos)
+    .forEach(c => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${c.pos}</td>
+        <td>${c.name}</td>
+        <td>${c.points}</td>
+        <td class="hide-mobile">${c.drivers.join(" & ")}</td>
+        <td><img class="team-photo" src="${c.photo}" alt="${c.name} photo"></td>
+      `;
+      tbody.appendChild(tr);
+    });
+}
+
+/* Supportive UI: nav toggle, countdown, calendar, results (compatible with your data) */
+
+// Navigation toggle (simple)
 function bindNavToggle() {
   const toggle = document.querySelector('.nav-toggle');
   const list = document.getElementById('navMenu');
+  if (!toggle || !list) return;
   toggle.addEventListener('click', () => {
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!expanded));
@@ -701,64 +793,7 @@ function startCountdown() {
   setInterval(tick, 1000);
 }
 
-// Populate news
-function populateNews() {
-  const wrap = document.getElementById('newsList');
-  newsAfterUSAGP.forEach((n, i) => {
-    const card = document.createElement('article');
-    card.className = 'news-card';
-    card.style.animationDelay = `${i * 0.08}s`;
-    card.innerHTML = `
-      <div class="news-media" style="background-image:url('${n.image}'); background-size:cover; background-position:center;"></div>
-      <div class="news-body">
-        <h4 class="news-title">${n.title}</h4>
-        <div class="news-meta">${fmt.date(n.date)}</div>
-        <p class="news-text">${n.text}</p>
-      </div>
-    `;
-    wrap.appendChild(card);
-  });
-}
-
-// Populate standings tables
-function populateDrivers() {
-  const tbody = document.getElementById('driversTable');
-  drivers2025
-    .filter(d => d.pos <= 20) // top 20
-    .sort((a, b) => a.pos - b.pos)
-    .forEach(d => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${d.pos}</td>
-        <td>${d.name} <span style="color:#9aa0a6; font-size:13px;">(${d.code})</span></td>
-        <td class="hide-mobile">${d.team}</td>
-        <td>${d.points}</td>
-        <td class="hide-mobile">${d.wins}</td>
-        <td class="hide-mobile">${d.poles}</td>
-        <td><img class="driver-photo" src="${d.photo}" alt="${d.name} photo"></td>
-      `;
-      tbody.appendChild(tr);
-    });
-}
-
-function populateConstructors() {
-  const tbody = document.getElementById('constructorsTable');
-  constructors2025
-    .sort((a, b) => a.pos - b.pos)
-    .forEach(c => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${c.pos}</td>
-        <td>${c.name}</td>
-        <td>${c.points}</td>
-        <td class="hide-mobile">${c.drivers.join(" & ")}</td>
-        <td><img class="team-photo" src="${c.photo}" alt="${c.name} photo"></td>
-      `;
-      tbody.appendChild(tr);
-    });
-}
-
-// Populate calendar
+// Populate calendar + results controls
 function populateCalendar() {
   const grid = document.getElementById('calendarGrid');
   calendar2025.forEach((r, i) => {
@@ -772,7 +807,6 @@ function populateCalendar() {
     grid.appendChild(card);
   });
 
-  // populate GP selector for results
   const gpSelect = document.getElementById('gpSelect');
   calendar2025.forEach(r => {
     const opt = document.createElement('option');
@@ -780,7 +814,7 @@ function populateCalendar() {
     opt.textContent = `R${r.round} — ${r.gp}`;
     gpSelect.appendChild(opt);
   });
-  gpSelect.value = "USA"; // default to USA for post-event context
+  gpSelect.value = "USA";
 }
 
 // Populate results table based on selections
@@ -812,7 +846,7 @@ function bindResults() {
   render();
 }
 
-// Intersection animations for subtle lift
+// Intersection animations (optional subtle lift on cards)
 function observeSections() {
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -822,915 +856,81 @@ function observeSections() {
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll('.count-card, .news-card, .calendar-card, .team-card')
+  document.querySelectorAll('.count-card, .news-card, .calendar-card')
     .forEach(el => obs.observe(el));
 }
 
-// Initialize
+// Initialize everything on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   bindNavToggle();
   startCountdown();
-  populateNews();
-  populateDrivers();
-  populateConstructors();
+  populateNews();            // kept exactly as requested
+  populateDrivers();         // kept exactly as requested
+  populateConstructors();    // kept exactly as requested
   populateCalendar();
   bindResults();
-  buildTeamCards();
-  bindModalClose();
   observeSections();
 });
-function populateNews() {
-  const wrap = document.getElementById('newsList');
-  newsAfterUSAGP.forEach((n, i) => {
-    const card = document.createElement('article');
-    card.className = 'news-card';
-    card.style.animationDelay = `${i * 0.08}s`;
-    card.innerHTML = `
-      <div class="news-media" style="background-image:url('${n.image}'); background-size:cover; background-position:center;"></div>
-      <div class="news-body">
-        <h4 class="news-title">${n.title}</h4>
-        <div class="news-meta">${fmt.date(n.date)}</div>
-        <p class="news-text">${n.text.length > 160 ? n.text.substring(0, 160) + "..." : n.text}</p>
-        <button class="read-more">Read full article →</button>
-      </div>
-    `;
-    card.querySelector('.read-more').addEventListener('click', (e) => {
-      e.stopPropagation();
-      openArticleInNewTab(i);
-    });
-    wrap.appendChild(card);
-  });
-}
-function openArticleInNewTab(index) {
-  const article = newsAfterUSAGP[index];
-  const win = window.open("", "_blank");
+// Fade the hero section (the one that shows background words) as you scroll.
+// This script is safe for VS Code, with null checks and passive scroll handling.
 
-  // Clone your current CSS links and <style> tags into the new document head
-  const headLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
-    .map(link => `<link rel="stylesheet" href="${link.href}">`)
-    .join('\n');
-  const inlineStyles = Array.from(document.head.querySelectorAll('style'))
-    .map(style => `<style>${style.innerHTML}</style>`)
-    .join('\n');
+(function () {
+  // Run after DOM is ready
+  document.addEventListener('DOMContentLoaded', function () {
+    const hero = document.querySelector('.hero');
 
-  // Inline fallback styles to ensure consistent rendering, even if external CSS loads late
-  const fallbackCSS = `
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0f1115; color: #e8eaed; }
-      .page { max-width: 1080px; margin: 0 auto; padding: 24px; }
-      .article-card { background: #151821; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.35); animation: fadeIn 0.4s ease; }
-      .news-media { width: 100%; height: 360px; background-size: cover; background-position: center; background-repeat: no-repeat; }
-      .news-body { padding: 20px; }
-      .news-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; color: #fff; }
-      .news-meta { color: #9aa0a6; font-size: 14px; margin-bottom: 14px; }
-      .news-text { font-size: 17px; color: #e8eaed; white-space: pre-line; }
-      .back-link { display: inline-block; margin-top: 18px; color: #ff7a18; text-decoration: none; font-weight: 700; }
-      .back-link:hover { color: #ff9a4d; }
-      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
-    </style>
-  `;
+    // If no hero element exists, exit cleanly
+    if (!hero) return;
 
-  // Build the HTML using the SAME classes you use on the site
-  const html = `
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>${article.title}</title>
-        ${headLinks}
-        ${inlineStyles}
-        ${fallbackCSS}
-      </head>
-      <body>
-        <div class="page">
-          <article class="article-card">
-            <div class="news-media" style="background-image:url('${article.image}');"></div>
-            <div class="news-body">
-              <h1 class="news-title">${article.title}</h1>
-              <div class="news-meta">${fmt.date(article.date)}</div>
-              <div class="news-text">${article.text.replace(/\n\s*\n/g, '\n\n')}</div>
-              <a class="back-link" href="javascript:window.close()">Close tab</a>
-            </div>
-          </article>
-        </div>
-      </body>
-    </html>
-  `;
+    let heroHeight = hero.offsetHeight;
 
-  win.document.open();
-  win.document.write(html);
-  win.document.close();
-}
-function populateNews() {
-  const wrap = document.getElementById('newsList');
-  newsAfterUSAGP.forEach((n, i) => {
-    const card = document.createElement('article');
-    card.className = 'news-card';
-    card.style.animationDelay = `${i * 0.08}s`;
-    card.innerHTML = `
-      <div class="news-media" style="background-image:url('${n.image}');"></div>
-      <div class="news-body">
-        <h4 class="news-title">${n.title}</h4>
-        <div class="news-meta">${fmt.date(n.date)}</div>
-        <p class="news-text">${n.text.length > 160 ? n.text.substring(0, 160) + "..." : n.text}</p>
-        <button class="read-more">Read full article →</button>
-      </div>
-    `;
-    card.querySelector('.read-more').addEventListener('click', (e) => {
-      e.stopPropagation();
-      openArticleInNewTab(i);
-    });
-    wrap.appendChild(card);
-  });
-}
-function openArticleInNewTab(index) {
-  const article = newsAfterUSAGP[index];
-  const win = window.open("", "_blank");
+    // Recompute height on resize to keep logic accurate across device rotations/resizes
+    window.addEventListener('resize', function () {
+      heroHeight = hero.offsetHeight || window.innerHeight;
+    }, { passive: true });
 
-  const headLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
-    .map(link => `<link rel="stylesheet" href="${link.href}">`)
-    .join('\n');
+    // Throttle via requestAnimationFrame to avoid layout thrash
+    let ticking = false;
 
-  const fallbackCSS = `
-    <style>
-      body { font-family: system-ui, sans-serif; margin: 0; background: #0f1115; color: #e8eaed; }
-      .page { max-width: 1080px; margin: 0 auto; padding: 24px; }
-      .article-card { background: #151821; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.35); animation: fadeIn 0.4s ease; }
-      .news-media { width: 100%; height: 360px; background-size: cover; background-position: center; }
-      .news-body { padding: 20px; }
-      .news-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; color: #fff; }
-      .news-meta { color: #9aa0a6; font-size: 14px; margin-bottom: 14px; }
-      .news-text { font-size: 17px; color: #e8eaed; white-space: pre-line; }
-      .btn { display: inline-block; margin-top: 20px; padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.25s ease; }
-      .btn-primary { background: #ff7a18; color: #fff; border: none; }
-      .btn-primary:hover { background: #ff9a4d; transform: translateY(-2px); }
-      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
-    </style>
-  `;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          // If hero is somehow removed, stop
+          if (!heroHeight || !hero) return;
 
-  const html = `
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <meta charset="utf-8">
-        <title>${article.title}</title>
-        ${headLinks}
-        ${fallbackCSS}
-      </head>
-      <body>
-        <div class="page">
-          <article class="article-card">
-            <div class="news-media" style="background-image:url('${article.image}');"></div>
-            <div class="news-body">
-              <h1 class="news-title">${article.title}</h1>
-              <div class="news-meta">${fmt.date(article.date)}</div>
-              <div class="news-text">${article.text.replace(/\n\s*\n/g, '<br><br>')}</div>
-              <button class="btn btn-primary" onclick="window.close()">← Back to Website</button>
-            </div>
-          </article>
-        </div>
-      </body>
-    </html>
-  `;
+          const scrollY = window.scrollY || window.pageYOffset || 0;
+          const opacity = Math.max(0, 1 - scrollY / heroHeight);
 
-  win.document.open();
-  win.document.write(html);
-  win.document.close();
-}
-function openArticleInNewTab(index) {
-  const article = newsAfterUSAGP[index];
-  const win = window.open("", "_blank");
+          // Only set inline style when needed
+          hero.style.opacity = String(opacity);
 
-  const headLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
-    .map(link => `<link rel="stylesheet" href="${link.href}">`)
-    .join('\n');
-
-  const fallbackCSS = `
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0f1115; color: #e8eaed; }
-      .page { max-width: 1080px; margin: 0 auto; padding: 24px; }
-      .article-card { background: #151821; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.35); animation: fadeIn 0.4s ease; }
-      .hero-wrap { width: 100%; height: 360px; background: #0b0d12; display: grid; place-items: center; overflow: hidden; }
-      .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-      .news-body { padding: 20px; }
-      .news-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; color: #fff; }
-      .news-meta { color: #9aa0a6; font-size: 14px; margin-bottom: 14px; }
-      .news-text { font-size: 17px; color: #e8eaed; white-space: pre-line; }
-      .btn { display: inline-block; margin-top: 20px; padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.25s ease; }
-      .btn-primary { background: #ff7a18; color: #fff; border: none; }
-      .btn-primary:hover { background: #ff9a4d; transform: translateY(-2px); }
-      .hero-fallback { color: #9aa0a6; font-size: 14px; }
-      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
-    </style>
-  `;
-
-  const safeText = (article.text || "").replace(/\n\s*\n/g, "<br><br>");
-
-  const html = `
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <meta charset="utf-8">
-        <title>${article.title}</title>
-        ${headLinks}
-        ${fallbackCSS}
-      </head>
-      <body>
-        <div class="page">
-          <article class="article-card">
-            <div class="hero-wrap">
-              <img id="heroImg" class="hero-img" src="${article.image}" alt="Article image" referrerpolicy="no-referrer">
-              <span id="heroFallback" class="hero-fallback" style="display:none;">Image failed to load.</span>
-            </div>
-            <div class="news-body">
-              <h1 class="news-title">${article.title}</h1>
-              <div class="news-meta">${fmt.date(article.date)}</div>
-              <div class="news-text">${safeText}</div>
-              <button class="btn btn-primary" onclick="window.close()">← Back to Website</button>
-            </div>
-          </article>
-        </div>
-        <script>
-          (function() {
-            const img = document.getElementById('heroImg');
-            const fb = document.getElementById('heroFallback');
-            // Ensure correct sizing once decoded
-            img.decode?.().catch(() => {}).finally(() => {
-              img.style.visibility = 'visible';
-            });
-            // Robust error fallback: try switching to the same URL without query, else hide img
-            img.addEventListener('error', () => {
-              try {
-                const url = new URL(img.src);
-                const stripped = url.origin + url.pathname; // remove query params that sometimes block hotlinking
-                if (stripped !== img.src) {
-                  img.src = stripped;
-                } else {
-                  img.style.display = 'none';
-                  fb.style.display = 'inline';
-                }
-              } catch (e) {
-                img.style.display = 'none';
-                fb.style.display = 'inline';
-              }
-            });
-          })();
-        </script>
-      </body>
-    </html>
-  `;
-
-  win.document.open();
-  win.document.write(html);
-  win.document.close();
-}
-function openArticleInNewTab(index) {
-  const article = newsAfterUSAGP[index];
-  const win = window.open("", "_blank");
-
-  // Clone your current CSS links and <style> tags into the new document head
-  const headLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
-    .map(link => `<link rel="stylesheet" href="${link.href}">`)
-    .join('\n');
-  const inlineStyles = Array.from(document.head.querySelectorAll('style'))
-    .map(style => `<style>${style.innerHTML}</style>`)
-    .join('\n');
-
-  // Inline fallback styles to ensure consistent rendering, even if external CSS loads late
-  const fallbackCSS = `
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0f1115; color: #e8eaed; }
-      .page { max-width: 1080px; margin: 0 auto; padding: 24px; }
-      .article-card { background: #151821; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.35); animation: fadeIn 0.4s ease; }
-      .news-media { width: 100%; height: 360px; background-size: cover; background-position: center; background-repeat: no-repeat; }
-      .news-body { padding: 20px; }
-      .news-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; color: #fff; }
-      .news-meta { color: #9aa0a6; font-size: 14px; margin-bottom: 14px; }
-      .news-text { font-size: 17px; color: #e8eaed; white-space: pre-line; }
-      .back-link { display: inline-block; margin-top: 18px; color: #ff7a18; text-decoration: none; font-weight: 700; }
-      .back-link:hover { color: #ff9a4d; }
-      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
-    </style>
-  `;
-
-  // Build the HTML using the SAME classes you use on the site
-  const html = `
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>${article.title}</title>
-        ${headLinks}
-        ${inlineStyles}
-        ${fallbackCSS}
-      </head>
-      <body>
-        <div class="page">
-          <article class="article-card">
-            <div class="news-media" style="background-image:url('${article.image}');"></div>
-            <div class="news-body">
-              <h1 class="news-title">${article.title}</h1>
-              <div class="news-meta">${fmt.date(article.date)}</div>
-              <div class="news-text">${article.text.replace(/\n\s*\n/g, '\n\n')}</div>
-              <a class="back-link" href="javascript:window.close()">Close tab</a>
-            </div>
-          </article>
-        </div>
-      </body>
-    </html>
-  `;
-
-  win.document.open();
-  win.document.write(html);
-  win.document.close();
-}
-function populateNews() {
-  const wrap = document.getElementById('newsList');
-  newsAfterUSAGP.forEach((n, i) => {
-    const card = document.createElement('article');
-    card.className = 'news-card';
-    card.style.animationDelay = `${i * 0.08}s`;
-    card.innerHTML = `
-      <div class="news-media">
-        <img src="${n.image}" alt="${n.title}" class="news-img">
-      </div>
-      <div class="news-body">
-        <h4 class="news-title">${n.title}</h4>
-        <div class="news-meta">${fmt.date(n.date)}</div>
-        <p class="news-text">${n.text.length > 160 ? n.text.substring(0, 160) + "..." : n.text}</p>
-        <button class="read-more">Read full article →</button>
-      </div>
-    `;
-    card.querySelector('.read-more').addEventListener('click', (e) => {
-      e.stopPropagation();
-      openArticleInNewTab(i);
-    });
-    wrap.appendChild(card);
-  });
-}
-function initF1Background() {
-  const canvas = document.getElementById('f1Background');
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
-  camera.position.set(0, 1.5, 5);
-
-  // Lighting
-  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.2);
-  hemiLight.position.set(0, 20, 0);
-  scene.add(hemiLight);
-
-  const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
-  dirLight.position.set(5, 10, 7.5);
-  scene.add(dirLight);
-
-  // Load F1 model (replace URL with your .glb/.gltf model)
-  const loader = new THREE.GLTFLoader();
-  loader.load(
-    'path/to/f1car.glb',
-    function (gltf) {
-      const car = gltf.scene;
-      car.scale.set(0.8, 0.8, 0.8);
-      car.position.set(0, -0.5, 0);
-      scene.add(car);
-
-      // Animate rotation
-      function animate() {
-        requestAnimationFrame(animate);
-        car.rotation.y += 0.002; // slow spin
-        renderer.render(scene, camera);
+          ticking = false;
+        });
+        ticking = true;
       }
-      animate();
-    },
-    undefined,
-    function (error) {
-      console.error('Error loading F1 model:', error);
     }
-  );
 
-  // Handle resize
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    // Initialize once
+    onScroll();
+
+    // Use passive listener for better performance
+    window.addEventListener('scroll', onScroll, { passive: true });
   });
-}
-
-document.addEventListener('DOMContentLoaded', initF1Background);
-document.addEventListener("DOMContentLoaded", () => {
-  const rows = document.querySelectorAll(".championship .row");
-
-  // Animate rows in sequence
-  rows.forEach((row, i) => {
-    setTimeout(() => {
-      row.classList.add("animate-in");
-    }, i * 200); // stagger 200ms
-  });
-
-  // Animate counters
-  function animateCounter(el, target, duration = 1200) {
-    let start = 0;
-    const stepTime = Math.abs(Math.floor(duration / target));
-    const timer = setInterval(() => {
-      start += 1;
-      el.textContent = start;
-      if (start >= target) {
-        clearInterval(timer);
-        el.textContent = target;
-        el.classList.add("active");
-      }
-    }, stepTime);
-  }
-
-  document.querySelectorAll(".cell.points, .cell.wins, .cell.poles").forEach(el => {
-    const target = parseInt(el.dataset.points || el.dataset.wins || el.dataset.poles, 10);
-    animateCounter(el, target);
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  // Animate rows differently for drivers vs constructors
-  document.querySelectorAll(".board").forEach(board => {
-    const rows = board.querySelectorAll(".row");
-    rows.forEach((row, i) => {
-      setTimeout(() => {
-        row.classList.add("animate-in");
-      }, i * 200);
-    });
-  });
-
-  // Counter animation with glow
-  function animateCounter(el, target, duration = 1200) {
-    let start = 0;
-    const stepTime = Math.max(20, Math.floor(duration / target));
-    const timer = setInterval(() => {
-      start += 1;
-      el.textContent = start;
-      if (start >= target) {
-        clearInterval(timer);
-        el.textContent = target;
-        el.classList.add("active");
-      }
-    }, stepTime);
-  }
-
-  document.querySelectorAll(".cell.points, .cell.wins, .cell.poles").forEach(el => {
-    const target = parseInt(el.dataset.points || el.dataset.wins || el.dataset.poles, 10);
-    animateCounter(el, target);
-  });
-});
-
-document.querySelectorAll('.points').forEach(el => {
-  let final = parseInt(el.dataset.points);
-  let count = 0;
-  let step = Math.ceil(final / 60);
-  let interval = setInterval(() => {
-    count += step;
-    if (count >= final) {
-      count = final;
-      clearInterval(interval);
-    }
-    el.textContent = count + " pts";
-  }, 30);
-});
-document.querySelectorAll('.points').forEach(el => {
-  let final = parseInt(el.dataset.points);
-  let count = 0;
-  let step = Math.ceil(final / 50);
-  let interval = setInterval(() => {
-    count += step;
-    if (count >= final) {
-      count = final;
-      clearInterval(interval);
-    }
-    el.textContent = count;
-  }, 30);
-});
-// === THEME ENHANCEMENTS ===
-// Inject global styles dynamically for colors, backgrounds, and animations
-function injectThemeStyles() {
-  const style = document.createElement("style");
-  style.innerHTML = `
-    body {
-      background: linear-gradient(135deg, #0f1115, #1a1d29);
-      color: #e8eaed;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      margin: 0;
-      overflow-x: hidden;
-    }
-
-    section {
-      padding: 40px 20px;
-      margin: 20px auto;
-      border-radius: 16px;
-      background: linear-gradient(145deg, #151821, #1f2230);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    section:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
-    }
-
-    h2, h3, h4 {
-      color: #ff7a18;
-      text-shadow: 0 0 6px rgba(255,122,24,0.6);
-    }
-
-    .news-card {
-      background: linear-gradient(160deg, #1c1f2b, #2a2e3f);
-      border-radius: 14px;
-      overflow: hidden;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeUp 0.6s forwards;
-    }
-    .news-card.in-view {
-      animation: fadeUp 0.6s forwards;
-    }
-    .news-media {
-      height: 220px;
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.9);
-      transition: filter 0.4s ease;
-    }
-    .news-card:hover .news-media {
-      filter: brightness(1.1);
-    }
-    .news-body {
-      padding: 18px;
-    }
-    .news-title {
-      font-size: 20px;
-      margin: 0 0 8px;
-      color: #fff;
-    }
-    .news-meta {
-      font-size: 13px;
-      color: #9aa0a6;
-      margin-bottom: 10px;
-    }
-    .news-text {
-      font-size: 15px;
-      line-height: 1.5;
-      color: #d1d5db;
-    }
-    .read-more {
-      margin-top: 12px;
-      background: #ff7a18;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .read-more:hover {
-      background: #ff9a4d;
-      transform: translateY(-2px);
-    }
-
-    .calendar-card {
-      background: linear-gradient(145deg, #202433, #2c3145);
-      border-radius: 12px;
-      padding: 16px;
-      margin: 12px;
-      color: #fff;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-      transform: scale(0.95);
-      opacity: 0;
-      animation: fadeScale 0.6s forwards;
-    }
-
-    .team-card {
-      background: linear-gradient(160deg, #1c1f2b, #2a2e3f);
-      border-radius: 14px;
-      overflow: hidden;
-      margin: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeUp 0.6s forwards;
-    }
-    .team-card img {
-      width: 100%;
-      display: block;
-    }
-    .team-card-body {
-      padding: 14px;
-      color: #fff;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeScale {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  `;
-  document.head.appendChild(style);
-}
-
-// Call this early in DOMContentLoaded
-document.addEventListener("DOMContentLoaded", () => {
-  injectThemeStyles();
-});
-// === THEME ENHANCEMENTS v2 ===
-function injectThemeStyles() {
-  const style = document.createElement("style");
-  style.innerHTML = `
-    /* Prevent white flash on load */
-    html, body {
-      background: #0f1115; /* dark base immediately */
-      color: #e8eaed;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      margin: 0;
-      overflow-x: hidden;
-    }
-
-    section {
-      padding: 40px 20px;
-      margin: 20px auto;
-      border-radius: 16px;
-      background: linear-gradient(145deg, #151821, #1f2230);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    section:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
-    }
-
-    h2, h3, h4 {
-      color: #ff7a18;
-      text-shadow: 0 0 6px rgba(255,122,24,0.6);
-    }
-
-    /* News card styling */
-    .news-card {
-      background: linear-gradient(160deg, #1c1f2b, #2a2e3f);
-      border-radius: 14px;
-      overflow: hidden;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeUp 0.6s forwards;
-    }
-    .news-media {
-      height: 220px;
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.9);
-      transition: filter 0.4s ease;
-    }
-    .news-card:hover .news-media {
-      filter: brightness(1.1);
-    }
-    .news-body {
-      padding: 18px;
-    }
-    .news-title {
-      font-size: 20px;
-      margin: 0 0 8px;
-      color: #fff;
-    }
-    .news-meta {
-      font-size: 13px;
-      color: #9aa0a6;
-      margin-bottom: 10px;
-    }
-
-    /* === Colored article text === */
-    .news-text {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #d1d5db;
-    }
-    .news-text strong {
-      color: #4dd0e1; /* teal for emphasis */
-    }
-    .news-text em {
-      color: #ff7a18; /* orange for italics */
-    }
-    .news-text ul li::marker {
-      color: #ff4081; /* pink bullets */
-    }
-    .news-text blockquote {
-      border-left: 4px solid #ff7a18;
-      padding-left: 12px;
-      color: #c792ea; /* purple quotes */
-      font-style: italic;
-    }
-
-    .read-more {
-      margin-top: 12px;
-      background: #ff7a18;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .read-more:hover {
-      background: #ff9a4d;
-      transform: translateY(-2px);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  `;
-  document.head.appendChild(style);
-}
-
-// Inject styles as early as possible
-document.addEventListener("DOMContentLoaded", injectThemeStyles);
-function injectNewsTextColors() {
-  const style = document.createElement("style");
-  style.innerHTML = `
-    /* Base news text */
-    .news-text {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #d0d3d8; /* softer grey instead of white */
-    }
-
-    /* Add variation for emphasis */
-    .news-text strong {
-      color: #ff7a18; /* orange for bold words */
-    }
-    .news-text em {
-      color: #4dd0e1; /* teal for italics */
-    }
-    .news-text mark {
-      background: transparent;
-      color: #c792ea; /* purple highlight */
-      font-weight: 600;
-    }
-
-    /* Headings inside news */
-    .news-title {
-      color: #ff4081; /* pink for titles */
-    }
-
-    /* Meta info (date, author, etc.) */
-    .news-meta {
-      color: #8bc34a; /* green accent */
-    }
-
-    /* Links inside news */
-    .news-text a {
-      color: #4fc3f7;
-      text-decoration: none;
-    }
-    .news-text a:hover {
-      color: #81d4fa;
-      text-decoration: underline;
-    }
-  `;
-  document.head.appendChild(style);
-}
-
-document.addEventListener("DOMContentLoaded", injectNewsTextColors);
+})();
 document.addEventListener('DOMContentLoaded', () => {
-  const lights = document.querySelectorAll('.pit-lights .light');
-  const msg = document.getElementById('lightsMessage');
+  const header = document.querySelector('.site-header');
+  const sections = document.querySelectorAll('#countdown, #news, #drivers, #constructors, #calendar');
 
-  // Sequentially light up each red light
-  lights.forEach((light, i) => {
-    setTimeout(() => {
-      light.style.background = 'red';
-      light.style.opacity = '1';
-      light.style.boxShadow = '0 0 25px red';
-    }, i * 1000);
-  });
-
-  // After all lights are on, turn them off and show message
-  setTimeout(() => {
-    lights.forEach(light => {
-      light.style.background = '#330000';
-      light.style.opacity = '0.3';
-      light.style.boxShadow = 'none';
+  function updateOffsets() {
+    const h = header ? header.offsetHeight : 0;
+    sections.forEach(sec => {
+      sec.style.scrollMarginTop = h + 'px';
     });
-    msg.style.opacity = 1;
-  }, 6000);
+  }
+
+  updateOffsets();
+  window.addEventListener('resize', updateOffsets);
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const wrapper = document.querySelector('.pit-lights-wrapper');
-  const lights = document.querySelectorAll('.pit-lights .light');
-  const msg = document.querySelector('.lights-message');
-  let cycleTimeouts = [];
-
-  function resetLights() {
-    lights.forEach(l => l.className = 'light');
-    msg.style.opacity = 0;
-  }
-
-  function clearCycle() {
-    cycleTimeouts.forEach(t => clearTimeout(t));
-    cycleTimeouts = [];
-  }
-
-  function runSequence() {
-    resetLights();
-
-    // Turn lights red one by one
-    lights.forEach((light, i) => {
-      cycleTimeouts.push(setTimeout(() => {
-        light.classList.add('red');
-      }, i * 1000));
-    });
-
-    const allRedTime = lights.length * 1000;
-
-    // Turn all green and show message
-    cycleTimeouts.push(setTimeout(() => {
-      lights.forEach(l => {
-        l.classList.remove('red');
-        l.classList.add('green');
-      });
-      msg.style.opacity = 1;
-    }, allRedTime));
-
-    // Reset after green phase and loop
-    cycleTimeouts.push(setTimeout(() => {
-      runSequence();
-    }, allRedTime + 2000)); // 2s green before reset
-  }
-
-  // Show/hide on scroll
-  function handleScroll() {
-    if (window.scrollY > 0) {
-      wrapper.classList.add('hidden');
-      clearCycle();
-      resetLights();
-    } else {
-      if (wrapper.classList.contains('hidden')) {
-        wrapper.classList.remove('hidden');
-        runSequence();
-      }
-    }
-  }
-
-  handleScroll();
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  function startSequence() {
-  // Step 1: Turn lights red one by one
-  lights.forEach((light, i) => {
-    setTimeout(() => {
-      light.style.background = 'red';
-      light.style.opacity = '1';
-      light.style.boxShadow = '0 0 25px red';
-    }, i * 1000);
-  });
-
-  // Step 2: After all are red, turn them green
-  setTimeout(() => {
-    lights.forEach(light => {
-      light.style.background = 'limegreen';
-      light.style.boxShadow = '0 0 25px limegreen';
-    });
-
-    // Show the text AFTER the lights are green
-    msg.style.opacity = 1;
-
-    // Step 3: After a short delay, turn them black
-    setTimeout(() => {
-      lights.forEach(light => {
-        light.style.background = 'black';
-        light.style.boxShadow = 'none';
-      });
-
-      // Hide the text again when lights go black
-      msg.style.opacity = 0;
-
-      // Step 4: Restart the sequence after a pause
-      setTimeout(startSequence, 1000);
-
-    }, 1000); // how long they stay green before going black
-
-  }, lights.length * 1000);
-}
-
-// Start the loop
-startSequence();
-
-});
-
 
 
 
