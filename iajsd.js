@@ -1038,8 +1038,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
-
+const toggle = document.querySelector('.nav-toggle');
+const menu = document.getElementById('navMenu');
+if (toggle && menu) {
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+}
 
 
 
