@@ -1200,6 +1200,15 @@ body {
   .nav-list.open { display: grid; gap: 10px; }
 }
 
+:root {
+  --vh: 100%;
+}
+
+.hero,
+.spline-bg {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 
 
 
