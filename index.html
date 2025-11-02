@@ -256,6 +256,20 @@
 <body>
   <!-- 3D Background -->
   <spline-viewer url="https://prod.spline.design/ISZFPRVBa1wvlr7D/scene.splinecode"></spline-viewer>
+<script>
+  function setVh() {
+    // Get the viewport height and multiply by 1% to get a value for 1vh
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  // Run on load
+  setVh();
+
+  // Run on resize/orientation change
+  window.addEventListener('resize', setVh);
+</script>
+
 
 
 
