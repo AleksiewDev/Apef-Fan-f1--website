@@ -39,7 +39,6 @@
  <!-- Spline 3D background -->
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.90/build/spline-viewer.js"></script>
 </head>
-<body>
   <!-- Fixed 3D background behind all content -->
   <spline-viewer class="spline-bg" url="https://prod.spline.design/ISZFPRVBa1wvlr7D/scene.splinecode"></spline-viewer>
 
@@ -177,8 +176,47 @@
 
   <!-- Scripts -->
   <script src="iajsd.js"></script>
-</body>
 </html>
+<script>
+  // Ensure DOM is ready before manipulations
+  document.addEventListener('DOMContentLoaded', () => {
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('navMenu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+
+    // Prevent initial blank flash by forcing visible sections quickly
+    // (Some browsers delay painting with complex web components.)
+    const sections = document.querySelectorAll('.countdown-section, .news-section, .standings-section, .calendar-section, .site-footer');
+    sections.forEach(s => {
+      s.style.visibility = 'visible';
+      s.style.opacity = '1';
+    });
+  });
+</script>
+<script>
+  // Ensure all sections are visible immediately
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll(
+      '.countdown-section, .news-section, .standings-section, .calendar-section, .site-footer'
+    ).forEach(sec => {
+      sec.style.visibility = 'visible';
+      sec.style.opacity = '1';
+    });
+  });
+</script>
+
+
+
+
+
+
+
 
 
 
