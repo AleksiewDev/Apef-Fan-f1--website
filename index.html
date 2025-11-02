@@ -211,8 +211,51 @@
   });
 </script>
 
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.90/build/spline-viewer.js"></script>
+  <style>
+    /* Make spline background fill screen */
+    spline-viewer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1; /* push behind everything */
+    }
 
+    /* Menu styles */
+    .menu-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
 
+    .menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      z-index: 10;
+    }
+
+    .menu.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- 3D Background -->
+  <spline-viewer url="https://prod.spline.design/ISZFPRVBa1wvlr7D/scene.splinecode"></spline-viewer>
 
 
 
