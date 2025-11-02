@@ -71,6 +71,41 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+      {
+    title: "Alpine and Aston Martin Eye Breakthrough as 2026 F1 Era Approaches",
+    date: "2025-11-02",
+    image: "https://cdn-images.motor.es/image/m/1320w/fotos-noticias/2025/04/alonso-fija-alpine-f1ejemplo-seguir-aston-martin-2025107650-1744349203_1.jpg",
+    text: `The Formula 1 spotlight often shines on the sport’s biggest names, but two ambitious teams—Alpine and Aston Martin—are quietly preparing to shake up the grid as the 2026 regulation changes draw near. Both squads see the upcoming overhaul as their best chance in years to break into the front-running pack.
+
+🔵 Alpine’s Long-Term Gamble
+Alpine has doubled down on its French identity, with Renault’s power unit program at the heart of its strategy.
+
+Despite a turbulent 2025 season, the team has secured Franco Colapinto for the future, signaling faith in young talent.
+
+Insiders suggest Alpine is experimenting with lightweight chassis concepts to maximize efficiency under the new hybrid rules.
+
+The team’s leadership insists that 2026 will be the year Alpine finally transitions from midfield regulars to podium contenders.
+
+🟢 Aston Martin’s Veteran Edge
+Aston Martin continues to build around Fernando Alonso, who remains central to the team’s development despite his age.
+
+The Silverstone-based outfit has invested heavily in its new factory and wind tunnel, aiming to rival the infrastructure of the top teams.
+
+With Lance Stroll’s future uncertain, speculation is mounting that Aston Martin could bring in a rising star to partner Alonso in 2026.
+
+The team’s focus on aerodynamic efficiency could pay off under the new active aero rules, potentially giving them a competitive edge.
+
+🌍 The Wider Grid Picture
+Williams is also making quiet progress, with whispers of a bold recruitment drive to strengthen its technical department.
+
+Sauber (soon to become Audi) is preparing for its full factory entry, with Audi’s resources expected to transform the team into a serious challenger.
+
+The midfield battle is shaping up to be the most unpredictable in years, with several teams capable of springing surprises.
+
+⚡ Why This Matters
+The 2026 regulations are designed to reset the competitive order, and while the headlines often focus on Red Bull, Mercedes, Ferrari, and McLaren, the real intrigue may come from the next tier of teams. Alpine, Aston Martin, Williams, and Audi-backed Sauber all see this as their golden opportunity to disrupt the status quo.
+`
+  },
    {
     title: "Mercedes Poised for Formula 1 Dominance as 2026 Rule Changes Shake the Grid",
     date: "2025-11-01",
@@ -951,6 +986,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateOffsets();
   window.addEventListener('resize', updateOffsets);
 });
+
 
 
 
