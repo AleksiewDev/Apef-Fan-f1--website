@@ -462,4 +462,720 @@ html {
   .calendar-grid { grid-template-columns: 1fr; }
 }
 
+/* ===== RGB utilities ===== */
+
+/* Animated RGB gradient text for section titles */
+.section-title {
+  /* keep existing text styles, add RGB glow */
+  background: linear-gradient(90deg, );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rgbShift 6s linear infinite;
+  text-shadow: none;
+}
+
+@keyframes rgbShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Section frames: RGB cyan/red/green/blue lines without changing background */
+.countdown-section,
+.news-section,
+.standings-section,
+.calendar-section,
+.site-footer {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg,) 1;
+  box-shadow:
+    0 0 18px rgba(0, 224, 255, 0.25),
+    inset 0 0 12px rgba(0, 224, 255, 0.08);
+  position: relative;
+}
+
+/* Animated top line accent for each section */
+.countdown-section::before,
+.news-section::before,
+.standings-section::before,
+.calendar-section::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 12px;
+  height: 2px;
+  background: linear-gradient(90deg, );
+  background-size: 300% 100%;
+  animation: lineScan 5.5s linear infinite;
+  border-radius: 999px;
+}
+
+@keyframes lineScan {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* ===== Countdown RGB lines ===== */
+.countdown-grid {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, ) 1;
+  border-radius: 14px;
+  padding: 18px;
+  position: relative;
+}
+
+.countdown-grid::after {
+  content: "";
+  position: absolute;
+  left: 20px; right: 20px; bottom: 12px; height: 2px;
+  background: linear-gradient(90deg, );
+  background-size: 250% 100%;
+  animation: lineScan 6s linear infinite reverse;
+  opacity: 0.9;
+}
+
+.count-card {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, ) 1;
+  box-shadow:
+    0 0 15px rgba(0, 224, 255, 0.25),
+    inset 0 0 10px rgba(0, 224, 255, 0.12);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
+  background: linear-gradient(145deg, rgba(17,17,17,0.9), rgba(26,26,26,0.9));
+}
+.count-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 26px rgba(0, 224, 255, 0.35);
+  filter: saturate(1.15);
+}
+
+.count-value {
+  color: #00e0ff;
+  text-shadow: 0 0 10px rgba(0,224,255,0.75);
+  animation: pulseCount 2.6s ease-in-out infinite;
+}
+@keyframes pulseCount {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+/* ===== News: RGB colors + animations ===== */
+.news-section .news-list {
+  gap: 20px;
+}
+
+.news-card {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, ) 1;
+  background: rgba(12,13,16,0.80);
+  box-shadow:
+    0 0 20px rgba(0, 224, 255, 0.22),
+    inset 0 0 12px rgba(0, 224, 255, 0.10);
+  transform: translateY(16px) scale(0.98);
+  opacity: 0;
+  animation: newsIn 520ms cubic-bezier(.2, .8, .2, 1) forwards;
+  transition: transform 0.32s ease, box-shadow 0.32s ease, filter 0.32s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 0 28px rgba(255, 0, 0, 0.25), 0 0 28px rgba(0, 224, 255, 0.3);
+  filter: brightness(1.06) saturate(1.15);
+}
+
+/* Animated RGB header bar on each news card */
+.news-card::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0; height: 3px;
+  background: linear-gradient(90deg,);
+  background-size: 300% 100%;
+  animation: lineScan 6s linear infinite;
+}
+
+/* News media stays subtle; don’t touch background */
+.news-media {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(255,0,0,0.18), rgba(0,224,255,0.18), rgba(0,255,0,0.18), rgba(0,0,255,0.18));
+}
+
+/* News title: RGB animated text */
+.news-title {
+  font-weight: 800;
+  background: linear-gradient(90deg, );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rgbShift 7s linear infinite;
+  letter-spacing: 0.3px;
+}
+
+/* News meta: cyan accent */
+.news-meta {
+  color: #8be9ff;
+  text-shadow: 0 0 6px rgba(0,224,255,0.45);
+}
+
+/* News text: alternating RGB underline sheen */
+.news-text {
+  color: #e7e9ee;
+  position: relative;
+}
+.news-text::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px; height: 2px; width: 100%;
+  background: linear-gradient(90deg, );
+  background-size: 250% 100%;
+  animation: lineScan 7s linear infinite reverse;
+  opacity: 0.7;
+}
+
+/* Read more button: RGB gradient pulse */
+.read-more {
+  color: #0a0b0d;
+  background: linear-gradient(90deg, );
+  background-size: 200% 100%;
+  animation: buttonFlow 4.5s linear infinite;
+  box-shadow: 0 0 18px rgba(0,224,255,0.25);
+}
+@keyframes buttonFlow {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* ===== Tables: drivers & constructors RGB lines ===== */
+.standings-table {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, ) 1;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.22);
+}
+
+.standings-table thead th {
+  position: relative;
+}
+.standings-table thead th::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px; height: 2px;
+  background: linear-gradient(90deg, );
+  background-size: 250% 100%;
+  animation: lineScan 6s linear infinite;
+}
+
+.standings-table tbody tr:hover {
+  background: rgba(255,255,255,0.05);
+  box-shadow: inset 0 0 10px rgba(0,224,255,0.18);
+}
+
+/* Photos keep existing border but add minor cyan glow */
+.driver-photo, .team-photo {
+  box-shadow: 0 0 10px rgba(0,224,255,0.25);
+}
+
+/* ===== Calendar RGB cards ===== */
+.calendar-grid {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg,) 1;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 0 16px rgba(0,224,255,0.22);
+  position: relative;
+}
+
+.calendar-grid::before {
+  content: "";
+  position: absolute;
+  left: 16px; right: 16px; top: 12px; height: 2px;
+  background: linear-gradient(90deg,);
+  background-size: 300% 100%;
+  animation: lineScan 5.5s linear infinite;
+  opacity: 0.9;
+}
+
+.calendar-card {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, ) 1;
+  background: linear-gradient(160deg, rgba(255,0,0,0.10), rgba(0,224,255,0.12));
+  box-shadow: 0 0 20px rgba(0,224,255,0.25);
+}
+.calendar-card:hover {
+  box-shadow: 0 0 30px rgba(0,224,255,0.35);
+}
+
+.calendar-gp {
+  background: linear-gradient(90deg,);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rgbShift 7s linear infinite;
+}
+
+.calendar-meta {
+  color: #8be9ff;
+}
+
+/* ===== Hero title optional RGB (if you add text later) ===== */
+.hero .section-title {
+  filter: drop-shadow(0 0 12px rgba(0,224,255,0.35));
+}
+
+/* ===== Performance preferences for smooth animations ===== */
+@media (prefers-reduced-motion: reduce) {
+  .section-title,
+  .news-title,
+  .read-more,
+  .count-value,
+  .count-card,
+  .news-card,
+  .calendar-card,
+  .standings-table thead th::after,
+  .calendar-grid::before,
+  .countdown-grid::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Utility color accents for inline words */
+
+/* === News section: two-color animated gradient === */
+
+/* News title: two-color gradient animation (e.g. cyan + magenta) */
+.news-title {
+  font-weight: 800;
+  background: linear-gradient(90deg, #00e0ff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: twoColorShift 5s linear infinite;
+  letter-spacing: 0.3px;
+}
+
+@keyframes twoColorShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* News text: subtle two-color underline animation */
+.news-text {
+  color: #e7e9ee;
+  position: relative;
+}
+.news-text::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px; height: 2px; width: 100%;
+  background: linear-gradient(90deg, #00e0ff, #ff00ff);
+  background-size: 200% 100%;
+  animation: twoColorShift 6s linear infinite;
+  opacity: 0.7;
+}
+body {
+  border: 2px solid transparent;
+}
+.countdown-section,
+.news-section,
+.standings-section,
+.calendar-section,
+.site-footer {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg,) 1;
+  /* …rest of your styles */
+}
+.site-header {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hero {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+/* Calendar GP titles: two-color animated gradient */
+.calendar-gp {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #00e0ff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: twoColorShift 6s linear infinite;
+}
+
+@keyframes twoColorShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Ensure sections are visible immediately */
+.countdown-section,
+.news-section,
+.standings-section,
+.calendar-section,
+.site-footer {
+  visibility: visible;
+  opacity: 1;
+}
+.calendar-card {
+  background: linear-gradient(160deg, rgba(255,106,0,0.15), rgba(0,224,255,0.15));
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #ff6a00, #00e0ff) 1;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 0 20px rgba(0,224,255,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.calendar-card {
+  background: rgba(12,13,16,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.calendar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 28px rgba(0,224,255,0.25);
+}
+.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #0a0b0d;
+  font-weight: 700;
+  border: none;
+  background: linear-gradient(90deg, #ff6a00, #00e0ff);
+  box-shadow: 0 10px 24px rgba(0,224,255,0.25);
+  cursor: pointer;
+  transition: transform 280ms cubic-bezier(.2, .8, .2, 1);
+}
+.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #0a0b0d;
+  font-weight: 700;
+  border: none;
+  background: linear-gradient(90deg, #00e0ff, #ff00ff);
+  background-size: 200% 100%;
+  animation: twoColorShift 4s linear infinite;
+  box-shadow: 0 6px 18px rgba(0,224,255,0.25);
+  cursor: pointer;
+  transition: transform 280ms cubic-bezier(.2, .8, .2, 1);
+}
+.read-more:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes twoColorShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.countdown-grid::after {
+  content: "";
+  position: absolute;
+  /* … */
+  background: linear-gradient();
+}
+.countdown-section::before,
+.news-section::before,
+.standings-section::before,
+.calendar-section::before {
+  content: "";
+  position: absolute;
+  /* … */
+  background: linear-gradient();
+}
+.calendar-card {
+  background: linear-gradient(160deg);
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #ff6a00, #00e0ff) 1;
+  /* … */
+}
+.calendar-card {
+  background: rgba(12,13,16,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.calendar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 28px ;
+}
+.news-card {
+  /* ... */
+  opacity: 0;
+  animation: newsIn 480ms cubic-bezier(.2, .8, .2, 1) forwards;
+}
+.calendar-card {
+  /* ... */
+  opacity: 0;
+  animation: cardIn 480ms cubic-bezier(.2, .8, .2, 1) forwards;
+}
+.news-card {
+  /* ... */
+  opacity: 1; /* visible immediately */
+  transform: translateY(0);
+}
+.calendar-card {
+  /* ... */
+  opacity: 1; /* visible immediately */
+  transform: translateY(0);
+}
+body {
+  background-color: #0a0b0d; /* fallback dark background */
+}
+
+.spline-bg {
+  background: #0a0b0d; /* fallback color while Spline loads */
+}
+.count-card {
+  flex: 1 1 120px;
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  border: 2px solid #ff6a00;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255,106,0,0.4);
+  transition: transform 0.3s ease;
+}
+.count-card {
+  flex: 1 1 120px;
+  background: rgba(17,17,17,0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease;
+}
+.calendar-card {
+  background: linear-gradient(160deg, rgba(255,106,0,0.15), rgba(0,224,255,0.15));
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #ff6a00, #00e0ff) 1;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 0 20px rgba(0,224,255,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.calendar-card {
+  background: rgba(12,13,16,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.calendar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 28px rgba(0,224,255,0.25);
+}
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(12,13,16,0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+/* === Section Titles: two-color animated gradient === */
+.section-title {
+  max-width: 1200px;
+  margin: 36px auto 6px auto;
+  padding: 0 20px;
+  font-size: clamp(22px, 3.6vw, 30px);
+  font-weight: 700;
+  background: linear-gradient(90deg, #00e0ff, #ff00ff); /* cyan + magenta */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: twoColorShift 5s linear infinite;
+}
+
+@keyframes twoColorShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Section Subtitles: neutral === */
+.section-subtitle {
+  max-width: 1200px;
+  margin: 0 auto 18px auto;
+  padding: 0 20px;
+  color: #ccc;
+}
+
+/* === Countdown Cards: clean, no rgba === */
+.count-card {
+  flex: 1 1 120px;
+  background: #111;              /* solid dark */
+  border: 1px solid #222;        /* subtle solid border */
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: none;              /* no rgba shadows */
+  transition: transform 0.3s ease;
+}
+.count-card:hover {
+  transform: translateY(-6px);
+}
+
+/* === News Cards: keep animations === */
+.news-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.32s ease, filter 0.32s ease;
+}
+.news-card:hover {
+  transform: translateY(-6px);
+  filter: brightness(1.06);
+}
+
+/* News Title: two-color gradient */
+.news-title {
+  font-weight: 800;
+  background: linear-gradient(90deg, #00e0ff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: twoColorShift 6s linear infinite;
+}
+
+/* News Text: neutral with subtle underline */
+.news-text {
+  color: #e7e9ee;
+  position: relative;
+}
+.news-text::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px; height: 2px; width: 100%;
+  background: linear-gradient(90deg, #00e0ff, #ff00ff);
+  background-size: 200% 100%;
+  animation: twoColorShift 6s linear infinite;
+  opacity: 0.6;
+}
+
+/* Read More Button: two-color animated */
+.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #0a0b0d;
+  font-weight: 700;
+  border: none;
+  background: linear-gradient(90deg, #00e0ff, #ff00ff);
+  background-size: 200% 100%;
+  animation: twoColorShift 4s linear infinite;
+  cursor: pointer;
+  transition: transform 0.28s ease;
+}
+.read-more:hover {
+  transform: translateY(-2px);
+}
+
+/* === Standings Tables: clean === */
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #222;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: none;
+}
+.standings-table thead th {
+  text-align: left;
+  padding: 12px;
+  background: #222;
+  font-weight: 600;
+  color: #e8ebf0;
+}
+.standings-table tbody td {
+  padding: 12px;
+  border-top: 1px solid #222;
+  vertical-align: middle;
+}
+
+/* === Calendar Cards: clean === */
+.calendar-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+.calendar-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Calendar GP Title: two-color gradient */
+.calendar-gp {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #00e0ff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: twoColorShift 6s linear infinite;
+}
+.calendar-meta {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.spline-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;   /* ensures full coverage */
+  background: #0a0b0d; /* fallback color */
+}
+:root {
+  --vh: 100%;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --vh: calc(var(--vh, 1vh) * 100);
+  }
+  .hero, .spline-bg {
+    height: var(--vh);
+  }
+}
+@media (max-width: 768px) {
+  .spline-bg {
+    display: none; /* disable spline on mobile */
+  }
+  body {
+    background: url('fallback.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+
+
 
