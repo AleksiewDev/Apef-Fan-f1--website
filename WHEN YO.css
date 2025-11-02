@@ -1172,10 +1172,34 @@ body {
     display: none; /* disable spline on mobile */
   }
   body {
-    background: url('fallback.jpg') no-repeat center center fixed;
+    background: url('https://unpkg.com/@splinetool/viewer@1.10.90/build/spline-viewer.js') no-repeat center center fixed;
     background-size: cover;
   }
 }
+@media (max-width: 768px) {
+  /* Remove this block if you want spline on mobile */
+  /* .spline-bg {
+    display: none;
+  }
+  body {
+    background: url('fallback.jpg') no-repeat center center fixed;
+    background-size: cover;
+  } */
+}
+@media (max-width: 800px) {
+  .nav-list {
+    display: none;
+    position: absolute;
+    right: 20px; top: 62px;
+    background: rgba(12,13,16,0.95);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 12px;
+    z-index: 60;
+  }
+  .nav-list.open { display: grid; gap: 10px; }
+}
+
 
 
 
