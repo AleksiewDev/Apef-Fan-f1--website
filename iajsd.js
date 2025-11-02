@@ -71,6 +71,42 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+{
+    title: "Midfield Madness: Four Teams Split by Just 12 Points in Constructors’ Battle",
+    date: "2025-11-02",
+    image: "https://media.formula1.com/image/upload/t_16by9South/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Bahrain/2210069665.webp",
+    text: `he spotlight in Formula 1 often shines on the title fight at the front, but the real drama this season is unfolding in the midfield. With just a handful of races left in 2025, Racing Bulls, Aston Martin, Haas, and Sauber are locked in a fierce scrap for sixth place in the Constructors’ Championship—and only 12 points separate all four teams.
+
+⚔️ The Current Standings (Behind the Top 4)
+5th – Williams: 111 points (clear of the chaos, thanks to Carlos Sainz’s podium in Baku)
+
+6th – Racing Bulls: 72 points
+
+7th – Aston Martin: 69 points
+
+8th – Haas: 62 points
+
+9th – Sauber: 60 points
+
+10th – Alpine: 20 points
+
+🌍 Why It Matters
+Prize Money & Prestige: Every position in the Constructors’ table is worth millions in prize money. For midfield outfits, finishing 6th instead of 9th can mean the difference between a major upgrade program next year—or falling further behind.
+
+Driver Futures: Strong results in this battle could secure contracts for drivers under pressure. Haas’s Kevin Magnussen and Sauber’s Valtteri Bottas, for example, are racing not just for points but for their careers.
+
+Momentum into 2026: With sweeping regulation changes looming, teams that finish higher gain both financial and psychological momentum heading into the new era.
+
+🔑 The Storylines to Watch
+Racing Bulls’ Consistency: Yuki Tsunoda has been quietly racking up points, keeping RB just ahead in this knife-edge fight.
+
+Aston Martin’s Struggles: After starting the season strong, Aston has slipped back, but Fernando Alonso’s experience could be decisive in the final rounds.
+
+Haas’s Surprise Pace: The American team has shown flashes of brilliance, especially in qualifying, but race-day tire management remains their Achilles’ heel.
+
+Sauber’s Dark Horse Potential: With both drivers scoring recently, Sauber is the team most likely to upset the order if they can string together a double-points finish.
+`
+  },
       {
     title: "Alpine and Aston Martin Eye Breakthrough as 2026 F1 Era Approaches",
     date: "2025-11-02",
@@ -986,6 +1022,26 @@ document.addEventListener('DOMContentLoaded', () => {
   updateOffsets();
   window.addEventListener('resize', updateOffsets);
 });
+
+// Fix mobile 100vh issue
+function setVh() {
+  document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+}
+window.addEventListener('resize', setVh);
+setVh();
+document.addEventListener('DOMContentLoaded', () => {
+  const spline = document.querySelector('.spline-bg');
+  if (spline) {
+    spline.addEventListener('error', () => {
+      spline.style.display = 'none';
+      document.body.style.background = "url('fallback.jpg') center/cover no-repeat";
+    });
+  }
+});
+
+
+
+
 
 
 
