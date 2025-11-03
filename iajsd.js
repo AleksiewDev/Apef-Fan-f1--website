@@ -71,6 +71,39 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+     {
+    title: "Drivers Speak Out Ahead of the 2025 Brazilian Grand Prix: Tension, Optimism, and Championship Drama",
+    date: "2025-11-03",
+    image: "https://www.total-motorsport.com/wp-content/uploads/2025/03/SI202503160090-scaled.jpg",
+    text: `The Formula 1 circus has arrived in São Paulo for the 2025 Brazilian Grand Prix, and with just four races left in the season, the atmosphere in the paddock is electric. Drivers sat down with the media ahead of the weekend, offering insights into their mindset, strategies, and expectations as the championship battle reaches a fever pitch.
+
+🏆 Championship Contenders on Edge
+Lando Norris, who leads the standings by a single point over Oscar Piastri, admitted the pressure is unlike anything he has experienced before. “It’s been a rollercoaster season. Every race feels like a final now, and Interlagos is always unpredictable. I just need to stay calm and execute.”
+
+Oscar Piastri, chasing his McLaren teammate, struck a confident tone: “I’ve been building momentum, and I feel good about my pace here. The key will be qualifying well and staying out of trouble in the sprint.”
+
+Max Verstappen, 36 points adrift but still mathematically in contention, reminded everyone not to count him out: “We’ve been closing the gap. Interlagos has given me great memories, and I’ll give everything to keep the fight alive.”
+
+🔧 Midfield Voices: Fighting for Pride and Points
+Charles Leclerc emphasized Ferrari’s determination to finish the season strong: “We’ve had ups and downs, but Brazil is always special. The fans bring so much energy, and I want to give them a good show.”
+
+George Russell highlighted Mercedes’ progress: “We’ve been improving steadily. If the weather plays its usual tricks here, we could be in the mix for a podium.”
+
+Fernando Alonso, ever the veteran, reflected on the bigger picture: “Interlagos is a driver’s circuit. You need courage, precision, and a bit of luck. I still love the challenge.”
+
+🌧️ Weather and Strategy Concerns
+Interlagos is notorious for its unpredictable weather, and drivers were quick to acknowledge it. Norris joked, “I’ve packed for all four seasons,” while Verstappen noted that “rain here can turn the race upside down in minutes.” Teams are preparing multiple strategies, knowing that tire choices could decide the outcome.
+
+🇧🇷 The Brazilian Spirit
+Local fans are expected to pack the stands, creating one of the most passionate atmospheres on the calendar. Several drivers praised the energy:
+
+Piastri: “The crowd here is insane—in the best way. You feel their passion from the moment you leave the hotel.”
+
+Leclerc: “It’s like racing in a football stadium. The noise, the flags, the chants—it’s unforgettable.”
+
+🔮 What’s at Stake
+With just four races left, the Brazilian GP could prove decisive. A win for Norris or Piastri could tilt the title fight dramatically, while a Verstappen victory would keep the three-way battle alive heading into the final stretch.`
+  },
       {
     title: "Brazilian Grand Prix 2025: Interlagos Set for High Drama in Sprint Weekend",
     date: "2025-11-03",
@@ -1082,6 +1115,7 @@ function setVh() {
 }
 setVh();
 window.addEventListener('resize', setVh);
+
 
 
 
