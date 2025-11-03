@@ -71,6 +71,36 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+      {
+    title: "Brazilian Grand Prix 2025: Interlagos Set for High Drama in Sprint Weekend",
+    date: "2025-11-03",
+    image: "https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Brazil.jpg",
+    text: `The Formula 1 circus heads to São Paulo this week for the Brazilian Grand Prix at Interlagos, one of the most iconic and unpredictable races on the calendar. With a Sprint format in play and the championship battle heating up, fans can expect a weekend full of strategy gambles, overtakes, and potential surprises.
+
+🔥 The Top Teams: Who Holds the Edge?
+McLaren (Lando Norris & Oscar Piastri) McLaren arrives in Brazil with momentum after Norris’ recent win in Mexico. Their car has shown strong adaptability on medium-downforce circuits, and Interlagos—with its mix of fast straights and twisty infield—could suit them well. Norris, now a title contender, will be eager to maximize points in both the Sprint and the main race.
+
+Red Bull (Max Verstappen & Sergio Pérez) Verstappen has a strong record at Interlagos, including victory in 2024. The RB21’s efficiency on straights and stability in high-speed corners should make Red Bull a favorite again. However, tire degradation has been a weakness in recent races, and Interlagos’ abrasive surface could expose that.
+
+Ferrari (Charles Leclerc & Carlos Sainz) Ferrari’s one-lap pace has been excellent, but race-day tire wear remains a concern. Interlagos often punishes poor tire management, so while Leclerc could shine in qualifying, Ferrari will need a clever strategy to stay in the fight for the podium.
+
+Mercedes (Lewis Hamilton & George Russell) Interlagos has historically been a happy hunting ground for Hamilton, who famously won here in 2021. Mercedes’ form has been inconsistent this season, but if cooler conditions prevail, their car could be more competitive than expected.
+
+⚡ The Challengers: Who Could Spring a Surprise?
+Aston Martin (Fernando Alonso & Lance Stroll) Alonso thrives on technical circuits, and Interlagos’ elevation changes and tricky corners could play to his strengths. Expect him to be a dark horse for a top-five finish.
+
+Alpine (Esteban Ocon & Pierre Gasly) Alpine shocked many with podiums in 2024 at this very track. While repeating that feat may be difficult, their car’s balance in mixed conditions could make them opportunistic if rain hits.
+
+Williams & Haas Both teams will be looking to capitalize on the Sprint format. Williams’ straight-line speed could help in overtaking battles, while Haas may struggle with tire wear but could sneak into points if chaos unfolds.
+
+🌦️ Weather and Strategy Factors
+Unpredictable Weather: Interlagos is notorious for sudden rain showers. A wet race could completely shuffle the order, favoring drivers with strong car control like Verstappen, Hamilton, and Alonso.
+
+Sprint Format: With Sprint Qualifying on Friday, Sprint on Saturday, and the Grand Prix on Sunday, teams will have limited practice time to perfect setups. This could benefit squads with naturally well-balanced cars, like McLaren and Red Bull.
+
+Tire Management: The 71-lap race on the 4.309 km circuit is tough on tires. Expect at least a two-stop strategy, with undercuts playing a key role.
+`
+  },
 {
     title: "Midfield Madness: Four Teams Split by Just 12 Points in Constructors’ Battle",
     date: "2025-11-02",
@@ -1046,6 +1076,7 @@ if (toggle && menu) {
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
 }
+
 
 
 
