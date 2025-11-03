@@ -4,7 +4,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color: #f2f3f5;
+  color: #0042c5;
   background: transparent;
   overflow-x: hidden;
 }
@@ -66,7 +66,7 @@ html, body {
   padding: 8px 12px;
   border-radius: 8px;
   background: rgba(255,255,255,0.06);
-  color: #fff;
+  color: #ffbf00;
   border: 0;
 }
 .nav-list {
@@ -1167,39 +1167,6 @@ body {
     height: var(--vh);
   }
 }
-@media (max-width: 768px) {
-  .spline-bg {
-    display: none; /* disable spline on mobile */
-  }
-  body {
-    background: url('https://unpkg.com/@splinetool/viewer@1.10.90/build/spline-viewer.js') no-repeat center center fixed;
-    background-size: cover;
-  }
-}
-@media (max-width: 768px) {
-  /* Remove this block if you want spline on mobile */
-  /* .spline-bg {
-    display: none;
-  }
-  body {
-    background: url('fallback.jpg') no-repeat center center fixed;
-    background-size: cover;
-  } */
-}
-@media (max-width: 800px) {
-  .nav-list {
-    display: none;
-    position: absolute;
-    right: 20px; top: 62px;
-    background: rgba(12,13,16,0.95);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    padding: 12px;
-    z-index: 60;
-  }
-  .nav-list.open { display: grid; gap: 10px; }
-}
-
 :root {
   --vh: 100%;
 }
@@ -1208,6 +1175,24 @@ body {
 .spline-bg {
   height: calc(var(--vh, 1vh) * 100);
 }
+:root {
+  --vh: 100%;
+}
+
+.hero,
+.spline-bg {
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+}
+spline-viewer.spline-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  z-index: -1;
+}
+
 
 
 
