@@ -33,15 +33,6 @@ html, body {
   align-items: center;
   gap: 14px;
 }
-.logo-mark {
-  width: 42px; height: 42px;
-  border-radius: 50%;
-  background:
-    radial-gradient(80% 80% at 50% 50%, rgba(255,106,0,0.35) 0%, rgba(255,106,0,0) 70%),
-    conic-gradient(from 160deg at 50% 50%, #ff6a00, #00e0ff, #ff6a00);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-  animation: pulse 3.2s cubic-bezier(.2, .8, .2, 1) infinite;
-}
 @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); filter: hue-rotate(12deg);} }
 .brand-title {
   font-family: "Playfair Display", serif;
@@ -1191,6 +1182,89 @@ spline-viewer.spline-bg {
   width: 100vw;
   height: calc(var(--vh, 1vh) * 100);
   z-index: -1;
+}
+.logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;       /* keeps it circular */
+  object-fit: cover;        /* ensures it fills nicely */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+.brand-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(90deg, #000000, #000000); /* cyan + magenta */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: twoColorShift 6s linear infinite;
+  letter-spacing: 1px;
+}
+
+@keyframes twoColorShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;   /* this makes it circular */
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
+}
+.logo-img {
+  width: 120px;       /* make it bigger */
+  height: auto;       /* keep natural aspect ratio */
+  border-radius: 0;   /* remove circular shape */
+  object-fit: contain; /* show full image without cropping */
+  box-shadow: none;   /* optional: remove shadow if you want it clean */
+}
+.logo-img {
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+}
+.logo-img {
+  width: 160px;       /* adjust size as you like */
+  height: auto;       /* keep natural proportions */
+  border: none;       /* no border */
+  border-radius: 0;   /* no rounded corners */
+  box-shadow: none;   /* no glow/shadow */
+  background: none;   /* no background color */
+  object-fit: contain; /* show full image */
+}
+/* Clean logo image — no glow, no shapes, no colors */
+.logo-img {
+  width: 160px;       /* adjust size as you like */
+  height: auto;       /* keep natural proportions */
+  border: none;       /* no border */
+  border-radius: 0;   /* no circle */
+  box-shadow: none;   /* remove glow */
+  background: none;   /* no background color */
+  object-fit: contain; /* show full image */
+}
+.logo-img {
+  width: 200px;     /* bigger than before */
+  height: auto;     /* keeps proportions */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  object-fit: contain;
+}
+.logo-img {
+  max-width: 220px;   /* cap the size */
+  width: 100%;        /* scale down on small screens */
+  height: auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
 }
 
 
