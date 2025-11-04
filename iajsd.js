@@ -71,6 +71,25 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+   {
+    title: "Ferrari Eyes Russell as Hamilton Exit Looms, While Mercedes Plots Verstappen Coup for 2027",
+    date: "2025-11-04",
+    image: "https://cdn4.premiumread.com/?url=https://gulf-times.com/gulftimes/uploads/images/2024/03/01/147704.JPG&w=500&q=100&f=webp",
+    text: `he Formula 1 driver market is already heating up for 2027, with seismic shifts on the horizon that could reshape the grid’s balance of power.
+
+Ferrari have reportedly decided not to renew Lewis Hamilton’s contract beyond 2026, leaving the seven-time world champion without a seat at Maranello for 2027. Hamilton’s dream move to Ferrari has so far failed to deliver the results he envisioned, and the Scuderia appear ready to look elsewhere.
+
+That decision opens the door for George Russell, who has been strongly linked with a move to Ferrari. Russell’s current deal with Mercedes runs through 2026, but uncertainty about his long-term role—especially with Mercedes’ pursuit of Max Verstappen—has fueled speculation that he could be tempted by Ferrari. Italian media have suggested that Ferrari view Russell as a natural fit: young, ambitious, and already proven as a team leader.
+
+Meanwhile, Charles Leclerc’s future at Ferrari is far from secure. Despite being contracted until 2029, reports indicate that Leclerc is weighing his options if Ferrari cannot provide a car capable of fighting consistently for championships. After years of frustration with strategy errors and underperforming machinery, the Monegasque star may decide that his best chance at a title lies elsewhere. Should Leclerc walk away, Ferrari could find themselves in need of a complete reset—making Russell’s arrival even more crucial.
+
+On the other side of the paddock, Mercedes are intensifying their efforts to lure Max Verstappen for 2027. Team boss Toto Wolff has long admired the Dutchman, and with Hamilton gone and Russell’s future uncertain, Verstappen represents the ultimate prize. Rumors of behind-the-scenes talks between Wolff and Verstappen have already surfaced, with Mercedes hoping to capitalize on any instability at Red Bull. Despite Verstappen’s contract running until 2028, the combination of new regulations in 2026 and Red Bull’s internal challenges could make a switch possible.
+
+If these moves materialize, the 2027 grid could see Russell in red at Ferrari and Verstappen in silver at Mercedes—a dramatic reshuffle that would reignite one of Formula 1’s greatest rivalries. Ferrari would gain a driver eager to prove himself as a world champion, while Mercedes would secure the sport’s most dominant force of the past decade.
+
+The next two seasons will be pivotal. Ferrari must prove they can deliver a title-contending car to keep Leclerc, while Mercedes must show Verstappen that Brackley is the place to win under the new rules. One thing is certain: the 2027 driver market promises fireworks, and the sport may be on the verge of another era-defining rivalry.
+`
+  },
      {
     title: "Drivers Speak Out Ahead of the 2025 Brazilian Grand Prix: Tension, Optimism, and Championship Drama",
     date: "2025-11-03",
@@ -1115,6 +1134,7 @@ function setVh() {
 }
 setVh();
 window.addEventListener('resize', setVh);
+
 
 
 
