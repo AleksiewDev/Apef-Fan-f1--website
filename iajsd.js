@@ -50,8 +50,8 @@ const drivers2025 = [
   { pos: 16, name: "Esteban Ocon", code: "OCO", nationality: "FRA", team: "Haas F1 Team", points: 30, wins: 0, poles: 0, photo: "https://i.redd.it/esteban-ocons-helmet-for-the-2025-season-v0-u52c357k3wje1.jpg?width=3277&format=pjpg&auto=webp&s=eb145ca50e5bc3f1154fb9efa9636832904de868" },
   { pos: 17, name: "Yuki Tsunoda", code: "TSU", nationality: "JPN", team: "Red Bull Racing", points: 28, wins: 0, poles: 0, photo: "https://newsgpcdn.vshcdn.net/i/images/1586/yuki-tsunoda-f1-post-season-test-with-red-bull_f.jpg" },
   { pos: 18, name: "Pierre Gasly", code: "GAS", nationality: "FRA", team: "Alpine", points: 20, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/alpine-pg-2025-1.jpg" },
-  { pos: 19, name: "Gabriel Bortoleto", code: "BOR", nationality: "BRA", team: "Kick Sauber", points: 19, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GjLwdydW4AATow-.jpg:large" },
-  { pos: 20, name: "Franco Colapinto", code: "COL", nationality: "ARG", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://instagram.fsof10-1.fna.fbcdn.net/v/t39.30808-6/485158953_122196919394251980_6379425086884951888_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuQ0FST1VTRUxfSVRFTS5pbWFnZV91cmxnZW4uODAyeDEzNzkuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlLmMyIn0&_nc_ht=instagram.fsof10-1.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2QFOF63zKGK_M4W2iLOT5UvcCCUq3UJt_8vW4JYd0rtIlNPzxFhv4uTgFWZF5YPjAtk&_nc_ohc=Hh0BVWNvipMQ7kNvwFeLOqS&_nc_gid=CrJ8NA_nvF6OD7xRYaKgmQ&edm=AKr904kAAAAA&ccb=7-5&ig_cache_key=MzU3MjcxMzU3Njk0MDc5MzMzMA%3D%3D.3-ccb7-5&oh=00_Afe_-uUTtgPM9Al8jg6m8JHD4pz83NrDhXI-6WGGMcPTLg&oe=69017193&_nc_sid=23467f" },
+  { pos: 19, name: "Gabriel Bortoleto", code: "BOR", nationality: "BRA", team: "Kick Sauber", points: 19, wins: 0, poles: 0, photo: "https://static.wikia.nocookie.net/f1wikia/images/5/54/Bortoleto2025.png/revision/latest?cb=20250728003557" },
+  { pos: 20, name: "Franco Colapinto", code: "COL", nationality: "ARG", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://static.wikia.nocookie.net/f1wikia/images/c/c1/Colapinto2025_Alpine.png/revision/latest/scale-to-width-down/1200?cb=20250728003710" },
   { pos: 21, name: "Jack Doohan", code: "DOO", nationality: "AUS", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://preview.redd.it/franco-colapinto-in-alpine-2025-will-be-the-deja-vu-of-v0-mfphwgeotvye1.png?width=1320&format=png&auto=webp&s=c67fd2287c94f2ea96a53595c6616976b0e0af20" }
 ];
 
@@ -1134,12 +1134,23 @@ function setVh() {
 }
 setVh();
 window.addEventListener('resize', setVh);
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector(".logo-img");
+  if (logo) {
+    // Apply filter to knock out white background
+    logo.style.filter = "drop-shadow(0 0 8px #000000ff) brightness(1.1) contrast(1.2)";
+  }
+});
+document.addEventListener('scroll', () => {
+  const logo = document.querySelector('.logo-img');
+  if (!logo) return;
 
-
-
-
-
-
+  if (window.scrollY > 50) {
+    logo.style.width = '80px';
+  } else {
+    logo.style.width = '120px';
+  }
+});
 
 
 
