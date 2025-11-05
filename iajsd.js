@@ -71,6 +71,28 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+      {
+    title: "Gabriel Bortoleto Set for Emotional First Home Grand Prix at Interlagos",
+    date: "2025-11-05",
+    image: "https://cdn-4.motorsport.com/images/amp/2GzXW3o0/s1000/gabriel-bortoleto-sauber.jpg",
+    text: `The São Paulo Grand Prix this weekend will mark a historic and emotional milestone for Gabriel Bortoleto, as the 21-year-old rookie prepares to race in front of his home crowd for the very first time in Formula 1.
+
+A Long-Awaited Return for Brazil
+Brazilian fans have waited nearly a decade to cheer for one of their own at Interlagos. The last time a Brazilian driver competed at home was Felipe Massa in 2017, and now Bortoleto carries the hopes of a nation that has produced legends like Ayrton Senna, Nelson Piquet, and Emerson Fittipaldi. His debut at Interlagos is not just another race—it’s a symbolic moment for Brazilian motorsport, reconnecting the passionate São Paulo crowd with a homegrown talent.
+
+The Dream Becomes Reality
+Bortoleto, who grew up in São Paulo, described the experience as “unreal” and a dream come true. He has impressed in his rookie season with Sauber, most recently scoring points at the Mexican Grand Prix after a strong comeback drive. Now, he arrives at Interlagos with momentum and confidence, aiming to deliver another points finish in front of family, friends, and thousands of fans.
+
+Sauber’s Hopes and the Interlagos Factor
+Sauber team principal Jonathan Wheatley has expressed optimism that the unpredictable conditions at Interlagos could play into the team’s hands. With rain and thunderstorms forecast for the weekend, strategy and adaptability may prove decisive. Wheatley noted that the Brazilian fans create one of the most passionate atmospheres in the sport, something that could give Bortoleto an extra boost.
+
+Carrying the Weight of Expectation
+While the excitement is immense, Bortoleto has been careful to keep his focus on the track. He acknowledged that his schedule will be busier than usual with media and fan commitments, but emphasized that his priority is to perform at the highest level. For him, this race is not only about emotion but also about proving himself as a consistent points scorer in his debut season.
+
+A Nation Behind Him
+The Interlagos circuit has always been a cauldron of noise and passion, and this weekend will be no different. With the grandstands filled with Brazilian flags and chants, Bortoleto will feel the weight of expectation—but also the power of support. For a country that has longed for a new hero on the grid, his first home race is more than just a sporting event; it’s a celebration of Brazil’s enduring love affair with Formula 1.
+`
+  },
    {
     title: "Ferrari Eyes Russell as Hamilton Exit Looms, While Mercedes Plots Verstappen Coup for 2027",
     date: "2025-11-04",
@@ -1151,6 +1173,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
