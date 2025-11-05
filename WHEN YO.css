@@ -443,12 +443,12 @@ html {
   font-size: 0.9rem;
   color: #ccc;
 }
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .countdown-grid { gap: 12px; }
   .count-card { flex: 1 1 45%; }
   .calendar-grid { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 480px) {
+@media (max-width: 1300px) {
   .count-card { flex: 1 1 100%; }
   .calendar-grid { grid-template-columns: 1fr; }
 }
@@ -1150,7 +1150,7 @@ body {
   --vh: 100%;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 720px) {
   :root {
     --vh: calc(var(--vh, 1vh) * 100);
   }
@@ -1285,6 +1285,8 @@ spline-viewer.spline-bg {
   left: 0;
   z-index: -1;
 }
+
+
 
 
 
