@@ -1266,6 +1266,23 @@ spline-viewer.spline-bg {
   box-shadow: none;
   background: none;
 }
+.hero,
+.spline-bg {
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+}
+spline-viewer.spline-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  z-index: -1;
+  object-fit: cover;
+}
+
+
+
 
 
 
