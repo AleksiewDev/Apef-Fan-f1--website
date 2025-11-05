@@ -443,12 +443,12 @@ html {
   font-size: 0.9rem;
   color: #ccc;
 }
-@media (max-width: 1300px) {
+@media (max-width: 720px) {
   .countdown-grid { gap: 12px; }
   .count-card { flex: 1 1 45%; }
   .calendar-grid { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 1300px) {
+@media (max-width: 720px) {
   .count-card { flex: 1 1 100%; }
   .calendar-grid { grid-template-columns: 1fr; }
 }
@@ -1314,3 +1314,5 @@ spline-viewer.spline-bg {
   z-index: -1;
   object-fit: cover;
 }
+
+
