@@ -44,12 +44,8 @@
       </nav>
     </header>
 
-  <!-- Fixed 3D background -->
- <!-- Spline 3D background -->
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.90/build/spline-viewer.js"></script>
-</head>
-  <!-- Fixed 3D background behind all content -->
-  <spline-viewer class="spline-bg" url="https://prod.spline.design/ISZFPRVBa1wvlr7D/scene.splinecode"></spline-viewer>
+
+
 
   <div id="app">
     <!-- Header -->
@@ -279,6 +275,23 @@
   window.addEventListener('resize', setVh);
 </script>
 
+<script>
+  function setVh() {
+    // Get the viewport height and multiply by 1% to get a value for 1vh
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  // Run on load
+  setVh();
+
+  // Run on resize/orientation change
+  window.addEventListener('resize', setVh);
+</script>
+
+<style>
+  spline-viewer { position: fixed; top:0; left:0; width:100vw; height:100vh; }
+</style>
 
 
 
