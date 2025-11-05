@@ -76,7 +76,7 @@ html, body {
   transform: translateY(-2px);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1300px) {
   .nav-toggle { display: inline-block; }
   .nav-list {
     display: none;
@@ -1285,12 +1285,32 @@ spline-viewer.spline-bg {
   left: 0;
   z-index: -1;
 }
+/* Make Spline 3D background fill full viewport on all devices */
+.spline-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh; /* dynamic viewport height for modern browsers */
+  min-height: 100vh; /* fallback for older browsers */
+  z-index: -1;
+  object-fit: cover;
+}
 
-
-
-
-
-
-
-
-
+/* Fix Spline overflow on mobile browsers */
+@supports (-webkit-touch-callout: none) {
+  .spline-bg {
+    height: -webkit-fill-available;
+  }
+}
+.spline-bg {
+  height: calc(var(--vh, 1vh) * 100);
+}
+.spline-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: -1;
+  object-fit: cover;
+}
