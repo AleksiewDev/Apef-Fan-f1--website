@@ -71,6 +71,25 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+    {
+    title: "Franco Colapinto Secures Alpine Seat for 2026 Formula 1 Season",
+    date: "2025-11-07",
+    image: "https://cdn1.f1oversteer.com/uploads/37/2025/09/GettyImages-2232436876-1024x683.jpg",
+    text: `Franco Colapinto, the young Argentine talent, will continue his journey in Formula 1 with Alpine, as the team confirmed he will drive alongside Pierre Gasly in the 2026 season. Despite a challenging debut year in 2025, Alpine has shown faith in Colapinto’s potential, securing him as part of their long-term project.
+
+A Rising Star with a Rocky Start
+Colapinto first entered Formula 1 in 2024 with Williams, stepping in mid-season and impressing with flashes of speed and composure. His move to Alpine in 2025 came after replacing Jack Doohan just six races into the campaign. While his early performances were inconsistent—marked by errors and a lack of points—he gradually improved, finishing ahead of teammate Gasly in several racesSky Sports.
+
+Alpine’s Strategy for Stability
+Alpine’s decision to retain Colapinto reflects their desire for continuity and stability. Executive advisor Flavio Briatore emphasized that Colapinto has the attributes to grow with the team, noting his resilience and ability to adapt under pressure. Gasly, meanwhile, has already committed to Alpine until 2028, meaning the team now has a clear driver pairing for the medium termFormula 1.
+
+Fan Connection and Regional Impact
+Colapinto’s presence is particularly significant for South American fans. With the Brazilian Grand Prix being the only F1 race in the region, Alpine’s announcement ahead of the São Paulo weekend was symbolic, drawing strong support from Argentine fans who see Colapinto as their new motorsport ambassador.
+
+Looking Ahead to 2026
+The 2026 season will mark Colapinto’s first full campaign from start to finish. Alpine hopes that with a year of experience under his belt, he can convert consistency into points and help push the team up the constructors’ standings. For Colapinto, it’s a chance to prove he belongs among the elite, and for Alpine, it’s a bet on youthful promise over immediate results.
+`
+  },
   {
     title: "High Stakes Friday: Free Practice and Sprint Qualifying at Interlagos",
     date: "2025-11-07",
@@ -1201,6 +1220,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
