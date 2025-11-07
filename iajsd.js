@@ -71,6 +71,34 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+  {
+    title: "High Stakes Friday: Free Practice and Sprint Qualifying at Interlagos",
+    date: "2025-11-07",
+    image: "https://imageio.forbes.com/specials-images/imageserve/676bcfdc7dd83c5a85dd3946/F1-Grand-Prix-of-Brazil/960x0.jpg?format=jpg&width=960",
+    text: `The Formula 1 circus has arrived in Brazil for the 2025 São Paulo Grand Prix, and Friday’s schedule is packed with action. Drivers will first take to the track for Free Practice 1 (FP1), a crucial session to fine-tune setups and gather data on tire performance at the demanding Autódromo José Carlos Pace. Later in the day, the spotlight shifts to Sprint Qualifying, where the grid for Saturday’s Sprint race will be decided.
+
+Why Today Matters
+Championship Battle: Lando Norris leads the standings by just one point over his McLaren teammate Oscar Piastri, while Max Verstappen lurks 36 points behind. Every lap today could influence the destiny of the title.
+
+Sprint Format: The Sprint weekend offers 33 points in total, with 8 points available to the Sprint winner. That makes Sprint Qualifying especially critical, as it determines who gets the best shot at those valuable points.
+
+Track Challenges: Interlagos is famous for its undulating layout, unpredictable weather, and passionate fans. Teams must balance aggressive setups for qualifying with durability for the race.
+
+What to Watch
+McLaren Showdown: Norris and Piastri are locked in a tense intra-team duel. Norris arrives with momentum after his dominant win in Mexico, but Piastri has consistently shown pace in Sprint sessions.
+
+Verstappen’s Push: The Red Bull star knows that a double victory in Brazil could reignite his title hopes. Sprint Qualifying is his first chance to strike back.
+
+Ferrari & Mercedes: Charles Leclerc and George Russell will be looking to disrupt the McLaren-Red Bull battle, especially with Ferrari showing strong pace in recent rounds.
+
+Schedule Highlights
+Friday, November 7: FP1 followed by Sprint Qualifying
+
+Saturday, November 8: Sprint Race and traditional Qualifying
+
+Sunday, November 9: São Paulo Grand Prix
+`
+  },
       {
     title: "Gabriel Bortoleto Set for Emotional First Home Grand Prix at Interlagos",
     date: "2025-11-05",
@@ -1173,6 +1201,57 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
