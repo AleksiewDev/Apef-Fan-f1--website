@@ -72,6 +72,45 @@ const constructors2025 = [
 // News after USA GP 2025
 const newsAfterUSAGP = [
     {
+    title: "Norris takes pole in Brazil Sprint Qualifying",
+    date: "2025-11-07",
+    image: "https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2024/11/03192347/lando-norris-wave-brazilian-gp-planetf1.jpg",
+    text: `The drama of Interlagos never disappoints, and the 2025 Brazilian Grand Prix Sprint Qualifying was no exception. Under the São Paulo skies, the grid for Saturday’s Sprint was set after a tense three-phase shootout that saw Lando Norris stamp his authority at the top, edging out his McLaren teammate Oscar Piastri and title rival Max Verstappen.
+
+With the championship battle hanging by a thread—just a single point separating Norris and Piastri before this weekend—every lap carried enormous weight. McLaren once again showed their raw pace, but Verstappen’s Red Bull lurked dangerously close, reminding everyone that the Dutchman is never out of the fight at Interlagos.
+
+🔥 Full Sprint Qualifying Report
+SQ1: Medium tyres were mandatory, and the McLarens immediately set the tone. Piastri went quickest early, just ahead of Norris, while Alonso impressed with a strong third. Verstappen bided his time before unleashing a lap nearly two-tenths faster than anyone else.
+
+SQ2: The field tightened. Russell briefly topped the timesheets, but Norris and Piastri responded with blistering laps. Ferrari struggled, with Leclerc scraping through while Hamilton looked uncomfortable in his Ferrari, only just making the cut.
+
+SQ3: The final shootout was a McLaren vs. Red Bull showdown. Norris delivered under pressure, stringing together a near-perfect lap to secure P1. Piastri slotted into second, while Verstappen had to settle for third after a small error in the middle sector.
+
+🏁 Full Sprint Qualifying Results (1st–20th)
+Position	Driver	Team
+1	Lando Norris	McLaren
+2	Kimi Antonelli	Mercedes
+3	Oscar Piastri	Mclaren
+4	George Russell	Mercedes
+5	Fernando Alonso	Aston Martin
+6	Max Verstappen Red Bull Racing
+7	Lance Stroll	Aston Martin
+8	Charles Leclerc	Ferrari
+9	Isack Hadjar   Racing Bulls
+10	Nico Hulkenberg	Sauber
+11	Lewis Hamilton	Ferrari
+12	Alexander Albon	Williams
+13	Piere Gasly	Alpine
+14	Gabriel Bortoleto	Sauber
+15	Oliver Bearman	Haas
+16	Franco Colapinto	Alpine
+17	Liam Lawson	Racing Bulls
+18	Yuki Tsunoda Red Bull Racing
+19	Esteban Ocon	Haas
+20	Carlos Sainz	Williams
+`
+  },
+    {
     title: "Norris Leads the Pack in Brazil FP1",
     date: "2025-11-07",
     image: "https://static.independent.co.uk/2024/04/19/11/07-7b3ad5286d2e4ba29111ed28424e0801.jpg",
@@ -1259,6 +1298,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
