@@ -72,6 +72,45 @@ const constructors2025 = [
 // News after USA GP 2025
 const newsAfterUSAGP = [
     {
+    title: "Norris Leads the Pack in Brazil FP1",
+    date: "2025-11-07",
+    image: "https://static.independent.co.uk/2024/04/19/11/07-7b3ad5286d2e4ba29111ed28424e0801.jpg",
+    text: `McLaren’s Lando Norris stamped his authority at Interlagos by setting the fastest time in the 2025 Formula 1 São Paulo Grand Prix FP1 session. In a single hour of practice, Norris showed blistering pace, edging out his teammate Oscar Piastri to secure a McLaren 1–2. The session highlighted McLaren’s strength on the technical Autódromo José Carlos Pace circuit, while rivals scrambled to keep up.
+
+🌍 Full FP1 Report
+The lone practice session in Brazil was a crucial opportunity for teams to fine-tune their setups ahead of sprint qualifying. Norris looked confident from the start, consistently topping the timesheets. Piastri followed closely, proving McLaren’s balance and speed are well-suited to the high-speed corners and elevation changes of Interlagos.
+
+Behind them, Nico Hulkenberg surprised many by pushing his Sauber into third, reminding fans of his past pole position at the same venue back in 2010. Fernando Alonso kept Aston Martin in the mix with a strong fourth, while Brazilian rookie Gabriel Bortoleto delighted home fans by securing fifth in his Sauber.
+
+Mercedes showed flashes of competitiveness with George Russell and Andrea Kimi Antonelli inside the top 10, while Racing Bulls’ youngsters Isack Hadjar and Liam Lawson demonstrated promise. Williams, Haas, and Alpine filled the midfield, with Ferrari notably absent from the sharp end of the timesheets, raising questions about their pace heading into the weekend.
+
+📋 FP1 Classification (Brazil GP 2025)
+Here’s the full list from 1st to 20th:
+
+Position	Driver	Team
+1	Lando Norris	McLaren
+2	Oscar Piastri	McLaren
+3	Nico Hulkenberg	Sauber
+4	Fernando Alonso	Aston Martin
+5	Gabriel Bortoleto	Sauber
+6	George Russell	Mercedes
+7	Pierre Gasly	Alpine
+8	Carlos Sainz	Williams
+9	Isack Hadjar	Racing Bulls
+10	Andrea Kimi Antonelli	Mercedes
+11	Liam Lawson	Racing Bulls
+12	Alex Albon	Williams
+13	Esteban Ocon	Haas
+14	Oliver Bearman	Haas
+15	Lance Stroll	Aston Martin
+16	Franco Colapinto	Alpine
+17	Max Verstappen	Red Bull Racing
+18	Charles Leclerc	Ferrari
+19	Lewis Hamilton	Ferrari
+20	Yuki Tsunoda	Red Bull Racing
+`
+  },
+    {
     title: "Franco Colapinto Secures Alpine Seat for 2026 Formula 1 Season",
     date: "2025-11-07",
     image: "https://cdn1.f1oversteer.com/uploads/37/2025/09/GettyImages-2232436876-1024x683.jpg",
@@ -1220,6 +1259,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
