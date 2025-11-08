@@ -32,6 +32,7 @@ const nextGp = {
 
 // Drivers 2025 (name, code, team, points, wins, poles, photo)
 const drivers2025 = [
+
   { pos: 1, name: "Lando Norris", code: "NOR", nationality: "GBR", team: "McLaren", points: 357, wins: 6, poles: 5, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" },
   { pos: 2, name: "Oscar Piastri", code: "PIA", nationality: "AUS", team: "McLaren", points: 356, wins: 7, poles: 5, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_oscar_team_pic_02.jpg" },
   { pos: 3, name: "Max Verstappen", code: "VER", nationality: "NED", team: "Red Bull Racing", points: 321, wins: 5, poles: 7, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmb-f8vwQW9GTmAejEbUu2JeYUlzkscG8vZoaXwnvmzbJjqInaA7aSEAeB6jRrZRFCxA&usqp=CAU" },
@@ -72,25 +73,39 @@ const constructors2025 = [
 // News after USA GP 2025
 const newsAfterUSAGP = [
    {
-    title: "Norris Holds Firm at Interlagos — McLaren Driver Takes Sprint Win Amid Chaos",
+   title: "Norris Holds Firm at Interlagos — McLaren Driver Takes Sprint Win Amid Chaos",
     date: "2025-11-08",
-    image:",https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2024/11/03192347/lando-norris-wave-brazilian-gp-planetf1.jpg"
-    text: `In a dramatic sprint race at the 2025 Brazilian Grand Prix at Autódromo José Carlos Pace (São Paulo), Lando Norris delivered a flawless performance to convert pole into victory, while his title-contending teammate Oscar Piastri suffered a major setback. Norris led from lights to flag and extended his advantage in the drivers’ championship, while chaos struck mid-race and reshuffled the order and pressure at the top.
+    image: "https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2024/11/03192347/lando-norris-wave-brazilian-gp-planetf1.jpg",
+    text: ` In a dramatic sprint race at the 2025 Brazilian Grand Prix at Autódromo José Carlos Pace (São Paulo), Lando Norris delivered a flawless performance to convert pole into victory, while his title-contending teammate Oscar Piastri suffered a major setback. Norris led from lights to flag and extended his advantage in the drivers’ championship, while chaos struck mid-race and reshuffled the order and pressure at the top.
 
+Full Report
 
 Norris got off the line superbly, taking full advantage of his sprint-pole position to establish an early advantage. He held the lead confidently, fending off pressure from the surprise challenge of Kimi Antonelli (Mercedes) who pushed hard in the early laps. 
-
+Sky Sports
++3
+RacingNews365
++3
+GPFans
++3
 
 However, the race’s tone changed dramatically about one-third of the way in: on lap six at Turn 3, Piastri lost control—apparently caught out by a damp kerb and water spray—and slammed into the barriers. Two other drivers, Nico Hülkenberg and Franco Colapinto, crashed in very quick succession at the same corner, forcing a red flag and stoppage while the barriers were repaired. 
 The Race
 
-When the sprint restarted under rolling conditions, Norris maintained his composure and lead even though Antonelli was on more durable tyres and pressed strongly. Ultimately Norris held on to claim his first sprint-win of the season and a big points haul in the championship battle.
+When the sprint restarted under rolling conditions, Norris maintained his composure and lead even though Antonelli was on more durable tyres and pressed strongly. Ultimately Norris held on to claim his first sprint-win of the season and a big points haul in the championship battle. 
+GPblog
++2
+RacingNews365
++2
 
 Behind Norris and Antonelli, George Russell (Mercedes) secured the final spot on the podium, while reigning champion Max Verstappen finished fourth after being unable to bridge the gap. 
-
+RacingNews365
++2
+GPblog
++2
 
 For McLaren, the contrasting fortunes are stark: Norris maximised his opportunity, while Piastri’s crash is a major blow to his title bid. The result sees Norris move nine points clear of Piastri in the standings. 
-
+RaceFans
++1
 
 Full Sprint Race Classification (24 laps)
 Pos	Driver	Team	Gap / Notes
@@ -131,6 +146,45 @@ The red-flag incident and barrier repairs remind us how even a sprint race can h
 Looking Ahead
 
 With the sprint out of the way, the focus now shifts to qualifying and the main Grand Prix on Sunday. Norris will aim to build momentum, while Piastri must bounce back quickly. The championship is far from settled — but this weekend has tilted the scales ever so slightly in Norris’s favour.
+`
+  },
+    {
+    title: "Norris Leads the Pack in Brazil FP1",
+    date: "2025-11-07",
+    image: "https://static.independent.co.uk/2024/04/19/11/07-7b3ad5286d2e4ba29111ed28424e0801.jpg",
+    text: `McLaren’s Lando Norris stamped his authority at Interlagos by setting the fastest time in the 2025 Formula 1 São Paulo Grand Prix FP1 session. In a single hour of practice, Norris showed blistering pace, edging out his teammate Oscar Piastri to secure a McLaren 1–2. The session highlighted McLaren’s strength on the technical Autódromo José Carlos Pace circuit, while rivals scrambled to keep up.
+
+🌍 Full FP1 Report
+The lone practice session in Brazil was a crucial opportunity for teams to fine-tune their setups ahead of sprint qualifying. Norris looked confident from the start, consistently topping the timesheets. Piastri followed closely, proving McLaren’s balance and speed are well-suited to the high-speed corners and elevation changes of Interlagos.
+
+Behind them, Nico Hulkenberg surprised many by pushing his Sauber into third, reminding fans of his past pole position at the same venue back in 2010. Fernando Alonso kept Aston Martin in the mix with a strong fourth, while Brazilian rookie Gabriel Bortoleto delighted home fans by securing fifth in his Sauber.
+
+Mercedes showed flashes of competitiveness with George Russell and Andrea Kimi Antonelli inside the top 10, while Racing Bulls’ youngsters Isack Hadjar and Liam Lawson demonstrated promise. Williams, Haas, and Alpine filled the midfield, with Ferrari notably absent from the sharp end of the timesheets, raising questions about their pace heading into the weekend.
+
+📋 FP1 Classification (Brazil GP 2025)
+Here’s the full list from 1st to 20th:
+
+Position	Driver	Team
+1	Lando Norris	McLaren
+2	Oscar Piastri	McLaren
+3	Nico Hulkenberg	Sauber
+4	Fernando Alonso	Aston Martin
+5	Gabriel Bortoleto	Sauber
+6	George Russell	Mercedes
+7	Pierre Gasly	Alpine
+8	Carlos Sainz	Williams
+9	Isack Hadjar	Racing Bulls
+10	Andrea Kimi Antonelli	Mercedes
+11	Liam Lawson	Racing Bulls
+12	Alex Albon	Williams
+13	Esteban Ocon	Haas
+14	Oliver Bearman	Haas
+15	Lance Stroll	Aston Martin
+16	Franco Colapinto	Alpine
+17	Max Verstappen	Red Bull Racing
+18	Charles Leclerc	Ferrari
+19	Lewis Hamilton	Ferrari
+20	Yuki Tsunoda	Red Bull Racing
 `
   },
     {
@@ -1506,6 +1560,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
