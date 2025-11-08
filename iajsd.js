@@ -72,6 +72,55 @@ const constructors2025 = [
 // News after USA GP 2025
 const newsAfterUSAGP = [
     {
+    title: "Drivers React After Friday at the 2025 F1 São Paulo Grand Prix: Norris Shines, Piastri Rebounds, Verstappen Strugglesg",
+    date: "2025-11-08",
+    image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/F1_Grand_Prix_of_Brazil___Sprint__Qualifying/2182473837.webp",
+    text: `Today
+Write me drivers opinion after friday for f1 brazil 2025 ,, write an article about that with title and text
+🏎️ Drivers React After Friday at the 2025 F1 São Paulo Grand Prix: Norris Shines, Piastri Rebounds, Verstappen Struggles
+
+The drama at Interlagos began early this weekend, with Friday’s Sprint Qualifying setting the tone for what promises to be a pivotal round in the 2025 Formula 1 championship.
+
+Norris Confident After Pole
+Lando Norris delivered a superb lap to secure Sprint pole position, continuing his momentum after victory in Mexico. The McLaren driver, now leading the championship by a single point, was upbeat:
+
+“It felt great out there. The car was really hooked up, and even with the wind picking up, we managed to keep it stable. Interlagos is always tricky, but I’m happy with how we started the weekend.”
+
+Norris’ confidence reflects McLaren’s strong form, and his ability to handle the pressure of a tight title fight is becoming increasingly evident.
+
+Piastri Relieved by Strong Showing
+After a difficult run of races, Oscar Piastri was visibly relieved to qualify third, just behind Norris and rookie sensation Kimi Antonelli. He admitted his first lap wasn’t perfect but praised the car’s improvement:
+
+“I’m much happier today than the last couple of weeks. The balance felt better, and even though I had a couple of big moments on my first lap, overall it was a step forward. We’re back in the fight.”
+
+Piastri’s optimism suggests McLaren may have found solutions to the issues that plagued him in recent rounds, keeping the title battle alive.
+
+Antonelli Impresses Again
+Kimi Antonelli, the Mercedes rookie, stunned many by grabbing second place. His calm reaction showed maturity beyond his years:
+
+“It’s special to be up here at Interlagos. The car felt strong, and I think we can fight tomorrow. It’s about keeping it clean and learning every lap.”
+
+Antonelli’s rise continues to be one of the season’s biggest stories, with his performances already drawing comparisons to past legends.
+
+Verstappen Frustrated
+Meanwhile, Max Verstappen endured a tough day, finishing outside the top five after struggling with grip in practice and qualifying. The Red Bull driver admitted:
+
+“We just didn’t get the balance right. The car was sliding too much, and we need to understand why. It’s not ideal, but we’ll keep pushing.”
+
+With Verstappen 36 points adrift in the standings, his frustration is understandable—Brazil may be slipping away as a chance to close the gap.
+
+Other Voices from the Grid
+George Russell (P4): “We’re close, but missing a little bit compared to McLaren. Tomorrow’s race pace will be key.”
+
+Charles Leclerc (P6): “It wasn’t perfect, but the car feels decent. We’ll see what the weather brings.”
+
+Fernando Alonso (P5): “Interlagos always delivers surprises. I think we’re in the mix.”
+
+Conclusion
+Friday at the 2025 São Paulo Grand Prix highlighted the intensity of this year’s title fight. Norris’ pole, Piastri’s resurgence, and Antonelli’s breakthrough set up a thrilling weekend, while Verstappen’s struggles add another twist to the narrative. With rain forecast for the Sprint and Grand Prix, Interlagos could once again deliver one of its trademark chaotic classics.
+`
+  },
+    {
     title: "Norris takes pole in Brazil Sprint Qualifying",
     date: "2025-11-07",
     image: "https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2024/11/03192347/lando-norris-wave-brazilian-gp-planetf1.jpg",
@@ -1298,6 +1347,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
