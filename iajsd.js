@@ -71,6 +71,165 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+   {
+    title: "Norris Holds Firm at Interlagos — McLaren Driver Takes Sprint Win Amid Chaos",
+    date: "2025-11-08",
+    image:",https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2024/11/03192347/lando-norris-wave-brazilian-gp-planetf1.jpg"
+    text: `In a dramatic sprint race at the 2025 Brazilian Grand Prix at Autódromo José Carlos Pace (São Paulo), Lando Norris delivered a flawless performance to convert pole into victory, while his title-contending teammate Oscar Piastri suffered a major setback. Norris led from lights to flag and extended his advantage in the drivers’ championship, while chaos struck mid-race and reshuffled the order and pressure at the top.
+
+
+Norris got off the line superbly, taking full advantage of his sprint-pole position to establish an early advantage. He held the lead confidently, fending off pressure from the surprise challenge of Kimi Antonelli (Mercedes) who pushed hard in the early laps. 
+
+
+However, the race’s tone changed dramatically about one-third of the way in: on lap six at Turn 3, Piastri lost control—apparently caught out by a damp kerb and water spray—and slammed into the barriers. Two other drivers, Nico Hülkenberg and Franco Colapinto, crashed in very quick succession at the same corner, forcing a red flag and stoppage while the barriers were repaired. 
+The Race
+
+When the sprint restarted under rolling conditions, Norris maintained his composure and lead even though Antonelli was on more durable tyres and pressed strongly. Ultimately Norris held on to claim his first sprint-win of the season and a big points haul in the championship battle.
+
+Behind Norris and Antonelli, George Russell (Mercedes) secured the final spot on the podium, while reigning champion Max Verstappen finished fourth after being unable to bridge the gap. 
+
+
+For McLaren, the contrasting fortunes are stark: Norris maximised his opportunity, while Piastri’s crash is a major blow to his title bid. The result sees Norris move nine points clear of Piastri in the standings. 
+
+
+Full Sprint Race Classification (24 laps)
+Pos	Driver	Team	Gap / Notes
+1	Lando Norris (GBR)	McLaren	—
+2	Kimi Antonelli (ITA)	Mercedes	+0.845 s
+3	George Russell (GBR)	Mercedes	+2.318 s
+4	Max Verstappen (NED)	Red Bull	+4.423 s
+5	Charles Leclerc (MON)	Ferrari	+16.483 s
+6	Fernando Alonso (ESP)	Aston Martin	+18.306 s
+7	Lewis Hamilton (GBR)	Ferrari	+18.603 s
+8	Pierre Gasly (FRA)	Alpine	+19.366 s
+9	Lance Stroll (CAN)	Aston Martin	+23.933 s
+10	Isack Hadjar (FRA)	Racing Bulls	+29.548 s
+11	Esteban Ocon (FRA)	Haas	+31.000 s
+12	Oliver Bearman (GBR)	Haas	+31.334 s
+13	Liam Lawson (NZL)	Racing Bulls	+38.090 s
+14	Yuki Tsunoda (JPN)	Red Bull	+38.462 s
+15	Carlos Sainz (ESP)	Williams	+38.951 s
+16	Nico Hülkenberg (GER)	Sauber	+42.349 s
+17	Alex Albon (THA)	Williams	+55.456 s
+18	Gabriel Bortoleto (BRA)	Sauber	1 Lap down
+—	Oscar Piastri (AUS)	McLaren	DNF (crash)
+—	Franco Colapinto (ARG)	Alpine	DNF (crash)
+
+
+Implications & Takeaways
+
+Norris’s victory is timely — extending his lead in the championship at what is a critical juncture of the season.
+
+Piastri’s crash is doubly damaging: no points in the sprint and potential repercussions into qualifying and the main race.
+
+Mercedes emerge strongly with both drivers on the podium, showing improved consistency and pace.
+
+Red Bull and Verstappen will be frustrated — finishing behind two Mercedes and unable to close the gap to Norris.
+
+The red-flag incident and barrier repairs remind us how even a sprint race can hinge on external factors (track conditions, weather, surface water).
+
+Looking Ahead
+
+With the sprint out of the way, the focus now shifts to qualifying and the main Grand Prix on Sunday. Norris will aim to build momentum, while Piastri must bounce back quickly. The championship is far from settled — but this weekend has tilted the scales ever so slightly in Norris’s favour.
+`
+  },
+    {
+    title: "Norris takes pole in Brazil Sprint Qualifying",
+    date: "2025-11-07",
+    image: "https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2024/11/03192347/lando-norris-wave-brazilian-gp-planetf1.jpg",
+    text: `The drama of Interlagos never disappoints, and the 2025 Brazilian Grand Prix Sprint Qualifying was no exception. Under the São Paulo skies, the grid for Saturday’s Sprint was set after a tense three-phase shootout that saw Lando Norris stamp his authority at the top, edging out his McLaren teammate Oscar Piastri and title rival Max Verstappen.
+
+With the championship battle hanging by a thread—just a single point separating Norris and Piastri before this weekend—every lap carried enormous weight. McLaren once again showed their raw pace, but Verstappen’s Red Bull lurked dangerously close, reminding everyone that the Dutchman is never out of the fight at Interlagos.
+
+🔥 Full Sprint Qualifying Report
+SQ1: Medium tyres were mandatory, and the McLarens immediately set the tone. Piastri went quickest early, just ahead of Norris, while Alonso impressed with a strong third. Verstappen bided his time before unleashing a lap nearly two-tenths faster than anyone else.
+
+SQ2: The field tightened. Russell briefly topped the timesheets, but Norris and Piastri responded with blistering laps. Ferrari struggled, with Leclerc scraping through while Hamilton looked uncomfortable in his Ferrari, only just making the cut.
+
+SQ3: The final shootout was a McLaren vs. Red Bull showdown. Norris delivered under pressure, stringing together a near-perfect lap to secure P1. Piastri slotted into second, while Verstappen had to settle for third after a small error in the middle sector.
+
+🏁 Full Sprint Qualifying Results (1st–20th)
+Position	Driver	Team
+1	Lando Norris	McLaren
+2	Kimi Antonelli	Mercedes
+3	Oscar Piastri	Mclaren
+4	George Russell	Mercedes
+5	Fernando Alonso	Aston Martin
+6	Max Verstappen Red Bull Racing
+7	Lance Stroll	Aston Martin
+8	Charles Leclerc	Ferrari
+9	Isack Hadjar   Racing Bulls
+10	Nico Hulkenberg	Sauber
+11	Lewis Hamilton	Ferrari
+12	Alexander Albon	Williams
+13	Piere Gasly	Alpine
+14	Gabriel Bortoleto	Sauber
+15	Oliver Bearman	Haas
+16	Franco Colapinto	Alpine
+17	Liam Lawson	Racing Bulls
+18	Yuki Tsunoda Red Bull Racing
+19	Esteban Ocon	Haas
+20	Carlos Sainz	Williams
+`
+  },
+    {
+    title: "Norris Leads the Pack in Brazil FP1",
+    date: "2025-11-07",
+    image: "https://static.independent.co.uk/2024/04/19/11/07-7b3ad5286d2e4ba29111ed28424e0801.jpg",
+    text: `McLaren’s Lando Norris stamped his authority at Interlagos by setting the fastest time in the 2025 Formula 1 São Paulo Grand Prix FP1 session. In a single hour of practice, Norris showed blistering pace, edging out his teammate Oscar Piastri to secure a McLaren 1–2. The session highlighted McLaren’s strength on the technical Autódromo José Carlos Pace circuit, while rivals scrambled to keep up.
+
+🌍 Full FP1 Report
+The lone practice session in Brazil was a crucial opportunity for teams to fine-tune their setups ahead of sprint qualifying. Norris looked confident from the start, consistently topping the timesheets. Piastri followed closely, proving McLaren’s balance and speed are well-suited to the high-speed corners and elevation changes of Interlagos.
+
+Behind them, Nico Hulkenberg surprised many by pushing his Sauber into third, reminding fans of his past pole position at the same venue back in 2010. Fernando Alonso kept Aston Martin in the mix with a strong fourth, while Brazilian rookie Gabriel Bortoleto delighted home fans by securing fifth in his Sauber.
+
+Mercedes showed flashes of competitiveness with George Russell and Andrea Kimi Antonelli inside the top 10, while Racing Bulls’ youngsters Isack Hadjar and Liam Lawson demonstrated promise. Williams, Haas, and Alpine filled the midfield, with Ferrari notably absent from the sharp end of the timesheets, raising questions about their pace heading into the weekend.
+
+📋 FP1 Classification (Brazil GP 2025)
+Here’s the full list from 1st to 20th:
+
+Position	Driver	Team
+1	Lando Norris	McLaren
+2	Oscar Piastri	McLaren
+3	Nico Hulkenberg	Sauber
+4	Fernando Alonso	Aston Martin
+5	Gabriel Bortoleto	Sauber
+6	George Russell	Mercedes
+7	Pierre Gasly	Alpine
+8	Carlos Sainz	Williams
+9	Isack Hadjar	Racing Bulls
+10	Andrea Kimi Antonelli	Mercedes
+11	Liam Lawson	Racing Bulls
+12	Alex Albon	Williams
+13	Esteban Ocon	Haas
+14	Oliver Bearman	Haas
+15	Lance Stroll	Aston Martin
+16	Franco Colapinto	Alpine
+17	Max Verstappen	Red Bull Racing
+18	Charles Leclerc	Ferrari
+19	Lewis Hamilton	Ferrari
+20	Yuki Tsunoda	Red Bull Racing
+`
+  },
+    {
+    title: "Franco Colapinto Secures Alpine Seat for 2026 Formula 1 Season",
+    date: "2025-11-07",
+    image: "https://cdn1.f1oversteer.com/uploads/37/2025/09/GettyImages-2232436876-1024x683.jpg",
+    text: `Franco Colapinto, the young Argentine talent, will continue his journey in Formula 1 with Alpine, as the team confirmed he will drive alongside Pierre Gasly in the 2026 season. Despite a challenging debut year in 2025, Alpine has shown faith in Colapinto’s potential, securing him as part of their long-term project.
+
+A Rising Star with a Rocky Start
+Colapinto first entered Formula 1 in 2024 with Williams, stepping in mid-season and impressing with flashes of speed and composure. His move to Alpine in 2025 came after replacing Jack Doohan just six races into the campaign. While his early performances were inconsistent—marked by errors and a lack of points—he gradually improved, finishing ahead of teammate Gasly in several racesSky Sports.
+
+Alpine’s Strategy for Stability
+Alpine’s decision to retain Colapinto reflects their desire for continuity and stability. Executive advisor Flavio Briatore emphasized that Colapinto has the attributes to grow with the team, noting his resilience and ability to adapt under pressure. Gasly, meanwhile, has already committed to Alpine until 2028, meaning the team now has a clear driver pairing for the medium termFormula 1.
+
+Fan Connection and Regional Impact
+Colapinto’s presence is particularly significant for South American fans. With the Brazilian Grand Prix being the only F1 race in the region, Alpine’s announcement ahead of the São Paulo weekend was symbolic, drawing strong support from Argentine fans who see Colapinto as their new motorsport ambassador.
+
+Looking Ahead to 2026
+The 2026 season will mark Colapinto’s first full campaign from start to finish. Alpine hopes that with a year of experience under his belt, he can convert consistency into points and help push the team up the constructors’ standings. For Colapinto, it’s a chance to prove he belongs among the elite, and for Alpine, it’s a bet on youthful promise over immediate results.
+`
+  },
     {
     title: "Drivers React After Friday at the 2025 F1 São Paulo Grand Prix: Norris Shines, Piastri Rebounds, Verstappen Strugglesg",
     date: "2025-11-08",
@@ -1347,6 +1506,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
