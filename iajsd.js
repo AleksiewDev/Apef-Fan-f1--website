@@ -75,7 +75,7 @@ const newsAfterUSAGP = [
    {
     title: "Lando Lights It Up: Norris Takes Pole in Wild São Paulo Qualifying",
     date: "2025-11-08",
-    image: "https://static.wikia.nocookie.net/f1wikia/images/b/bc/LandoNorris2025.jpeg/revision/latest?cb=20250814232518",
+    image: "https://cdni.autocarindia.com/ExtraImages/20251027125339_f1_norris_mexico_gp.jpg",
     text: `Lando Lights It Up: Norris Takes Pole in Wild São Paulo Qualifying
 
 In a dramatic and unpredictable qualifying session at Interlagos, Lando Norris delivered a masterclass to snatch pole position for the 2025 São Paulo Grand Prix, continuing his late-season surge in the title fight. The McLaren driver clocked a blistering 1:09.511, edging out Mercedes rookie *Andrea Kimi Antonelli* and Ferrari’s *Charles Leclerc* in a session that saw championship contenders stumble and new stars shine.
@@ -1588,6 +1588,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
