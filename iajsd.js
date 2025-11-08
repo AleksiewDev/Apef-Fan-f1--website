@@ -73,6 +73,34 @@ const constructors2025 = [
 // News after USA GP 2025
 const newsAfterUSAGP = [
    {
+    title: "Lando Lights It Up: Norris Takes Pole in Wild São Paulo Qualifying",
+    date: "2025-11-08",
+    image: "https://static.wikia.nocookie.net/f1wikia/images/b/bc/LandoNorris2025.jpeg/revision/latest?cb=20250814232518",
+    text: `Lando Lights It Up: Norris Takes Pole in Wild São Paulo Qualifying
+
+In a dramatic and unpredictable qualifying session at Interlagos, Lando Norris delivered a masterclass to snatch pole position for the 2025 São Paulo Grand Prix, continuing his late-season surge in the title fight. The McLaren driver clocked a blistering 1:09.511, edging out Mercedes rookie *Andrea Kimi Antonelli* and Ferrari’s *Charles Leclerc* in a session that saw championship contenders stumble and new stars shine.
+
+
+
+ 🔥 Qualifying Report: Chaos, Comebacks, and Championship Twists
+
+The Interlagos circuit, always a theatre of drama, delivered again. With clouds looming and grip levels fluctuating, the session was a rollercoaster from Q1 to Q3.
+
+- Q1 Shock:Max Verstappen*, struggling with balance and rear-end grip, suffered a stunning Q1 exit. The Red Bull driver will start 16th, a massive blow to his championship hopes.
+- Q2 Drama:Lewis Hamilton* couldn’t extract pace from his Mercedes and was eliminated in P13, while *Isack Hadjar* stunned the paddock by dragging his RB into Q3 with a stellar lap.
+- Q3 Showdown: Norris, fresh off a Sprint win earlier in the day, saved his best for last. His final lap was a statement—hooked up, aggressive, and inch-perfect. Antonelli, showing maturity beyond his years, secured a front-row start, while Leclerc’s tidy lap earned him P3.
+
+Meanwhile, Oscar Piastri recovered from a Sprint crash to qualify fourth, keeping his title hopes alive. Hadjar’s P5 was arguably the lap of the day, outqualifying both George Russell and Carlos Sainz.
+
+---
+
+
+
+
+
+With Norris now holding a slender lead in the championship, and Verstappen buried in the midfield, Sunday’s race promises fireworks. Will McLaren convert pole into victory? Can Antonelli pull off a shock win? And how far can Max climb? São Paulo never disappoints—and this one’s already a classic in the making.` 
+    },
+   {
    title: "Norris Holds Firm at Interlagos — McLaren Driver Takes Sprint Win Amid Chaos",
     date: "2025-11-08",
     image: "https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2024/11/03192347/lando-norris-wave-brazilian-gp-planetf1.jpg",
@@ -1560,6 +1588,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
