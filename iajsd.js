@@ -72,6 +72,42 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+     {
+    title: "Brazilian GP 2025: Norris vs Piastri in Rain-Soaked Interlagos Showdown",
+    date: "2025-11-09",
+    image: "https://images.squarespace-cdn.com/content/v1/52744b67e4b0782c048b666f/1762430056260-FSW3R2ZF2Q1W7NDCJBIF/2+F1+Brazil+GP+poster.jpg?format=750w",
+    text: `The 2025 Brazilian Grand Prix at Interlagos promises chaos and drama, with rain showers and thunderstorms forecast across the weekend. The unpredictable São Paulo skies mean strategy will be as decisive as raw pace, and practice sessions have already hinted at who might hold the upper hand.
+
+Weather Report 🌧️
+
+Sunday (Race Day): Cooler temperatures near 19°C with light rain showers expected. Track evolution will be tricky, with drying lines appearing late in the race. Safety Car probability is high, historically 86% in wet conditions.
+
+Practice Analysis 🔍
+McLaren looked dominant, with Lando Norris topping the sole practice session by just 0.023s over teammate Oscar Piastri. Their pace on both short runs and mid-session fuel loads suggests strong adaptability.
+
+Red Bull struggled, with Max Verstappen only 17th in practice, complaining of poor balance in the wet. However, Verstappen’s history at Interlagos—winning from P17 last year in torrential rain—means he cannot be discountedF1 Oversteer.
+
+Ferrari and Mercedes showed mixed form: Charles Leclerc languished near the back, while rookie Kimi Antonelli impressed with front-row pace in Sprint Qualifying. Mercedes’ stability in wet conditions could be a hidden advantage.
+
+Surprise performers: Nico Hulkenberg (Sauber) and Fernando Alonso (Aston Martin) both placed inside the top five in practice, suggesting midfield teams could capitalize if chaos unfolds.
+
+Race Strategies 🧠
+Two-stop race likely: Starting on intermediates, switching to slicks if a dry line emerges, then back to wets if showers return.
+
+Track position critical: Overtaking at Interlagos is possible, but risky in wet conditions—especially at the Senna ‘S’.
+
+Safety Car windows: Teams must stay flexible, ready to pit under caution to minimize time loss.
+
+McLaren advantage: With Norris leading the championship by just one point over Piastri, both drivers will push aggressively. Expect team strategy tension if rain reshuffles the order.
+
+Who Holds the Advantage? 🏁
+McLaren: Best balance in practice, strong wet-weather pace, and both drivers in the title fight. Norris has momentum after Mexico, but Piastri is desperate to reclaim the lead.
+
+Verstappen: Despite poor practice, his wet-weather mastery and fearless overtaking make him the dark horse.
+
+Mercedes (Antonelli): Rookie brilliance could shine if conditions stay treacherous.
+`
+  },
    {
     title: "Lando Lights It Up: Norris Takes Pole in Wild São Paulo Qualifying",
     date: "2025-11-08",
@@ -1588,6 +1624,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
