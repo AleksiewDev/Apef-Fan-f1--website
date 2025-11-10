@@ -71,6 +71,55 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+ {
+    title: "Chaos, Comebacks, and Controversy: F1 Drivers React to the 2025 Brazilian Grand Prix",
+    date: "2025-11-10",
+    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-o7fAgMnOZA&psig=AOvVaw3nYS7SaGEEyvjWPHCxhBDb&ust=1762851017312000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOi7tfeZ55ADFQAAAAAdAAAAABAE",
+    text: `The 2025 São Paulo Grand Prix delivered drama, redemption, heartbreak, and championship-defining moments. Here's how each of the 20 drivers reacted after the checkered flag fell at Interlagos: 
+    1. Lando Norris (McLaren) "It feels incredible. Brazil has always been special, and to win here with such pace—just wow. The boos? I hear them, but I’m focused on the title."
+
+2. Kimi Antonelli (Mercedes) "I gave it everything. The contact with Piastri was unfortunate, but I kept my head down. P2 is a great result for the team."
+
+3. Max Verstappen (Red Bull) "From pit lane to podium—classic Interlagos chaos. We made the right calls, and the car felt alive. I love this place."
+
+4. George Russell (Mercedes) "Solid points today. I had the pace for a podium but got caught in traffic mid-race. Still, we’re building momentum."
+
+5. Oscar Piastri (McLaren) "I’m gutted. The penalty was harsh—I saw a gap and went for it. It cost me, but I’ll bounce back in Vegas."
+
+⚔️ Midfield Warriors
+6. Oliver Bearman (Haas) "Best result of the season! The car was hooked up, and I managed the tires well. We’re proving Haas belongs in the fight."
+
+7. Liam Lawson (Racing Bulls) "Happy with the points. We nailed the strategy and stayed clean. Sao Paulo always throws surprises."
+
+8. Isack Hadjar (Racing Bulls) "Tough race, but I’m proud of the fight. Holding off Gasly in the final laps was intense."
+
+9. Nico Hülkenberg (Sauber) "We needed this. Clean race, good pace, and finally some luck. Let’s keep pushing."
+
+10. Pierre Gasly (Alpine) "Frustrating. We had the pace for more, but traffic and tire degradation hurt us. Still, points are points."
+
+🚧 Battlers and Survivors
+11. Alex Albon (Williams) "We gambled on the early stop—it almost worked. Just missed the top ten, but the car felt decent."
+
+12. Esteban Ocon (Haas) "I got squeezed a few times, but we kept it clean. Not our best day, but we’ll regroup."
+
+13. Carlos Sainz (Williams) "The car was tricky today. I struggled with balance and couldn’t find rhythm. We’ll analyze and move forward."
+
+14. Fernando Alonso (Aston Martin) "Not much to celebrate. We lacked pace and grip. Brazil deserves better racing from us."
+
+15. Franco Colapinto (Alpine) "First time racing here—it’s electric. I learned a lot, and finishing was the goal. Mission accomplished."
+
+16. Lance Stroll (Aston Martin) "We tried a bold strategy, but it didn’t pay off. Just one of those weekends."
+
+17. Yuki Tsunoda (Red Bull) "I got caught in the Lap 1 mess and never recovered. Disappointed, but we’ll fight again."
+
+💥 DNFs and Heartbreaks
+Charles Leclerc (Ferrari) "I was just a passenger in that crash. It’s frustrating—this could’ve been a podium. We need answers."
+
+Lewis Hamilton (Ferrari) "I felt something wrong early on, then the engine gave up. Brazil deserves better. We’ll come back stronger."
+
+Gabriel Bortoleto (Sauber) "Devastated. My home race, and I couldn’t finish. I wanted to give the fans a show. Next year, I promise."
+`
+  },
      {
     title: "Lando Norris Dominates in São Paulo to Extend Championship Lead",
     date: "2025-11-09",
@@ -89,7 +138,6 @@ Piastri Loses Ground: Norris’s McLaren teammate Oscar Piastri struggled, finis
 Midfield Battles: Oliver Bearman impressed again with a strong top-six finish for Haas, while Liam Lawson and Nico Hülkenberg executed clever one-stop strategies to secure points.
 
 Full Race Classification (71 laps)
-Pos	Driver	Team	Gap / Notes
 1	Lando Norris (GBR)	McLaren	
 2	Kimi Antonelli (ITA)	Mercedes	
 3	Max Verstappen (NED)	Red Bull	+
@@ -1674,6 +1722,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
