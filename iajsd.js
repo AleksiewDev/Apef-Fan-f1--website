@@ -74,7 +74,7 @@ const newsAfterUSAGP = [
  {
     title: "Chaos, Comebacks, and Controversy: F1 Drivers React to the 2025 Brazilian Grand Prix",
     date: "2025-11-10",
-    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-o7fAgMnOZA&psig=AOvVaw3nYS7SaGEEyvjWPHCxhBDb&ust=1762851017312000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOi7tfeZ55ADFQAAAAAdAAAAABAE",
+    image: "https://i.ytimg.com/vi/-o7fAgMnOZA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBLtzlx8SVjyMToZ1n9ALd-vJ7KHQ",
     text: `The 2025 São Paulo Grand Prix delivered drama, redemption, heartbreak, and championship-defining moments. Here's how each of the 20 drivers reacted after the checkered flag fell at Interlagos: 
     1. Lando Norris (McLaren) "It feels incredible. Brazil has always been special, and to win here with such pace—just wow. The boos? I hear them, but I’m focused on the title."
 
@@ -1722,6 +1722,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
