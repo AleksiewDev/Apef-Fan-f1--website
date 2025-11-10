@@ -72,6 +72,28 @@ const constructors2025 = [
 // News after USA GP 2025
 const newsAfterUSAGP = [
  {
+    title: "From Pitlane to Podium: Verstappen’s Astonishing P3 in Brazil",
+    date: "2025-11-10",
+    image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Brazil/2245875435.webp",
+    text: `Max Verstappen’s charge from the pitlane to third place at the 2025 São Paulo Grand Prix was nothing short of extraordinary. What began as a weekend of frustration for Red Bull turned into one of the most memorable comeback drives of the season, showcasing Verstappen’s relentless determination and racecraft.
+
+A Weekend of Struggles
+Verstappen’s troubles started in qualifying, where he was eliminated in Q1 for the first time in his career. Red Bull’s experimental setup changes left the car unbalanced, forcing the team to take drastic action. Overnight, they fitted a new power unit and revised setup, which meant Verstappen had to start from the pitlane under parc fermé rules.
+
+Early Setbacks
+The race began with more drama. Verstappen picked up a puncture on lap one, forcing an early pit stop and dropping him to the back once again. At that point, few believed a podium was possible. Yet, Verstappen remained composed, knowing the Interlagos circuit often rewards bold strategy and aggressive overtaking.
+
+The Fightback
+From there, Verstappen launched a relentless recovery drive. He carved through the midfield, exploiting Red Bull’s improved race pace and making decisive moves in the DRS zones. His ability to manage tire degradation while maintaining speed was crucial. By mid-race, he was already inside the top ten, and with a perfectly timed second stop, he emerged in contention for the podium.
+
+Closing Stages
+In the final laps, Verstappen battled Mercedes’ Kimi Antonelli for second place. Although he couldn’t quite pass the Italian rookie, Verstappen secured P3, a result he himself admitted was “incredible” and far beyond expectations. The podium extended his streak of seven consecutive top-three finishes, keeping his season alive even as championship leader Lando Norris extended his points advantage.
+
+Why It Mattered
+This comeback wasn’t just about salvaging points. It highlighted Red Bull’s willingness to take risks—changing the car setup “blind” and starting from pitlane rather than settling for mediocrity. Verstappen’s drive embodied the team’s competitive DNA and his own refusal to give up, even when the odds seemed stacked against him.
+`
+  },
+ {
     title: "Chaos, Comebacks, and Controversy: F1 Drivers React to the 2025 Brazilian Grand Prix",
     date: "2025-11-10",
     image: "https://i.ytimg.com/vi/-o7fAgMnOZA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBLtzlx8SVjyMToZ1n9ALd-vJ7KHQ",
@@ -1722,6 +1744,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
