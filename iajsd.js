@@ -71,6 +71,25 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+  {
+    title: "From Zandvoort Heartbreak to Championship Triumph: Lando Norris’s Stunning Comeback",
+    date: "2025-11-11",
+    image: "https://cdn-9.motorsport.com/images/amp/YpbPvlN0/s1000/lando-norris-mclaren.jpg",
+    text: `When the Dutch Grand Prix at Zandvoort ended in smoke for Lando Norris, many believed his 2025 Formula 1 title hopes had gone up with it. Running strongly in second place, Norris suffered a cruel mechanical failure that handed victory to teammate Oscar Piastri and left the Briton trailing by 34 points in the standings. For a driver who had led the championship earlier in the year, the setback looked decisive. Yet what followed was one of the most remarkable comebacks in recent F1 history.
+
+The Turning Point
+Instead of crumbling under pressure, Norris regrouped. Across the next five rounds—Italy, Azerbaijan, Singapore, the United States, and Mexico—he consistently outscored Piastri. His resilience was rewarded with back-to-back victories in Mexico City and São Paulo, where he dominated the field and reclaimed the championship lead. By early November, Norris had transformed a 34-point deficit into a razor-thin advantage, sitting just one point ahead of Piastri.
+
+Mental Strength and Maturity
+What makes Norris’s comeback so compelling is not just the results, but the mindset behind them. Former world champion Jacques Villeneuve praised Norris’s openness about mistakes, calling his honesty a “superpower” that allowed him to grow under pressure. Norris himself dismissed the idea that luck or sudden change in mentality was responsible, insisting that his resurgence was built on hard work, consistency, and belief in McLaren’s pace.
+
+The Championship Battle
+With only a handful of races left, the fight between Norris and Piastri has become the defining storyline of the season. McLaren, already crowned Constructors’ Champion, now faces the rare luxury—and tension—of seeing its two drivers battle for the ultimate prize. Meanwhile, Max Verstappen, though still capable of brilliance, has slipped further behind, acknowledging that Red Bull’s struggles earlier in the season cost him dearlyF1GrandPrix.it.
+
+Why This Comeback Matters
+Norris’s rebound after Zandvoort is more than a statistical recovery—it’s a testament to the evolution of a driver once criticized for lacking killer instinct. By refusing to let mechanical misfortune define his season, he has shown the grit required of a world champion. His victories in Mexico and Brazil weren’t just wins; they were statements of intent, proving that he can thrive under the most intense pressure.
+`
+  },
  {
     title: "From Pitlane to Podium: Verstappen’s Astonishing P3 in Brazil",
     date: "2025-11-10",
@@ -1744,6 +1763,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
