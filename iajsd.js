@@ -1207,111 +1207,7 @@ Over 400,000 fans created a carnival atmosphere in Mexico City. Local hero Sergi
 Looking ahead
 With Brazil and Qatar sprint weekends next, the title fight is wide open. Norris has momentum, Piastri must regroup, and Verstappen is waiting to strike.`
   },
-  {
-    title: "What’s happening with Piastri? From dominance to title pressure",
-    date: "2025-10-26",
-    image: "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-26T001210.347.webp",
-    text: `Oscar Piastri’s championship campaign has hit turbulence. After a dominant win at Zandvoort, the McLaren driver looked unstoppable — 34 points clear of teammate Lando Norris and 104 ahead of Max Verstappen. But five races later, the gap has shrunk to just 14 and 40 respectively.
-
-**Post-Zandvoort results**
-- 🇮🇹 Monza: P3, solid but outpaced by Norris
-- 🇦🇿 Baku: DNF, double crash weekend
-- 🇸🇬 Singapore: P4, decent recovery
-- 🇺🇸 Austin: P5, worst dry race finish of the season
-- 🇲🇽 Mexico: Qualifying struggles, race P5
-
-Piastri’s form dipped sharply in Baku, where he crashed out of both the sprint and the main race. That weekend alone cost him 30+ points. In Austin, he finished fifth — 22 seconds behind Norris — and admitted setup issues and poor tyre management.
-
-Meanwhile, Norris has surged with consistent podiums and a pole in Mexico. Verstappen, once 104 points behind, has won the US GP and sprint, slashing the deficit to 40.
-
-**What’s going wrong?**
-- Qualifying pace has dropped: Piastri’s average grid position since Zandvoort is P5.
-- Tyre degradation: He’s struggled in high-deg races like Singapore and Austin.
-- Pressure: With Norris and Verstappen charging, every mistake is amplified.
-
-**Déjà vu from 2010?**
-This season is starting to echo Mark Webber’s 2010 campaign. Back then, Webber led the championship for much of the year, only to see it slip away in the final races. Mistakes, pressure, and rivals peaking at the right time cost him the title — and Piastri now faces a similar storm.
-
-**Championship outlook**
-With five rounds left — including sprints in Brazil and Qatar — the title fight is wide open. Piastri still leads, but momentum is shifting. Norris is just 14 points behind, and Verstappen is within striking distance. If McLaren can’t stabilize Piastri’s form, the Australian may lose a title that once looked inevitable.
-
-The next few races will define the season. Can Piastri respond under pressure, or will Norris and Verstappen complete the comeback?`
-  },
-  {
-    title: "Norris takes stunning pole in Mexico City qualifying",
-    date: "2025-10-25",
-    image: "https://cdn.racingnews365.com/2025/Norris/_1092x683_crop_center-center_85_none/2243102585.jpg?v=1761375627",
-    text: `Lando Norris delivered a sensational lap to secure pole position for the Mexico City Grand Prix, stopping the clocks at 1:16.801. 
-The McLaren driver carried his momentum from FP3 into qualifying, edging out Ferrari’s Lewis Hamilton . 
-George Russell put Mercedes fourth on the grid, while Charles Leclerc lined up third for Ferrari. 
-
-Max Verstappen struggled to extract pace from his Red Bull and could manage only fifth, ahead of Oscar Piastri in sixth. 
-Rookie Andrea Kimi Antonelli impressed again with seventh, continuing his strong weekend form. 
-Fernando Alonso and Carlos Sainz filled the fourth row, while Yuki Tsunoda rounded out the top ten. 
-
-The session was tight throughout, with less than half a second covering the top six. 
-Altitude and cooling remained key talking points, with several drivers reporting brake fade in Q2. 
-With Norris on pole and Hamilton alongside, Sunday’s race promises a fierce multi‑team battle at the front.`
-  },
-  {
-    title: "Norris dominates FP3 in Mexico",
-    date: "2025-10-25",
-    image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T193053.711.webp",
-    text: ` Lando Norris set a blistering 1:16.633 to lead final practice by over three tenths.
-    Hamilton and Russell followed for Ferrari and Mercedes, while Verstappen slipped to P6.
-    McLaren looks strong heading into qualifying, with Ferrari and Mercedes close behind.`
-  },
-  {
-    title: "Red Bull upgrades under scrutiny as Verstappen tops FP2",
-    date: "2025-10-24",
-    image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Mexico/GENERAL%20CROP%20-%202025-10-25T000459.547.webp",
-    text: `Red Bull arrived in Mexico with the most extensive upgrade package of the field, including revised floor edges and cooling inlets. 
-Max Verstappen immediately put the parts to good use, setting the fastest time in FP2 with a 1:17.392. 
-Analysts noted improved stability in medium‑speed corners, though rivals McLaren and Ferrari remained within striking distance. 
-The upgrades are seen as pivotal in Verstappen’s late‑season title push, with the Dutchman now only 40 points off championship leader Oscar Piastri.`
-  },
-  {
-    title: "Verstappen sets the pace in Mexico FP2 as rivals close in",
-    date: "2025-10-24",
-    image: "https://cdn-6.motorsport.com/images/amp/6O1GkkG2/s1000/max-verstappen-red-bull-racing.jpg",
-    text: `Max Verstappen returned to his Red Bull after sitting out FP1 and immediately stamped his authority on the Mexico City weekend. 
-The Dutchman’s 1:17.392 lap was enough to top the second practice session, though Ferrari’s Charles Leclerc and Mercedes rookie Andrea Kimi Antonelli kept the gap tight in second and third.
-
-The session began under warm afternoon skies, with teams eager to recover track time after handing cars to rookies in FP1. 
-Verstappen quickly found rhythm, combining straight‑line efficiency with stability through the stadium section. 
-Leclerc’s Ferrari looked sharp on low‑fuel runs, just 0.153s adrift, while Antonelli continued to impress in his debut season, finishing only 0.174s behind Verstappen and ahead of more experienced rivals.
-
-Lando Norris placed fourth for McLaren, a quarter of a second off the pace, while Lewis Hamilton rounded out the top five for Ferrari. 
-George Russell was sixth, followed by Yuki Tsunoda in the second Red Bull. 
-Fernando Alonso and Carlos Sainz slotted into eighth and ninth, with Lance Stroll completing the top ten for Aston Martin.
-
-Further down the order, Liam Lawson led the Racing Bulls effort in 11th, just ahead of Oscar Piastri in 12th, who focused on long‑run pace rather than headline times. 
-Esteban Ocon and rookie Isack Hadjar followed, while Nico Hülkenberg, Alexander Albon, and Oliver Bearman filled the midfield slots. 
-Pierre Gasly, Franco Colapinto, Gabriel Bortoleto, and Jack Doohan rounded out the classification.
-
-The session was notable for the return of full‑time drivers after nine rookies had taken part in FP1. 
-Teams split their FP2 programs between qualifying simulations on soft tyres and heavy‑fuel race runs, with the high altitude continuing to test cooling systems and ERS deployment. 
-Brake temperatures spiked for several cars, forcing careful management during long stints.
-
-With Verstappen back on top, McLaren and Ferrari close behind, and Antonelli proving he belongs in the fight, the stage is set for a fascinating Saturday. 
-The margins at the front suggest qualifying could be decided by hundredths, while the midfield battle remains wide open. 
-The passionate Mexican crowd, already energized by Pato O’Ward’s FP1 cameo, left FP2 buzzing with anticipation for the weekend’s decisive sessions.`
-  },
-  {
-    title: "Leclerc leads rookie‑heavy FP1 in Mexico City",
-    date: "2025-10-24",
-    image: "https://images.ps-aws.com/c?url=https%3A%2F%2Fd3cm515ijfiu6w.cloudfront.net%2Fwp-content%2Fuploads%2F2025%2F10%2F24201624%2FCharles-Leclerc-Formula-1-F1-results-Ferrari-PlanetF1-1320x742.jpg",
-    text: `Ferrari’s Charles Leclerc set the pace in FP1 at the Autódromo Hermanos Rodríguez with a 1:18.380. 
-Mercedes rookie Andrea Kimi Antonelli impressed in P2, just a tenth behind, while Nico Hülkenberg’s Sauber was third. 
-Oscar Piastri slotted into fourth despite a late slide.
-
-Nine rookies were given track time as part of F1’s mandatory FP1 program. Gabriel Bortoleto (Sauber) shone in fifth, Red Bull’s Arvid Lindblad was sixth, and Alpine’s Franco Colapinto placed ninth. 
-McLaren gave home hero Pato O’Ward a run, drawing huge cheers from the Mexican crowd. 
-Other rookies included Frederik Vesti (Mercedes), Paul Aron (Alpine), Ryo Hirakawa (Haas), Ayumu Iwasa (Racing Bulls), and Luke Browning (Williams). 
-
-The session highlighted the next generation’s potential while giving teams valuable high‑altitude data ahead of qualifying.`
-  },
-];
+ ]
 
 // Calendar (2025)
 const calendar2025 = [
@@ -1763,6 +1659,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
