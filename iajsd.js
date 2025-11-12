@@ -71,6 +71,39 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+ {
+    title: "Red Bull and Racing Bulls to Unveil 2026 F1 Cars in Detroit on January",
+    date: "2025-11-12",
+    image: "https://cdn-9.motorsport.com/images/amp/6b7Galv0/s1000/liam-lawson-red-bull-racing-is.jpg",
+    text: `On January 15, 2026, Formula 1 fans will witness a landmark moment: Red Bull Racing and Racing Bulls will jointly reveal their new cars in Detroit, Michigan, at the headquarters of their new engine partner, Ford. This event marks the official beginning of the Red Bull Ford Powertrains era, a partnership that will debut under the sweeping new F1 regulations set to reshape the sport.
+
+A Historic Launch in Detroit
+Location: Ford’s U.S. headquarters in Detroit, chosen to honor the American giant’s motorsport heritage.
+
+Teams Involved: Oracle Red Bull Racing and Visa Cash App Racing Bulls.
+
+Date: January 15, 2026 – the first confirmed launch of the new rules era.
+
+By selecting Detroit, Red Bull is paying tribute to Ford’s legacy while celebrating the start of a new chapter in Formula 1. The unveiling will showcase the new liveries of both teams, designed for the 2026 season that introduces radical changes to power units and chassis regulations.
+
+The Red Bull–Ford Partnership
+Power Units: For the first time, Red Bull will compete with its own Red Bull Ford Powertrains, developed in collaboration with Ford engineers.
+
+Significance: This partnership represents Ford’s return to Formula 1 after decades away, while giving Red Bull full independence in engine manufacturing.
+
+CEO Statement: Ford’s Jim Farley emphasized that the collaboration is about more than racing—it’s about applying F1 innovation to future cars and trucks.
+
+What Fans Can Expect
+Livery Reveal: Both teams will present their striking new designs, symbolizing the dawn of the 2026 regulations.
+
+Pre-Season Testing: The cars themselves are expected to hit the track later in January at a private test in Barcelona.
+
+Season Outlook: With 24 races scheduled, the 2026 campaign promises to be one of the most competitive in F1 history.
+
+Why It Matters
+This Detroit launch is more than a car reveal—it’s the start of a new era in Formula 1. Red Bull and Racing Bulls are positioning themselves at the forefront of innovation, combining their racing pedigree with Ford’s engineering might. Fans worldwide will be watching closely, as the partnership could redefine the competitive landscape of the sport.
+`
+  },
   {
     title: "From Zandvoort Heartbreak to Championship Triumph: Lando Norris’s Stunning Comeback",
     date: "2025-11-11",
@@ -1659,6 +1692,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
