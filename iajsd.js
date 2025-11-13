@@ -1738,4 +1738,21 @@ document.addEventListener('scroll', () => {
 
 
 
+let scrolling = false;
+window.addEventListener('scroll', () => {
+  if (!scrolling) {
+    document.body.classList.add('is-scrolling');
+    scrolling = true;
+    clearTimeout(window.scrollEndTimer);
+    window.scrollEndTimer = setTimeout(() => {
+      document.body.classList.remove('is-scrolling');
+      scrolling = false;
+    }, 200);
+  }
+});
+window.addEventListener('load', () => {
+  // your code here
+});
+
+
 
