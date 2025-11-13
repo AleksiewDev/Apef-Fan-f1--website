@@ -72,6 +72,22 @@ const constructors2025 = [
 // News after USA GP 2025
 const newsAfterUSAGP = [
   {
+    title: "Audi Unveils Striking Concept Livery Ahead of 2026 Formula 1 Debut",
+    date: "2025-11-13",
+    image: "https://www.topgear.com/sites/default/files/2025/11/%281%29%20A251797_large.jpg",
+    text: `Audi has officially revealed its R26 Concept livery, offering fans a tantalizing preview of the design language and color scheme that will adorn the German marque’s first Formula 1 car when it hits the grid in 2026. The unveiling took place at the Audi Brand Experience Center in Munich, marking a major milestone in the company’s journey toward its long-awaited entry into the sport.
+
+The concept car, dubbed the R26, is not the final race machine but rather a showcase of Audi’s new visual identity in Formula 1. The livery features a sleek titanium finish, complemented by carbon black accents and the newly introduced Audi red, which also reimagines the iconic Audi rings in a bold crimson hue. This minimalist yet aggressive design pays homage to Audi’s rich motorsport heritage, drawing inspiration from the legendary Auto Union racers while signaling a modern, forward-looking approachSpeedcafe.com.
+
+Audi CEO Gernot Döllner described the R26 Concept as “a clear, ambitious statement,” emphasizing that motorsport has always been part of Audi’s DNA and a driving force behind innovation. The company’s entry into Formula 1 is seen as both a technological challenge and a branding opportunity, with Audi aiming to deliver the most striking car on the grid when the new regulations come into effect in 2026.
+
+The R26 Concept also reflects the sweeping changes Formula 1 will undergo in 2026, including lighter chassis, active aerodynamics, and new hybrid power units. Audi will take over the Sauber team, with operations spread across Hinwil (Switzerland) for chassis development, Neuburg (Germany) for power unit production, and a new technology office in Bicester (UK) to tap into Motorsport Valley expertise.
+
+While the full race-spec car will only be unveiled in January 2026, anticipation is already building. Audi has confirmed its driver lineup with Nico Hülkenberg and Gabriel Bortoleto, alongside former Ferrari team principal Mattia Binotto heading the project. The brand has set ambitious targets, aiming to challenge for championships by 2030, underscoring its long-term commitment to Formula 1.
+
+`
+  },
+  {
     title: "Can Red Bull’s Brazil Upgrades Propel Verstappen in the Next Races?",
     date: "2025-11-13",
     image: "https://cdn.motorsport.com/images/mgl/68VWQ7Q2/s1000/max-verstappen-red-bull-racing.jpg",
@@ -1719,6 +1735,7 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
 
