@@ -71,6 +71,33 @@ const constructors2025 = [
 
 // News after USA GP 2025
 const newsAfterUSAGP = [
+  {
+    title: "Can Red Bull’s Brazil Upgrades Propel Verstappen in the Next Races?",
+    date: "2025-11-13",
+    image: "https://cdn.motorsport.com/images/mgl/68VWQ7Q2/s1000/max-verstappen-red-bull-racing.jpg",
+    text: `When Red Bull rolled the dice at the Brazilian Grand Prix, they did so in dramatic fashion. After Max Verstappen’s shock elimination in Q1, the team pulled his RB21 out of parc fermé, fitted a new Honda power unit, and made several setup revisions. This forced him to start from the pit lane, but the gamble paid off: Verstappen stormed through the field to finish third, becoming only the fourth driver in Formula 1 history to reach the podium from a pit lane start.
+
+What Changed in Brazil
+New Power Unit: Red Bull installed a fresh internal combustion engine, turbocharger, MGU-K, MGU-H, and battery system.
+
+Revised Floor & Setup: Reports suggest they switched to a Mexico-spec floor, aiming for better balance and efficiency.
+
+Strategic Risk: These changes breached component allocation rules, triggering a pit lane start.
+
+The Immediate Impact
+Despite an early puncture, Verstappen’s pace was on par or faster than McLaren’s throughout the race. His recovery drive highlighted that the new engine delivered extra power, particularly on the long straights of InterlagosF1 Oversteer. Without the Q1 disaster, Verstappen might have been in contention for victory.
+
+Will It Help in Future Races?
+Performance Boost: The Brazil upgrades clearly gave Verstappen more speed. If reliability holds, Red Bull could close the gap to McLaren in upcoming rounds.
+
+Cost Cap Concerns: McLaren has already questioned whether Red Bull’s engine swap fits within the 2025 cost cap rules. Any penalties or restrictions could blunt the advantage.
+
+Championship Context: Verstappen remains behind Lando Norris in the drivers’ standings. Even with improved pace, Red Bull must deliver flawless weekends to claw back points.
+
+Conclusion
+The Brazil changes were a short-term success, proving Red Bull can still unlock performance when pushed. However, the real test lies ahead: can these upgrades be sustained under F1’s strict cost cap rules, and will they consistently match McLaren’s pace? If Red Bull avoids regulatory setbacks, Verstappen’s podium in Brazil may be the turning point that reignites his championship fight.
+`
+  },
  {
     title: "Red Bull and Racing Bulls to Unveil 2026 F1 Cars in Detroit on January",
     date: "2025-11-12",
@@ -1692,5 +1719,6 @@ document.addEventListener('scroll', () => {
     logo.style.width = '120px';
   }
 });
+
 
 
