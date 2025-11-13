@@ -212,8 +212,6 @@
     });
   });
 </script>
-
-<script type="module" src="https://unpkg.com/@splinetool/viewer@1.11.1/build/spline-viewer.js"></script>
   <style>
     /* Make spline background fill screen */
     spline-viewer {
@@ -257,7 +255,6 @@
 </head>
 <body>
   <!-- 3D Background -->
-  <spline-viewer url="https://prod.spline.design/sLePMntcH7ugJ5h3/scene.splinecode"></spline-viewer>
 <script>
   function setVh() {
     // Get the viewport height and multiply by 1% to get a value for 1vh
@@ -284,11 +281,18 @@
 
   // Run on resize/orientation change
   window.addEventListener('resize', setVh);
+</script>
+
+<script>
+if (window.innerWidth < 768) {
+  document.querySelector('.spline-bg').remove();
+}
 </script>
 
 <style>
   spline-viewer { position: fixed; top:0; left:0; width:100vw; height:100vh; }
 </style>
+
 
 
 
