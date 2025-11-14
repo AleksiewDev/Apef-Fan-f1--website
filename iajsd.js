@@ -1387,7 +1387,7 @@ function openArticle(idx){
   modalBody.innerHTML = `
     <img src="${n.image}" alt="${escapeHtml(n.title)}">
     <h2>${escapeHtml(n.title)}</h2>
-    <div style="color:var(--muted);margin-bottom:10px">${n.date} • F1 News Hub</div>
+    <div style="color:var(--muted);margin-bottom:10px">${n.date} </div>
     <div style="white-space:pre-wrap;color:#333;font-size:15px">${escapeHtml(n.text)}</div>
   `;
   modal.setAttribute('aria-hidden','false');
