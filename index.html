@@ -1,297 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Apex Fan Club — F1 2025</title>
-  <meta name="description" content="Apex Fan Club — the definitive home for F1 fans. 2025 drivers, teams, standings, calendar, results, and deep-dive team histories." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="WHEN YO.css" />
-
-  <!-- Spline 3D background -->
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.11.1/build/spline-viewer.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>F1 News — Live Hub</title>
+  <link rel="stylesheet" href="untilted 2.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Fixed 3D background behind all content -->
-  <spline-viewer url="https://prod.spline.design/sLePMntcH7ugJ5h3/scene.splinecode"></spline-viewer>
-    <!-- Header -->
-    <header class="site-header">
+  <header class="site-header">
+    <div class="header-inner">
       <div class="brand">
+        <img id="f1-logo" src="https://i.pinimg.com/736x/3d/89/3a/3d893a5f9d6a914d84a8bd0d57a05ff9.jpg" alt="F1 Logo">
         <div class="brand-text">
-         <div class="brand">
-  <img 
-    src="https://i.pinimg.com/736x/3d/89/3a/3d893a5f9d6a914d84a8bd0d57a05ff9.jpg" 
-    alt="Apex Fan Club Logo" 
-    class="logo-img" />
-  <div class="brand-text">
-    <h1 class="brand-title"></h1>
-    <p class="brand-subtitle"></p>
-  </div>
-</div>
-
+          <h1>Formula 1 — Apex Fan Club</h1>
+          <p class="tag">Countdown • News • Championships • Calendar</p>
         </div>
       </div>
-      <nav class="main-nav" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
-        <ul id="navMenu" class="nav-list">
-          <li><a href="#countdown">Next GP</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#drivers">Drivers</a></li>
-          <li><a href="#constructors">Constructors</a></li>
-          <li><a href="#calendar">Calendar</a></li>
-        </ul>
+      <nav class="top-nav">
+        <a href="#countdown">Countdown</a>
+        <a href="#news">News</a>
+        <a href="#drivers">Drivers</a>
+        <a href="#constructors">Constructors</a>
+        <a href="#calendar">Calendar</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-
-
-
-  <div id="app">
-    <!-- Header -->
-    <header class="site-header">
-       </header>
-
-    <!-- Hero section (shows background words) -->
-    <section class="hero"></section>
-
-    <!-- Countdown -->
-    <section id="countdown" class="countdown-section">
-    
-    </section>
-
-  
-   
-
-
-    <!-- Footer -->
-    <footer class="site-footer">
- 
-    </footer>
-  </div>
-
-
-    <!-- Countdown -->
-    <section id="countdown" class="countdown-section">
-      <h3 class="section-title">Next Grand Prix: FORMULA 1 HEINEKEN LAS VEGAS GRAND PRIX</h3>
-      <p class="section-subtitle">Las Vegas Strip Circuit</p>
-      <div class="countdown-grid">
-        <div class="count-card">
-          <div class="count-value" id="days">00</div>
-          <div class="count-label">Days</div>
+  <main class="main">
+    <!-- Hero with dynamic countdown -->
+    <section id="countdown" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="next-gp-info">
+          <h2>Next Grand Prix</h2>
+          <h3 id="next-gp-name">Loading...</h3>
+          <p id="next-gp-circuit" class="muted"></p>
         </div>
-        <div class="count-card">
-          <div class="count-value" id="hours">00</div>
-          <div class="count-label">Hours</div>
-        </div>
-        <div class="count-card">
-          <div class="count-value" id="minutes">00</div>
-          <div class="count-label">Minutes</div>
-        </div>
-        <div class="count-card">
-          <div class="count-value" id="seconds">00</div>
-          <div class="count-label">Seconds</div>
+
+        <div class="countdown-card">
+          <div class="countdown-grid" aria-live="polite">
+            <div><span id="cd-days">00</span><small>DAYS</small></div>
+            <div><span id="cd-hours">00</span><small>HOURS</small></div>
+            <div><span id="cd-minutes">00</span><small>MIN</small></div>
+            <div><span id="cd-seconds">00</span><small>SEC</small></div>
+          </div>
+          <div class="cta-row">
+            <button class="btn accent" id="go-to-calendar">View Calendar</button>
+            <div class="small-muted" id="gp-date">—</div>
+          </div>
         </div>
       </div>
-      <div class="event-times" id="eventTimes" aria-live="polite"></div>
     </section>
 
     <!-- News -->
-    <section id="news" class="news-section">
-      <h3 class="section-title">Latest news</h3>
-      <div class="news-list" id="newsList"></div>
-    </section>
-
-    <!-- Drivers -->
-    <section id="drivers" class="standings-section">
-      <h3 class="section-title">Drivers’ Championship — 2025</h3>
-      <p class="section-subtitle">Positions 1–20</p>
-      <div class="table-wrap">
-        <table class="standings-table" aria-describedby="drivers-desc">
-          <caption id="drivers-desc" class="visually-hidden">Current 2025 Formula 1 Drivers’ Championship standings from 1 to 20.</caption>
-          <thead>
-            <tr>
-              <th scope="col">Pos</th>
-              <th scope="col">Driver</th>
-              <th scope="col" class="hide-mobile">Team</th>
-              <th scope="col">Points</th>
-              <th scope="col" class="hide-mobile">Wins</th>
-              <th scope="col" class="hide-mobile">Poles</th>
-              <th scope="col">Photo</th>
-            </tr>
-          </thead>
-          <tbody id="driversTable"></tbody>
-        </table>
+    <section id="news" class="section">
+      <div class="section-head">
+        <h2>Latest News</h2>
+        <p class="muted">Top stories curated from around the paddock — click Read more for full article.</p>
+      </div>
+      <div id="news-grid" class="news-grid">
+        <!-- cards injected by JS -->
       </div>
     </section>
 
-    <!-- Constructors -->
-    <section id="constructors" class="standings-section">
-      <h3 class="section-title">Constructors’ Championship — 2025</h3>
-      <p class="section-subtitle">Positions 1–10</p>
-      <div class="table-wrap">
-        <table class="standings-table" aria-describedby="constructors-desc">
-          <caption id="constructors-desc" class="visually-hidden">Current 2025 Formula 1 Constructors’ Championship standings from 1 to 10.</caption>
-          <thead>
-            <tr>
-              <th scope="col">Pos</th>
-              <th scope="col">Constructor</th>
-              <th scope="col">Points</th>
-              <th scope="col" class="hide-mobile">Drivers</th>
-              <th scope="col">Photo</th>
-            </tr>
-          </thead>
-          <tbody id="constructorsTable"></tbody>
-        </table>
+    <!-- Full Article Popup -->
+<div id="articlePopup" class="article-popup">
+    <div class="article-popup-content">
+        <button class="close-article">✕</button>
+        <h2 id="popupTitle"></h2>
+        <img id="popupImage" alt="">
+        <p id="popupText"></p>
+    </div>
+</div>
+
+
+    <!-- Drivers championship -->
+    <section id="drivers" class="section">
+      <div class="section-head">
+        <h2>Drivers Championship</h2>
+        <p class="muted">Live standings — photos, stats and highlights.</p>
+      </div>
+      <div class="table-wrap" id="drivers-wrap">
+        <!-- driver cards injected by JS -->
+      </div>
+    </section>
+
+    <!-- Constructors championship -->
+    <section id="constructors" class="section">
+      <div class="section-head">
+        <h2>Constructors Championship</h2>
+        <p class="muted">Team standings with driver pairings and points.</p>
+      </div>
+      <div class="constructors-grid" id="constructors-wrap">
+        <!-- constructors injected by JS -->
       </div>
     </section>
 
     <!-- Calendar -->
-    <section id="calendar" class="calendar-section">
-      <h3 class="section-title">2025 season calendar</h3>
-      <div id="calendarGrid" class="calendar-grid"></div>
-
-    
+    <section id="calendar" class="section">
+      <div class="section-head">
+        <h2>2025 Calendar</h2>
+        <p class="muted">Full season calendar — click a round to highlight countdown.</p>
+      </div>
+      <div id="calendar-list" class="calendar-list">
+        <!-- calendar injected by JS -->
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-grid">
-        <div>
-          <h6 class="footer-title">Apex Fan Club</h6>
-          <p>Built for fans who crave clarity, authenticity, and speed.</p>
-        </div>
-        <div>
-          <h6 class="footer-title">Contact</h6>
-          <p>Email: ffans7329@gmail.com</p>
-        </div>
-        <div>
-          <h6 class="footer-title">Credits</h6>
-          <p>F1 2025 data mapped for clarity. Photos: add your preferred real images.</p>
-        </div>
+  <!-- Modal for full news articles -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-panel" role="document">
+      <button class="modal-close" id="modalClose" aria-label="Close article">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- filled by JS -->
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Apex Fan Club. All rights reserved.</p>
-      </div>
-    </footer>
+    </div>
+    <div class="modal-backdrop"></div>
   </div>
 
-  <!-- Scripts -->
-  <script src="iajsd.js"></script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© <span id=""></span> 2025 Apex Fan Club. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="">For Contact: ffans7329@gmail.com</a> 
+      </div>
+    </div>
+  </footer>
+
+  <script src="untilted 3.js"></script>
+</body>
 </html>
-<script>
-  // Ensure DOM is ready before manipulations
-  document.addEventListener('DOMContentLoaded', () => {
-    // Mobile nav toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.getElementById('navMenu');
-    if (toggle && menu) {
-      toggle.addEventListener('click', () => {
-        const isOpen = menu.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', String(isOpen));
-      });
-    }
 
-    // Prevent initial blank flash by forcing visible sections quickly
-    // (Some browsers delay painting with complex web components.)
-    const sections = document.querySelectorAll('.countdown-section, .news-section, .standings-section, .calendar-section, .site-footer');
-    sections.forEach(s => {
-      s.style.visibility = 'visible';
-      s.style.opacity = '1';
-    });
-  });
-</script>
-<script>
-  // Ensure all sections are visible immediately
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll(
-      '.countdown-section, .news-section, .standings-section, .calendar-section, .site-footer'
-    ).forEach(sec => {
-      sec.style.visibility = 'visible';
-      sec.style.opacity = '1';
-    });
-  });
-</script>
-  <style>
-    /* Make spline background fill screen */
-    spline-viewer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1; /* push behind everything */
-    }
-
-    /* Menu styles */
-    .menu-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      padding: 10px 15px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .menu {
-      display: none;
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      background: rgba(0,0,0,0.8);
-      color: #fff;
-      padding: 15px;
-      border-radius: 5px;
-      z-index: 10;
-    }
-
-    .menu.show {
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <!-- 3D Background -->
-<script>
-  function setVh() {
-    // Get the viewport height and multiply by 1% to get a value for 1vh
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
-
-  // Run on load
-  setVh();
-
-  // Run on resize/orientation change
-  window.addEventListener('resize', setVh);
-</script>
-
-<script>
-  function setVh() {
-    // Get the viewport height and multiply by 1% to get a value for 1vh
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
-
-  // Run on load
-  setVh();
-
-  // Run on resize/orientation change
-  window.addEventListener('resize', setVh);
-</script>
-
-<script>
-if (window.innerWidth < 768) {
-  document.querySelector('.spline-bg').remove();
-}
-</script>
-
-<style>
-  spline-viewer { position: fixed; top:0; left:0; width:100vw; height:100vh; }
-</style>
 
 
 
