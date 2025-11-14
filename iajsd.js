@@ -1,77 +1,115 @@
- /* Apex Fan Club — Data + Interactions + Animations (vanilla JS)
-   Notes:
-   - Replace image URLs with your chosen real photos for drivers and teams.
-   - Mexico City GP date/time localized from Anton’s timezone (EEST). Adjust if needed.
-*/
-
-// Util: formatters
-const fmt = {
-  date(d) {
-    const dt = new Date(d);
-    return dt.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
-  },
-  time(d) {
-    const dt = new Date(d);
-    return dt.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
-  }
-};
-
-// Next GP: São Paulo (Anton in EEST, event local Brazil UTC-3)
-const nextGp = {
-name: "Las Vegas Grand Prix",
-venue: "Las Vegas Strip Circuit",
-startISO: "2025-11-23T20:00:00-08:00", // Race local time in Las Vegas (PST)
-sessions: [
-  { key: "fp1", label: "FP1", iso: "2025-11-21T16:30:00-08:00" },
-  { key: "fp2", label: "FP2", iso: "2025-11-21T20:00:00-08:00" },
-  { key: "fp3", label: "FP3", iso: "2025-11-22T16:30:00-08:00" },
-  { key: "qualifying", label: "Qualifying", iso: "2025-11-22T20:00:00-08:00" },
-  { key: "race", label: "Race", iso: "2025-11-23T20:00:00-08:00" }
-]
-}
-// Drivers 2025 (name, code, team, points, wins, poles, photo)
-const drivers2025 = [
-
-  { pos: 1, name: "Lando Norris", code: "NOR", nationality: "GBR", team: "McLaren", points: 390, wins: 7, poles: 6, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" },
-  { pos: 2, name: "Oscar Piastri", code: "PIA", nationality: "AUS", team: "McLaren", points: 366, wins: 7, poles: 5, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_oscar_team_pic_02.jpg" },
-  { pos: 3, name: "Max Verstappen", code: "VER", nationality: "NED", team: "Red Bull Racing", points: 341, wins: 5, poles: 7, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmb-f8vwQW9GTmAejEbUu2JeYUlzkscG8vZoaXwnvmzbJjqInaA7aSEAeB6jRrZRFCxA&usqp=CAU" },
-  { pos: 4, name: "George Russell", code: "RUS", nationality: "GBR", team: "Mercedes", points: 276, wins: 2, poles: 2, photo: "https://images.ctfassets.net/1fvlg6xqnm65/DF8GKGlCgVkML7jYA3lX8/f98a3b6f3fdaff998fa1ee7cdc1fa5c9/GR-EYNTK-IMAGE-MOBILE.jpg?w=626&q=75&fm=webp" },
-  { pos: 5, name: "Charles Leclerc", code: "LEC", nationality: "MON", team: "Ferrari", points: 214, wins: 0, poles: 1, photo: "https://aceracegear.com/wp-content/uploads/2025/02/cl-01-2025.jpg" },
-  { pos: 6, name: "Lewis Hamilton", code: "HAM", nationality: "GBR", team: "Ferrari", points: 148, wins: 0, poles: 0, photo: "https://store.ferrari.com/dw/image/v2/BGDG_PRD/on/demandware.static/-/Sites-48/default/dw0196a800/images/zoom/LA06Zf_170_2.png?strip=false" },
-  { pos: 7, name: "Kimi Antonelli", code: "ANT", nationality: "ITA", team: "Mercedes", points: 122, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/uoiclYPCB7vPlR53OzLou_H9HJ-qDCPRy-OeMqaavDgvSISa7CySyCKsgzl8A0f_3vOf_eH7v7rBt8gaHb8beg.webp" },
-  { pos: 8, name: "Alexander Albon", code: "ALB", nationality: "THA", team: "Williams", points: 73, wins: 0, poles: 0, photo: "https://static.independent.co.uk/2024/02/05/19/e52f9590a04d09ef4bf873e9c5122f2eY29udGVudHNlYXJjaGFwaSwxNzA3MjQ2MzI3-2.75253307.jpg?width=1200&height=1200&fit=crop" },
-  { pos: 9, name: "Nico Hülkenberg", code: "HUL", nationality: "GER", team: "Kick Sauber", points: 43, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GMrCz6GWEAASYks?format=jpg&name=large" },
-  { pos: 10, name: "Isack Hadjar", code: "HAD", nationality: "FRA", team: "Racing Bulls", points: 43, wins: 0, poles: 0, photo: "https://framerusercontent.com/images/R4z6H2nIMtXBpFzkL4qJ2Jny88.jpg?width=3072&height=3840" },
-  { pos: 11, name: "Oliver Bearman", code: "BEA", nationality: "GBR", team: "Haas F1 Team", points: 40, wins: 0, poles: 0, photo: "https://cdn-5.motorsport.com/images/amp/Yv87pRj0/s1000/oliver-bearman-haas-f1-team-2.jpg" },
-  { pos: 12, name: "Fernando Alonso", code: "ALO", nationality: "ESP", team: "Aston Martin", points: 40, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/am-fa-2025-1.jpg" },
-  { pos: 13, name: "Carlos Sainz", code: "SAI", nationality: "ESP", team: "Williams", points: 38, wins: 0, poles: 0, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RyGKN7IWY5i31pK8yXLVDcwvjYRS0XLQGufGNCztDziweEHsWkzIomBsjgbi96XzIx8&usqp=CAU" },
-  { pos: 14, name: "Liam Lawson", code: "LAW", nationality: "NZL", team: "Racing Bulls", points: 36, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/-QcAd3hXRJrSMq9n1bSfMYrnGVDHN2BJ3JLMhGXs1PkMfc3Jyd9A2Gy-ugqDmfQkZgM9BJ22pYbg711lUdV-sw.webp" },
-  { pos: 15, name: "Lance Stroll", code: "STR", nationality: "CAN", team: "Aston Martin", points: 32, wins: 0, poles: 0, photo: "https://aurupteur.com/uploads/brefs/4511/4511_gkeojbrwyaijt58.jpg" },
-  { pos: 16, name: "Esteban Ocon", code: "OCO", nationality: "FRA", team: "Haas F1 Team", points: 30, wins: 0, poles: 0, photo: "https://i.redd.it/esteban-ocons-helmet-for-the-2025-season-v0-u52c357k3wje1.jpg?width=3277&format=pjpg&auto=webp&s=eb145ca50e5bc3f1154fb9efa9636832904de868" },
-  { pos: 17, name: "Yuki Tsunoda", code: "TSU", nationality: "JPN", team: "Red Bull Racing", points: 28, wins: 0, poles: 0, photo: "https://newsgpcdn.vshcdn.net/i/images/1586/yuki-tsunoda-f1-post-season-test-with-red-bull_f.jpg" },
-  { pos: 18, name: "Pierre Gasly", code: "GAS", nationality: "FRA", team: "Alpine", points: 22, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/alpine-pg-2025-1.jpg" },
-  { pos: 19, name: "Gabriel Bortoleto", code: "BOR", nationality: "BRA", team: "Kick Sauber", points: 19, wins: 0, poles: 0, photo: "https://static.wikia.nocookie.net/f1wikia/images/5/54/Bortoleto2025.png/revision/latest?cb=20250728003557" },
-  { pos: 20, name: "Franco Colapinto", code: "COL", nationality: "ARG", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://static.wikia.nocookie.net/f1wikia/images/c/c1/Colapinto2025_Alpine.png/revision/latest/scale-to-width-down/1200?cb=20250728003710" },
-  { pos: 21, name: "Jack Doohan", code: "DOO", nationality: "AUS", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://preview.redd.it/franco-colapinto-in-alpine-2025-will-be-the-deja-vu-of-v0-mfphwgeotvye1.png?width=1320&format=png&auto=webp&s=c67fd2287c94f2ea96a53595c6616976b0e0af20" }
+/* ============================
+   Data (you provided; used as-is)
+   ============================ */
+const drivers = [
+ { pos: 1, name: "Lando Norris", code: "NOR", nationality: "GBR", team: "McLaren", points: 390, wins: 7, poles: 6, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" },
+ { pos: 2, name: "Oscar Piastri", code: "PIA", nationality: "AUS", team: "McLaren", points: 366, wins: 7, poles: 5, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_oscar_team_pic_02.jpg" },
+ { pos: 3, name: "Max Verstappen", code: "VER", nationality: "NED", team: "Red Bull Racing", points: 341, wins: 5, poles: 7, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmb-f8vwQW9GTmAejEbUu2JeYUlzkscG8vZoaXwnvmzbJjqInaA7aSEAeB6jRrZRFCxA&usqp=CAU" },
+ { pos: 4, name: "George Russell", code: "RUS", nationality: "GBR", team: "Mercedes", points: 276, wins: 2, poles: 2, photo: "https://images.ctfassets.net/1fvlg6xqnm65/DF8GKGlCgVkML7jYA3lX8/f98a3b6f3fdaff998fa1ee7cdc1fa5c9/GR-EYNTK-IMAGE-MOBILE.jpg?w=626&q=75&fm=webp" },
+ { pos: 5, name: "Charles Leclerc", code: "LEC", nationality: "MON", team: "Ferrari", points: 214, wins: 0, poles: 1, photo: "https://aceracegear.com/wp-content/uploads/2025/02/cl-01-2025.jpg" },
+ { pos: 6, name: "Lewis Hamilton", code: "HAM", nationality: "GBR", team: "Ferrari", points: 148, wins: 0, poles: 0, photo: "https://store.ferrari.com/dw/image/v2/BGDG_PRD/on/demandware.static/-/Sites-48/default/dw0196a800/images/zoom/LA06Zf_170_2.png?strip=false" },
+ { pos: 7, name: "Kimi Antonelli", code: "ANT", nationality: "ITA", team: "Mercedes", points: 122, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/uoiclYPCB7vPlR53OzLou_H9HJ-qDCPRy-OeMqaavDgvSISa7CySyCKsgzl8A0f_3vOf_eH7v7rBt8gaHb8beg.webp" },
+ { pos: 8, name: "Alexander Albon", code: "ALB", nationality: "THA", team: "Williams", points: 73, wins: 0, poles: 0, photo: "https://static.independent.co.uk/2024/02/05/19/e52f9590a04d09ef4bf873e9c5122f2eY29udGVudHNlYXJjaGFwaSwxNzA3MjQ2MzI3-2.75253307.jpg?width=1200&height=1200&fit=crop" },
+ { pos: 9, name: "Nico Hülkenberg", code: "HUL", nationality: "GER", team: "Kick Sauber", points: 43, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GMrCz6GWEAASYks?format=jpg&name=large" },
+ { pos: 10, name: "Isack Hadjar", code: "HAD", nationality: "FRA", team: "Racing Bulls", points: 43, wins: 0, poles: 0, photo: "https://framerusercontent.com/images/R4z6H2nIMtXBpFzkL4qJ2Jny88.jpg?width=3072&height=3840" },
+ { pos: 11, name: "Oliver Bearman", code: "BEA", nationality: "GBR", team: "Haas F1 Team", points: 40, wins: 0, poles: 0, photo: "https://cdn-5.motorsport.com/images/amp/Yv87pRj0/s1000/oliver-bearman-haas-f1-team-2.jpg" },
+ { pos: 12, name: "Fernando Alonso", code: "ALO", nationality: "ESP", team: "Aston Martin", points: 40, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/am-fa-2025-1.jpg" },
+ { pos: 13, name: "Carlos Sainz", code: "SAI", nationality: "ESP", team: "Williams", points: 38, wins: 0, poles: 0, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RyGKN7IWY5i31pK8yXLVDcwvjYRS0XLQGufGNCztDziweEHsWkzIomBsjgbi96XzIx8&usqp=CAU" },
+ { pos: 14, name: "Liam Lawson", code: "LAW", nationality: "NZL", team: "Racing Bulls", points: 36, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/-QcAd3hXRJrSMq9n1bSfMYrnGVDHN2BJ3JLMhGXs1PkMfc3Jyd9A2Gy-ugqDmfQkZgM9BJ22pYbg711lUdV-sw.webp" },
+ { pos: 15, name: "Lance Stroll", code: "STR", nationality: "CAN", team: "Aston Martin", points: 32, wins: 0, poles: 0, photo: "https://aurupteur.com/uploads/brefs/4511/4511_gkeojbrwyaijt58.jpg" },
+ { pos: 16, name: "Esteban Ocon", code: "OCO", nationality: "FRA", team: "Haas F1 Team", points: 30, wins: 0, poles: 0, photo: "https://i.redd.it/esteban-ocons-helmet-for-the-2025-season-v0-u52c357k3wje1.jpg?width=3277&format=pjpg&auto=webp&s=eb145ca50e5bc3f1154fb9efa9636832904de868" },
+ { pos: 17, name: "Yuki Tsunoda", code: "TSU", nationality: "JPN", team: "Red Bull Racing", points: 28, wins: 0, poles: 0, photo: "https://newsgpcdn.vshcdn.net/i/images/1586/yuki-tsunoda-f1-post-season-test-with-red-bull_f.jpg" },
+ { pos: 18, name: "Pierre Gasly", code: "GAS", nationality: "FRA", team: "Alpine", points: 22, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/alpine-pg-2025-1.jpg" },
+ { pos: 19, name: "Gabriel Bortoleto", code: "BOR", nationality: "BRA", team: "Kick Sauber", points: 19, wins: 0, poles: 0, photo: "https://static.wikia.nocookie.net/f1wikia/images/5/54/Bortoleto2025.png/revision/latest?cb=20250728003557" },
+ { pos: 20, name: "Franco Colapinto", code: "COL", nationality: "ARG", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://static.wikia.nocookie.net/f1wikia/images/c/c1/Colapinto2025_Alpine.png/revision/latest/scale-to-width-down/1200?cb=20250728003710" },
+ { pos: 21, name: "Jack Doohan", code: "DOO", nationality: "AUS", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://preview.redd.it/franco-colapinto-in-alpine-2025-will-be-the-deja-vu-of-v0-mfphwgeotvye1.png?width=1320&format=png&auto=webp&s=c67fd2287c94f2ea96a53595c6616976b0e0af20" }
 ];
 
-// Constructors 2025
-const constructors2025 = [
-  { pos: 1, name: "Mclaren F1 Team", points: 756, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp" },
-  { pos: 2, name: "Mercedes-Amg Petronas F1 Team", points: 398, drivers: ["George Russell", "Kimi Antonelli"], photo: "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp" },
-  { pos: 3, name: "Oracle Red Bull Racing ", points: 366, drivers: ["Max Verstappen", "Yuki tsunoda"], photo: "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626" },
-  { pos: 4, name: "Scuderia Ferrari HP", points: 362, drivers: ["Charles Leclerc", "Lewis Hamilton"], photo: "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg" },
-  { pos: 5, name: "Atlassian Williams Racing", points: 111, drivers: ["Alexander Albon", "Carlos Sainz"], photo: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Williams/williams-2025-launch-6.webp" },
-  { pos: 6, name: "Visa Cash App RB Formula One Team", points: 82, drivers: ["Isack Hadjar", "Liam  Lawson"], photo: "https://media.tudorwatch.com/image/upload/v1/tudormag/SI202503140201" },
-  { pos: 7, name: "Aston Martin Aramco Cognizant Formula One Team", points: 72, drivers: ["Fernando Alonso", "Lance Stroll"], photo: "https://upload.wikimedia.org/wikipedia/commons/3/33/2025_Japan_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP1.jpg" },
-  { pos: 8, name: "MoneyGram Haas F1 Team", points: 70, drivers: ["Oliver Bearman", "Esteban Ocon"], photo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FIA_F1_Austria_2025_Nr._87_Bearman.jpg" },
-  { pos: 9, name: "Kick Sauber", points: 62, drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"], photo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/2025_Japan_GP_-_Sauber_-_Nico_Hulkenberg_-_FP1.jpg" },
-  { pos: 10, name: "BWT Alpine F1 Team", points: 21, drivers: ["Piere Gasly", "Franco Colapinto"], photo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/FIA_F1_Austria_2025_Nr._10_Gasly.jpg" },
+const constructors = [
+ { pos: 1, name: "Mclaren F1 Team", points: 756, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp" },
+ { pos: 2, name: "Mercedes-Amg Petronas F1 Team", points: 398, drivers: ["George Russell", "Kimi Antonelli"], photo: "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp" },
+ { pos: 3, name: "Oracle Red Bull Racing ", points: 366, drivers: ["Max Verstappen", "Yuki tsunoda"], photo: "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626" },
+ { pos: 4, name: "Scuderia Ferrari HP", points: 362, drivers: ["Charles Leclerc", "Lewis Hamilton"], photo: "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg" },
+ { pos: 5, name: "Atlassian Williams Racing", points: 111, drivers: ["Alexander Albon", "Carlos Sainz"], photo: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Williams/williams-2025-launch-6.webp" },
+ { pos: 6, name: "Visa Cash App RB Formula One Team", points: 82, drivers: ["Isack Hadjar", "Liam Lawson"], photo: "https://media.tudorwatch.com/image/upload/v1/tudormag/SI202503140201" },
+ { pos: 7, name: "Aston Martin Aramco Cognizant Formula One Team", points: 72, drivers: ["Fernando Alonso", "Lance Stroll"], photo: "https://upload.wikimedia.org/wikipedia/commons/3/33/2025_Japan_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP1.jpg" },
+ { pos: 8, name: "MoneyGram Haas F1 Team", points: 70, drivers: ["Oliver Bearman", "Esteban Ocon"], photo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FIA_F1_Austria_2025_Nr._87_Bearman.jpg" },
+ { pos: 9, name: "Kick Sauber", points: 62, drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"], photo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/2025_Japan_GP_-_Sauber_-_Nico_Hulkenberg_-_FP1.jpg" },
+ { pos: 10, name: "BWT Alpine F1 Team", points: 21, drivers: ["Piere Gasly", "Franco Colapinto"], photo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/FIA_F1_Austria_2025_Nr._10_Gasly.jpg" },
 ];
 
-// News after USA GP 2025
-const newsAfterUSAGP = [
+const calendar = [
+ { round: 1, gp: "Australia", circuit: "Melbourne", date: "2025-03-16" },
+ { round: 2, gp: "China", circuit: "Shanghai", date: "2025-03-23" },
+ { round: 3, gp: "Japan", circuit: "Suzuka", date: "2025-04-06" },
+ { round: 4, gp: "Bahrain", circuit: "Sakhir", date: "2025-04-13" },
+ { round: 5, gp: "Saudi Arabia", circuit: "Jeddah", date: "2025-04-20" },
+ { round: 6, gp: "Miami", circuit: "Florida", date: "2025-05-04" },
+ { round: 7, gp: "Emilia Romagna", circuit: "Imola", date: "2025-05-18" },
+ { round: 8, gp: "Monaco", circuit: "Monte Carlo", date: "2025-05-25" },
+ { round: 9, gp: "Spain", circuit: "Catalunya", date: "2025-06-01" },
+ { round: 10, gp: "Canada", circuit: "Montreal", date: "2025-06-15" },
+ { round: 11, gp: "Austria", circuit: "Spielberg", date: "2025-06-29" },
+ { round: 12, gp: "Britain", circuit: "Silverstone", date: "2025-07-06" },
+ { round: 13, gp: "Belgium", circuit: "Spa-Francorchamps", date: "2025-07-27" },
+ { round: 14, gp: "Hungary", circuit: "Hungaroring", date: "2025-08-03" },
+ { round: 15, gp: "Netherlands", circuit: "Zandvoort", date: "2025-08-31" },
+ { round: 16, gp: "Italy", circuit: "Monza", date: "2025-09-07" },
+ { round: 17, gp: "Azerbaijan", circuit: "Baku", date: "2025-09-21" },
+ { round: 18, gp: "Singapore", circuit: "Marina Bay", date: "2025-10-05" },
+ { round: 19, gp: "USA", circuit: "Austin", date: "2025-10-19" },
+ { round: 20, gp: "Mexico City", circuit: "Mexico City", date: "2025-10-26" },
+ { round: 21, gp: "São Paulo", circuit: "Interlagos", date: "2025-11-02" },
+ { round: 22, gp: "Las Vegas", circuit: "Las Vegas", date: "2025-11-22" },
+ { round: 23, gp: "Qatar", circuit: "Lusail", date: "2025-11-30" },
+ { round: 24, gp: "Abu Dhabi", circuit: "Yas Marina", date: "2025-12-07" }
+];
+
+/* ============================
+   Example News Items (shape you requested)
+   - You can replace these with live feeds later.
+   ============================ */
+const news = [
   {
+    title: "Cadillac’s First F1 Test at Imola with Ferrari: A Historic Step Toward 2026",
+    date: "2025-11-14",
+    image: "https://cdn-5.motorsport.com/images/mgl/6lmdPpj0/s8/sergio-perez-cadillac-racing.jpg",
+    text: `Cadillac has officially taken its first steps into Formula 1, conducting a landmark test at the legendary Imola circuit with Ferrari machinery. The session marked a crucial milestone for the American brand as it prepares to join the grid in 2026.
+
+🚗 Cadillac Joins Forces with Ferrari
+Cadillac will enter Formula 1 as the 11th team in 2026, powered by Ferrari engines.
+
+To prepare, the team borrowed Ferrari’s SF-23 (2023-spec car) under F1’s Testing of Previous Cars (TPC) regulations.
+
+The collaboration saw 20 Cadillac staff working alongside 30 Ferrari engineers, giving the new outfit its first taste of live track operations.
+
+🏎️ Sergio Perez Back Behind the Wheel
+Former Red Bull driver Sergio Perez made his F1 return after nearly a year away.
+
+Perez completed 99 laps at Imola, with a best time of 1:18.82, showing consistency and only one minor off-track excursion at Tamburello.
+
+He drove a blacked-out Ferrari SF-23, wearing unbranded black overalls and helmet, symbolizing Cadillac’s fresh start.
+
+🔧 Testing Objectives
+The test was not about outright speed but about operational readiness: pit stops, communication, and team coordination.
+
+Perez used the outing to benchmark his physical condition ahead of winter training and Cadillac’s first car shakedown in January.
+
+Ferrari’s support ensured Cadillac could simulate a race weekend environment, vital for a team with no prior F1 track experience.
+
+🌍 Significance for Cadillac and F1
+This test represents Cadillac’s first real-world step toward its debut, moving beyond simulators and design work.
+
+With Perez and Valtteri Bottas signed as drivers, Cadillac is positioning itself as a competitive newcomer.
+
+The Imola session demonstrated the strength of Ferrari’s partnership, giving Cadillac credibility and technical backing from day one.
+
+📰 Conclusion
+Cadillac’s Imola test with Ferrari was more than just laps on track—it was a symbolic moment of transition from concept to reality. With Perez back in action, Bottas waiting in the wings, and Ferrari’s engines powering the project, Cadillac’s entry promises to add fresh energy to Formula 1’s future.
+
+`
+  },
+{
     title: "Audi Unveils Striking Concept Livery Ahead of 2026 Formula 1 Debut",
     date: "2025-11-13",
     image: "https://www.topgear.com/sites/default/files/2025/11/%281%29%20A251797_large.jpg",
@@ -1283,476 +1321,299 @@ Over 400,000 fans created a carnival atmosphere in Mexico City. Local hero Sergi
 Looking ahead
 With Brazil and Qatar sprint weekends next, the title fight is wide open. Norris has momentum, Piastri must regroup, and Verstappen is waiting to strike.`
   },
- ]
-
-// Calendar (2025)
-const calendar2025 = [
-  { round: 1, gp: "Australia", circuit: "Melbourne", date: "2025-03-16" },
-  { round: 2, gp: "China", circuit: "Shanghai", date: "2025-03-23" },
-  { round: 3, gp: "Japan", circuit: "Suzuka", date: "2025-04-06" },
-  { round: 4, gp: "Bahrain", circuit: "Sakhir", date: "2025-04-13" },
-  { round: 5, gp: "Saudi Arabia", circuit: "Jeddah", date: "2025-04-20" },
-  { round: 6, gp: "Miami", circuit: "Florida", date: "2025-05-04" },
-  { round: 7, gp: "Emilia Romagna", circuit: "Imola", date: "2025-05-18" },
-  { round: 8, gp: "Monaco", circuit: "Monte Carlo", date: "2025-05-25" },
-  { round: 9, gp: "Spain", circuit: "Catalunya", date: "2025-06-01" },
-  { round: 10, gp: "Canada", circuit: "Montreal", date: "2025-06-15" },
-  { round: 11, gp: "Austria", circuit: "Spielberg", date: "2025-06-29" },
-  { round: 12, gp: "Britain", circuit: "Silverstone", date: "2025-07-06" },
-  { round: 13, gp: "Belgium", circuit: "Spa-Francorchamps", date: "2025-07-27" },
-  { round: 14, gp: "Hungary", circuit: "Hungaroring", date: "2025-08-03" },
-  { round: 15, gp: "Netherlands", circuit: "Zandvoort", date: "2025-08-31" },
-  { round: 16, gp: "Italy", circuit: "Monza", date: "2025-09-07" },
-  { round: 17, gp: "Azerbaijan", circuit: "Baku", date: "2025-09-21" },
-  { round: 18, gp: "Singapore", circuit: "Marina Bay", date: "2025-10-05" },
-  { round: 19, gp: "USA", circuit: "Austin", date: "2025-10-19" },
-  { round: 20, gp: "Mexico City", circuit: "Mexico City", date: "2025-10-26" },
-  { round: 21, gp: "São Paulo", circuit: "Interlagos", date: "2025-11-02" },
-  { round: 22, gp: "Las Vegas", circuit: "Las Vegas", date: "2025-11-22" },
-  { round: 23, gp: "Qatar", circuit: "Lusail", date: "2025-11-30" },
-  { round: 24, gp: "Abu Dhabi", circuit: "Yas Marina", date: "2025-12-07" }
 ];
 
-// Results scaffold
-const resultsData = {
-  "USA": {
-    race: [
-      { pos: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:32:15.420", points: 25 },
-      { pos: 2, driver: "Lando Norris", team: "McLaren", time: "+7.959s", points: 18 },
-      { pos: 3, driver: "Charles Leclerc", team: "Ferrari", time: "+12.4s", points: 15 },
-      { pos: 4, driver: "George Russell", team: "Mercedes", time: "+18.7s", points: 12 },
-      { pos: 5, driver: "Oscar Piastri", team: "McLaren", time: "+21.3s", points: 10 },
-      { pos: 6, driver: "Lewis Hamilton", team: "Ferrari", time: "+28.5s", points: 8 },
-      { pos: 7, driver: "Yuki Tsunoda", team: "Red Bull Racing", time: "+31.1s", points: 6 },
-      { pos: 8, driver: "Alexander Albon", team: "Williams", time: "+35.6s", points: 4 },
-      { pos: 9, driver: "Nico Hülkenberg", team: "Kick Sauber", time: "+41.0s", points: 2 },
-      { pos: 10, driver: "Isack Hadjar", team: "Racing Bulls", time: "+44.9s", points: 1 }
-    ],
-    sprint: [
-      { pos: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "30:12.003", points: 8 },
-      { pos: 2, driver: "Lando Norris", team: "McLaren", time: "+2.4s", points: 7 },
-      { pos: 3, driver: "Charles Leclerc", team: "Ferrari", time: "+6.2s", points: 6 },
-      { pos: 4, driver: "George Russell", team: "Mercedes", time: "+12.0s", points: 5 },
-      { pos: 5, driver: "Oscar Piastri", team: "McLaren", time: "+14.5s", points: 4 },
-      { pos: 6, driver: "Yuki Tsunoda", team: "Red Bull Racing", time: "+18.9s", points: 3 },
-      { pos: 7, driver: "Alexander Albon", team: "Williams", time: "+21.3s", points: 2 },
-      { pos: 8, driver: "Isack Hadjar", team: "Racing Bulls", time: "+24.7s", points: 1 }
-    ],
-    qualifying: [
-      { pos: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:32.001" },
-      { pos: 2, driver: "Charles Leclerc", team: "Ferrari", time: "1:32.112" },
-      { pos: 3, driver: "Lando Norris", team: "McLaren", time: "1:32.203" }
-    ],
-    fp1: [],
-    fp2: [],
-    fp3: []
-  }
-};
+/* ============================
+   Helpers & DOM references
+   ============================ */
+const newsGrid = document.getElementById('news-grid');
+const driversWrap = document.getElementById('drivers-wrap');
+const constructorsWrap = document.getElementById('constructors-wrap');
+const calendarList = document.getElementById('calendar-list');
+const yearSpan = document.getElementById('year');
 
-/* KEEPING YOUR EXACT FUNCTIONS FOR NEWS, DRIVERS, CONSTRUCTORS */
+const modal = document.getElementById('modal');
+const modalBody = document.getElementById('modalBody');
+const modalClose = document.getElementById('modalClose');
 
-// Populate news (version that uses <div class="news-media"><img ... /></div> and read-more -> openArticleInNewTab)
-function populateNews() {
-  const wrap = document.getElementById('newsList');
-  newsAfterUSAGP.forEach((n, i) => {
+const nextGpName = document.getElementById('next-gp-name');
+const nextGpCircuit = document.getElementById('next-gp-circuit');
+const gpDateEl = document.getElementById('gp-date');
+const cdDays = document.getElementById('cd-days');
+const cdHours = document.getElementById('cd-hours');
+const cdMinutes = document.getElementById('cd-minutes');
+const cdSeconds = document.getElementById('cd-seconds');
+
+const goToCalendarBtn = document.getElementById('go-to-calendar');
+
+yearSpan.textContent = new Date().getFullYear();
+
+/* ============================
+   Render News Cards & Modal
+   ============================ */
+function renderNews(){
+  newsGrid.innerHTML = '';
+  news.forEach((n, idx) => {
     const card = document.createElement('article');
     card.className = 'news-card';
-    card.style.animationDelay = `${i * 0.08}s`;
     card.innerHTML = `
       <div class="news-media">
-        <img src="${n.image}" alt="${n.title}" class="news-img">
+        <img src="${n.image}" alt="${escapeHtml(n.title)}">
       </div>
       <div class="news-body">
-        <h4 class="news-title">${n.title}</h4>
-        <div class="news-meta">${fmt.date(n.date)}</div>
-        <p class="news-text">${n.text.length > 160 ? n.text.substring(0, 160) + "..." : n.text}</p>
-        <button class="read-more">Read full article →</button>
+        <div class="news-meta"><div>${n.date}</div><div>• F1 Hub</div></div>
+        <h3 class="news-title">${escapeHtml(n.title)}</h3>
+        <p class="news-excerpt">${truncate(n.text,120)}</p>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <button class="read-more" data-idx="${idx}">Read more</button>
+          <div style="font-size:12px;color:var(--muted)">${Math.max(1, n.text.length/120 |0)} min read</div>
+        </div>
       </div>
     `;
-    card.querySelector('.read-more').addEventListener('click', (e) => {
-      e.stopPropagation();
-      openArticleInNewTab(i);
+    newsGrid.appendChild(card);
+  });
+
+  // attach events
+  document.querySelectorAll('.read-more').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      const idx = Number(e.currentTarget.dataset.idx);
+      openArticle(idx);
     });
-    wrap.appendChild(card);
   });
 }
 
-// Open article in new tab (final robust version from your code)
-function openArticleInNewTab(index) {
-  const article = newsAfterUSAGP[index];
-  const win = window.open("", "_blank");
-
-  const headLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
-    .map(link => `<link rel="stylesheet" href="${link.href}">`)
-    .join('\n');
-  const inlineStyles = Array.from(document.head.querySelectorAll('style'))
-    .map(style => `<style>${style.innerHTML}</style>`)
-    .join('\n');
-
-  const fallbackCSS = `
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0f1115; color: #e8eaed; }
-      .page { max-width: 1080px; margin: 0 auto; padding: 24px; }
-      .article-card { background: #151821; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.35); animation: fadeIn 0.4s ease; }
-      .hero-wrap { width: 100%; height: 360px; background: #0b0d12; display: grid; place-items: center; overflow: hidden; }
-      .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-      .news-body { padding: 20px; }
-      .news-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; color: #fff; }
-      .news-meta { color: #9aa0a6; font-size: 14px; margin-bottom: 14px; }
-      .news-text { font-size: 17px; color: #e8eaed; white-space: pre-line; }
-      .btn { display: inline-block; margin-top: 20px; padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.25s ease; }
-      .btn-primary { background: #ff7a18; color: #fff; border: none; }
-      .btn-primary:hover { background: #ff9a4d; transform: translateY(-2px); }
-      .hero-fallback { color: #9aa0a6; font-size: 14px; }
-      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
-    </style>
+function openArticle(idx){
+  const n = news[idx];
+  modalBody.innerHTML = `
+    <img src="${n.image}" alt="${escapeHtml(n.title)}">
+    <h2>${escapeHtml(n.title)}</h2>
+    <div style="color:var(--muted);margin-bottom:10px">${n.date} • F1 News Hub</div>
+    <div style="white-space:pre-wrap;color:#333;font-size:15px">${escapeHtml(n.text)}</div>
   `;
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
 
-  const safeText = (article.text || "").replace(/\n\s*\n/g, "<br><br>");
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e)=>{
+  if(e.target === modal || e.target.classList.contains('modal-backdrop')) closeModal();
+});
+function closeModal(){
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
 
-  const html = `
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>${article.title}</title>
-        ${headLinks}
-        ${inlineStyles}
-        ${fallbackCSS}
-      </head>
-      <body>
-        <div class="page">
-          <article class="article-card">
-            <div class="hero-wrap">
-              <img id="heroImg" class="hero-img" src="${article.image}" alt="Article image" referrerpolicy="no-referrer">
-              <span id="heroFallback" class="hero-fallback" style="display:none;">Image failed to load.</span>
-            </div>
-            <div class="news-body">
-              <h1 class="news-title">${article.title}</h1>
-              <div class="news-meta">${fmt.date(article.date)}</div>
-              <div class="news-text">${safeText}</div>
-              <button class="btn btn-primary" onclick="window.close()">← Back to Website</button>
-            </div>
-          </article>
+/* ============================
+   Render Drivers
+   (we present them as rich cards — no basic table)
+   ============================ */
+function renderDrivers(){
+  driversWrap.innerHTML = '';
+  // assume drivers array already sorted by pos; display rich cards
+  drivers.forEach(d=>{
+    const el = document.createElement('div');
+    el.className = 'driver-card';
+    el.innerHTML = `
+      <div class="driver-photo"><img loading="lazy" src="${d.photo}" alt="${escapeHtml(d.name)}"></div>
+      <div class="driver-info">
+        <h4>${d.pos}. ${escapeHtml(d.name)} <small style="color:var(--muted);font-weight:600">(${d.code})</small></h4>
+        <div class="driver-meta">${escapeHtml(d.team)} • ${escapeHtml(d.nationality)}</div>
+        <div class="driver-stats">
+          <div><strong>${d.points}</strong> pts</div>
+          <div>• <strong>${d.wins}</strong> W</div>
+          <div>• <strong>${d.poles}</strong> P</div>
         </div>
-        <script>
-          (function() {
-            const img = document.getElementById('heroImg');
-            const fb = document.getElementById('heroFallback');
-            img.decode?.().catch(() => {}).finally(() => { img.style.visibility = 'visible'; });
-            img.addEventListener('error', () => {
-              try {
-                const url = new URL(img.src);
-                const stripped = url.origin + url.pathname;
-                if (stripped !== img.src) {
-                  img.src = stripped;
-                } else {
-                  img.style.display = 'none';
-                  fb.style.display = 'inline';
-                }
-              } catch (e) {
-                img.style.display = 'none';
-                fb.style.display = 'inline';
-              }
-            });
-          })();
-        </script>
-      </body>
-    </html>
-  `;
-
-  win.document.open();
-  win.document.write(html);
-  win.document.close();
-}
-
-// Populate drivers (unchanged)
-function populateDrivers() {
-  const tbody = document.getElementById('driversTable');
-  drivers2025
-    .filter(d => d.pos <= 20)
-    .sort((a, b) => a.pos - b.pos)
-    .forEach(d => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${d.pos}</td>
-        <td>${d.name} <span style="color:#9aa0a6; font-size:13px;">(${d.code})</span></td>
-        <td class="hide-mobile">${d.team}</td>
-        <td>${d.points}</td>
-        <td class="hide-mobile">${d.wins}</td>
-        <td class="hide-mobile">${d.poles}</td>
-        <td><img class="driver-photo" src="${d.photo}" alt="${d.name} photo"></td>
-      `;
-      tbody.appendChild(tr);
-    });
-}
-
-// Populate constructors (unchanged)
-function populateConstructors() {
-  const tbody = document.getElementById('constructorsTable');
-  constructors2025
-    .sort((a, b) => a.pos - b.pos)
-    .forEach(c => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${c.pos}</td>
-        <td>${c.name}</td>
-        <td>${c.points}</td>
-        <td class="hide-mobile">${c.drivers.join(" & ")}</td>
-        <td><img class="team-photo" src="${c.photo}" alt="${c.name} photo"></td>
-      `;
-      tbody.appendChild(tr);
-    });
-}
-
-/* Supportive UI: nav toggle, countdown, calendar, results (compatible with your data) */
-
-// Navigation toggle (simple)
-function bindNavToggle() {
-  const toggle = document.querySelector('.nav-toggle');
-  const list = document.getElementById('navMenu');
-  if (!toggle || !list) return;
-  toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!expanded));
-    list.classList.toggle('open', !expanded);
-  });
-}
-
-// Countdown logic
-function startCountdown() {
-  const target = new Date(nextGp.startISO).getTime();
-  const ids = { days: 'days', hours: 'hours', minutes: 'minutes', seconds: 'seconds' };
-
-  function renderSessions() {
-    const el = document.getElementById('eventTimes');
-    const items = nextGp.sessions.map(s => `${s.label}: ${fmt.date(s.iso)} — ${fmt.time(s.iso)}`);
-    el.textContent = `${nextGp.name} — ${nextGp.venue} | ${items.join(' • ')}`;
-  }
-
-  renderSessions();
-
-  function tick() {
-    const now = Date.now();
-    const diff = Math.max(0, target - now);
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
-    const s = Math.floor((diff / 1000) % 60);
-
-    document.getElementById(ids.days).textContent = String(d).padStart(2, '0');
-    document.getElementById(ids.hours).textContent = String(h).padStart(2, '0');
-    document.getElementById(ids.minutes).textContent = String(m).padStart(2, '0');
-    document.getElementById(ids.seconds).textContent = String(s).padStart(2, '0');
-  }
-  tick();
-  setInterval(tick, 1000);
-}
-
-// Populate calendar + results controls
-function populateCalendar() {
-  const grid = document.getElementById('calendarGrid');
-  calendar2025.forEach((r, i) => {
-    const card = document.createElement('div');
-    card.className = 'calendar-card';
-    card.style.animationDelay = `${i * 0.05}s`;
-    card.innerHTML = `
-      <h4 class="calendar-gp">R${r.round}: ${r.gp}</h4>
-      <div class="calendar-meta">${r.circuit} — ${fmt.date(r.date)}</div>
+      </div>
     `;
-    grid.appendChild(card);
-  });
-
-  const gpSelect = document.getElementById('gpSelect');
-  calendar2025.forEach(r => {
-    const opt = document.createElement('option');
-    opt.value = r.gp;
-    opt.textContent = `R${r.round} — ${r.gp}`;
-    gpSelect.appendChild(opt);
-  });
-  gpSelect.value = "USA";
-}
-
-// Populate results table based on selections
-function bindResults() {
-  const gpSelect = document.getElementById('gpSelect');
-  const sessionSelect = document.getElementById('sessionSelect');
-  const tbody = document.getElementById('resultsTable');
-
-  function render() {
-    const gp = gpSelect.value;
-    const ses = sessionSelect.value;
-    const data = resultsData[gp]?.[ses] || [];
-    tbody.innerHTML = '';
-    data.forEach(row => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${row.pos ?? ""}</td>
-        <td>${row.driver ?? ""}</td>
-        <td class="hide-mobile">${row.team ?? ""}</td>
-        <td>${row.time ?? ""}</td>
-        <td class="hide-mobile">${row.points ?? ""}</td>
-      `;
-      tbody.appendChild(tr);
-    });
-  }
-
-  gpSelect.addEventListener('change', render);
-  sessionSelect.addEventListener('change', render);
-  render();
-}
-
-// Intersection animations (optional subtle lift on cards)
-function observeSections() {
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in-view');
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.count-card, .news-card, .calendar-card')
-    .forEach(el => obs.observe(el));
-}
-
-// Initialize everything on DOM ready
-document.addEventListener('DOMContentLoaded', () => {
-  bindNavToggle();
-  startCountdown();
-  populateNews();            // kept exactly as requested
-  populateDrivers();         // kept exactly as requested
-  populateConstructors();    // kept exactly as requested
-  populateCalendar();
-  bindResults();
-  observeSections();
-});
-// Fade the hero section (the one that shows background words) as you scroll.
-// This script is safe for VS Code, with null checks and passive scroll handling.
-
-(function () {
-  // Run after DOM is ready
-  document.addEventListener('DOMContentLoaded', function () {
-    const hero = document.querySelector('.hero');
-
-    // If no hero element exists, exit cleanly
-    if (!hero) return;
-
-    let heroHeight = hero.offsetHeight;
-
-    // Recompute height on resize to keep logic accurate across device rotations/resizes
-    window.addEventListener('resize', function () {
-      heroHeight = hero.offsetHeight || window.innerHeight;
-    }, { passive: true });
-
-    // Throttle via requestAnimationFrame to avoid layout thrash
-    let ticking = false;
-
-    function onScroll() {
-      if (!ticking) {
-        window.requestAnimationFrame(function () {
-          // If hero is somehow removed, stop
-          if (!heroHeight || !hero) return;
-
-          const scrollY = window.scrollY || window.pageYOffset || 0;
-          const opacity = Math.max(0, 1 - scrollY / heroHeight);
-
-          // Only set inline style when needed
-          hero.style.opacity = String(opacity);
-
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    // Initialize once
-    onScroll();
-
-    // Use passive listener for better performance
-    window.addEventListener('scroll', onScroll, { passive: true });
-  });
-})();
-document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.site-header');
-  const sections = document.querySelectorAll('#countdown, #news, #drivers, #constructors, #calendar');
-
-  function updateOffsets() {
-    const h = header ? header.offsetHeight : 0;
-    sections.forEach(sec => {
-      sec.style.scrollMarginTop = h + 'px';
-    });
-  }
-
-  updateOffsets();
-  window.addEventListener('resize', updateOffsets);
-});
-
-// Fix mobile 100vh issue
-function setVh() {
-  document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
-}
-window.addEventListener('resize', setVh);
-setVh();
-document.addEventListener('DOMContentLoaded', () => {
-  const spline = document.querySelector('.spline-bg');
-  if (spline) {
-    spline.addEventListener('error', () => {
-      spline.style.display = 'none';
-      document.body.style.background = "url('fallback.jpg') center/cover no-repeat";
-    });
-  }
-});
-const toggle = document.querySelector('.nav-toggle');
-const menu = document.getElementById('navMenu');
-if (toggle && menu) {
-  toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
+    driversWrap.appendChild(el);
   });
 }
-function setVh() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-setVh();
-window.addEventListener('resize', setVh);
-document.addEventListener("DOMContentLoaded", () => {
-  const logo = document.querySelector(".logo-img");
-  if (logo) {
-    // Apply filter to knock out white background
-    logo.style.filter = "drop-shadow(0 0 8px #000000ff) brightness(1.1) contrast(1.2)";
-  }
-});
-document.addEventListener('scroll', () => {
-  const logo = document.querySelector('.logo-img');
-  if (!logo) return;
 
-  if (window.scrollY > 50) {
-    logo.style.width = '80px';
+/* ============================
+   Render Constructors
+   ============================ */
+function renderConstructors(){
+  constructorsWrap.innerHTML = '';
+  constructors.forEach(c=>{
+    const box = document.createElement('div');
+    box.className = 'constructor-card';
+    box.innerHTML = `
+      <div class="constructor-media"><img loading="lazy" src="${c.photo}" alt="${escapeHtml(c.name)}"></div>
+      <div class="constructor-body">
+        <h4>${c.pos}. ${escapeHtml(c.name)}</h4>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+          <div class="driver-pair">${escapeHtml(c.drivers.join(' • '))}</div>
+          <div style="font-weight:800;color:var(--accent)">${c.points} pts</div>
+        </div>
+      </div>
+    `;
+    constructorsWrap.appendChild(box);
+  });
+}
+
+/* ============================
+   Render Calendar
+   ============================ */
+function renderCalendar(){
+  calendarList.innerHTML = '';
+  calendar.forEach(round=>{
+    const item = document.createElement('div');
+    item.className = 'calendar-item';
+    item.dataset.date = round.date;
+    item.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div class="gp">${round.round}. ${escapeHtml(round.gp)}</div>
+          <div class="date">${formatDate(round.date)} • ${escapeHtml(round.circuit)}</div>
+        </div>
+        <div style="font-weight:800;color:var(--accent)">${shortDate(round.date)}</div>
+      </div>
+    `;
+    item.addEventListener('click', () => {
+      // when user clicks a round — jump countdown to that date
+      setCountdownToDate(round.date);
+      // smooth scroll to hero
+      document.getElementById('countdown').scrollIntoView({behavior:'smooth'});
+    });
+    calendarList.appendChild(item);
+  });
+}
+
+/* ============================
+   Countdown: picks next upcoming GP automatically
+   ============================ */
+let countdownTarget = null;
+function findNextGP(){
+  const now = new Date();
+  for(let i=0;i<calendar.length;i++){
+    const d = new Date(calendar[i].date + 'T00:00:00');
+    if(d > now) return { ...calendar[i], dateObj: d };
+  }
+  // if none (season over) pick last
+  const last = calendar[calendar.length-1];
+  return {...last, dateObj: new Date(last.date + 'T00:00:00')};
+}
+
+function setCountdownToDate(dateString){
+  countdownTarget = new Date(dateString + 'T00:00:00');
+  const gp = calendar.find(c=>c.date===dateString);
+  if(gp){
+    nextGpName.textContent = `${gp.gp} GP`;
+    nextGpCircuit.textContent = gp.circuit;
+    gpDateEl.textContent = formatDate(gp.date);
   } else {
-    logo.style.width = '120px';
+    nextGpName.textContent = `Upcoming`;
+    nextGpCircuit.textContent = '';
+    gpDateEl.textContent = '';
   }
-});
+}
 
-
-
-let scrolling = false;
-window.addEventListener('scroll', () => {
-  if (!scrolling) {
-    document.body.classList.add('is-scrolling');
-    scrolling = true;
-    clearTimeout(window.scrollEndTimer);
-    window.scrollEndTimer = setTimeout(() => {
-      document.body.classList.remove('is-scrolling');
-      scrolling = false;
-    }, 200);
+function startCountdown(){
+  // default to the next GP
+  const next = findNextGP();
+  setCountdownToDate(next.date);
+  // update visible headings too
+  if(nextGpName.textContent.trim()==='' || nextGpName.textContent==='Loading...'){
+    nextGpName.textContent = `${next.gp} GP`;
+    nextGpCircuit.textContent = next.circuit;
+    gpDateEl.textContent = formatDate(next.date);
   }
+  // tick every second
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
+
+function updateCountdown(){
+  if(!countdownTarget) return;
+  const now = new Date();
+  const diff = countdownTarget.getTime() - now.getTime();
+  if(diff <= 0){
+    cdDays.textContent = '00'; cdHours.textContent='00'; cdMinutes.textContent='00'; cdSeconds.textContent='00';
+    // you could rotate to next gp automatically
+    return;
+  }
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((diff % (1000*60)) / 1000);
+  cdDays.textContent = padNum(days);
+  cdHours.textContent = padNum(hours);
+  cdMinutes.textContent = padNum(minutes);
+  cdSeconds.textContent = padNum(seconds);
+}
+
+/* ============================
+   Utilities
+   ============================ */
+function padNum(n){return String(n).padStart(2,'0')}
+function truncate(s, n){ if(!s) return ''; return s.length>n? s.slice(0,n).trim() + '...' : s; }
+function escapeHtml(unsafe) {
+  if(!unsafe) return '';
+  return String(unsafe)
+    .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
+    .replaceAll('"','&quot;').replaceAll("'",'&#039;');
+}
+function formatDate(d){
+  // returns e.g. "Nov 22, 2025"
+  const dt = new Date(d + 'T00:00:00');
+  return dt.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+}
+function shortDate(d){
+  const dt = new Date(d + 'T00:00:00');
+  return dt.toLocaleDateString(undefined, { month:'short', day:'numeric' });
+}
+
+/* ============================
+   Init everything
+   ============================ */
+function init(){
+  renderNews();
+  renderDrivers();
+  renderConstructors();
+  renderCalendar();
+  startCountdown();
+
+  // open calendar on button click
+  goToCalendarBtn.addEventListener('click',()=>{
+    document.getElementById('calendar').scrollIntoView({behavior:'smooth'});
+  });
+
+  // small accessibility: close modal on esc
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape'){ closeModal(); }
+  });
+
+  // set initial year
+  document.getElementById('year').textContent = new Date().getFullYear();
+}
+init();
+
+/* ============================
+   End of file
+   ============================ */
+// OPEN FULL ARTICLE
+function openArticle(index) {
+    const article = news[index];
+
+    document.getElementById("popupTitle").innerText = article.title;
+    document.getElementById("popupImage").src = article.image;
+    document.getElementById("popupText").innerText = article.text;
+
+    const popup = document.getElementById("articlePopup");
+    popup.style.display = "flex";
+
+    // Scroll inside popup smoothly
+    document.querySelector(".article-popup-content").scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+// CLOSE POPUP
+document.querySelector(".close-article").addEventListener("click", () => {
+    document.getElementById("articlePopup").style.display = "none";
 });
-window.addEventListener('load', () => {
-  // your code here
-});
+
 
 
 
