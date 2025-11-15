@@ -73,7 +73,7 @@ const news = [
   {
     title: "When Can Lando Norris Win the Championship?",
     date: "2025-11-15",
-    image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/fom-website/2024/Brazil/GettyImages-2182703356.webp",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJCnyK1Cj5hyFR4O8Vmk4nxbtsurQlaImp8g&s",
     text: `The 2025 Formula 1 season has delivered one of the most thrilling title battles in recent memory. With only three races left — Las Vegas, Qatar, and Abu Dhabi — Lando Norris stands on the brink of becoming World Champion. After back-to-back victories in Mexico and Brazil, Norris has seized control of the standings, leading teammate Oscar Piastri by 24 points and holding a 49-point cushion over Max Verstappen.
 
 Norris’s Current Position
@@ -1608,7 +1608,150 @@ function openArticle(index) {
 document.querySelector(".close-article").addEventListener("click", () => {
     document.getElementById("articlePopup").style.display = "none";
 });
+function animateCards() {
+    document.querySelectorAll('.news-card, .driver-card, .constructor-card, .calendar-item')
+        .forEach((el, i) => {
+            el.style.opacity = 0;
+            el.style.transform = "translateY(6px)";
+            setTimeout(() => {
+                el.style.transition = "all .35s cubic-bezier(.2,.9,.3,1)";
+                el.style.opacity = 1;
+                el.style.transform = "translateY(0)";
+            }, 50 + i * 40);
+        });
+}
 
+document.addEventListener("DOMContentLoaded", animateCards);
+function highlightCalendarItem(item) {
+    document.querySelectorAll(".calendar-item").forEach(i => i.classList.remove("active"));
+    item.classList.add("active");
+}
+document.getElementById("go-to-calendar").addEventListener("click", () => {
+    document.getElementById("calendar").scrollIntoView({ behavior: "smooth" });
+});
+window.addEventListener("scroll", () => {
+    const header = document.querySelector(".site-header");
+    if (window.scrollY > 40) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
+});
+function revealOnScroll() {
+    const elements = document.querySelectorAll(".news-card, .driver-card, .constructor-card, .calendar-item");
+    const trigger = window.innerHeight * 0.85;
+
+    elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) {
+            el.style.opacity = 1;
+            el.style.transform = "none";
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+document.addEventListener("DOMContentLoaded", revealOnScroll);
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".top-nav a");
+
+function highlightNav() {
+    let current = "";
+
+    sections.forEach(sec => {
+        const top = sec.offsetTop - 180;
+        if (scrollY >= top) current = sec.id;
+    });
+
+    navLinks.forEach(a => {
+        a.classList.remove("active");
+        if (a.getAttribute("href") === "#" + current) a.classList.add("active");
+    });
+}
+
+window.addEventListener("scroll", highlightNav);
+document.querySelectorAll("img").forEach(img => {
+    img.style.opacity = 0;
+    img.onload = () => {
+        img.style.transition = "opacity .35s ease";
+        img.style.opacity = 1;
+    };
+});
+document.querySelectorAll(".news-card, .driver-card, .constructor-card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        card.style.transform = `translateY(-4px) rotateX(${y/30}deg) rotateY(${x/30}deg)`;
+    });
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "translateY(0) rotateX(0) rotateY(0)";
+    });
+});
+window.addEventListener("scroll", () => {
+    const modal = document.getElementById("modal");
+    if (modal && modal.style.display === "flex") closeArticleModal();
+});
+const breakingNewsEl = document.getElementById("breakingNews");
+
+function updateBreakingNews() {
+    if (!breakingNewsEl || !window.news) return;
+    const latest = news[0];
+    if (!latest) return;
+    breakingNewsEl.textContent = "Breaking: " + latest.title;
+}
+
+updateBreakingNews();
+function revealHeadlines() {
+    document.querySelectorAll(".section-head h2").forEach(h => {
+        const top = h.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) h.classList.add("reveal");
+    });
+}
+
+window.addEventListener("scroll", revealHeadlines);
+document.addEventListener("DOMContentLoaded", revealHeadlines);
+function showLocalGPTime(dateString) {
+    const localTimeBox = document.getElementById("localTimeInfo");
+    if (!localTimeBox) return;
+
+    const gpDateUTC = new Date(dateString); // GP date as is (UTC assumed)
+    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; 
+    const userOffsetMin = gpDateUTC.getTimezoneOffset(); 
+
+    // Convert GP date to user timezone
+    const gpLocal = gpDateUTC.toLocaleString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        timeZone: userTimeZone
+    });
+
+    // Format UTC offset
+    const offsetHours = -(userOffsetMin / 60);
+    const offsetStr = (offsetHours >= 0 ? "+" : "") + offsetHours;
+
+    // Show it
+    localTimeBox.textContent = 
+        `Local Time (${userTimeZone}): ${gpLocal} (UTC${offsetStr})`;
+}
+
+
+// 🔄 Hook into your existing NEXT GP initialization
+document.addEventListener("DOMContentLoaded", () => {
+    // Whenever next GP loads
+    if (typeof findNextGP === "function") {
+        const next = findNextGP();
+        if (next) showLocalGPTime(next.date);
+    }
+});
+
+// 🔄 Hook into calendar item click (override patch)
+document.querySelectorAll(".calendar-item").forEach(item => {
+    item.addEventListener("click", () => {
+        const date = item.getAttribute("data-date");
+        showLocalGPTime(date);
+    });
+});
 
 
 
