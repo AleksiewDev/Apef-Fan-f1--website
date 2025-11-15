@@ -73,7 +73,7 @@ const news = [
   {
     title: "When Can Lando Norris Win the Championship?",
     date: "2025-11-15",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJCnyK1Cj5hyFR4O8Vmk4nxbtsurQlaImp8g&s",
+    image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/fom-website/2024/Brazil/GettyImages-2182703356.webp",
     text: `The 2025 Formula 1 season has delivered one of the most thrilling title battles in recent memory. With only three races left — Las Vegas, Qatar, and Abu Dhabi — Lando Norris stands on the brink of becoming World Champion. After back-to-back victories in Mexico and Brazil, Norris has seized control of the standings, leading teammate Oscar Piastri by 24 points and holding a 49-point cushion over Max Verstappen.
 
 Norris’s Current Position
@@ -1608,6 +1608,7 @@ function openArticle(index) {
 document.querySelector(".close-article").addEventListener("click", () => {
     document.getElementById("articlePopup").style.display = "none";
 });
+
 
 
 
