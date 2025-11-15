@@ -71,41 +71,36 @@ const calendar = [
    ============================ */
 const news = [
   {
-    title: "Cadillac’s First F1 Test at Imola with Ferrari: A Historic Step Toward 2026",
-    date: "2025-11-14",
-    image: "https://cdn-5.motorsport.com/images/mgl/6lmdPpj0/s8/sergio-perez-cadillac-racing.jpg",
-    text: `Cadillac has officially taken its first steps into Formula 1, conducting a landmark test at the legendary Imola circuit with Ferrari machinery. The session marked a crucial milestone for the American brand as it prepares to join the grid in 2026.
+    title: "When Can Lando Norris Win the Championship?",
+    date: "2025-11-15",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJCnyK1Cj5hyFR4O8Vmk4nxbtsurQlaImp8g&s",
+    text: `The 2025 Formula 1 season has delivered one of the most thrilling title battles in recent memory. With only three races left — Las Vegas, Qatar, and Abu Dhabi — Lando Norris stands on the brink of becoming World Champion. After back-to-back victories in Mexico and Brazil, Norris has seized control of the standings, leading teammate Oscar Piastri by 24 points and holding a 49-point cushion over Max Verstappen.
 
-🚗 Cadillac Joins Forces with Ferrari
-Cadillac will enter Formula 1 as the 11th team in 2026, powered by Ferrari engines.
+Norris’s Current Position
+7 wins in 2025: His strongest season to date, showcasing consistency and speed.
 
-To prepare, the team borrowed Ferrari’s SF-23 (2023-spec car) under F1’s Testing of Previous Cars (TPC) regulations.
+Championship lead: 24 points ahead of Piastri, 49 ahead of Verstappen.
 
-The collaboration saw 20 Cadillac staff working alongside 30 Ferrari engineers, giving the new outfit its first taste of live track operations.
+Momentum: Double victory in Sao Paulo (Sprint + Grand Prix) gave him maximum points.
 
-🏎️ Sergio Perez Back Behind the Wheel
-Former Red Bull driver Sergio Perez made his F1 return after nearly a year away.
+The Championship Math
+With three rounds left, a maximum of 78 points remain on the table (including sprints). Norris’s path to the title depends on how his rivals perform:
 
-Perez completed 99 laps at Imola, with a best time of 1:18.82, showing consistency and only one minor off-track excursion at Tamburello.
+Earliest chance: Norris could clinch the championship in Qatar if he extends his lead beyond 52 points over Piastri and Verstappen.
 
-He drove a blacked-out Ferrari SF-23, wearing unbranded black overalls and helmet, symbolizing Cadillac’s fresh start.
+Most likely scenario: The fight will go down to Abu Dhabi unless Norris dominates Las Vegas and Qatar.
 
-🔧 Testing Objectives
-The test was not about outright speed but about operational readiness: pit stops, communication, and team coordination.
+Key Factors
+McLaren rivalry: Piastri remains his closest challenger, and intra-team battles could decide the title.
 
-Perez used the outing to benchmark his physical condition ahead of winter training and Cadillac’s first car shakedown in January.
+Verstappen threat: Despite trailing, Verstappen’s resurgence with Red Bull’s RB21 upgrades means he cannot be discounted.
 
-Ferrari’s support ensured Cadillac could simulate a race weekend environment, vital for a team with no prior F1 track experience.
+Consistency: Norris himself admits the “only thing I can do is win every race” — a mindset that has fueled his late-season surge.
 
-🌍 Significance for Cadillac and F1
-This test represents Cadillac’s first real-world step toward its debut, moving beyond simulators and design work.
+What It Means
+If Norris secures the crown, it would mark McLaren’s first drivers’ championship since Lewis Hamilton in 2008, and elevate Norris into the elite circle of British champions alongside Hamilton, Jenson Button, and Damon Hill. For Norris personally, it would be the culmination of years of promise, cementing him as the face of McLaren’s revival.
 
-With Perez and Valtteri Bottas signed as drivers, Cadillac is positioning itself as a competitive newcomer.
-
-The Imola session demonstrated the strength of Ferrari’s partnership, giving Cadillac credibility and technical backing from day one.
-
-📰 Conclusion
-Cadillac’s Imola test with Ferrari was more than just laps on track—it was a symbolic moment of transition from concept to reality. With Perez back in action, Bottas waiting in the wings, and Ferrari’s engines powering the project, Cadillac’s entry promises to add fresh energy to Formula 1’s future.
+✨ Conclusion: Lando Norris can mathematically win the championship in Qatar, but the more realistic scenario is a dramatic showdown in Abu Dhabi. His destiny is now in his own hands — win consistently, and the title will be his.
 
 `
   },
@@ -1613,6 +1608,7 @@ function openArticle(index) {
 document.querySelector(".close-article").addEventListener("click", () => {
     document.getElementById("articlePopup").style.display = "none";
 });
+
 
 
 
