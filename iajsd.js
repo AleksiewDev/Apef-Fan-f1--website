@@ -22,7 +22,7 @@ const drivers = [
  { pos: 18, name: "Pierre Gasly", code: "GAS", nationality: "FRA", team: "Alpine", points: 22, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/alpine-pg-2025-1.jpg" },
  { pos: 19, name: "Gabriel Bortoleto", code: "BOR", nationality: "BRA", team: "Kick Sauber", points: 19, wins: 0, poles: 0, photo: "https://cdn.racingnews365.com/2025/Bortoleto/_1092x683_crop_center-center_85_none/XPB_1355727_HiRes.jpg?v=1751134525" },
  { pos: 20, name: "Franco Colapinto", code: "COL", nationality: "ARG", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://static.wikia.nocookie.net/f1wikia/images/c/c1/Colapinto2025_Alpine.png/revision/latest/scale-to-width-down/1200?cb=20250728003710" },
- { pos: 21, name: "Jack Doohan", code: "DOO", nationality: "AUS", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/F1_Grand_Prix_of_Azerbaijan___Previews/2171498785.webp" }
+ { pos: 21, name: "Jack Doohan", code: "DOO", nationality: "AUS", team: "Alpine", points: 0, wins: 0, poles: 0, photo: "https://www.motorsinside.com/en/wp-content/uploads/sites/2/2024/02/1500_edito_09DTWWmvev6odH1IrF13nU5W7OTGKhD_Pm0oNuL8gXmB3n1yAlNTCC4P8ie0os_rq_t4.webp" }
 ];
 
 const constructors = [
@@ -1800,6 +1800,7 @@ document.querySelectorAll(".calendar-item").forEach(item => {
         showLocalGPTime(date);
     });
 });
+
 
 
 
