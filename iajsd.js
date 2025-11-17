@@ -70,6 +70,54 @@ const calendar = [
    - You can replace these with live feeds later.
    ============================ */
 const news = [
+     {
+    title: "High Stakes Under the Neon Lights: What to Expect from the 2025 Formula 1 Las Vegas Grand Prix",
+    date: "2025-11-17",
+    image: "https://www.blackbookmotorsport.com/wp-content/uploads/2024/11/f1-las-vegas-grand-prix-plaza-2025-november-2024.jpg",
+    text: `The Las Vegas Grand Prix 2025 is the penultimate race of the season, with the championship still undecided. Expect McLaren’s Lando Norris to arrive with momentum, Red Bull’s Max Verstappen to fight back, and Ferrari to play the role of disruptor. The Strip Circuit’s long straights and tricky corners will set the stage for high-speed duels and strategic battles.
+
+🌆 The Setting: Las Vegas Strip Circuit
+The race takes place on the Las Vegas Strip Circuit, a 6.12 km street track with 17 turns and speeds exceeding 230 mph.
+
+With 50 laps scheduled, the race promises a mix of long straights for overtaking and technical sections where precision matters.
+
+Night racing under the neon lights adds drama, making it one of the most visually spectacular events on the calendar.
+
+🔥 Championship Context
+Lando Norris (McLaren) leads the drivers’ standings with 390 points, having won back-to-back races in Mexico and Brazil.
+
+Oscar Piastri (McLaren) trails by 24 points, still in contention but under pressure to deliver.
+
+Max Verstappen (Red Bull), though not leading, remains a threat on high-speed circuits like Vegas.
+
+Ferrari’s Charles Leclerc and Carlos Sainz are outsiders but capable of upsetting strategies, especially in qualifying.
+
+⚔️ Key Battles to Watch
+McLaren vs. Red Bull: Norris’ momentum versus Verstappen’s raw pace. The Strip’s straights favor Red Bull’s power unit, but McLaren’s recent form could neutralize that advantage.
+
+Intra-team duel at McLaren: Norris vs. Piastri. With both drivers tied for most wins this season (7 each), qualifying will be crucial.
+
+Ferrari vs. Mercedes: Ferrari’s improved race pace could challenge Mercedes, who historically performed well here (Russell won in 2024).
+
+Midfield spotlight: Haas’ Oliver Bearman enters with confidence after scoring points in four consecutive races, marking him as a rising star.
+
+🧠 Strategy & Regulations
+The FIA has hinted at mandatory two pit stops and tire-life adjustments for 2026, making Vegas a preview of future strategies.
+
+Tire degradation under the desert night conditions will be a decisive factor, with teams balancing aggressive stints against long-run consistency.
+
+🎲 What to Expect
+High-speed overtakes on the Strip’s straights.
+
+Safety cars are likely, given the street circuit’s tight margins.
+
+Championship drama: If Norris wins, he could secure the title before Abu Dhabi. If Verstappen or Piastri triumph, the fight goes down to the wire.
+
+Conclusion: The Las Vegas Grand Prix 2025 is more than just a race—it’s a showdown of momentum, power, and precision. With the championship undecided, every lap under the neon glow will feel like a roll of the dice. Expect fireworks both on and off the track.
+
+
+`
+  },
   {
     title: "When Can Lando Norris Win the Championship?",
     date: "2025-11-15",
@@ -1752,6 +1800,7 @@ document.querySelectorAll(".calendar-item").forEach(item => {
         showLocalGPTime(date);
     });
 });
+
 
 
 
