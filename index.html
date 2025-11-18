@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="bg">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -15,15 +15,15 @@
         <img id="f1-logo" src="https://i.pinimg.com/736x/3d/89/3a/3d893a5f9d6a914d84a8bd0d57a05ff9.jpg" alt="F1 Logo">
         <div class="brand-text">
           <h1>Formula 1 — Apex Fan Club</h1>
-          <p class="tag">Countdown • News • Championships • Calendar</p>
+          <p class="tag">Предстоящ старт • Новини • Шампионат • Календар</p>
         </div>
       </div>
       <nav class="top-nav">
-        <a href="#countdown">Countdown</a>
-        <a href="#news">News</a>
-        <a href="#drivers">Drivers</a>
-        <a href="#constructors">Constructors</a>
-        <a href="#calendar">Calendar</a>
+        <a href="#countdown">Предстоящ старт</a>
+        <a href="#news">Новини</a>
+        <a href="#drivers">Класиране при пилотите</a>
+        <a href="#constructors">Класиране при конструктори</a>
+        <a href="#calendar">Календар</a>
       </nav>
     </div>
   </header>
@@ -34,10 +34,16 @@
       <div class="hero-bg"></div>
       <div class="hero-content">
         <div class="next-gp-info">
-          <h2>Next Grand Prix</h2>
+          <h2>Следващо Гран При</h2>
           <h3 id="next-gp-name">Loading...</h3>
           <p id="next-gp-circuit" class="muted"></p>
         </div>
+
+          <!-- New circuit image -->
+  <div class="gp-image">
+    <img src="https://i.pinimg.com/736x/d2/e4/a0/d2e4a053ce57da18a99b11fdb2834451.jpg" 
+         alt="Las Vegas Street Circuit Layout">
+  </div>
 
         <div class="countdown-card">
           <div class="countdown-grid" aria-live="polite">
@@ -47,7 +53,7 @@
             <div><span id="cd-seconds">00</span><small>SEC</small></div>
           </div>
           <div class="cta-row">
-            <button class="btn accent" id="go-to-calendar">View Calendar</button>
+            <button class="btn accent" id="go-to-calendar">Виж Календараr</button>
             <div class="small-muted" id="gp-date">—</div>
           </div>
         </div>
@@ -59,8 +65,8 @@
     <!-- News -->
     <section id="news" class="section">
       <div class="section-head">
-        <h2>Latest News</h2>
-        <p class="muted">Top stories curated from around the paddock — click Read more for full article.</p>
+        <h2>Последни Новини</h2>
+        <p class="muted">Подбрани водещи новини от падока — щракнете на „Прочети повече“ за целия материал</p>
       </div>
       <div id="news-grid" class="news-grid">
         <!-- cards injected by JS -->
@@ -81,8 +87,8 @@
     <!-- Drivers championship -->
     <section id="drivers" class="section">
       <div class="section-head">
-        <h2>Drivers Championship</h2>
-        <p class="muted">Live standings — photos, stats and highlights.</p>
+        <h2>Класиране при пилоти</h2>
+        <p class="muted">Актуално класиране — снимки, статистики и акценти</p>
       </div>
       <div class="table-wrap" id="drivers-wrap">
         <!-- driver cards injected by JS -->
@@ -92,8 +98,8 @@
     <!-- Constructors championship -->
     <section id="constructors" class="section">
       <div class="section-head">
-        <h2>Constructors Championship</h2>
-        <p class="muted">Team standings with driver pairings and points.</p>
+        <h2>Класиране при конструктори</h2>
+        <p class="muted">Отбори, пилоти и точки</p>
       </div>
       <div class="constructors-grid" id="constructors-wrap">
         <!-- constructors injected by JS -->
@@ -103,8 +109,8 @@
     <!-- Calendar -->
     <section id="calendar" class="section">
       <div class="section-head">
-        <h2>2025 Calendar</h2>
-        <p class="muted">Full season calendar — click a round to highlight countdown.</p>
+        <h2>Календар 2025</h2>
+        <p class="muted">Пълен сезонен календар — изберете кръг за обратно броене</p>
       </div>
       <div id="calendar-list" class="calendar-list">
         <!-- calendar injected by JS -->
@@ -127,8 +133,8 @@
     <div class="footer-inner">
       <div>© <span id="year"></span>Apex Fan Club. All rights reserved.</div>
       <div class="footer-links">
-        <a href="#news">For Contact: ffans7329@gmail.com</a> 
-        <a href="https://www.facebook.com/profile.php?id=61582854004928">Follow our Facebook Page: Formula 1 - Apex Fan club</a> 
+        <a href="#news">Свържете се с нас: ffans7329@gmail.com</a> 
+        <a href="https://www.facebook.com/profile.php?id=61582854004928">Последвайте нашата страница в Facebook - Apex Fan club</a>
       </div>
     </div>
   </footer>
@@ -136,25 +142,6 @@
   <script src="iajsd.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
