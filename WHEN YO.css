@@ -598,8 +598,92 @@ body {
   line-height: 1.3;
   font-size: 16px;
 }
+:root {
+  --warm-red: #FF1E00;
+  --carbon-black: #15151E;
+  --white: #FFFFFF;
+  --gray-light: #CCCCCC;
+  --gray-dark: #999999;
+}
+/* Backgrounds */
+body {
+  background: var(--carbon-black);
+  color: var(--white);
+}
 
+/* Navigation & Footer */
+.site-header,
+.site-footer {
+  background: var(--carbon-black);
+  color: var(--white);
+}
 
+/* Buttons */
+.btn.accent {
+  background: var(--warm-red);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(255,30,0,0.25);
+}
+.btn.accent:hover {
+  background: #e00000; /* slightly darker red */
+}
+
+/* Section dividers */
+.section-head h2 {
+  border-left: 4px solid var(--warm-red);
+  color: var(--white);
+}
+
+/* Text muted */
+.muted {
+  color: var(--gray-dark);
+}
+
+/* Cards */
+.news-card,
+.driver-card,
+.constructor-card {
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+}
+.news-card:hover {
+  border-color: var(--warm-red);
+}
+/* Navigation menu text → White */
+.top-nav a {
+  color: var(--white); /* #FFFFFF */
+}
+
+/* Driver names → Black */
+.driver-info h4 {
+  color: #000000; /* pure black */
+  font-weight: 700; /* keeps them bold and readable */
+}
+/* Constructor names → Black */
+.constructor-body h4 {
+  color: #000000; /* pure black */
+  font-weight: 700;
+}
+.gp-image {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.gp-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transition: transform .3s ease;
+}
+
+.gp-image img:hover {
+  transform: scale(1.05);
+}
 
 
 
