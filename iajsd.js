@@ -73,7 +73,7 @@ const news = [
            {
     title: "Пилотите са притеснени преди Лас Вегас: студ, дъжд и тъмни участъци по трасето",
     date: "2025-11-20",
-    image: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Las%20Vegas.webp",
+    image: "https://corp.formula1.com/wp-content/uploads/2024/03/j3npIWmT-1-e1709649376357-2048x1364.webp",
     text: `Уикендът на Гран При на Лас Вегас обещава да бъде един от най-непредсказуемите в календара на Формула 1. Пилотите вече изразяват сериозни притеснения за условията, които могат да превърнат състезанието в истинско изпитание за сцепление и безопасност.
 
 🌡️ Ниски температури и липса на сцепление
@@ -1153,6 +1153,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
