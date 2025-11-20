@@ -684,9 +684,27 @@ body {
 .gp-image img:hover {
   transform: scale(1.05);
 }
+/* FIX: Make popup title + text fully black */
+.article-popup-content h2,
+.article-popup-content p {
+    color: #000 !important;
+}
 
+/* Also fix date or any extra elements if needed */
+.article-popup-content * {
+    color: #000 !important;
+}
+#popupTitle {
+    color: #000 !important;
+}
+.modal-body {
+    color: #000 !important;
+}
 
-
+.modal-body h2,
+.modal-body p {
+    color: #000 !important;
+}
 
 
 
