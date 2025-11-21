@@ -1136,58 +1136,109 @@ function renderCalendar(){
 }
 
 /* ============================
-   Countdown: picks next upcoming GP automatically
+   FIXED COUNTDOWN FOR LAS VEGAS GP 2025
    ============================ */
-let countdownTarget = null;
 
-function setCountdownToLasVegasGP(){
-  // намери Las Vegas GP в календара
-  const gp = calendar.find(c => c.gp.toLowerCase().includes("las vegas"));
-  if(gp){
-    countdownTarget = new Date(gp.date + 'T00:00:00');
-    nextGpName.textContent = `${gp.gp} GP`;
-    nextGpCircuit.textContent = gp.circuit;
-    gpDateEl.textContent = formatDate(gp.date);
-  } else {
-    // fallback ако липсва в календара
-    nextGpName.textContent = `Las Vegas GP`;
-    nextGpCircuit.textContent = '';
-    gpDateEl.textContent = '';
-  }
+function startCountdown(targetDate) {
+    const cdDays = document.getElementById("cd-days");
+    const cdHours = document.getElementById("cd-hours");
+    const cdMinutes = document.getElementById("cd-minutes");
+    const cdSeconds = document.getElementById("cd-seconds");
+
+    function update() {
+        const now = new Date().getTime();
+        const raceTime = new Date(targetDate).getTime();
+        const diff = raceTime - now;
+
+        if (diff <= 0) {
+            cdDays.textContent = "00";
+            cdHours.textContent = "00";
+            cdMinutes.textContent = "00";
+            cdSeconds.textContent = "00";
+            return;
+        }
+
+        cdDays.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+        cdHours.textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        cdMinutes.textContent = Math.floor((diff / (1000 * 60)) % 60);
+        cdSeconds.textContent = Math.floor((diff / 1000) % 60);
+    }
+
+    update();
+    setInterval(update, 1000);
 }
 
-function startCountdown(){
-  // винаги към Las Vegas GP
-  setCountdownToLasVegasGP();
+/* AUTO-SELECT NEXT GP — BUT NOW FORCED TO LAS VEGAS GP */
+function loadNextGP() {
+    const nextGP = calendar.find(gp => gp.gp === "Лас Вегас");
 
-  // tick every second
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+    document.getElementById("next-gp-name").textContent = `Гран При на ${nextGP.gp}`;
+    document.getElementById("next-gp-circuit").textContent = nextGP.circuit;
+    document.getElementById("gp-date").textContent = nextGP.date;
+
+    startCountdown(nextGP.date + "T22:00:00"); 
+    // F1 Vegas start time ~22:00 BG time — adjust if needed
 }
+ /* ============================
+   PERFECT COUNTDOWN (NO NaN EVER)
+   ============================ */
 
-function updateCountdown(){
-  if(!countdownTarget) return;
-  const now = new Date();
-  const diff = countdownTarget.getTime() - now.getTime();
+function startCountdown(dateString) {
+    const target = new Date(dateString.replace(/-/g, "/")); 
+    // Force safe date parsing on all browsers
 
-  if(diff <= 0){
-    cdDays.textContent = '00';
-    cdHours.textContent='00';
-    cdMinutes.textContent='00';
-    cdSeconds.textContent='00';
-    return;
-  }
+    if (isNaN(target.getTime())) {
+        console.error("Invalid date:", dateString);
+        return;
+    }
 
-  const days = Math.floor(diff / (1000*60*60*24));
-  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-  const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
-  const seconds = Math.floor((diff % (1000*60)) / 1000);
+    const cdDays = document.getElementById("cd-days");
+    const cdHours = document.getElementById("cd-hours");
+    const cdMinutes = document.getElementById("cd-minutes");
+    const cdSeconds = document.getElementById("cd-seconds");
 
-  cdDays.textContent = padNum(days);
-  cdHours.textContent = padNum(hours);
-  cdMinutes.textContent = padNum(minutes);
-  cdSeconds.textContent = padNum(seconds);
+    function tick() {
+        const now = new Date();
+        const diff = target - now;
+
+        if (diff <= 0) {
+            cdDays.textContent = "00";
+            cdHours.textContent = "00";
+            cdMinutes.textContent = "00";
+            cdSeconds.textContent = "00";
+            return;
+        }
+
+        cdDays.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+        cdHours.textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        cdMinutes.textContent = Math.floor((diff / (1000 * 60)) % 60);
+        cdSeconds.textContent = Math.floor((diff / 1000) % 60);
+    }
+
+    tick();
+    setInterval(tick, 1000);
 }
+function loadNextGP() {
+    const vegas = calendar.find(g => g.gp === "Лас Вегас");
+    const vegasDate = vegas.date + " 22:00:00"; // safe format
+
+    document.getElementById("next-gp-name").textContent = 
+        `Гран При на ${vegas.gp}`;
+    
+    document.getElementById("next-gp-circuit").textContent = vegas.circuit;
+    document.getElementById("gp-date").textContent = vegas.date;
+
+    startCountdown(vegasDate);
+}
+window.onload = () => {
+    loadNextGP();
+    renderNews();
+    renderDrivers();
+    renderConstructors();
+    renderCalendar();
+    document.getElementById("year").textContent = new Date().getFullYear();
+};
+
 
 
 /* ============================
@@ -1418,6 +1469,21 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
