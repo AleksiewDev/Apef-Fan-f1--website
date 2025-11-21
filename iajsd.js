@@ -1139,41 +1139,27 @@ function renderCalendar(){
    Countdown: picks next upcoming GP automatically
    ============================ */
 let countdownTarget = null;
-function findNextGP(){
-  const now = new Date();
-  for(let i=0;i<calendar.length;i++){
-    const d = new Date(calendar[i].date + 'T00:00:00');
-    if(d > now) return { ...calendar[i], dateObj: d };
-  }
-  // if none (season over) pick last
-  const last = calendar[calendar.length-1];
-  return {...last, dateObj: new Date(last.date + 'T00:00:00')};
-}
 
-function setCountdownToDate(dateString){
-  countdownTarget = new Date(dateString + 'T00:00:00');
-  const gp = calendar.find(c=>c.date===dateString);
+function setCountdownToLasVegasGP(){
+  // намери Las Vegas GP в календара
+  const gp = calendar.find(c => c.gp.toLowerCase().includes("las vegas"));
   if(gp){
+    countdownTarget = new Date(gp.date + 'T00:00:00');
     nextGpName.textContent = `${gp.gp} GP`;
     nextGpCircuit.textContent = gp.circuit;
     gpDateEl.textContent = formatDate(gp.date);
   } else {
-    nextGpName.textContent = `Upcoming`;
+    // fallback ако липсва в календара
+    nextGpName.textContent = `Las Vegas GP`;
     nextGpCircuit.textContent = '';
     gpDateEl.textContent = '';
   }
 }
 
 function startCountdown(){
-  // default to the next GP
-  const next = findNextGP();
-  setCountdownToDate(next.date);
-  // update visible headings too
-  if(nextGpName.textContent.trim()==='' || nextGpName.textContent==='Loading...'){
-    nextGpName.textContent = `${next.gp} GP`;
-    nextGpCircuit.textContent = next.circuit;
-    gpDateEl.textContent = formatDate(next.date);
-  }
+  // винаги към Las Vegas GP
+  setCountdownToLasVegasGP();
+
   // tick every second
   updateCountdown();
   setInterval(updateCountdown, 1000);
@@ -1183,20 +1169,26 @@ function updateCountdown(){
   if(!countdownTarget) return;
   const now = new Date();
   const diff = countdownTarget.getTime() - now.getTime();
+
   if(diff <= 0){
-    cdDays.textContent = '00'; cdHours.textContent='00'; cdMinutes.textContent='00'; cdSeconds.textContent='00';
-    // you could rotate to next gp automatically
+    cdDays.textContent = '00';
+    cdHours.textContent='00';
+    cdMinutes.textContent='00';
+    cdSeconds.textContent='00';
     return;
   }
+
   const days = Math.floor(diff / (1000*60*60*24));
   const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
   const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
   const seconds = Math.floor((diff % (1000*60)) / 1000);
+
   cdDays.textContent = padNum(days);
   cdHours.textContent = padNum(hours);
   cdMinutes.textContent = padNum(minutes);
   cdSeconds.textContent = padNum(seconds);
 }
+
 
 /* ============================
    Utilities
@@ -1426,6 +1418,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
