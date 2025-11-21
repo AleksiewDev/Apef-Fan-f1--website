@@ -104,7 +104,7 @@ FP2 – Норис отвръща на удара: Във втората сес�
 `
   },
           {
-    title: "Ландо Норис най-бърз в втората тренировка в Лас Вегас, изненади от Саубер и Racing Bulls ",
+    title: "Ландо Норис най-бърз в втората тренировка в Лас Вегас, изненади от Заубер и Racing Bulls ",
     date: "2025-11-21",
     image: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Las_Vegas___Practice/2247713287.webp",
     text: `Пълна класация – Втора тренировка (FP2), Лас Вегас Гран При 2025
@@ -1365,6 +1365,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
