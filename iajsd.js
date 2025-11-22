@@ -1301,108 +1301,66 @@ function renderCalendar(){
 }
 
 /* ============================
-   FIXED COUNTDOWN FOR LAS VEGAS GP 2025
+   COUNTDOWN FOR BULGARIAN TIME
    ============================ */
 
-function startCountdown(targetDate) {
-    const cdDays = document.getElementById("cd-days");
-    const cdHours = document.getElementById("cd-hours");
-    const cdMinutes = document.getElementById("cd-minutes");
-    const cdSeconds = document.getElementById("cd-seconds");
+// Default start hour for races in Bulgaria (edit when needed)
+const DEFAULT_BG_TIME = "15:00"; // Пример: 15:00 българско време
 
-    function update() {
-        const now = new Date().getTime();
-        const raceTime = new Date(targetDate).getTime();
-        const diff = raceTime - now;
+function getNextRace() {
+    const now = new Date();
 
-        if (diff <= 0) {
-            cdDays.textContent = "00";
-            cdHours.textContent = "00";
-            cdMinutes.textContent = "00";
-            cdSeconds.textContent = "00";
-            return;
-        }
-
-        cdDays.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
-        cdHours.textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        cdMinutes.textContent = Math.floor((diff / (1000 * 60)) % 60);
-        cdSeconds.textContent = Math.floor((diff / 1000) % 60);
-    }
-
-    update();
-    setInterval(update, 1000);
+    // Find the nearest upcoming race
+    return calendar.find(race => {
+        const date = new Date(`${race.date}T${DEFAULT_BG_TIME}:00+02:00`);
+        return date > now;
+    });
 }
 
-/* AUTO-SELECT NEXT GP — BUT NOW FORCED TO LAS VEGAS GP */
-function loadNextGP() {
-    const nextGP = calendar.find(gp => gp.gp === "Лас Вегас");
+function startCountdown() {
+    const race = getNextRace();
 
-    document.getElementById("next-gp-name").textContent = `Гран При на ${nextGP.gp}`;
-    document.getElementById("next-gp-circuit").textContent = nextGP.circuit;
-    document.getElementById("gp-date").textContent = nextGP.date;
-
-    startCountdown(nextGP.date + "T06:00:00"); 
-    // F1 Vegas start time ~22:00 BG time — adjust if needed
-}
- /* ============================
-   PERFECT COUNTDOWN (NO NaN EVER)
-   ============================ */
-
-function startCountdown(dateString) {
-    const target = new Date(dateString.replace(/-/g, "/")); 
-    // Force safe date parsing on all browsers
-
-    if (isNaN(target.getTime())) {
-        console.error("Invalid date:", dateString);
+    if (!race) {
+        document.getElementById("next-gp-name").textContent = "Сезонът е приключил";
         return;
     }
 
-    const cdDays = document.getElementById("cd-days");
-    const cdHours = document.getElementById("cd-hours");
-    const cdMinutes = document.getElementById("cd-minutes");
-    const cdSeconds = document.getElementById("cd-seconds");
+    // Apply BG timezone (+02:00)
+    const targetDate = new Date(`${race.date}T${DEFAULT_BG_TIME}:00+02:00`);
 
-    function tick() {
+    // Fill GP info
+    document.getElementById("next-gp-name").textContent = race.gp + " Гран При";
+    document.getElementById("next-gp-circuit").textContent = race.circuit;
+    document.getElementById("gp-date").textContent = race.date;
+
+    function updateCountdown() {
         const now = new Date();
-        const diff = target - now;
+        const diff = targetDate - now;
 
-        if (diff <= 0) {
-            cdDays.textContent = "00";
-            cdHours.textContent = "00";
-            cdMinutes.textContent = "00";
-            cdSeconds.textContent = "00";
+        if (diff < 0) {
+            document.getElementById("cd-days").textContent = "00";
+            document.getElementById("cd-hours").textContent = "00";
+            document.getElementById("cd-minutes").textContent = "00";
+            document.getElementById("cd-seconds").textContent = "00";
             return;
         }
 
-        cdDays.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
-        cdHours.textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        cdMinutes.textContent = Math.floor((diff / (1000 * 60)) % 60);
-        cdSeconds.textContent = Math.floor((diff / 1000) % 60);
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("cd-days").textContent = days.toString().padStart(2, "0");
+        document.getElementById("cd-hours").textContent = hours.toString().padStart(2, "0");
+        document.getElementById("cd-minutes").textContent = minutes.toString().padStart(2, "0");
+        document.getElementById("cd-seconds").textContent = seconds.toString().padStart(2, "0");
     }
 
-    tick();
-    setInterval(tick, 1000);
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 }
-function loadNextGP() {
-    const vegas = calendar.find(g => g.gp === "Лас Вегас");
-    const vegasDate = vegas.date + " 22:00:00"; // safe format
 
-    document.getElementById("next-gp-name").textContent = 
-        `Гран При на ${vegas.gp}`;
-    
-    document.getElementById("next-gp-circuit").textContent = vegas.circuit;
-    document.getElementById("gp-date").textContent = vegas.date;
-
-    startCountdown(vegasDate);
-}
-window.onload = () => {
-    loadNextGP();
-    renderNews();
-    renderDrivers();
-    renderConstructors();
-    renderCalendar();
-    document.getElementById("year").textContent = new Date().getFullYear();
-};
+startCountdown();
 
 
 
@@ -1634,6 +1592,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
