@@ -1367,43 +1367,67 @@ function startCountdown() {
         return;
     }
 
-    // Задаваме български timezone (+02:00)
-    const targetDate = new Date(`${race.date}T${DEFAULT_BG_TIME}:00+02:00`);
+ }
+ /* ============================
+   PERFECT COUNTDOWN (NO NaN EVER)
+   ============================ */
 
-    // Попълваме GP информацията
-    document.getElementById("next-gp-name").textContent = race.gp + " Grand Prix";
-    document.getElementById("next-gp-circuit").textContent = race.circuit;
-    document.getElementById("gp-date").textContent = race.date + " (BG Time)";
+function startCountdown(dateString) {
+    const target = new Date(dateString.replace(/-/g, "/")); 
+    // Force safe date parsing on all browsers
 
-    function updateCountdown() {
+    if (isNaN(target.getTime())) {
+        console.error("Invalid date:", dateString);
+        return;
+    }
+
+    const cdDays = document.getElementById("cd-days");
+    const cdHours = document.getElementById("cd-hours");
+    const cdMinutes = document.getElementById("cd-minutes");
+    const cdSeconds = document.getElementById("cd-seconds");
+
+    function tick() {
         const now = new Date();
-        const diff = targetDate - now;
+        const diff = target - now;
 
-        if (diff < 0) {
-            document.getElementById("cd-days").textContent = "00";
-            document.getElementById("cd-hours").textContent = "00";
-            document.getElementById("cd-minutes").textContent = "00";
-            document.getElementById("cd-seconds").textContent = "00";
+        if (diff <= 0) {
+            cdDays.textContent = "00";
+            cdHours.textContent = "00";
+            cdMinutes.textContent = "00";
+            cdSeconds.textContent = "00";
             return;
         }
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-
-        document.getElementById("cd-days").textContent = days.toString().padStart(2, "0");
-        document.getElementById("cd-hours").textContent = hours.toString().padStart(2, "0");
-        document.getElementById("cd-minutes").textContent = minutes.toString().padStart(2, "0");
-        document.getElementById("cd-seconds").textContent = seconds.toString().padStart(2, "0");
+        cdDays.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+        cdHours.textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        cdMinutes.textContent = Math.floor((diff / (1000 * 60)) % 60);
+        cdSeconds.textContent = Math.floor((diff / 1000) % 60);
     }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    tick();
+    setInterval(tick, 1000);
 }
+function loadNextGP() {
+    const vegas = calendar.find(g => g.gp === "Лас Вегас");
+    const vegasDate = vegas.date + " 22:00:00"; // safe format
 
-// Стартираме countdown-а
-startCountdown();
+    document.getElementById("next-gp-name").textContent = 
+        `Гран При на ${vegas.gp}`;
+    
+    document.getElementById("next-gp-circuit").textContent = vegas.circuit;
+    document.getElementById("gp-date").textContent = vegas.date;
+
+    startCountdown(vegasDate);
+}
+window.onload = () => {
+    loadNextGP();
+    renderNews();
+    renderDrivers();
+    renderConstructors();
+    renderCalendar();
+    document.getElementById("year").textContent = new Date().getFullYear();
+};
+
 
 
 
@@ -1636,6 +1660,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
