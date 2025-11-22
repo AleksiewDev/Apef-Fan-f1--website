@@ -103,7 +103,7 @@ Mercedes: Ръсел бе конкурентен, но не намери доп�
 `
                       },
                          {
-    title: "андо Норис покори дъждовната квалификация в Лас Вегас и стартира от пол позиция",
+    title: "Ландо Норис покори дъждовната квалификация в Лас Вегас и стартира от пол позиция",
     date: "2025-11-22",
     image: "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000000/fom-website/2025/Las%20Vegas/GENERAL%20CROP%20-%202025-11-22T063010.740.webp",
     text: `
@@ -1601,6 +1601,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
