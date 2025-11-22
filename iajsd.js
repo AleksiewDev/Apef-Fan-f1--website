@@ -1303,14 +1303,23 @@ function renderCalendar(){
 /* ============================
    COUNTDOWN FOR BULGARIAN TIME
    ============================ */
+// LAS VEGAS GRAND PRIX COUNTDOWN
+// Българско време за състезанието
+const DEFAULT_BG_TIME = "06:00"; // 08:00 сутринта на 23 ноември (българско време)
 
-// Default start hour for races in Bulgaria (edit when needed)
-const DEFAULT_BG_TIME = "06:00"; // Пример: 15:00 българско време
+// Календър с LAS VEGAS GP (готово за разширяване при нужда)
+const calendar = [
+    {
+        gp: "Las Vegas",
+        circuit: "Las Vegas Street Circuit",
+        date: "2025-11-23" // Българската дата (следващият ден)
+    }
+];
 
 function getNextRace() {
     const now = new Date();
 
-    // Find the nearest upcoming race
+    // Намираме най-близкото предстоящо състезание
     return calendar.find(race => {
         const date = new Date(`${race.date}T${DEFAULT_BG_TIME}:00+02:00`);
         return date > now;
@@ -1325,13 +1334,13 @@ function startCountdown() {
         return;
     }
 
-    // Apply BG timezone (+02:00)
-    const targetDate = new Date(`${race.date}T${DEFAULT_BG_TIME}:00+10:00`);
+    // Задаваме български timezone (+02:00)
+    const targetDate = new Date(`${race.date}T${DEFAULT_BG_TIME}:00+02:00`);
 
-    // Fill GP info
-    document.getElementById("next-gp-name").textContent = race.gp + " Гран При";
+    // Попълваме GP информацията
+    document.getElementById("next-gp-name").textContent = race.gp + " Grand Prix";
     document.getElementById("next-gp-circuit").textContent = race.circuit;
-    document.getElementById("gp-date").textContent = race.date;
+    document.getElementById("gp-date").textContent = race.date + " (BG Time)";
 
     function updateCountdown() {
         const now = new Date();
@@ -1360,7 +1369,9 @@ function startCountdown() {
     setInterval(updateCountdown, 1000);
 }
 
+// Стартираме countdown-а
 startCountdown();
+
 
 
 
@@ -1592,6 +1603,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
