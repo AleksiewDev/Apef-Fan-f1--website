@@ -1326,7 +1326,7 @@ function startCountdown() {
     }
 
     // Apply BG timezone (+02:00)
-    const targetDate = new Date(`${race.date}T${DEFAULT_BG_TIME}:00+02:00`);
+    const targetDate = new Date(`${race.date}T${DEFAULT_BG_TIME}:00+10:00`);
 
     // Fill GP info
     document.getElementById("next-gp-name").textContent = race.gp + " Гран При";
@@ -1592,6 +1592,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
