@@ -1308,7 +1308,7 @@ function loadNextGP() {
     document.getElementById("next-gp-circuit").textContent = nextGP.circuit;
     document.getElementById("gp-date").textContent = nextGP.date;
 
-    startCountdown(nextGP.date + "T22:00:00"); 
+    startCountdown(nextGP.date + "T06:00:00"); 
     // F1 Vegas start time ~22:00 BG time — adjust if needed
 }
  /* ============================
@@ -1601,6 +1601,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
