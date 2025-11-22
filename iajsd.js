@@ -1305,7 +1305,7 @@ function renderCalendar(){
    ============================ */
 
 // Default start hour for races in Bulgaria (edit when needed)
-const DEFAULT_BG_TIME = "15:00"; // Пример: 15:00 българско време
+const DEFAULT_BG_TIME = "06:00"; // Пример: 15:00 българско време
 
 function getNextRace() {
     const now = new Date();
@@ -1592,6 +1592,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
