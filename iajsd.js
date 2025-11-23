@@ -2,19 +2,19 @@
    Data (you provided; used as-is)
    ============================ */
 const drivers = [
- { pos: 1, name: "Ландо Норис", code: "NOR", nationality: "GBR", team: "Макларън", points: 390, wins: 7, poles: 6, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" },
- { pos: 2, name: "Оскар Пиастри", code: "PIA", nationality: "AUS", team: "Макларън", points: 366, wins: 7, poles: 5, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_oscar_team_pic_02.jpg" },
- { pos: 3, name: "Макс Верстапен", code: "VER", nationality: "NED", team: "Ред Бул", points: 341, wins: 5, poles: 7, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmb-f8vwQW9GTmAejEbUu2JeYUlzkscG8vZoaXwnvmzbJjqInaA7aSEAeB6jRrZRFCxA&usqp=CAU" },
- { pos: 4, name: "Джордж Ръсел", code: "RUS", nationality: "GBR", team: "Мерцедес", points: 276, wins: 2, poles: 2, photo: "https://images.ctfassets.net/1fvlg6xqnm65/DF8GKGlCgVkML7jYA3lX8/f98a3b6f3fdaff998fa1ee7cdc1fa5c9/GR-EYNTK-IMAGE-MOBILE.jpg?w=626&q=75&fm=webp" },
- { pos: 5, name: "Шарл Леклер", code: "LEC", nationality: "MON", team: "Ферари", points: 214, wins: 0, poles: 1, photo: "https://aceracegear.com/wp-content/uploads/2025/02/cl-01-2025.jpg" },
- { pos: 6, name: "Люис Хамилтън ", code: "HAM", nationality: "GBR", team: "Ферари", points: 148, wins: 0, poles: 0, photo: "https://store.ferrari.com/dw/image/v2/BGDG_PRD/on/demandware.static/-/Sites-48/default/dw0196a800/images/zoom/LA06Zf_170_2.png?strip=false" },
- { pos: 7, name: "Андреа Кими Антонели", code: "ANT", nationality: "ITA", team: "Мерцедес", points: 122, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/uoiclYPCB7vPlR53OzLou_H9HJ-qDCPRy-OeMqaavDgvSISa7CySyCKsgzl8A0f_3vOf_eH7v7rBt8gaHb8beg.webp" },
+ { pos: 1, name: "Ландо Норис", code: "NOR", nationality: "GBR", team: "Макларън", points: 408, wins: 7, poles: 7, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" },
+ { pos: 2, name: "Оскар Пиастри", code: "PIA", nationality: "AUS", team: "Макларън", points: 378, wins: 7, poles: 5, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_oscar_team_pic_02.jpg" },
+ { pos: 3, name: "Макс Верстапен", code: "VER", nationality: "NED", team: "Ред Бул", points: 366, wins: 6, poles: 7, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmb-f8vwQW9GTmAejEbUu2JeYUlzkscG8vZoaXwnvmzbJjqInaA7aSEAeB6jRrZRFCxA&usqp=CAU" },
+ { pos: 4, name: "Джордж Ръсел", code: "RUS", nationality: "GBR", team: "Мерцедес", points: 291, wins: 2, poles: 2, photo: "https://images.ctfassets.net/1fvlg6xqnm65/DF8GKGlCgVkML7jYA3lX8/f98a3b6f3fdaff998fa1ee7cdc1fa5c9/GR-EYNTK-IMAGE-MOBILE.jpg?w=626&q=75&fm=webp" },
+ { pos: 5, name: "Шарл Леклер", code: "LEC", nationality: "MON", team: "Ферари", points: 222, wins: 0, poles: 1, photo: "https://aceracegear.com/wp-content/uploads/2025/02/cl-01-2025.jpg" },
+ { pos: 6, name: "Люис Хамилтън ", code: "HAM", nationality: "GBR", team: "Ферари", points: 149, wins: 0, poles: 0, photo: "https://store.ferrari.com/dw/image/v2/BGDG_PRD/on/demandware.static/-/Sites-48/default/dw0196a800/images/zoom/LA06Zf_170_2.png?strip=false" },
+ { pos: 7, name: "Андреа Кими Антонели", code: "ANT", nationality: "ITA", team: "Мерцедес", points: 132, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/uoiclYPCB7vPlR53OzLou_H9HJ-qDCPRy-OeMqaavDgvSISa7CySyCKsgzl8A0f_3vOf_eH7v7rBt8gaHb8beg.webp" },
  { pos: 8, name: "Алекс Албон", code: "ALB", nationality: "THA", team: "Уилямс", points: 73, wins: 0, poles: 0, photo: "https://static.independent.co.uk/2024/02/05/19/e52f9590a04d09ef4bf873e9c5122f2eY29udGVudHNlYXJjaGFwaSwxNzA3MjQ2MzI3-2.75253307.jpg?width=1200&height=1200&fit=crop" },
- { pos: 9, name: "Нико Хюлкенберг", code: "HUL", nationality: "GER", team: "Заубер", points: 43, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GMrCz6GWEAASYks?format=jpg&name=large" },
- { pos: 10, name: "Исак Хаджар", code: "HAD", nationality: "FRA", team: "Рейсинг Булс", points: 43, wins: 0, poles: 0, photo: "https://framerusercontent.com/images/R4z6H2nIMtXBpFzkL4qJ2Jny88.jpg?width=3072&height=3840" },
- { pos: 11, name: "Оливър Беарман", code: "BEA", nationality: "GBR", team: "Хаас", points: 40, wins: 0, poles: 0, photo: "https://cdn-5.motorsport.com/images/amp/Yv87pRj0/s1000/oliver-bearman-haas-f1-team-2.jpg" },
- { pos: 12, name: "Фернандо Алонсо", code: "ALO", nationality: "ESP", team: "Астън Мартин", points: 40, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/am-fa-2025-1.jpg" },
- { pos: 13, name: "Карлос Сайнц", code: "SAI", nationality: "ESP", team: "Уилям", points: 38, wins: 0, poles: 0, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RyGKN7IWY5i31pK8yXLVDcwvjYRS0XLQGufGNCztDziweEHsWkzIomBsjgbi96XzIx8&usqp=CAU" },
+ { pos: 9, name: "Исак Хаджар", code: "HAD", nationality: "FRA", team: "Рейсинг Булс", points: 47, wins: 0, poles: 0, photo: "https://framerusercontent.com/images/R4z6H2nIMtXBpFzkL4qJ2Jny88.jpg?width=3072&height=3840" },
+ { pos: 10, name: "Нико Хюлкенберг", code: "HUL", nationality: "GER", team: "Заубер", points: 45, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GMrCz6GWEAASYks?format=jpg&name=large" },
+ { pos: 11, name: "Карлос Сайнц", code: "SAI", nationality: "ESP", team: "Уилям", points: 44, wins: 0, poles: 0, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RyGKN7IWY5i31pK8yXLVDcwvjYRS0XLQGufGNCztDziweEHsWkzIomBsjgbi96XzIx8&usqp=CAU" },
+ { pos: 12, name: "Оливър Беарман", code: "BEA", nationality: "GBR", team: "Хаас", points: 40, wins: 0, poles: 0, photo: "https://cdn-5.motorsport.com/images/amp/Yv87pRj0/s1000/oliver-bearman-haas-f1-team-2.jpg" }, 
+ { pos: 13, name: "Фернандо Алонсо", code: "ALO", nationality: "ESP", team: "Астън Мартин", points: 40, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/am-fa-2025-1.jpg" },
  { pos: 14, name: "Лиам Лоусън", code: "LAW", nationality: "NZL", team: "Рейсинг Бул", points: 36, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/-QcAd3hXRJrSMq9n1bSfMYrnGVDHN2BJ3JLMhGXs1PkMfc3Jyd9A2Gy-ugqDmfQkZgM9BJ22pYbg711lUdV-sw.webp" },
  { pos: 15, name: "Ланс Строл", code: "STR", nationality: "CAN", team: "Астън Мартин", points: 32, wins: 0, poles: 0, photo: "https://aurupteur.com/uploads/brefs/4511/4511_gkeojbrwyaijt58.jpg" },
  { pos: 16, name: "Естебан Окон", code: "OCO", nationality: "FRA", team: "Хаас", points: 30, wins: 0, poles: 0, photo: "https://i.redd.it/esteban-ocons-helmet-for-the-2025-season-v0-u52c357k3wje1.jpg?width=3277&format=pjpg&auto=webp&s=eb145ca50e5bc3f1154fb9efa9636832904de868" },
@@ -26,16 +26,16 @@ const drivers = [
 ];
 
 const constructors = [
- { pos: 1, name: "Макларън", points: 756, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp" },
- { pos: 2, name: "Мерцедес", points: 398, drivers: ["George Russell", "Kimi Antonelli"], photo: "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp" },
- { pos: 3, name: "Ред Бул ", points: 366, drivers: ["Max Verstappen", "Yuki tsunoda"], photo: "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626" },
- { pos: 4, name: "Ферари", points: 362, drivers: ["Charles Leclerc", "Lewis Hamilton"], photo: "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg" },
- { pos: 5, name: "Уилямс ", points: 111, drivers: ["Alexander Albon", "Carlos Sainz"], photo: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Williams/williams-2025-launch-6.webp" },
- { pos: 6, name: "Рейсинг Булс ", points: 82, drivers: ["Isack Hadjar", "Liam Lawson"], photo: "https://media.tudorwatch.com/image/upload/v1/tudormag/SI202503140201" },
+ { pos: 1, name: "Макларън", points: 786, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp" },
+ { pos: 2, name: "Мерцедес", points: 423, drivers: ["George Russell", "Kimi Antonelli"], photo: "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp" },
+ { pos: 3, name: "Ред Бул ", points: 391, drivers: ["Max Verstappen", "Yuki tsunoda"], photo: "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626" },
+ { pos: 4, name: "Ферари", points: 371, drivers: ["Charles Leclerc", "Lewis Hamilton"], photo: "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg" },
+ { pos: 5, name: "Уилямс ", points: 117, drivers: ["Alexander Albon", "Carlos Sainz"], photo: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Williams/williams-2025-launch-6.webp" },
+ { pos: 6, name: "Рейсинг Булс ", points: 86, drivers: ["Isack Hadjar", "Liam Lawson"], photo: "https://media.tudorwatch.com/image/upload/v1/tudormag/SI202503140201" },
  { pos: 7, name: "Астън Мартин", points: 72, drivers: ["Fernando Alonso", "Lance Stroll"], photo: "https://upload.wikimedia.org/wikipedia/commons/3/33/2025_Japan_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP1.jpg" },
  { pos: 8, name: "Хаас", points: 70, drivers: ["Oliver Bearman", "Esteban Ocon"], photo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FIA_F1_Austria_2025_Nr._87_Bearman.jpg" },
- { pos: 9, name: "Заубер ", points: 62, drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"], photo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/2025_Japan_GP_-_Sauber_-_Nico_Hulkenberg_-_FP1.jpg" },
- { pos: 10, name: "Алпин", points: 21, drivers: ["Piere Gasly", "Franco Colapinto"], photo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/FIA_F1_Austria_2025_Nr._10_Gasly.jpg" },
+ { pos: 9, name: "Заубер ", points: 64, drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"], photo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/2025_Japan_GP_-_Sauber_-_Nico_Hulkenberg_-_FP1.jpg" },
+ { pos: 10, name: "Алпин", points: 22, drivers: ["Piere Gasly", "Franco Colapinto"], photo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/FIA_F1_Austria_2025_Nr._10_Gasly.jpg" },
 ];
 
 const calendar = [
@@ -61,7 +61,7 @@ const calendar = [
  { round: 20, gp: "Мексико Сити", circuit: "Аутодромо Ерманос Родригес", date: "2025-10-26" },
  { round: 21, gp: "Сао Пауло", circuit: "Интерлагос", date: "2025-11-02" },
  { round: 22, gp: "Лас Вегас", circuit: "Лас Вегас", date: "2025-11-22" },
- { round: 23, gp: "Катар", circuit: "Лусаил", date: "2025-11-30" },
+ { round: 23, gp: "Катар", circuit: "Лосаил Интернaшънъл Сърки", date: "2025-11-30" },
  { round: 24, gp: "Абу Даби", circuit: "Яс Марина", date: "2025-12-07" }
 ];
 
@@ -1364,47 +1364,7 @@ function renderCalendar(){
    FIXED COUNTDOWN FOR LAS VEGAS GP 2025
    ============================ */
 
-function startCountdown(targetDate) {
-    const cdDays = document.getElementById("cd-days");
-    const cdHours = document.getElementById("cd-hours");
-    const cdMinutes = document.getElementById("cd-minutes");
-    const cdSeconds = document.getElementById("cd-seconds");
-
-    function update() {
-        const now = new Date().getTime();
-        const raceTime = new Date(targetDate).getTime();
-        const diff = raceTime - now;
-
-        if (diff <= 0) {
-            cdDays.textContent = "00";
-            cdHours.textContent = "00";
-            cdMinutes.textContent = "00";
-            cdSeconds.textContent = "00";
-            return;
-        }
-
-        cdDays.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
-        cdHours.textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        cdMinutes.textContent = Math.floor((diff / (1000 * 60)) % 60);
-        cdSeconds.textContent = Math.floor((diff / 1000) % 60);
-    }
-
-    update();
-    setInterval(update, 1000);
-}
-
-/* AUTO-SELECT NEXT GP — BUT NOW FORCED TO LAS VEGAS GP */
-function loadNextGP() {
-    const nextGP = calendar.find(gp => gp.gp === "Лас Вегас");
-
-    document.getElementById("next-gp-name").textContent = `Гран При на ${nextGP.gp}`;
-    document.getElementById("next-gp-circuit").textContent = nextGP.circuit;
-    document.getElementById("gp-date").textContent = nextGP.date;
-
-    startCountdown(nextGP.date + "T22:00:00"); 
-    // F1 Vegas start time ~22:00 BG time — adjust if needed
-}
- /* ============================
+/* ============================
    PERFECT COUNTDOWN (NO NaN EVER)
    ============================ */
 
@@ -1443,18 +1403,28 @@ function startCountdown(dateString) {
     tick();
     setInterval(tick, 1000);
 }
+
+/* ============================
+   AUTO-SELECT NEXT GP = QATAR
+   ============================ */
+
 function loadNextGP() {
-    const vegas = calendar.find(g => g.gp === "Лас Вегас");
-    const vegasDate = vegas.date + " 22:00:00"; // safe format
+    const qatar = calendar.find(g => g.gp === "Катар");
+    const qatarDateTime = qatar.date + " 20:00:00"; 
+    // Промени часа ако имаш нужда (примерно 20:00 BG time)
 
     document.getElementById("next-gp-name").textContent = 
-        `Гран При на ${vegas.gp}`;
-    
-    document.getElementById("next-gp-circuit").textContent = vegas.circuit;
-    document.getElementById("gp-date").textContent = vegas.date;
+        `Гран При на ${qatar.gp}`;
 
-    startCountdown(vegasDate);
+    document.getElementById("next-gp-circuit").textContent = qatar.circuit;
+    document.getElementById("gp-date").textContent = qatar.date;
+
+    startCountdown(qatarDateTime);
 }
+
+/* ============================
+   ON PAGE LOAD
+   ============================ */
 window.onload = () => {
     loadNextGP();
     renderNews();
@@ -1463,6 +1433,7 @@ window.onload = () => {
     renderCalendar();
     document.getElementById("year").textContent = new Date().getFullYear();
 };
+
 
 
 
@@ -1694,6 +1665,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
