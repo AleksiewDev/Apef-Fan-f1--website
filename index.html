@@ -144,9 +144,31 @@
 </html>
 
 
+<script>
+// Get popup and close button
+const articlePopup = document.getElementById("articlePopup");
+const closeBtn = document.querySelector(".close-article");
 
+// Function to open popup (you probably already call this somewhere)
+function openArticlePopup(title, imageSrc, text) {
+  document.getElementById("popupTitle").textContent = title;
+  document.getElementById("popupImage").src = imageSrc;
+  document.getElementById("popupText").textContent = text;
+  articlePopup.style.display = "flex"; // show popup
+}
 
+// Close popup when ✕ is clicked
+closeBtn.addEventListener("click", () => {
+  articlePopup.style.display = "none";
+});
 
+// Optional: close popup when clicking outside content
+articlePopup.addEventListener("click", (e) => {
+  if (e.target === articlePopup) {
+    articlePopup.style.display = "none";
+  }
+});
+</script>
 
 
 
