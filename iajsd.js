@@ -12,7 +12,7 @@ const drivers = [
  { pos: 8, name: "Алекс Албон", code: "ALB", nationality: "THA", team: "Уилямс", points: 73, wins: 0, poles: 0, photo: "https://static.independent.co.uk/2024/02/05/19/e52f9590a04d09ef4bf873e9c5122f2eY29udGVudHNlYXJjaGFwaSwxNzA3MjQ2MzI3-2.75253307.jpg?width=1200&height=1200&fit=crop" },
  { pos: 9, name: "Исак Хаджар", code: "HAD", nationality: "FRA", team: "Рейсинг Булс", points: 51, wins: 0, poles: 0, photo: "https://framerusercontent.com/images/R4z6H2nIMtXBpFzkL4qJ2Jny88.jpg?width=3072&height=3840" },
  { pos: 10, name: "Нико Хюлкенберг", code: "HUL", nationality: "GER", team: "Заубер", points: 49, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GMrCz6GWEAASYks?format=jpg&name=large" },
- { pos: 11, name: "Карлос Сайнц", code: "SAI", nationality: "ESP", team: "Уилям", points: 48, wins: 0, poles: 0, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RyGKN7IWY5i31pK8yXLVDcwvjYRS0XLQGufGNCztDziweEHsWkzIomBsjgbi96XzIx8&usqp=CAU" },
+ { pos: 11, name: "Карлос Сайнц", code: "SAI", nationality: "ESP", team: "Уилямс", points: 48, wins: 0, poles: 0, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RyGKN7IWY5i31pK8yXLVDcwvjYRS0XLQGufGNCztDziweEHsWkzIomBsjgbi96XzIx8&usqp=CAU" },
  { pos: 12, name: "Оливър Беарман", code: "BEA", nationality: "GBR", team: "Хаас", points: 41, wins: 0, poles: 0, photo: "https://cdn-5.motorsport.com/images/amp/Yv87pRj0/s1000/oliver-bearman-haas-f1-team-2.jpg" }, 
  { pos: 13, name: "Фернандо Алонсо", code: "ALO", nationality: "ESP", team: "Астън Мартин", points: 40, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/am-fa-2025-1.jpg" },
  { pos: 14, name: "Лиам Лоусън", code: "LAW", nationality: "NZL", team: "Рейсинг Бул", points: 36, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/-QcAd3hXRJrSMq9n1bSfMYrnGVDHN2BJ3JLMhGXs1PkMfc3Jyd9A2Gy-ugqDmfQkZgM9BJ22pYbg711lUdV-sw.webp" },
@@ -1840,6 +1840,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
