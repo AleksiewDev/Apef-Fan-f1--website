@@ -70,6 +70,62 @@ const calendar = [
    - You can replace these with live feeds later.
    ============================ */
 const news = [
+                                                                        {
+    title: "„Пиастри блести в Катар – Спринтът, който разтърси битката за титлата",
+    date: "2025-11-29",
+    image: "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Qatar___Practice__Sprint_Qualifying/2248913578.webp",
+    text: `Оскар Пиастри спечели спринтовата надпревара в Катар, следван от Джордж Ръсел и Ландо Норис. Ето пълната класация от 1 до 20 и анализ на ключовите моменти.
+
+    🔎 Анализ на надпреварата
+Оскар Пиастри – превърна полпозишъна в безупречна победа. Контролираше темпото от старта до финала, доказвайки, че е готов да се бори за титлата.
+
+Джордж Ръсел – стабилно второ място за Mercedes. Ръсел демонстрира зрялост и агресивност, като успя да държи Норис зад себе си.
+
+Ландо Норис – третото място му носи ценни точки, но изглеждаше по-предпазлив, вероятно мислейки за шампионата.
+
+Макс Верстапен – четвърти, но не успя да намери ритъм срещу McLaren и Mercedes. Въпреки това остава в битката за титлата.
+
+Андреа Кими Антонели – впечатляващо представяне на младия италианец с топ 5 резултат.
+
+Юки Цунода – изненада с агресивно каране и стабилно шесто място, пред Верстапен в квалификацията.
+
+Фернандо Алонсо – отново показва опит и хладнокръвие, като завърши в топ 7.
+
+Карлос Сайнц и Алекс Албон – силни резултати за Williams, доказвайки прогреса на отбора.
+
+Люис Хамилтън – разочароващо 17-то място за Ferrari, което подчертава трудния сезон на Скудерията.
+
+🎬 Заключение
+Спринтът в Катар беше ключов за битката за титлата – Пиастри намали дистанцията до Норис, а Верстапен остана в сянка. McLaren показа мощ, но Mercedes и Red Bull все още са фактори. Финалът в Абу Даби обещава да бъде експлозивен.
+
+📊 Пълна класация – Спринт Катар 2025
+Позиция	Пилот	Отбор
+1	Oscar Piastri	McLaren
+2	George Russell	Mercedes
+3	Lando Norris	McLaren
+4	Max Verstappen	Red Bull
+5	Andrea Kimi Antonelli	Mercedes
+6	Yuki Tsunoda	Red Bull
+7	Fernando Alonso	Aston Martin
+8	Carlos Sainz	Williams
+9	Isack Hadjar	Racing Bulls
+10	Alex Albon	Williams
+11	Gabriel Bortoleto	Sauber
+12	Oliver Bearman	Haas
+13	Charles Leclerc	Ferrari
+14	Liam Lawson	Racing Bulls
+15	Esteban Ocon	Haas
+16	Nico Hulkenberg	Sauber
+17	Lewis Hamilton	Ferrari
+18	Pierre Gasly	Alpine
+19	Lance Stroll	Aston Martin
+20	Franco Colapinto	Alpine
+
+
+
+`
+                                                   
+                                  },
                                                                      {
     title: "Мнения на пилотите след петъчния ден на ГП на Катар",
     date: "2025-11-29",
@@ -2077,6 +2133,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
