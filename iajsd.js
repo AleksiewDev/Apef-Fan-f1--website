@@ -71,7 +71,7 @@ const calendar = [
    ============================ */
 const news = [
                                                                         {
-    title: "„Пиастри блести в Катар – Спринтът, който разтърси битката за титлата",
+    title: "Пиастри блести в Катар – Спринтът, който разтърси битката за титлата",
     date: "2025-11-29",
     image: "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Qatar___Practice__Sprint_Qualifying/2248913578.webp",
     text: `Оскар Пиастри спечели спринтовата надпревара в Катар, следван от Джордж Ръсел и Ландо Норис. Ето пълната класация от 1 до 20 и анализ на ключовите моменти.
@@ -2133,6 +2133,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
