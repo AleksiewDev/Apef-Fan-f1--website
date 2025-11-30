@@ -1991,31 +1991,52 @@ function renderCalendar(){
   });
 }
 
-/* ============================
-   FIXED COUNTDOWN FOR LAS VEGAS GP 2025
-   ============================ */
+function startCountdown(dateString) {
+  const target = new Date(dateString.replace(/-/g, "/")); // Safe parsing
+  if (isNaN(target.getTime())) {
+    console.error("Invalid date:", dateString);
+    return;
+  }
 
-/* ============================
-   PERFECT COUNTDOWN (NO NaN EVER)
-   ============================ */
+  const cdDays = document.getElementById("cd-days");
+  const cdHours = document.getElementById("cd-hours");
+  const cdMinutes = document.getElementById("cd-minutes");
+  const cdSeconds = document.getElementById("cd-seconds");
 
-/* ============================
-   AUTO-SELECT NEXT GP = ABU DHABI
-   ============================ */
+  function tick() {
+    const now = new Date();
+    const diff = target - now;
 
-function loadNextGP() {
-    const abuDhabi = calendar.find(g => g.gp === "Абу Даби");
-    const abuDhabiDateTime = abuDhabi.date + " 20:00:00"; 
-    // Adjust time if needed (example: 20:00 BG time)
+    if (diff <= 0) {
+      cdDays.textContent = "00";
+      cdHours.textContent = "00";
+      cdMinutes.textContent = "00";
+      cdSeconds.textContent = "00";
+      return;
+    }
 
-    document.getElementById("next-gp-name").textContent = 
-        `Гран При на ${abuDhabi.gp}`;
+    cdDays.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+    cdHours.textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    cdMinutes.textContent = Math.floor((diff / (1000 * 60)) % 60);
+    cdSeconds.textContent = Math.floor((diff / 1000) % 60);
+  }
 
-    document.getElementById("next-gp-circuit").textContent = abuDhabi.circuit;
-    document.getElementById("gp-date").textContent = abuDhabi.date;
-
-    startCountdown(abuDhabiDateTime);
+  tick();
+  setInterval(tick, 1000);
 }
+
+/* ============================ AUTO-SELECT NEXT GP = ABU DHABI ============================ */
+function loadNextGP() {
+  const abuDhabi = calendar.find(g => g.gp === "Абу Даби");
+  const abuDhabiDateTime = abuDhabi.date + " 20:00:00"; // Adjust time if needed (BG time)
+
+  document.getElementById("next-gp-name").textContent = `Гран При на ${abuDhabi.gp}`;
+  document.getElementById("next-gp-circuit").textContent = abuDhabi.circuit;
+  document.getElementById("gp-date").textContent = abuDhabi.date;
+
+  startCountdown(abuDhabiDateTime);
+}
+
 
 /* ============================
    ON PAGE LOAD
@@ -2260,6 +2281,9 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
+
+
 
 
 
