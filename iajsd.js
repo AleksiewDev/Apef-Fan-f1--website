@@ -21,7 +21,7 @@ const drivers = [
  { pos: 17, name: "Ланс Строл", code: "STR", nationality: "CAN", team: "Астън Мартин", points: 32, wins: 0, poles: 0, photo: "https://aurupteur.com/uploads/brefs/4511/4511_gkeojbrwyaijt58.jpg" },
  { pos: 18, name: "Пиер Гасли", code: "GAS", nationality: "FRA", team: "Алпин", points: 22, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/alpine-pg-2025-1.jpg" },
  { pos: 19, name: "Габриел Бортолето", code: "BOR", nationality: "BRA", team: "Заубер", points: 19, wins: 0, poles: 0, photo: "https://cdn.racingnews365.com/2025/Bortoleto/_1092x683_crop_center-center_85_none/XPB_1355727_HiRes.jpg?v=1751134525" },
- { pos: 20, name: "Франко Колапинто", code: "COL", nationality: "ARG", team: "Алпин", points: 0, wins: 0, poles: 0, photo: "https://static.wikia.nocookie.net/f1wikia/images/c/c1/Colapinto2025_Alpine.png/revision/latest/scale-to-width-down/1200?cb=20250728003710" },
+ { pos: 20, name: "Франко Колапинто", code: "COL", nationality: "ARG", team: "Алпин", points: 0, wins: 0, poles: 0, photo: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRp0SPtH8eIaoZY_HzxO0d2g48pfy0ia6gdRbrndNmGE8dNnrO4Qk-6KRbjMK0AsQy6o4n0BLfxnNHqr9M" },
  { pos: 21, name: "Джак Дуън", code: "DOO", nationality: "AUS", team: "Алпин", points: 0, wins: 0, poles: 0, photo: "https://www.motorsinside.com/en/wp-content/uploads/sites/2/2024/02/1500_edito_09DTWWmvev6odH1IrF13nU5W7OTGKhD_Pm0oNuL8gXmB3n1yAlNTCC4P8ie0os_rq_t4.webp" }
 ];
 
@@ -2660,6 +2660,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
