@@ -70,6 +70,49 @@ const calendar = [
    - You can replace these with live feeds later.
    ============================ */
 const news = [
+                                                                                                                                      {
+    title: "Верстапен с полпозишън в Абу Даби",
+    date: "2025-12-06",
+    image: "https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2025/12/06111257/red-bull-max-verstappen-2025-abu-dhabi-grand-prix.jpg",
+    text: `Квалификацията за Гран При на Абу Даби 2025 на „Яс Марина“ предложи истински спектакъл и напрежение, достойно за финал на сезона. В битката за титлата трима пилоти – Макс Верстапен (Red Bull), Ландо Норис (McLaren) и Оскар Пиастри (McLaren) – влязоха в решаващата сесия с минимални разлики в точките.
+
+Верстапен показа безкомпромисна скорост, осигурявайки си полпозишън. Това бе стратегически удар срещу лидера в шампионата, който има само 12 точки аванс пред нидерландеца.
+
+Норис остана втори, като не успя да подобри времето на макс.
+
+Пиастри завърши трети, запазвайки шансовете си, макар и по-ограничени.
+
+Джордж Ръсел (Mercedes) и Шарл Леклер (Ferari) допълниха топ 5, демонстрирайки стабилна форма в края на сезона.
+
+Квалификацията бе белязана и от драматични моменти – Люис Хамилтън отпадна още в Q1 след грешка в завой 9, което остави седемкратния шампион на далечна стартова позиция.
+
+📊 Пълна стартова решетка (1-20)
+Позиция	Пилот	Отбор
+Max Verstappen (Red Bull) — полпозишън. 
+Lando Norris (McLaren). 
+Oscar Piastri (McLaren). 
+George Russell (Mercedes). 
+Charles Leclerc (Ferrari). 
+Fernando Alonso (Aston Martin). 
+Gabriel Bortoleto (Kick Sauber). 
+Isack Hadjar (Racing Bulls). 
+Esteban Ocon (Haas). 
+Yuki Tsunoda (Red Bull). 
+Oliver Bearman (Haas) — елиминиран в Q2. 
+Carlos Sainz (Williams) — елиминиран в Q2. 
+Liam Lawson (Racing Bulls) — елиминиран в Q2. 
+Kimi Antonelli (Mercedes) — елиминиран в Q2. 
+Lance Stroll (Aston Martin) — елиминиран в Q2. 
+Lewis Hamilton (Ferrari) — изненадващо елиминиран в Q1 (зле за Ferrari). 
+Alexander Albon (Williams) — елиминиран в Q1. 
+Nico Hülkenberg (Kick Sauber) — елиминиран в Q1. 
+Pierre Gasly (Alpine) — елиминиран в Q1. 
+Franco Colapinto (Alpine) — елиминиран в Q1.
+
+
+
+`
+                                                                                            }, 
                                                                                                                                    {
     title: "Никола Цолов с историческо трето място в спринта на Формула 2 в Абу Даби",
     date: "2025-12-06",
@@ -2777,6 +2820,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
