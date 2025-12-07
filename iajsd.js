@@ -2,23 +2,23 @@
    Data (you provided; used as-is)
    ============================ */
 const drivers = [
- { pos: 1, name: "Ландо Норис", code: "NOR", nationality: "GBR", team: "Макларън", points: 408, wins: 7, poles: 7, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" },
- { pos: 2, name: "Макс Верстапен", code: "VER", nationality: "NED", team: "Ред Бул", points: 396, wins: 7, poles: 7, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmb-f8vwQW9GTmAejEbUu2JeYUlzkscG8vZoaXwnvmzbJjqInaA7aSEAeB6jRrZRFCxA&usqp=CAU" },
- { pos: 3, name: "Оскар Пиастри", code: "PIA", nationality: "AUS", team: "Макларън", points: 392, wins: 7, poles: 6, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_oscar_team_pic_02.jpg" },
- { pos: 4, name: "Джордж Ръсел", code: "RUS", nationality: "GBR", team: "Мерцедес", points: 309, wins: 2, poles: 2, photo: "https://images.ctfassets.net/1fvlg6xqnm65/DF8GKGlCgVkML7jYA3lX8/f98a3b6f3fdaff998fa1ee7cdc1fa5c9/GR-EYNTK-IMAGE-MOBILE.jpg?w=626&q=75&fm=webp" },
- { pos: 5, name: "Шарл Леклер", code: "LEC", nationality: "MON", team: "Ферари", points: 230, wins: 0, poles: 1, photo: "https://aceracegear.com/wp-content/uploads/2025/02/cl-01-2025.jpg" },
- { pos: 6, name: "Люис Хамилтън ", code: "HAM", nationality: "GBR", team: "Ферари", points: 152, wins: 0, poles: 0, photo: "https://store.ferrari.com/dw/image/v2/BGDG_PRD/on/demandware.static/-/Sites-48/default/dw0196a800/images/zoom/LA06Zf_170_2.png?strip=false" },
+ { pos: 1, name: "Ландо Норис", code: "NOR", nationality: "GBR", team: "Макларън", points: 423, wins: 7, poles: 7, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" },
+ { pos: 2, name: "Макс Верстапен", code: "VER", nationality: "NED", team: "Ред Бул", points: 321, wins: 8, poles: 8, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmb-f8vwQW9GTmAejEbUu2JeYUlzkscG8vZoaXwnvmzbJjqInaA7aSEAeB6jRrZRFCxA&usqp=CAU" },
+ { pos: 3, name: "Оскар Пиастри", code: "PIA", nationality: "AUS", team: "Макларън", points: 410, wins: 7, poles: 6, photo: "https://mclaren.bloomreach.io/cdn-cgi/image/format=webp,quality=80/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_oscar_team_pic_02.jpg" },
+ { pos: 4, name: "Джордж Ръсел", code: "RUS", nationality: "GBR", team: "Мерцедес", points: 319, wins: 2, poles: 2, photo: "https://images.ctfassets.net/1fvlg6xqnm65/DF8GKGlCgVkML7jYA3lX8/f98a3b6f3fdaff998fa1ee7cdc1fa5c9/GR-EYNTK-IMAGE-MOBILE.jpg?w=626&q=75&fm=webp" },
+ { pos: 5, name: "Шарл Леклер", code: "LEC", nationality: "MON", team: "Ферари", points: 242, wins: 0, poles: 1, photo: "https://aceracegear.com/wp-content/uploads/2025/02/cl-01-2025.jpg" },
+ { pos: 6, name: "Люис Хамилтън ", code: "HAM", nationality: "GBR", team: "Ферари", points: 156, wins: 0, poles: 0, photo: "https://store.ferrari.com/dw/image/v2/BGDG_PRD/on/demandware.static/-/Sites-48/default/dw0196a800/images/zoom/LA06Zf_170_2.png?strip=false" },
  { pos: 7, name: "Андреа Кими Антонели", code: "ANT", nationality: "ITA", team: "Мерцедес", points: 150, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/uoiclYPCB7vPlR53OzLou_H9HJ-qDCPRy-OeMqaavDgvSISa7CySyCKsgzl8A0f_3vOf_eH7v7rBt8gaHb8beg.webp" },
  { pos: 8, name: "Алекс Албон", code: "ALB", nationality: "THA", team: "Уилямс", points: 73, wins: 0, poles: 0, photo: "https://static.independent.co.uk/2024/02/05/19/e52f9590a04d09ef4bf873e9c5122f2eY29udGVudHNlYXJjaGFwaSwxNzA3MjQ2MzI3-2.75253307.jpg?width=1200&height=1200&fit=crop" },
  { pos: 9, name: "Карлос Сайнц", code: "SAI", nationality: "ESP", team: "Уилямс", points: 64, wins: 0, poles: 0, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RyGKN7IWY5i31pK8yXLVDcwvjYRS0XLQGufGNCztDziweEHsWkzIomBsjgbi96XzIx8&usqp=CAU" },
- { pos: 10, name: "Исак Хаджар", code: "HAD", nationality: "FRA", team: "Рейсинг Булс", points: 51, wins: 0, poles: 0, photo: "https://framerusercontent.com/images/R4z6H2nIMtXBpFzkL4qJ2Jny88.jpg?width=3072&height=3840" },
- { pos: 11, name: "Нико Хюлкенберг", code: "HUL", nationality: "GER", team: "Заубер", points: 49, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GMrCz6GWEAASYks?format=jpg&name=large" },
- { pos: 12, name: "Фернандо Алонсо", code: "ALO", nationality: "ESP", team: "Астън Мартин", points: 48, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/am-fa-2025-1.jpg" },
- { pos: 13, name: "Оливър Беарман", code: "BEA", nationality: "GBR", team: "Хаас", points: 41, wins: 0, poles: 0, photo: "https://cdn-5.motorsport.com/images/amp/Yv87pRj0/s1000/oliver-bearman-haas-f1-team-2.jpg" }, 
+ { pos: 10, name: "Фернандо Алонсо", code: "ALO", nationality: "ESP", team: "Астън Мартин", points: 56, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/am-fa-2025-1.jpg" },
+ { pos: 11, name: "Исак Хаджар", code: "HAD", nationality: "FRA", team: "Рейсинг Булс", points: 51, wins: 0, poles: 0, photo: "https://framerusercontent.com/images/R4z6H2nIMtXBpFzkL4qJ2Jny88.jpg?width=3072&height=3840" },
+ { pos: 12, name: "Нико Хюлкенберг", code: "HUL", nationality: "GER", team: "Заубер", points: 49, wins: 0, poles: 0, photo: "https://pbs.twimg.com/media/GMrCz6GWEAASYks?format=jpg&name=large" },
+ { pos: 13, name: "Оливър Беарман", code: "BEA", nationality: "GBR", team: "Хаас", points: 42, wins: 0, poles: 0, photo: "https://cdn-5.motorsport.com/images/amp/Yv87pRj0/s1000/oliver-bearman-haas-f1-team-2.jpg" }, 
  { pos: 14, name: "Лиам Лоусън", code: "LAW", nationality: "NZL", team: "Рейсинг Бул", points: 38, wins: 0, poles: 0, photo: "https://i.namu.wiki/i/-QcAd3hXRJrSMq9n1bSfMYrnGVDHN2BJ3JLMhGXs1PkMfc3Jyd9A2Gy-ugqDmfQkZgM9BJ22pYbg711lUdV-sw.webp" },
- { pos: 15, name: "Юки Цунода", code: "TSU", nationality: "JPN", team: "Ред Бул", points: 33, wins: 0, poles: 0, photo: "https://newsgpcdn.vshcdn.net/i/images/1586/yuki-tsunoda-f1-post-season-test-with-red-bull_f.jpg" },
- { pos: 16, name: "Естебан Окон", code: "OCO", nationality: "FRA", team: "Хаас", points: 32, wins: 0, poles: 0, photo: "https://i.redd.it/esteban-ocons-helmet-for-the-2025-season-v0-u52c357k3wje1.jpg?width=3277&format=pjpg&auto=webp&s=eb145ca50e5bc3f1154fb9efa9636832904de868" },
- { pos: 17, name: "Ланс Строл", code: "STR", nationality: "CAN", team: "Астън Мартин", points: 32, wins: 0, poles: 0, photo: "https://aurupteur.com/uploads/brefs/4511/4511_gkeojbrwyaijt58.jpg" },
+ { pos: 15, name: "Естебан Окон", code: "OCO", nationality: "FRA", team: "Хаас", points: 38, wins: 0, poles: 0, photo: "https://i.redd.it/esteban-ocons-helmet-for-the-2025-season-v0-u52c357k3wje1.jpg?width=3277&format=pjpg&auto=webp&s=eb145ca50e5bc3f1154fb9efa9636832904de868" },
+ { pos: 16, name: "Ланс Строл", code: "STR", nationality: "CAN", team: "Астън Мартин", points: 34, wins: 0, poles: 0, photo: "https://aurupteur.com/uploads/brefs/4511/4511_gkeojbrwyaijt58.jpg" },
+ { pos: 17, name: "Юки Цунода", code: "TSU", nationality: "JPN", team: "Ред Бул", points: 33, wins: 0, poles: 0, photo: "https://newsgpcdn.vshcdn.net/i/images/1586/yuki-tsunoda-f1-post-season-test-with-red-bull_f.jpg" },
  { pos: 18, name: "Пиер Гасли", code: "GAS", nationality: "FRA", team: "Алпин", points: 22, wins: 0, poles: 0, photo: "https://aceracegear.com/wp-content/uploads/2025/03/alpine-pg-2025-1.jpg" },
  { pos: 19, name: "Габриел Бортолето", code: "BOR", nationality: "BRA", team: "Заубер", points: 19, wins: 0, poles: 0, photo: "https://cdn.racingnews365.com/2025/Bortoleto/_1092x683_crop_center-center_85_none/XPB_1355727_HiRes.jpg?v=1751134525" },
  { pos: 20, name: "Франко Колапинто", code: "COL", nationality: "ARG", team: "Алпин", points: 0, wins: 0, poles: 0, photo: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRp0SPtH8eIaoZY_HzxO0d2g48pfy0ia6gdRbrndNmGE8dNnrO4Qk-6KRbjMK0AsQy6o4n0BLfxnNHqr9M" },
@@ -26,14 +26,14 @@ const drivers = [
 ];
 
 const constructors = [
- { pos: 1, name: "Макларън", points: 800, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp" },
- { pos: 2, name: "Мерцедес", points: 459, drivers: ["George Russell", "Kimi Antonelli"], photo: "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp" },
- { pos: 3, name: "Ред Бул ", points: 326, drivers: ["Max Verstappen", "Yuki tsunoda"], photo: "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626" },
- { pos: 4, name: "Ферари", points: 382, drivers: ["Charles Leclerc", "Lewis Hamilton"], photo: "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg" },
+ { pos: 1, name: "Макларън", points: 833, drivers: ["Oscar Piastri", "Lando Norris"], photo: "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp" },
+ { pos: 2, name: "Мерцедес", points: 469, drivers: ["George Russell", "Kimi Antonelli"], photo: "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp" },
+ { pos: 3, name: "Ред Бул ", points: 451, drivers: ["Max Verstappen", "Yuki tsunoda"], photo: "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626" },
+ { pos: 4, name: "Ферари", points: 398, drivers: ["Charles Leclerc", "Lewis Hamilton"], photo: "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg" },
  { pos: 5, name: "Уилямс ", points: 137, drivers: ["Alexander Albon", "Carlos Sainz"], photo: "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Williams/williams-2025-launch-6.webp" },
  { pos: 6, name: "Рейсинг Булс ", points: 92, drivers: ["Isack Hadjar", "Liam Lawson"], photo: "https://media.tudorwatch.com/image/upload/v1/tudormag/SI202503140201" },
- { pos: 7, name: "Астън Мартин", points: 80, drivers: ["Fernando Alonso", "Lance Stroll"], photo: "https://upload.wikimedia.org/wikipedia/commons/3/33/2025_Japan_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP1.jpg" },
- { pos: 8, name: "Хаас", points: 73, drivers: ["Oliver Bearman", "Esteban Ocon"], photo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FIA_F1_Austria_2025_Nr._87_Bearman.jpg" },
+ { pos: 7, name: "Астън Мартин", points: 90, drivers: ["Fernando Alonso", "Lance Stroll"], photo: "https://upload.wikimedia.org/wikipedia/commons/3/33/2025_Japan_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP1.jpg" },
+ { pos: 8, name: "Хаас", points: 80, drivers: ["Oliver Bearman", "Esteban Ocon"], photo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FIA_F1_Austria_2025_Nr._87_Bearman.jpg" },
  { pos: 9, name: "Заубер ", points: 68, drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"], photo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/2025_Japan_GP_-_Sauber_-_Nico_Hulkenberg_-_FP1.jpg" },
  { pos: 10, name: "Алпин", points: 22, drivers: ["Piere Gasly", "Franco Colapinto"], photo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/FIA_F1_Austria_2025_Nr._10_Gasly.jpg" },
 ];
@@ -2916,6 +2916,7 @@ function applyTheme() {
 
 // Call once on load
 applyTheme();
+
 
 
 
