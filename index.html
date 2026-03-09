@@ -80,21 +80,62 @@
         .nav-links a:hover::after { width: 100%; }
 
         /* --- HERO & COUNTDOWN --- */
-        header {
-            margin-top: 80px;
-            height: 70vh;
-            background: linear-gradient(rgba(21, 25, 34, 0.3), rgba(21, 25, 34, 0.6)), url('https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/637335027_122119466571095133_7477324724966621057_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2a1932&_nc_ohc=lfOa8h-JqoQQ7kNvwHTjxyt&_nc_oc=AdkBMYR9AD3jK3FnSty0vqWETDjObGvr93Zz5gAeCkbRpYpoeBWezqpqDhRfAsqbjIE&_nc_zt=23&_nc_ht=scontent.fsof10-1.fna&_nc_gid=xGxr0B8eKQkDOP2Aq9DAoA&_nc_ss=8&oh=00_Afw6j8Hbhf_Maw4JuDXiilZW2y7Qw-J-YzIttcgxr6DfdA&oe=69B367A4');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--white);
-            text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
+       .header-hero {
+    margin-top: 80px;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* REMOVE THIS: clip-path */
+}
+
+
+/* Slideshow background container */
+.bg-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+/* Each slide */
+.bg-slideshow .slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    /* remove fixed, it often causes lag */
+    /* background-attachment: fixed; */
+    opacity: 0;
+    animation: fadeSlide 50s infinite;
+}
+
+/* 10 slides, 5s each => 50s total, staggered with delay */
+.bg-slideshow .slide:nth-child(1) { animation-delay: 0s; }
+.bg-slideshow .slide:nth-child(2) { animation-delay: 5s; }
+.bg-slideshow .slide:nth-child(3) { animation-delay: 10s; }
+.bg-slideshow .slide:nth-child(4) { animation-delay: 15s; }
+.bg-slideshow .slide:nth-child(5) { animation-delay: 20s; }
+.bg-slideshow .slide:nth-child(6) { animation-delay: 25s; }
+.bg-slideshow .slide:nth-child(7) { animation-delay: 30s; }
+.bg-slideshow .slide:nth-child(8) { animation-delay: 35s; }
+.bg-slideshow .slide:nth-child(9) { animation-delay: 40s; }
+.bg-slideshow .slide:nth-child(10){ animation-delay: 45s; }
+.bg-slideshow .slide:nth-child(11){ animation-delay: 50s; }
+
+/* Smooth fade in/out */
+@keyframes fadeSlide {
+    0%   { opacity: 0; }
+    5%   { opacity: 1; }
+    20%  { opacity: 1; }
+    25%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
 
         header h1 {
             font-size: 4rem;
@@ -466,15 +507,31 @@
         </ul>
     </nav>
 
-    <header id="home">
-        <h1>Следващ Старт</h1>
-        <h3 style="font-weight: 300; letter-spacing: 2px;">Formula 1 Heineken Chinese Grand Prix 2026</h3>
-        <div class="countdown-container" id="countdown">
-            <div class="time-box"><span id="days">00</span><label>Дни</label></div>
-            <div class="time-box"><span id="hours">00</span><label>Часа</label></div>
-            <div class="time-box"><span id="minutes">00</span><label>Мин</label></div>
-            <div class="time-box"><span id="seconds">00</span><label>Сек</label></div>
-        </div>
+   <header id="home" class="header-hero">
+    <div class="bg-slideshow">
+        <div class="slide" style="background-image: url('https://images.ctfassets.net/gy95mqeyjg28/ds1OxKDdXKXPz5trrzB7G/6272ccf2292b1920c3b2036feeb28ee7/Image-2026-Formula1-AusGP-QualiReport-3.jpg?w=3840&q=75&fm=webp&fit=fill');"></div>
+        <div class="slide" style="background-image: url('https://static01.nyt.com/athletic/uploads/wp/2026/03/07051517/GettyImages-2264627392-scaled.jpg');"></div>
+        <div class="slide" style="background-image: url('https://www.autohebdo.fr/app/uploads/2026/02/SI202602114860.jpg');"></div>
+        <div class="slide" style="background-image: url('https://media.formula1.com/image/upload/t_16by9South/c_lfill,w_3392/q_auto/v1740000000/fom-website/2026/Ferrari/GettyImages-2257747181.webp');"></div>
+        <div class="slide" style="background-image: url('https://cdn-7.motorsport.com/images/amp/YXypBmj6/s6/alexander-albon-williams-2.jpg');"></div>
+        <div class="slide" style="background-image: url('https://cdn.crash.net/2026-01/racingbullsimola.png?width=1600');"></div>
+        <div class="slide" style="background-image: url('https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/fom-website/2024/Miscellaneous/2409170018.webp');"></div>
+        <div class="slide" style="background-image: url('https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2026/01/27122359/esteban-ocon-haas-barcelona.jpg');"></div>
+        <div class="slide" style="background-image: url('https://cdn.racingnews365.com/2026/Hulkenberg/XPB_1398366_HiRes.jpg?v=1772783743&width=1092&height=683&quality=85&crop=5185%2C3243%2C0%2C109');"></div>
+        <div class="slide" style="background-image: url('https://lesalpinistes.com/wp-content/uploads/2026/03/BWT-Alpine-Formula-One-Team-Alpine-A526-Pierre-Gasly-Franco-Colapinto-Grand-Prix-dAustralie-EL3-Qualifications-Samedi-2026-12.jpg');"></div>
+        <div class="slide" style="background-image: url('https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2026/F1_Grand_Prix_Of_Australia/2265360027.webp');"></div>
+    </div>
+
+    <h1>Следващ Старт</h1>
+    <h3 style="font-weight: 300; letter-spacing: 2px;">Formula 1 Heineken Chinese Grand Prix 2026</h3>
+    <div class="countdown-container" id="countdown">
+        <div class="time-box"><span id="days">00</span><label>Дни</label></div>
+        <div class="time-box"><span id="hours">00</span><label>Часа</label></div>
+        <div class="time-box"><span id="minutes">00</span><label>Мин</label></div>
+        <div class="time-box"><span id="seconds">00</span><label>Сек</label></div>
+    </div>
+</header>
+
     </header>
 
     <section id="news">
@@ -6405,6 +6462,22 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
