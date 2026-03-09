@@ -440,13 +440,130 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         /* Mobile Responsive */
+       /* --- Mobile Responsive (Upgraded for Phones) --- */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .countdown-container { gap: 1rem; }
-            .time-box { padding: 0.8rem; min-width: 70px; }
-            .time-box span { font-size: 1.5rem; }
-            .tech-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; } /* Simplified for mobile example */
+            /* General layout adjustments */
+            section {
+                padding: 3rem 5%; /* Reduce massive padding on mobile */
+            }
+            
+            .section-title {
+                font-size: 1.8rem; /* Smaller, better-proportioned titles */
+                margin-bottom: 2rem;
+            }
+
+            /* Navigation */
+            nav {
+                justify-content: center; /* Center the logo beautifully */
+                padding: 1rem 5%;
+            }
+            .nav-links { 
+                display: none; /* Keeps the top bar clean on mobile */
+            }
+
+            /* Hero Section & Countdown */
+            .header-hero { 
+                height: auto;
+                min-height: 85vh;
+                padding: 100px 5% 3rem; /* Allow text to flow naturally */
+                justify-content: flex-start;
+            }
+            header h1 { 
+                font-size: 2.2rem; 
+                line-height: 1.2;
+                margin-top: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            header h3 {
+                font-size: 1rem;
+                line-height: 1.4;
+                padding: 0 10px;
+            }
+            .countdown-container { 
+                gap: 0.8rem; 
+                flex-wrap: wrap; /* Make boxes wrap neatly into a 2x2 grid if needed */
+                justify-content: center;
+                margin-top: 1.5rem;
+            }
+            .time-box { 
+                padding: 1rem; 
+                min-width: 70px; 
+                flex: 1 1 40%; 
+            }
+            .time-box span { 
+                font-size: 2rem; 
+            }
+
+            /* Standings Table Controls */
+            .standings-controls {
+                flex-direction: column; /* Stack the toggle buttons vertically */
+                gap: 0.8rem;
+            }
+            .control-btn {
+                width: 100%; /* Make buttons full-width for easy thumb tapping */
+            }
+            .standings-table-container {
+                padding: 1rem; /* Reclaim screen space */
+            }
+            
+            /* Table adjustments */
+            th, td {
+                padding: 0.8rem 0.5rem; 
+                font-size: 0.85rem;
+            }
+            .driver-photo {
+                width: 30px;
+                height: 30px;
+            }
+            .pos-badge {
+                width: 25px;
+                height: 25px;
+                font-size: 0.8rem;
+            }
+
+            /* Tech Section */
+            .tech-grid { 
+                grid-template-columns: 1fr; 
+                gap: 2rem; 
+            }
+            .tech-stat h4 {
+                font-size: 1.5rem;
+            }
+            .tech-stat {
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Modal (News Popup) */
+            .modal-content {
+                width: 95%; /* Use more screen width */
+                max-height: 85vh;
+            }
+            .modal-header-img {
+                height: 200px; /* Prevent the image from taking up the whole screen */
+            }
+            .modal-body {
+                padding: 1.5rem; /* Fix massive padding */
+            }
+            #modal-title {
+                font-size: 1.3rem !important; /* Readable title size */
+                line-height: 1.3;
+            }
+            #modal-text {
+                font-size: 1rem !important; /* Perfect reading size for phones */
+            }
+            .close-modal {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 2rem 5% !important;
+            }
         }
         /* --- CALENDAR SECTION --- */
 .calendar-grid {
@@ -6462,14 +6579,6 @@ window.onload = function() {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
