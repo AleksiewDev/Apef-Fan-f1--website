@@ -493,6 +493,45 @@
             .time-box span { 
                 font-size: 2rem; 
             }
+            /* Hamburger Icon (Hidden on Desktop) */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--dark-slate);
+            z-index: 1001; /* Keep it above the sliding menu */
+        }
+        /* Navigation for Mobile */
+            nav {
+                justify-content: space-between; /* Space out logo and hamburger icon */
+                padding: 1rem 5%;
+            }
+            .menu-toggle {
+                display: block; /* Show hamburger icon */
+            }
+            .nav-links { 
+                position: fixed;
+                right: -100%; /* Hide off-screen by default */
+                top: 0;
+                height: 100vh;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 3rem;
+                transition: right 0.4s ease;
+                z-index: 1000;
+            }
+            .nav-links.nav-active {
+                right: 0; /* Slide in when active */
+            }
+            .nav-links a {
+                font-size: 1.5rem; /* Make links bigger for thumbs */
+            }
+
 
             /* Standings Table Controls */
             .standings-controls {
@@ -615,6 +654,11 @@
 
     <nav>
         <div class="logo">Formula 1 <span>Apex Fan Club</span></div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <ul class="nav-links">
             <li><a href="#home">Начало</a></li>
             <li><a href="#news">Новини</a></li>
@@ -6528,6 +6572,34 @@ function renderCalendar() {
         document.getElementById('news-modal').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
         });
+        // --- MOBILE MENU LOGIC ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            
+            // Toggle icon between hamburger (bars) and close (times)
+            const icon = mobileMenu.querySelector('i');
+            if(navLinks.classList.contains('nav-active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+                const icon = mobileMenu.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
 
         // --- COUNTDOWN LOGIC ---
         
@@ -6579,6 +6651,12 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 
