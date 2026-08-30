@@ -1,780 +1,1171 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formula 1 - Apex Fan Club</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* --- VARIABLES & RESET --- */
-        :root {
-            --f1-red: #e10600;
-            --f1-red-dark: #b30500;
-            --dark-slate: #151922;
-            --light-bg: #f3f4f6; /* Not black */
-            --white: #ffffff;
-            --gray-text: #6b7280;
-            --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-        
-        body {
-            background-color: var(--light-bg);
-            color: var(--dark-slate);
-            overflow-x: hidden;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            color: var(--dark-slate);
-        }
-        .logo span { color: var(--f1-red); }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-slate);
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--f1-red);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after { width: 100%; }
-
-        /* --- HERO & COUNTDOWN --- */
-       .header-hero {
-    margin-top: 80px;
-    height: 70vh;
-    position: relative;
-    overflow: hidden;
-    color: var(--white);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* REMOVE THIS: clip-path */
-}
-
-
-/* Slideshow background container */
-.bg-slideshow {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-}
-
-/* Each slide */
-.bg-slideshow .slide {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    /* remove fixed, it often causes lag */
-    /* background-attachment: fixed; */
-    opacity: 0;
-    animation: fadeSlide 50s infinite;
-}
-
-/* 10 slides, 5s each => 50s total, staggered with delay */
-.bg-slideshow .slide:nth-child(1) { animation-delay: 0s; }
-.bg-slideshow .slide:nth-child(2) { animation-delay: 5s; }
-.bg-slideshow .slide:nth-child(3) { animation-delay: 10s; }
-.bg-slideshow .slide:nth-child(4) { animation-delay: 15s; }
-.bg-slideshow .slide:nth-child(5) { animation-delay: 20s; }
-.bg-slideshow .slide:nth-child(6) { animation-delay: 25s; }
-.bg-slideshow .slide:nth-child(7) { animation-delay: 30s; }
-.bg-slideshow .slide:nth-child(8) { animation-delay: 35s; }
-.bg-slideshow .slide:nth-child(9) { animation-delay: 40s; }
-.bg-slideshow .slide:nth-child(10){ animation-delay: 45s; }
-.bg-slideshow .slide:nth-child(11){ animation-delay: 50s; }
-
-/* Smooth fade in/out */
-@keyframes fadeSlide {
-    0%   { opacity: 0; }
-    5%   { opacity: 1; }
-    20%  { opacity: 1; }
-    25%  { opacity: 0; }
-    100% { opacity: 0; }
-}
-
-
-        header h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            animation: slideDown 1s ease-out;
-        }
-
-        .countdown-container {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        .time-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.2);
-            min-width: 100px;
-        }
-
-        .time-box span {
-            display: block;
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .time-box label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.8;
-        }
-
-        /* --- SECTIONS GENERAL --- */
-        section {
-            padding: 5rem 10%;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-            position: relative;
-            padding-left: 1.5rem;
-            text-transform: uppercase;
-        }
-
-        .section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 100%;
-            width: 8px;
-            background: var(--f1-red);
-            border-radius: 4px;
-        }
-
-        /* --- NEWS GRID --- */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .news-card {
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            cursor: pointer;
-            position: relative;
-            top: 0;
-        }
-
-        .news-card:hover {
-            top: -10px;
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);
-        }
-
-        .news-image {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .news-content {
-            padding: 1.5rem;
-        }
-
-        .news-date {
-            color: var(--f1-red);
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .news-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
-
-        .read-more-btn {
-            background: transparent;
-            border: none;
-            color: var(--dark-slate);
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
-        }
-
-        .read-more-btn:hover {
-            color: var(--f1-red);
-            gap: 1rem;
-        }
-
-        /* --- STANDINGS --- */
-        .standings-controls {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .control-btn {
-            padding: 0.8rem 2rem;
-            border: none;
-            background: white;
-            color: var(--dark-slate);
-            font-weight: 700;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        .control-btn.active {
-            background: var(--f1-red);
-            color: white;
-        }
-
-        .standings-table-container {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th {
-            text-align: left;
-            padding: 1rem;
-            color: var(--gray-text);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-        }
-
-        td {
-            padding: 1.2rem 1rem;
-            border-bottom: 1px solid #eee;
-            font-weight: 600;
-        }
-
-        .pos-badge {
-            display: inline-flex;
-            width: 30px;
-            height: 30px;
-            background: var(--dark-slate);
-            color: white;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-        }
-        
-        .pos-1 { background: #FFD700; color: #000; }
-        .pos-2 { background: #C0C0C0; color: #000; }
-        .pos-3 { background: #CD7F32; color: #000; }
-
-        .driver-cell {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .driver-photo {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #eee;
-        }
-
-        /* --- TECH/BONUS SECTION --- */
-        .tech-section {
-            background: var(--white);
-            border-top: 1px solid #eee;
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .tech-text p {
-            line-height: 1.8;
-            color: var(--gray-text);
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-stat {
-            display: inline-block;
-            margin-right: 2rem;
-        }
-        .tech-stat h4 { font-size: 2rem; color: var(--f1-red); }
-        .tech-stat span { font-size: 0.9rem; color: var(--gray-text); }
-
-        /* --- MODAL --- */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(5px);
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal-content {
-            background: white;
-            width: 90%;
-            max-width: 800px;
-            max-height: 90vh;
-            border-radius: 20px;
-            overflow-y: auto;
-            position: relative;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-header-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .modal-body {
-            padding: 3rem;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
-
-        /* --- ANIMATIONS --- */
-        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        /* Mobile Responsive */
-       /* --- Mobile Responsive (Upgraded for Phones) --- */
-        @media (max-width: 768px) {
-            /* General layout adjustments */
-            section {
-                padding: 3rem 5%; /* Reduce massive padding on mobile */
-            }
-            
-            .section-title {
-                font-size: 1.8rem; /* Smaller, better-proportioned titles */
-                margin-bottom: 2rem;
-            }
-
-            /* Navigation */
-            nav {
-                justify-content: center; /* Center the logo beautifully */
-                padding: 1rem 5%;
-            }
-            .nav-links { 
-                display: none; /* Keeps the top bar clean on mobile */
-            }
-
-            /* Hero Section & Countdown */
-            .header-hero { 
-                height: auto;
-                min-height: 85vh;
-                padding: 100px 5% 3rem; /* Allow text to flow naturally */
-                justify-content: flex-start;
-            }
-            header h1 { 
-                font-size: 2.2rem; 
-                line-height: 1.2;
-                margin-top: 2rem;
-                margin-bottom: 0.5rem;
-            }
-            header h3 {
-                font-size: 1rem;
-                line-height: 1.4;
-                padding: 0 10px;
-            }
-            .countdown-container { 
-                gap: 0.8rem; 
-                flex-wrap: wrap; /* Make boxes wrap neatly into a 2x2 grid if needed */
-                justify-content: center;
-                margin-top: 1.5rem;
-            }
-            .time-box { 
-                padding: 1rem; 
-                min-width: 70px; 
-                flex: 1 1 40%; 
-            }
-            .time-box span { 
-                font-size: 2rem; 
-            }
-            /* Hamburger Icon (Hidden on Desktop) */
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--dark-slate);
-            z-index: 1001; /* Keep it above the sliding menu */
-        }
-        /* Navigation for Mobile */
-            nav {
-                justify-content: space-between; /* Space out logo and hamburger icon */
-                padding: 1rem 5%;
-            }
-            .menu-toggle {
-                display: block; /* Show hamburger icon */
-            }
-            .nav-links { 
-                position: fixed;
-                right: -100%; /* Hide off-screen by default */
-                top: 0;
-                height: 100vh;
-                width: 100%;
-                background-color: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 3rem;
-                transition: right 0.4s ease;
-                z-index: 1000;
-            }
-            .nav-links.nav-active {
-                right: 0; /* Slide in when active */
-            }
-            .nav-links a {
-                font-size: 1.5rem; /* Make links bigger for thumbs */
-            }
-
-
-            /* Standings Table Controls */
-            .standings-controls {
-                flex-direction: column; /* Stack the toggle buttons vertically */
-                gap: 0.8rem;
-            }
-            .control-btn {
-                width: 100%; /* Make buttons full-width for easy thumb tapping */
-            }
-            .standings-table-container {
-                padding: 1rem; /* Reclaim screen space */
-            }
-            
-            /* Table adjustments */
-            th, td {
-                padding: 0.8rem 0.5rem; 
-                font-size: 0.85rem;
-            }
-            .driver-photo {
-                width: 30px;
-                height: 30px;
-            }
-            .pos-badge {
-                width: 25px;
-                height: 25px;
-                font-size: 0.8rem;
-            }
-
-            /* Tech Section */
-            .tech-grid { 
-                grid-template-columns: 1fr; 
-                gap: 2rem; 
-            }
-            .tech-stat h4 {
-                font-size: 1.5rem;
-            }
-            .tech-stat {
-                margin-right: 1rem;
-                margin-bottom: 1rem;
-            }
-
-            /* Modal (News Popup) */
-            .modal-content {
-                width: 95%; /* Use more screen width */
-                max-height: 85vh;
-            }
-            .modal-header-img {
-                height: 200px; /* Prevent the image from taking up the whole screen */
-            }
-            .modal-body {
-                padding: 1.5rem; /* Fix massive padding */
-            }
-            #modal-title {
-                font-size: 1.3rem !important; /* Readable title size */
-                line-height: 1.3;
-            }
-            #modal-text {
-                font-size: 1rem !important; /* Perfect reading size for phones */
-            }
-            .close-modal {
-                top: 10px;
-                right: 10px;
-                width: 35px;
-                height: 35px;
-                font-size: 1.2rem;
-            }
-
-            /* Footer */
-            footer {
-                padding: 2rem 5% !important;
-            }
-        }
-        /* --- CALENDAR SECTION --- */
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.race-card {
-    background: var(--white);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    border-left: 6px solid var(--f1-red);
-}
-
-.race-card:hover {
-    transform: translateY(-8px);
-}
-
-.race-round {
-    color: var(--f1-red);
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-}
-
-.race-name {
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin: 0.5rem 0;
-}
-
-.race-date {
-    color: var(--gray-text);
-    font-weight: 600;
-}
-
-.race-location {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #444;
-}
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apef F1 Club | Премиум Формула 1 Преживяване</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       1. ДИЗАЙН СИСТЕМА И ПРОМЕНЛИВИ (БЕЗ ЧИСТО ЧЕРНО #000000)
+       ========================================================================== */
+    :root {
+      --bg-main: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --bg-glass: rgba(255, 255, 255, 0.88);
+      
+      --navy-deep: #0b1329;       /* Тъмен нюанс вместо черно */
+      --navy-card: #111e38;       
+      --blue-royal: #1d4ed8;      
+      --blue-electric: #2563eb;   
+      --blue-accent: #38bdf8;     
+      
+      --red-f1: #e10600;          
+      --purple-electric: #8b5cf6; 
+      --lime-racing: #10b981;     
+      
+      --gold-p1: #f59e0b;         
+      --silver-p2: #94a3b8;       
+      --bronze-p3: #d97706;       
+
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-light: #f8fafc;
+      
+      --border-subtle: rgba(226, 232, 240, 0.85);
+      --border-glass: rgba(255, 255, 255, 0.4);
+      
+      --shadow-sm: 0 4px 6px -1px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(11, 19, 41, 0.08);
+      --shadow-glow-red: 0 0 25px rgba(225, 6, 0, 0.35);
+      --shadow-glow-blue: 0 0 25px rgba(29, 78, 216, 0.35);
+      --shadow-glow-purple: 0 0 25px rgba(139, 92, 246, 0.35);
+
+      --font-display: 'Chakra Petch', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(29, 78, 216, 0.05) 0px, transparent 50%);
+    }
+
+    /* ==========================================================================
+       2. НАВИГАЦИЯ И ХЕДЪР
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.85rem 2rem;
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, var(--red-f1), var(--navy-deep));
+      color: var(--text-light);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 1px;
+      transform: skew(-10deg);
+      box-shadow: var(--shadow-glow-red);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--navy-deep);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-title span {
+      color: var(--red-f1);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--navy-deep);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--red-f1), var(--blue-royal));
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--red-f1);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       3. HERO СЕКЦИЯ С HUD ТАЙМЕР
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      padding: 4.5rem 1.5rem 3.5rem;
+      background: linear-gradient(135deg, #0b1329 0%, #152447 60%, #1e3a8a 100%);
+      color: var(--text-light);
+      overflow: hidden;
+      border-bottom: 4px solid var(--red-f1);
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(225, 6, 0, 0.05) 25%, transparent 25%);
+      background-size: 30px 30px, 60px 60px;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(225, 6, 0, 0.2);
+      border: 1px solid var(--red-f1);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffa4a2;
+      margin-bottom: 1.25rem;
+      animation: pulseBorder 2.5s infinite;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+
+    .countdown-hud {
+      background: rgba(17, 30, 56, 0.75);
+      backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-md), var(--shadow-glow-blue);
+      animation: floatHUD 6s ease-in-out infinite;
+    }
+
+    .hud-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hud-gp-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+
+    .hud-gp-location {
+      font-size: 0.85rem;
+      color: var(--blue-accent);
+      font-weight: 500;
+    }
+
+    .hud-status-badge {
+      background: var(--red-f1);
+      color: white;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      box-shadow: var(--shadow-glow-red);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .countdown-box {
+      background: rgba(11, 19, 41, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-md);
+      padding: 1rem 0.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .countdown-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red-f1), var(--blue-accent));
+    }
+
+    .countdown-number {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 4px;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    }
+
+    .countdown-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #94a3b8;
+      letter-spacing: 1px;
+    }
+
+    /* ==========================================================================
+       4. ОБЩИ СТИЛОВЕ ЗА СЕКЦИИ И ТАБОВЕ
+       ========================================================================== */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+      border-left: 4px solid var(--red-f1);
+      padding-left: 1.25rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .section-header.tech-accent {
+      border-left-color: var(--purple-electric);
+    }
+
+    .section-header.standings-accent {
+      border-left-color: var(--blue-royal);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .filter-pills, .standings-toggle-group {
+      display: flex;
+      gap: 10px;
+      background: #e2e8f0;
+      padding: 4px;
+      border-radius: var(--radius-full);
+    }
+
+    .filter-btn, .standings-tab-btn {
+      background: transparent;
+      border: none;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .filter-btn.active, .standings-tab-btn.active {
+      background: var(--blue-royal);
+      color: var(--text-light);
+      box-shadow: var(--shadow-glow-blue);
+    }
+
+    /* ==========================================================================
+       5. КАРТИ ЗА НОВИНИ
+       ========================================================================== */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+
+    .f1-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .f1-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(29, 78, 216, 0.3);
+    }
+
+    .f1-card-img-wrapper {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: var(--navy-deep);
+    }
+
+    .f1-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .f1-card:hover .f1-card-img {
+      transform: scale(1.05);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(11, 19, 41, 0.85);
+      backdrop-filter: blur(8px);
+      color: var(--text-light);
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--red-f1);
+      text-transform: uppercase;
+    }
+
+    .f1-card-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+    }
+
+    .f1-card:hover .card-title {
+      color: var(--blue-royal);
+    }
+
+    .card-excerpt {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1rem;
+    }
+
+    .card-read-more {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--red-f1);
+    }
+
+    /* ==========================================================================
+       6. КЛАСИРАНЕ (STANDINGS)
+       ========================================================================== */
+    .standings-container {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .standings-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .standings-table th {
+      background: var(--navy-deep);
+      color: var(--text-light);
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 1.1rem 1.25rem;
+      font-weight: 600;
+    }
+
+    .standings-table td {
+      padding: 1.1rem 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.95rem;
+      vertical-align: middle;
+      transition: var(--transition);
+    }
+
+    .standings-row {
+      transition: var(--transition);
+    }
+
+    .standings-row:hover {
+      background-color: rgba(241, 245, 249, 0.8);
+      transform: scale(1.002);
+    }
+
+    .pos-cell {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      width: 65px;
+    }
+
+    .pos-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      color: var(--navy-deep);
+      background: var(--bg-subtle);
+    }
+
+    .pos-1 .pos-badge { background: var(--gold-p1); color: #ffffff; box-shadow: 0 0 12px rgba(245, 158, 11, 0.5); }
+    .pos-2 .pos-badge { background: var(--silver-p2); color: #ffffff; }
+    .pos-3 .pos-badge { background: var(--bronze-p3); color: #ffffff; }
+
+    .driver-cell-content {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .team-color-indicator {
+      width: 4px;
+      height: 36px;
+      border-radius: 4px;
+    }
+
+    .driver-name-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .driver-full-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--navy-deep);
+    }
+
+    .driver-team-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .driver-racing-num {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: var(--navy-card);
+      color: var(--text-light);
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    .points-bar-container {
+      width: 100%;
+      max-width: 180px;
+      background: #e2e8f0;
+      height: 8px;
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .points-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue-royal), var(--blue-accent));
+      border-radius: var(--radius-full);
+      transition: width 0.8s ease-in-out;
+    }
+
+    .points-total {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+    }
+
+    /* ==========================================================================
+       7. ТЕХНИЧЕСКИ АНАЛИЗ
+       ========================================================================== */
+    .tech-section {
+      background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .tech-card {
+      background: var(--navy-card);
+      color: var(--text-light);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--purple-electric);
+      box-shadow: var(--shadow-glow-purple);
+    }
+
+    .tech-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      color: var(--lime-racing);
+      background: rgba(16, 185, 129, 0.15);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    .tech-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    .tech-desc {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+    }
+
+    .telemetry-preview {
+      background: rgba(11, 19, 41, 0.6);
+      border: 1px dashed rgba(139, 92, 246, 0.4);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+    }
+
+    .telemetry-item span {
+      display: block;
+      color: #94a3b8;
+      font-size: 0.7rem;
+    }
+
+    .telemetry-item strong {
+      color: var(--blue-accent);
+      font-size: 1rem;
+    }
+
+    /* ==========================================================================
+       8. КАЛЕНДАР
+       ========================================================================== */
+    .calendar-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .race-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .race-card.upcoming {
+      border: 2px solid var(--red-f1);
+      box-shadow: var(--shadow-glow-red);
+      background: linear-gradient(180deg, #ffffff 0%, #fff5f5 100%);
+    }
+
+    .race-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .race-round {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .race-country {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin: 0.3rem 0;
+    }
+
+    .race-circuit {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      height: 38px;
+    }
+
+    .race-date-badge {
+      display: inline-block;
+      background: var(--bg-subtle);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+    }
+
+    /* ==========================================================================
+       9. МОДАЛ ЗА ЧЕТЕНЕ НА ПЪЛНА СТАТИЯ
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 19, 41, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-window {
+      background: var(--bg-surface);
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      border-radius: var(--radius-lg);
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: scale(0.95) translateY(20px);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    .modal-backdrop.open .modal-window {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(11, 19, 41, 0.6);
+      color: white;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-full);
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: var(--transition);
+    }
+
+    .modal-close-btn:hover {
+      background: var(--red-f1);
+      transform: rotate(90deg);
+    }
+
+    .modal-image {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .modal-body {
+      padding: 2.25rem;
+    }
+
+    .modal-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .modal-meta-tag {
+      background: rgba(29, 78, 216, 0.1);
+      color: var(--blue-royal);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-text {
+      font-size: 1.05rem;
+      color: #334155;
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+
+    /* ==========================================================================
+       10. ФУТЪР
+       ========================================================================== */
+    .footer {
+      background: var(--navy-deep);
+      color: var(--text-light);
+      padding: 3rem 1.5rem 2rem;
+      border-top: 4px solid var(--blue-royal);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 2rem;
+    }
+
+    .footer-copy {
+      max-width: 1200px;
+      margin: 1.5rem auto 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    @keyframes pulseBorder {
+      0%, 100% { border-color: var(--red-f1); }
+      50% { border-color: var(--blue-accent); }
+    }
+
+    @keyframes floatHUD {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.3rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .standings-table th:nth-child(3),
+      .standings-table td:nth-child(3),
+      .standings-table th:nth-child(4),
+      .standings-table td:nth-child(4) {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Formula 1 <span>Apex Fan Club</span></div>
-        
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <span class="brand-badge">F1</span>
+        <span class="brand-title">APEX <span>F1 CLUB</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#news-section" class="nav-link">Новини</a></li>
+        <li><a href="#standings-section" class="nav-link">Класиране</a></li>
+        <li><a href="#tech-section" class="nav-link">Технически анализ</a></li>
+        <li><a href="#calendar-section" class="nav-link">Календар 2026</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-pattern"></div>
+    <div class="hero-container">
+      <div>
+        <div class="hero-tag">🏁 Официален Български F1 Клуб</div>
+        <h1 class="hero-title">Светът на <span>Формула 1</span> с максимална скорост.</h1>
+        <p class="hero-description">
+          Премиум анализи, шампионатно класиране и инженерен поглед зад кулисите на най-бързия спорт в света.
+        </p>
+      </div>
+
+      <div class="countdown-hud" id="countdown-hud">
+        <div class="hud-header">
+          <div>
+            <div class="hud-gp-title" id="hud-gp-name"> Formula 1 Pirelli Gran Premio d'Italia 2026</div>
+            <div class="hud-gp-location" id="hud-gp-circuit">Аутодромо Национале Монца</div>
+          </div>
+          <span class="hud-status-badge" id="hud-badge">Следващ Старт</span>
         </div>
 
-        <ul class="nav-links">
-            <li><a href="#home">Начало</a></li>
-            <li><a href="#news">Новини</a></li>
-            <li><a href="#standings">Класиране</a></li>
-            <li><a href="#calendar">Календар</a></li>
-            <li><a href="#tech">Техника</a></li>
-        </ul>
-    </nav>
-
-   <header id="home" class="header-hero">
-    <div class="bg-slideshow">
-        <div class="slide" style="background-image: url('https://images.ctfassets.net/gy95mqeyjg28/ds1OxKDdXKXPz5trrzB7G/6272ccf2292b1920c3b2036feeb28ee7/Image-2026-Formula1-AusGP-QualiReport-3.jpg?w=3840&q=75&fm=webp&fit=fill');"></div>
-        <div class="slide" style="background-image: url('https://static01.nyt.com/athletic/uploads/wp/2026/03/07051517/GettyImages-2264627392-scaled.jpg');"></div>
-        <div class="slide" style="background-image: url('https://www.autohebdo.fr/app/uploads/2026/02/SI202602114860.jpg');"></div>
-        <div class="slide" style="background-image: url('https://media.formula1.com/image/upload/t_16by9South/c_lfill,w_3392/q_auto/v1740000000/fom-website/2026/Ferrari/GettyImages-2257747181.webp');"></div>
-        <div class="slide" style="background-image: url('https://cdn-7.motorsport.com/images/amp/YXypBmj6/s6/alexander-albon-williams-2.jpg');"></div>
-        <div class="slide" style="background-image: url('https://cdn.crash.net/2026-01/racingbullsimola.png?width=1600');"></div>
-        <div class="slide" style="background-image: url('https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/fom-website/2024/Miscellaneous/2409170018.webp');"></div>
-        <div class="slide" style="background-image: url('https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2026/01/27122359/esteban-ocon-haas-barcelona.jpg');"></div>
-        <div class="slide" style="background-image: url('https://cdn.racingnews365.com/2026/Hulkenberg/XPB_1398366_HiRes.jpg?v=1772783743&width=1092&height=683&quality=85&crop=5185%2C3243%2C0%2C109');"></div>
-        <div class="slide" style="background-image: url('https://lesalpinistes.com/wp-content/uploads/2026/03/BWT-Alpine-Formula-One-Team-Alpine-A526-Pierre-Gasly-Franco-Colapinto-Grand-Prix-dAustralie-EL3-Qualifications-Samedi-2026-12.jpg');"></div>
-        <div class="slide" style="background-image: url('https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2026/F1_Grand_Prix_Of_Australia/2265360027.webp');"></div>
+        <div class="countdown-grid" id="countdown-timer-grid">
+          <div class="countdown-box">
+            <div class="countdown-number" id="timer-days">00</div>
+            <div class="countdown-label">Дни</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-number" id="timer-hours">00</div>
+            <div class="countdown-label">Часа</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-number" id="timer-minutes">00</div>
+            <div class="countdown-label">Минути</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-number" id="timer-seconds">00</div>
+            <div class="countdown-label">Секунди</div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <h1>Следващ Старт</h1>
-    <h3 style="font-weight: 300; letter-spacing: 2px;">Formula 1 Pirelli Gran Premio d'Italia 2026</h3>
-    <div class="countdown-container" id="countdown">
-        <div class="time-box"><span id="days">00</span><label>Дни</label></div>
-        <div class="time-box"><span id="hours">00</span><label>Часа</label></div>
-        <div class="time-box"><span id="minutes">00</span><label>Мин</label></div>
-        <div class="time-box"><span id="seconds">00</span><label>Сек</label></div>
-    </div>
-</header>
-
-    </header>
-
-    <section id="news">
+  <section class="container" id="news-section">
+    <div class="section-header">
+      <div>
         <h2 class="section-title">Последни Новини</h2>
-        <div class="news-grid" id="news-container">
-            </div>
-    </section>
-
-    <section id="standings" style="background: white;">
-        <h2 class="section-title">Класиране 2025</h2>
-        
-        <div class="standings-controls">
-            <button class="control-btn active" onclick="switchStandings('drivers')">Пилоти</button>
-            <button class="control-btn" onclick="switchStandings('constructors')">Конструктори</button>
-        </div>
-
-        <div class="standings-table-container">
-            <table id="standings-table">
-                </table>
-        </div>
-    </section>
-
-  <section id="tech" class="tech-section">
-    <div class="tech-grid">
-        <div class="tech-visual">
-            <img src="https://motorsportmagazine.b-cdn.net/wp-content/uploads/2024/06/F1-2026-car-with-front-airflow-scaled.jpg" alt="F1 Tech 2026" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow);">
-        </div>
-        <div class="tech-text">
-            <h2 class="section-title">Технически Анализ</h2>
-            <h3>Аеродинамиката на 2026</h3>
-            <br>
-            <p>Новите 2026 регулации промениха не само пода и крилата, но и цялостната концепция на болидите. Намалената аеродинамична сложност и по-ограничените елементи по каросерията целят по-чисто състезание, докато ефектът "ground effect" остава ключов за генерирането на притискане без прекомерна турбуленция.</p>
-            <div class="tech-stats">
-                <div class="tech-stat"><h4>340+</h4><span>km/h Топ скорост</span></div>
-                <div class="tech-stat"><h4>4.5G</h4><span>Натоварване в завой</span></div>
-            </div>
-            <br><br>
-        </div>
+        <p class="section-subtitle">Актуални събития от падока и пистата</p>
+      </div>
+      
     </div>
-</section>
 
+    <div class="news-grid" id="news-cards-container"></div>
+  </section>
 
-    <section id="calendar">
-    <h2 class="section-title">Календар 2026</h2>
-
-    <div class="calendar-grid" id="calendar-container">
-        <!-- Calendar items injected by JS -->
+  <section class="container" id="standings-section">
+    <div class="section-header standings-accent">
+      <div>
+        <h2 class="section-title">Световен Шампионат 2026</h2>
+        <p class="section-subtitle">Официално класиране при пилотите и конструкторите</p>
+      </div>
+      <div class="standings-toggle-group" id="standings-toggle">
+        <button class="standings-tab-btn active" data-type="drivers">🏎️ Пилоти</button>
+        <button class="standings-tab-btn" data-type="constructors">⚙️ Конструктори</button>
+      </div>
     </div>
-</section>
 
+    <div class="standings-container">
+      <table class="standings-table">
+        <thead>
+          <tr id="standings-table-head">
+            </tr>
+        </thead>
+        <tbody id="standings-table-body">
+          </tbody>
+      </table>
+    </div>
+  </section>
 
-    <footer style="background: var(--dark-slate); color: white; padding: 3rem 10%; text-align: center;">
-        <div class="logo" style="color: white; margin-bottom: 1rem;">Formula 1 <span>Apex Fan Club</span></div>
-        <p style="color: #888;">Създадено за фенове, от фенове.</p>
-
-        <p style="color: #888;">Свържете се с нас: ffans7329@gmail.com</p>
-
-         <a href="https://www.facebook.com/profile.php?id=61582854004928">Последвайте нашата страница в Facebook Formula 1 - Apex Fan club</a>
-
-          <p style="color: #888;">© 2026Apex Fan Club. All rights reserved.</p>
-
-    </footer>
-
-    <div class="modal-overlay" id="news-modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal()">&times;</button>
-            <img src="" alt="" class="modal-header-img" id="modal-img">
-            <div class="modal-body">
-                <h2 id="modal-title" style="font-size: 2rem; margin-bottom: 1rem;"></h2>
-                <span id="modal-date" style="color: var(--f1-red); font-weight: bold; display: block; margin-bottom: 2rem;"></span>
-                <p id="modal-text" style="line-height: 1.8; color: #444; font-size: 1.1rem; white-space: pre-line;"></p>
-            </div>
+  <section class="tech-section" id="tech-section">
+    <div class="container">
+      <div class="section-header tech-accent">
+        <div>
+          <h2 class="section-title">Технически Анализ</h2>
+          <p class="section-subtitle">Аеродинамика, гуми, телеметрия и инженеринг</p>
         </div>
+      </div>
+      <div class="tech-grid" id="tech-cards-container"></div>
     </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1687295341904309"
-     crossorigin="anonymous"></script>
+  </section>
 
-    <script>
-        // --- DATA OBJECTS ---
-        
-        const newsData = [
-            {
+  <section class="container" id="calendar-section">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Състезателен Календар</h2>
+        <p class="section-subtitle">График на стартовете за сезон 2026</p>
+      </div>
+    </div>
+    <div class="calendar-list" id="calendar-cards-container"></div>
+  </section>
+
+  <div class="modal-backdrop" id="article-modal" onclick="closeArticleModal(event)">
+    <div class="modal-window" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeArticleModal()">&times;</button>
+      <img src="" alt="" class="modal-image" id="modal-img" />
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span class="modal-meta-tag" id="modal-tag">Новини</span>
+        </div>
+        <h2 class="modal-title" id="modal-title">Заглавие</h2>
+        <div class="modal-text" id="modal-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <div class="brand-title" style="color: white; margin-bottom: 0.5rem;">APEF <span>F1 CLUB</span></div>
+        <p style="color: #94a3b8; font-size: 0.9rem; max-width: 400px;">
+          Независим български портал за Формула 1 анализи, шампионатни данни и състезателни новини.
+        </p>
+      </div>
+      <div style="font-family: var(--font-display); color: #38bdf8; font-weight: 700;">
+        #ApefF1 #Formula1Bulgaria
+      </div>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Apef F1 Club. Всички права запазени.
+    </div>
+  </footer>
+
+  <script>
+const APEF_F1_DATA = {
+    nextRace: {
+      title: "Formula 1 Pirelli Gran Premio d'Italia 2026",
+      circuit: "Аутодромо Национале Монца",
+      targetDate: new Date("2026-09-06T13:00:00.000Z").toISOString()
+    }, 
+
+
+
+      standings: {
+        drivers: [
+ { "pos": 1, "name": "Кими Антонели", "team": "Mercedes", "number": "12", "teamColor": "#27f4d2", "wins": 7, "podiums": "10", "points": 242 },
+  { "pos": 2, "name": "Джордж Ръсел", "team": "Mercedes", "number": "63", "teamColor": "#27f4d2", "wins": 2, "podiums": "6", "points": 183 },
+  { "pos": 3, "name": "Люис Хамилтън", "team": "Ferrari", "number": "44", "teamColor": "#dc0000", "wins": 1, "podiums": "5", "points": 183 },
+  { "pos": 4, "name": "Ландо Норис", "team": "McLaren", "number": "1", "teamColor": "#ff8000", "wins": 2, "podiums": "4", "points": 159 },
+  { "pos": 5, "name": "Шарл Леклер", "team": "Ferrari", "number": "16", "teamColor": "#dc0000", "wins": 1, "podiums": "4", "points": 155 },
+  { "pos": 6, "name": "Макс Верстапен", "team": "Red Bull", "number": "3", "teamColor": "#1e41ff", "wins": 0, "podiums": "4", "points": 112 },
+  { "pos": 7, "name": "Оскар Пиастри", "team": "McLaren", "number": "81", "teamColor": "#ff8000", "wins": 0, "podiums": "2", "points": 104 },
+  { "pos": 8, "name": "Исак Хаджар", "team": "Red Bull", "number": "20", "teamColor": "#1e41ff", "wins": 0, "podiums": "N/A", "points": 68 },
+  { "pos": 9, "name": "Лиам Лоусън", "team": "Racing Bulls", "number": "30", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 49 },
+  { "pos": 10, "name": "Пиер Гасли", "team": "Alpine", "number": "10", "teamColor": "#0090ff", "wins": 0, "podiums": "1", "points": 44 },
+  { "pos": 11, "name": "Арвид Линдблад", "team": "Racing Bulls", "number": "41", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 23 },
+  { "pos": 12, "name": "Франко Колапинто", "team": "Alpine", "number": "43", "teamColor": "#0090ff", "wins": 0, "podiums": "N/A", "points": 19 },
+  { "pos": 13, "name": "Оливър Беърман", "team": "Haas", "number": "87", "teamColor": "#ffffff", "wins": 0, "podiums": "N/A", "points": 18 },
+  { "pos": 14, "name": "Габриел Борто-лето", "team": "Audi", "number": "5", "teamColor": "#8c0000", "wins": 0, "podiums": "N/A", "points": 10 },
+  { "pos": 15, "name": "Нико Хюлкенберг", "team": "Audi", "number": "27", "teamColor": "#8c0000", "wins": 0, "podiums": "N/A", "points": 6 },
+  { "pos": 16, "name": "Карлос Сайнц", "team": "Williams", "number": "55", "teamColor": "#00a0dd", "wins": 0, "podiums": "N/A", "points": 6 },
+  { "pos": 17, "name": "Александър Албон", "team": "Williams", "number": "23", "teamColor": "#00a0dd", "wins": 0, "podiums": "N/A", "points": 5 },
+  { "pos": 18, "name": "Естебан Окон", "team": "Haas", "number": "31", "teamColor": "#ffffff", "wins": 0, "podiums": "N/A", "points": 3 },
+  { "pos": 19, "name": "Фернандо Алонсо", "team": "Aston Martin", "number": "14", "teamColor": "#006f62", "wins": 0, "podiums": "N/A", "points": 3 },
+  { "pos": 20, "name": "Юки Цунода", "team": "Racing Bulls", "number": "22", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 0 },
+  { "pos": 21, "name": "Ланс Строл", "team": "Aston Martin", "number": "18", "teamColor": "#006f62", "wins": 0, "podiums": "N/A", "points": 0 },
+  { "pos": 22, "name": "Валтери Ботас", "team": "Cadillac", "number": "77", "teamColor": "#b30000", "wins": 0, "podiums": "N/A", "points": 0 },
+  { "pos": 23, "name": "Серхио Перес", "team": "Cadillac", "number": "11", "teamColor": "#b30000", "wins": 0, "podiums": "N/A", "points": 0 }
+        ],
+        constructors: [
+             { "pos": 1, "team": "Mercedes-AMG Petronas", "engine": "Mercedes", "teamColor": "#27f4d2", "wins": 8, "podiums": 16, "points": 425 },
+  { "pos": 2, "team": "Scuderia Ferrari", "engine": "Ferrari", "teamColor": "#dc0000", "wins": 2, "podiums": 9, "points": 338 },
+  { "pos": 3, "team": "McLaren F1 Team", "engine": "Mercedes", "teamColor": "#ff8000", "wins": 2, "podiums": 6, "points": 263 },
+  { "pos": 4, "team": "Red Bull Racing", "engine": "Ford / RBPT", "teamColor": "#0254ec", "wins": 0, "podiums": 4, "points": 186 },
+  { "pos": 5, "team": "Racing Bulls", "engine": "Honda RBPT", "teamColor": "#1e5bc6", "wins": 0, "podiums": 0, "points": 66 },
+  { "pos": 6, "team": "Alpine F1 Team", "engine": "Renault", "teamColor": "#0090ff", "wins": 0, "podiums": 1, "points": 63 },
+  { "pos": 7, "team": "Haas F1 Team", "engine": "Ferrari", "teamColor": "#ffffff", "wins": 0, "podiums": 0, "points": 21 },
+  { "pos": 8, "team": "Audi Revolut F1 Team", "engine": "Audi", "teamColor": "#e10600", "wins": 0, "podiums": 0, "points": 16 },
+  { "pos": 9, "team": "Williams Racing", "engine": "Mercedes", "teamColor": "#00a0dd", "wins": 0, "podiums": 0, "points": 11 },
+  { "pos": 10, "team": "Aston Martin Aramco", "engine": "Honda", "teamColor": "#00665e", "wins": 0, "podiums": 0, "points": 3 },
+  { "pos": 11, "team": "Cadillac F1 Team", "engine": "Cadillac", "teamColor": "#b30000", "wins": 0, "podiums": 0, "points": 0 }
+        ]
+      },
+
+      news: [
+       {
     title: "Джордж Ръсел също е пред наказание за смяна на двигател – но Мерцедес още не е решил кога"  ,
     date: "2026-08-30",
     image: "https://i.pinimg.com/736x/6f/ec/f8/6fecf8dfbf85c5881ab33a5cd5e5a122.jpg",
@@ -14234,587 +14625,286 @@ Red Bull и Верстапен ще са разочаровани — зад Mer
 След приключването на спринта фокусът се измества към квалификацията и основното състезание. Норис ще се стреми да запази инерцията, докато Пиастри трябва бързо да се възстанови. Шампионатът е далеч от решен, но този уикенд леко накланя везните в полза на Норис.
 `
   },
-        ];
+      ],
 
-        const driversData = [
-  { "pos": 1, "name": "Андреа Кими Антонели", "code": "ANT", "nationality": "ITA", "team": "Мерцедес", "points": 242, "wins": 6, "poles": 6, "photo": "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000001/fom-website/2025/Mexico/GettyImages-2243232001.webp" },
+      techAnalysis: [
+  {
+    id: "tech-1",
+    tag: "Аеродинамика 2026",
+    title: "Active Aero & Компактни крила",
+    desc: "Новият регламент премахва активната аеродинамика и намалява зависимостта от пода.",
+    telemetry: { 
+      param1: "Притискане: ~30% по-малко спрямо 2025", 
+      param2: "Ефективност: 2.1 L/D (ограничена)" 
+    },
+    text: "Болидите за 2026 разчитат на по-малки крила, по-опростени елементи и намален ground effect. Целта е по-лесно следване и по-малко турбулентен въздух."
+  },
 
-  { "pos": 2, "name": "Джордж Ръсел", "code": "RUS", "nationality": "GBR", "team": "Мерцедес", "points": 183, "wins": 2, "poles": 4, "photo": "https://www.motorsportweek.com/wp-content/uploads/2025/07/George-Russell-Mercedes.webp" },
+  {
+    id: "tech-2",
+    tag: "Гуми 2026",
+    title: "По-тесни гуми & ново поведение",
+    desc: "Променена конструкция, по-ниско механично сцепление и по-динамично управление.",
+    telemetry: { 
+      param1: "Температурен прозорец: 10°C по-тесен", 
+      param2: "Grip Loss: ~18%" 
+    },
+    text: "Новите гуми изискват по-прецизно дозиране на газ и спирачки. Болидите са по-нервни, а пилотите компенсират с по-агресивни корекции."
+  },
 
-  { "pos": 3, "name": "Люис Хамилтън", "code": "HAM", "nationality": "GBR", "team": "Ферари", "points": 183, "wins": 1, "poles": 0, "photo": "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000001/trackside-images/2026/Formula_1_Testing_in_Bahrain___Day_1/2262281471.webp" },
+  {
+    id: "tech-3",
+    tag: "Телеметрия 2026",
+    title: "Опростена ERS система",
+    desc: "MGU-H е премахнат, а електрическият компонент е увеличен.",
+    telemetry: { 
+      param1: "ERS Output: +50% електрическа мощност", 
+      param2: "MGU-K Recovery: ограничено" 
+    },
+    text: "Екипите разполагат с по-малко данни в реално време, което увеличава ролята на пилота. Управлението на енергията става по-трудно и по-непредвидимо."
+  },
 
-  { "pos": 4, "name": "Ландо Норис", "code": "NOR", "nationality": "GBR", "team": "Макларън", "points": 159, "wins": 2, "poles": 2, "photo": "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000001/trackside-images/2026/Formula_1_Testing_in_Bahrain___Day_2/2261225705.webp" },
-
-  { "pos": 5, "name": "Шарл Леклер", "code": "LEC", "nationality": "MON", "team": "Ферари", "points": 155, "wins": 1, "poles": 0, "photo": "https://www.motorsportweek.com/wp-content/uploads/2026/01/Charles-Leclerc-Ferrari-1.webp" },
-
-  { "pos": 6, "name": "Макс Верстапен", "code": "VER", "nationality": "NED", "team": "Ред Бул", "points": 112, "wins": 0, "poles": 0, "photo": "https://www.autohebdo.fr/app/uploads/2026/02/max-verstappen-bahrein-essais-2-753x494.jpg" },
-
-  { "pos": 7, "name": "Оскар Пиастри", "code": "PIA", "nationality": "AUS", "team": "Макларън", "points": 104, "wins": 0, "poles": 0, "photo": "https://www.motorsportweek.com/wp-content/uploads/2026/03/Oscar-Piastri-McLaren-F1-2026.webp" },
-
-  { "pos": 8, "name": "Исак Хаджар", "code": "HAD", "nationality": "FRA", "team": "Ред Бул", "points": 68, "wins": 0, "poles": 0, "photo": "https://www.motorsportweek.com/wp-content/uploads/2026/02/Isack-Hadjar-Red-Bull-F1-2026.webp" },
-
-  { "pos": 9, "name": "Лиам Лоусън", "code": "LAW", "nationality": "NZL", "team": "Рейсинг Бул", "points": 49, "wins": 0, "poles": 0, "photo": "https://www.motorsportweek.com/wp-content/uploads/2026/02/Liam-Lawson-F1-Bahrain-Testing-1.webp" },
-
-  { "pos": 10, "name": "Пиер Гасли", "code": "GAS", "nationality": "FRA", "team": "Алпин", "points": 44, "wins": 0, "poles": 0, "photo": "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000001/trackside-images/2025/F1_Grand_Prix_of_Italy___Previews/2233667507.webp" },
-
-  { "pos": 11, "name": "Арвид Линблад", "code": "LIN", "nationality": "GBR", "team": "Рейсинг Булс", "points": 23, "wins": 0, "poles": 0, "photo": "https://media.formula1.com/image/upload/t_16by9North/f_auto/q_auto/v1765256499/trackside-images/2025/Formula_1_Testing_in_Abu_Dhabi/2250864781.jpg" },
-
-  { "pos": 12, "name": "Франко Колапинто", "code": "COL", "nationality": "ARG", "team": "Алпин", "points": 19, "wins": 0, "poles": 0, "photo": "https://www.autohebdo.fr/app/uploads/2025/11/franco-colapinto-alpine-753x494.jpg" },
-
-  { "pos": 13, "name": "Оливър Беарман", "code": "BEA", "nationality": "GBR", "team": "Хаас", "points": 18, "wins": 0, "poles": 0, "photo": "https://www.motorsportweek.com/wp-content/uploads/2025/12/Bearman.webp" },
-
-  { "pos": 14, "name": "Габриел Бортолето", "code": "BOR", "nationality": "BRA", "team": "Заубер", "points": 10, "wins": 0, "poles": 0, "photo": "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000001/fom-website/2026/Audi/16x9%20single%20image%20(46).webp" },
-
-  { "pos": 15, "name": "Нико Хюлкенберг", "code": "HUL", "nationality": "GER", "team": "Заубер", "points": 6, "wins": 0, "poles": 0, "photo": "https://www.autohebdo.fr/app/uploads/2026/01/Team_Driver_HUL_04-753x494.jpg" },
-
-  { "pos": 16, "name": "Карлос Сайнц", "code": "SAI", "nationality": "ESP", "team": "Уилямс", "points": 6, "wins": 0, "poles": 0, "photo": "https://www.autohebdo.fr/app/uploads/2026/02/DPPI_00125027_205-2-753x494.jpg" },
-
-  { "pos": 17, "name": "Алекс Албон", "code": "ALB", "nationality": "THA", "team": "Уилямс", "points": 5, "wins": 0, "poles": 0, "photo": "https://lh3.googleusercontent.com/proxy/n6GhbbRY39nAg8pAjEaGlGHTHcXHmzslotJELxPx7bYZ5iQK-OTEOWhz9UpCv2-LEoMOKRDMTd9kt154MbPNIL-Slz6vyOK_T_qkVtITmMhzLFhYAiroXAt2uerzGQq7XFwAtcCHFfWonwnJMMJsqlcswTV1NjKC2qoZf5wjxazIoRWZZmchKd8" },
-
-  { "pos": 18, "name": "Естебан Окон", "code": "OCO", "nationality": "FRA", "team": "Хаас", "points": 3, "wins": 0, "poles": 0, "photo": "https://www.autohebdo.fr/app/uploads/2026/01/DPPI_00125023_203-2.jpg" },
-
-  { "pos": 19, "name": "Фернандо Алонсо", "code": "ALO", "nationality": "ESP", "team": "Астън Мартин", "points": 3, "wins": 0, "poles": 0, "photo": "https://www.autohebdo.fr/app/uploads/2025/04/DPPI_00125008_166-753x494.jpg" },
-
-  { "pos": 20, "name": "Юки Цунода", "code": "TSU", "nationality": "JAP", "team": "Рейсинг БУулс", "points": 0, "wins": 0, "poles": 0, "photo": "https://i.pinimg.com/736x/d2/e7/19/d2e719084afc06335e3bff981c54f953.jpg" },
-
-  { "pos": 21, "name": "Ланс Строл", "code": "STR", "nationality": "CAN", "team": "Астън Мартин", "points": 0, "wins": 0, "poles": 0, "photo": "https://cdn.motorsport.com/images/mgl/6b8j9Ev2/s1000/lance-stroll-aston-martin-raci.jpg" },
-
-  { "pos": 22, "name": "Валтери Ботас", "code": "BOT", "nationality": "FIN", "team": "Кадилак", "points": 0, "wins": 0, "poles": 0, "photo": "https://cdn-1.motorsport.com/images/amp/0Ld5zym0/s1000/valtteri-bottas-cadillac-racin.webp" },
-
-  { "pos": 23, "name": "Серхио Перес", "code": "PER", "nationality": "MEX", "team": "Кадилак", "points": 0, "wins": 0, "poles": 0, "photo": "https://s3-newsifier.ams3.digitaloceanspaces.com/grandprix247.com/images/2026-02/perez-cadillac-2026-69895e29e5779.jpg" },
-
- 
-  
-
-  
-
- 
-];
+  {
+    id: "tech-4",
+    tag: "Инженеринг 2026",
+    title: "Компактни болиди & ново охлаждане",
+    desc: "Болидите са по-къси, по-леки и с променени понтони.",
+    telemetry: { 
+      param1: "Маса: -30 kg", 
+      param2: "Охлаждане: +12% ефективност" 
+    },
+    text: "Екипите оптимизират въздушните канали, понтоните и охлаждането за новите силови агрегати. Балансът на болида е променен и изисква нови концепции."
+  }
+],
 
 
-        const constructorsData = [
+      calendar: [
+{ round: "Кръг 01", country: "Австралия", circuit: "Мелбърн Парк", date: "06 - 08 Март", upcoming: false },
+{ round: "Кръг 02", country: "Китай", circuit: "Шанхай Интернешънъл Съркюит", date: "13 - 15 Март", upcoming: false },
+{ round: "Кръг 03", country: "Япония", circuit: "Сузука", date: "25 - 27 Март", upcoming: false },
+{ round: "Кръг 04", country: "САЩ", circuit: "Маями Интернешънъл Аутодром", date: "01 - 03 Май", upcoming: false },
+{ round: "Кръг 05", country: "Канада", circuit: "Писта Жил Вилньов", date: "22 - 24 Май", upcoming: false },
+{ round: "Кръг 06", country: "Монако", circuit: "Монте Карло", date: "05 - 07 Юни", upcoming: false },
+{ round: "Кръг 07", country: "Испания", circuit: "Каталуния", date: "12 - 14 Юни", upcoming: false },
+{ round: "Кръг 08", country: "Австрия", circuit: "Ред Бул Ринг", date: "26 - 28 Юни", upcoming: false },
+{ round: "Кръг 09", country: "Великобритания", circuit: "Силвърстоун", date: "03 - 05 Юли", upcoming: false },
+{ round: "Кръг 10", country: "Белгия", circuit: "Спа-Франкоршамп", date: "17 - 19 Юли", upcoming: false },
+{ round: "Кръг 11", country: "Унгария", circuit: "Хунгароринг", date: "24 - 26 Юли", upcoming: false },
+{ round: "Кръг 12", country: "Нидерландия", circuit: "Зандворт", date: "21 - 23 Август", upcoming: false },
 
+{ round: "Кръг 13", country: "Италия", circuit: "Аутодромо Национале Монца", date: "04 - 06 Септември", upcoming: true },
 
-  { "pos": 1, "name": "Мерцедес", "points": 425, "wins": 8, "drivers": ["George Russell", "Kimi Antonelli"], "photo": "https://images.ctfassets.net/1fvlg6xqnm65/6SsQDb4D1Ixx99OjHoDtbC/590b2a46b5090221a46fb5ac52279309/F1-2025-IMAGE-2.jpg?w=1920&q=75&fm=webp" },
+{ round: "Кръг 14", country: "Испания", circuit: "Мадрид", date: "11 - 13 Септември", upcoming: false },
+{ round: "Кръг 15", country: "Азербайджан", circuit: "Баку Сити Съркюит", date: "25 - 27 Септември", upcoming: false },
+{ round: "Кръг 16", country: "Сингапур", circuit: "Марина Бей", date: "09 - 11 Октомври", upcoming: false },
+{ round: "Кръг 17", country: "САЩ", circuit: "Писта на Америките", date: "23 - 25 Октомври", upcoming: false },
+{ round: "Кръг 18", country: "Мексико", circuit: "Аутодромо Ерманос Родригес", date: "30 Окт - 01 Ное", upcoming: false },
+{ round: "Кръг 19", country: "Бразилия", circuit: "Интерлагос", date: "06 - 08 Ноември", upcoming: false },
+{ round: "Кръг 20", country: "САЩ", circuit: "Лас Вегас Стрип Съркюит", date: "20 - 22 Ноември", upcoming: false },
+{ round: "Кръг 21", country: "Катар", circuit: "Лусайл", date: "27 - 29 Ноември", upcoming: false },
+{ round: "Кръг 22", country: "ОАЕ", circuit: "Яс Марина", date: "04 - 06 Декември", upcoming: false }
 
-  { "pos": 2, "name": "Ферари", "points": 3338, "wins": 2, "drivers": ["Charles Leclerc", "Lewis Hamilton"], "photo": "https://trf1.net/wp-content/uploads/2025/02/Charles-Leclerc-Ferrari-1-1-e1739960243357.jpeg" },
+      ]
+    };
 
-  { "pos": 3, "name": "Макларън", "points": 263, "wins": 2, "drivers": ["Oscar Piastri", "Lando Norris"], "photo": "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp" },
+    function renderStandings(type = 'drivers') {
+      const thead = document.getElementById('standings-table-head');
+      const tbody = document.getElementById('standings-table-body');
+      tbody.innerHTML = '';
 
-  { "pos": 4, "name": "Ред Бул", "points": 186, "wins": 0, "drivers": ["Max Verstappen", "Isack Hadjar"], "photo": "https://cdn.racingnews365.com/2025/Verstappen/_1092x683_crop_center-center_85_none/Verstappen-Bahrain-testing.jpg?v=1740576626" },
+      if (type === 'drivers') {
+        thead.innerHTML = `
+          <th style="width: 70px;">Поз.</th>
+          <th>Пилот & Отбор</th>
+          <th style="text-align: center;">Победи</th>
+          <th style="text-align: center;">Подиуми</th>
+          <th style="width: 220px; text-align: right;">Точки</th>
+        `;
 
-  { "pos": 5, "name": "Рейсинг Булс", "points": 66, "wins": 0, "drivers": ["Arvid Linblad", "Liam Lawson"], "photo": "https://media.tudorwatch.com/image/upload/v1/tudormag/SI202503140201" },
+        const maxPoints = APEF_F1_DATA.standings.drivers[0].points;
 
-  { "pos": 6, "name": "Алпин", "points": 63, "wins": 0, "drivers": ["Piere Gasly", "Franco Colapinto"], "photo": "https://upload.wikimedia.org/wikipedia/commons/a/ae/FIA_F1_Austria_2025_Nr._10_Gasly.jpg" },
-
-  { "pos": 7, "name": "Хаас", "points": 21, "wins": 0, "drivers": ["Oliver Bearman", "Esteban Ocon"], "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f8/FIA_F1_Austria_2025_Nr._87_Bearman.jpg" },
-
-  { "pos": 8, "name": "Ауди", "points": 16, "wins": 0, "drivers": ["Nico Hulkenberg", "Gabriel Bortoleto"], "photo": "https://upload.wikimedia.org/wikipedia/commons/9/9e/2025_Japan_GP_-_Sauber_-_Nico_Hulkenberg_-_FP1.jpg" },
-
-  { "pos": 8, "name": "Уилямс", "points": 11, "wins": 0, "drivers": ["Alexander Albon", "Carlos Sainz"], "photo": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Williams/williams-2025-launch-6.webp" },
-
-  { "pos": 10, "name": "Астън Мартин", "points": 3, "wins": 0, "drivers": ["Fernando Alonso", "Lance Stroll"], "photo": "https://upload.wikimedia.org/wikipedia/commons/3/33/2025_Japan_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP1.jpg" },
-
-  { "pos": 11, "name": "Кадилак", "points": 0, "wins": 0, "drivers": ["Sergio Perez", "Valteri Bottas"], "photo": "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_of_Netherlands/2233042195.webp" },
-
-
-
-
-
-
-        ];
-   const calendarData = [
-    { round: 1,  name: "Australian Grand Prix", date: "8 March 2026", location: "Melbourne, Australia" },
-    { round: 2,  name: "Chinese Grand Prix", date: "15 March 2026", location: "Shanghai, China" },
-    { round: 3,  name: "Japanese Grand Prix", date: "27 March 2026", location: "Suzuka, Japan" },
-    { round: 4,  name: "Miami Grand Prix", date: "3 May 2026", location: "Miami, USA" },
-    { round: 5,  name: "Canadian Grand Prix", date: "24 May 2026", location: "Montreal, Canada" },
-    { round: 6,  name: "Monaco Grand Prix", date: "7 June 2026", location: "Monte Carlo, Monaco" },
-    { round: 7, name: "Spanish Grand Prix", date: "14 June 2026", location: "Barcelona, Spain" },
-    { round: 8, name: "Austrian Grand Prix", date: "28 June 2026", location: "Spielberg, Austria" },
-    { round: 9, name: "British Grand Prix", date: "5 July 2026", location: "Silverstone, UK" },
-    { round: 10, name: "Belgian Grand Prix", date: "19 July 2026", location: "Spa-Francorchamps, Belgium" },
-    { round: 11, name: "Hungarian Grand Prix", date: "26 July 2026", location: "Budapest, Hungary" },
-    { round: 12, name: "Dutch Grand Prix", date: "23 August 2026", location: "Zandvoort, Netherlands" },
-    { round: 13, name: "Italian Grand Prix", date: "6 September 2026", location: "Monza, Italy" },
-    { round: 14, name: "Madrid Grand Prix", date: "13 September 2026", location: "Madrid, Spain" },
-    { round: 15, name: "Azerbaijan Grand Prix", date: "26 September 2026", location: "Baku, Azerbaijan" },
-    { round: 16, name: "Singapore Grand Prix", date: "11 October 2026", location: "Singapore" },
-    { round: 17, name: "United States Grand Prix", date: "25 October 2026", location: "Austin, USA" },
-    { round: 18, name: "Mexico City Grand Prix", date: "1 November 2026", location: "Mexico City, Mexico" },
-    { round: 19, name: "São Paulo Grand Prix", date: "8 November 2026", location: "São Paulo, Brazil" },
-    { round: 20, name: "Las Vegas Grand Prix", date: "21 November 2026", location: "Las Vegas, USA" },
-    { round: 21, name: "Qatar Grand Prix", date: "29 November 2026", location: "Lusail, Qatar" },
-    { round: 22, name: "Abu Dhabi Grand Prix", date: "6 December 2026", location: "Yas Marina, UAE" }
-];
-
-function renderCalendar() {
-    const container = document.getElementById("calendar-container");
-    container.innerHTML = calendarData.map(race => `
-        <div class="race-card">
-            <div class="race-round">Round ${race.round}</div>
-            <div class="race-name">${race.name}</div>
-            <div class="race-date">${race.date}</div>
-            <div class="race-location">
-                <i class="fas fa-location-dot"></i> ${race.location}
-            </div>
-        </div>
-    `).join("");
-}
-
-        
-
-        // --- RENDER FUNCTIONS ---
-
-        function renderNews() {
-            const container = document.getElementById('news-container');
-            container.innerHTML = newsData.map((item, index) => `
-                <article class="news-card" onclick="openModal(${index})">
-                    <img src="${item.image}" alt="${item.title}" class="news-image">
-                    <div class="news-content">
-                        <span class="news-date">${item.date}</span>
-                        <h3 class="news-title">${item.title}</h3>
-                        <button class="read-more-btn">
-                            Прочети Още <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </article>
-            `).join('');
-        }
-
-        function switchStandings(type) {
-            const table = document.getElementById('standings-table');
-            const btns = document.querySelectorAll('.control-btn');
-            
-            // Toggle active class
-            btns.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            if(type === 'drivers') {
-                table.innerHTML = `
-                    <thead>
-                        <tr>
-                            <th>Поз</th>
-                            <th>Пилот</th>
-                            <th>Отбор</th>
-                            <th>Победи</th>
-                            <th>Точки</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${driversData.map(d => `
-                            <tr>
-                                <td><span class="pos-badge pos-${d.pos}">${d.pos}</span></td>
-                                <td>
-                                    <div class="driver-cell">
-                                        <img src="${d.photo}" class="driver-photo">
-                                        <div>
-                                            <div>${d.name}</div>
-                                            <small style="color:#888">${d.code}</small>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>${d.team}</td>
-                                <td>${d.wins}</td>
-                                <td style="font-weight: 800; color: var(--f1-red);">${d.points}</td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                `;
-            } else {
-                table.innerHTML = `
-                    <thead>
-                        <tr>
-                            <th>Поз</th>
-                            <th>Отбор</th>
-                            <th>Победи</th>
-                            <th>Точки</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${constructorsData.map(c => `
-                            <tr>
-                                <td><span class="pos-badge pos-${c.pos}">${c.pos}</span></td>
-                                <td style="font-weight:700; font-size: 1.1rem;">${c.name}</td>
-                                <td>${c.wins}</td>
-                                <td style="font-weight: 800; color: var(--f1-red);">${c.points}</td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                `;
-            }
-        }
-
-        // --- MODAL LOGIC ---
-        
-        function openModal(index) {
-            const item = newsData[index];
-            document.getElementById('modal-img').src = item.image;
-            document.getElementById('modal-title').innerText = item.title;
-            document.getElementById('modal-date').innerText = item.date;
-            document.getElementById('modal-text').innerText = item.text;
-            
-            document.getElementById('news-modal').classList.add('active');
-            document.body.style.overflow = 'hidden'; // Stop background scrolling
-        }
-
-        function closeModal() {
-            document.getElementById('news-modal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close when clicking outside content
-        document.getElementById('news-modal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
+        APEF_F1_DATA.standings.drivers.forEach(d => {
+          const percentage = Math.round((d.points / maxPoints) * 100);
+          const tr = document.createElement('tr');
+          tr.className = `standings-row pos-${d.pos}`;
+          
+          tr.innerHTML = `
+            <td class="pos-cell">
+              <span class="pos-badge">${d.pos}</span>
+            </td>
+            <td>
+              <div class="driver-cell-content">
+                <div class="team-color-indicator" style="background-color: ${d.teamColor};"></div>
+                <div class="driver-name-wrap">
+                  <div class="driver-full-name">
+                    ${d.name} <span class="driver-racing-num">#${d.number}</span>
+                  </div>
+                  <span class="driver-team-sub">${d.team}</span>
+                </div>
+              </div>
+            </td>
+            <td style="text-align: center; font-family: var(--font-display); font-weight: 600;">${d.wins}</td>
+            <td style="text-align: center; font-family: var(--font-display); font-weight: 600;">${d.podiums}</td>
+            <td style="text-align: right;">
+              <div class="points-total">${d.points} PTS</div>
+              <div class="points-bar-container" style="margin-left: auto;">
+                <div class="points-bar-fill" style="width: ${percentage}%;"></div>
+              </div>
+            </td>
+          `;
+          tbody.appendChild(tr);
         });
-        // --- MOBILE MENU LOGIC ---
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        const navItems = document.querySelectorAll('.nav-links a');
+      } else {
+        thead.innerHTML = `
+          <th style="width: 70px;">Поз.</th>
+          <th>Конструктор / Двигател</th>
+          <th style="text-align: center;">Победи</th>
+          <th style="text-align: center;">Подиуми</th>
+          <th style="width: 220px; text-align: right;">Точки</th>
+        `;
 
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('nav-active');
-            
-            // Toggle icon between hamburger (bars) and close (times)
-            const icon = mobileMenu.querySelector('i');
-            if(navLinks.classList.contains('nav-active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+        const maxPoints = APEF_F1_DATA.standings.constructors[0].points;
+
+        APEF_F1_DATA.standings.constructors.forEach(c => {
+          const percentage = Math.round((c.points / maxPoints) * 100);
+          const tr = document.createElement('tr');
+          tr.className = `standings-row pos-${c.pos}`;
+          
+          tr.innerHTML = `
+            <td class="pos-cell">
+              <span class="pos-badge">${c.pos}</span>
+            </td>
+            <td>
+              <div class="driver-cell-content">
+                <div class="team-color-indicator" style="background-color: ${c.teamColor};"></div>
+                <div class="driver-name-wrap">
+                  <div class="driver-full-name">${c.team}</div>
+                  <span class="driver-team-sub">Задвижващ агрегат: ${c.engine}</span>
+                </div>
+              </div>
+            </td>
+            <td style="text-align: center; font-family: var(--font-display); font-weight: 600;">${c.wins}</td>
+            <td style="text-align: center; font-family: var(--font-display); font-weight: 600;">${c.podiums}</td>
+            <td style="text-align: right;">
+              <div class="points-total">${c.points} PTS</div>
+              <div class="points-bar-container" style="margin-left: auto;">
+                <div class="points-bar-fill" style="width: ${percentage}%;"></div>
+              </div>
+            </td>
+          `;
+          tbody.appendChild(tr);
         });
+      }
+    }
 
-        // Close mobile menu when a link is clicked
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('nav-active');
-                const icon = mobileMenu.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
+    document.getElementById('standings-toggle').addEventListener('click', (e) => {
+      const btn = e.target.closest('.standings-tab-btn');
+      if (btn) {
+        document.querySelectorAll('.standings-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderStandings(btn.dataset.type);
+      }
+    });
 
-       // --- COUNTDOWN LOGIC (JAPAN 2026, BULGARIAN TIME) ---
-function startCountdown() {
-    // Bulgarian time: 28 June 2026, 16:00 (UTC+3)
-    // UTC equivalent: 13:00
-    const countDownDate = new Date("2026-09-06T13:00:00Z").getTime();
-
-    setInterval(function () {
+    function initCountdown() {
+      const target = new Date(APEF_F1_DATA.nextRace.targetDate).getTime();
+      const updateTimer = () => {
         const now = new Date().getTime();
-        const distance = countDownDate - now;
+        const diff = target - now;
+        if (diff <= 0) return;
 
-        if (distance < 0) return;
+        document.getElementById('timer-days').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+        document.getElementById('timer-hours').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+        document.getElementById('timer-minutes').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        document.getElementById('timer-seconds').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+      };
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    }
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    function renderNews() {
+      const container = document.getElementById('news-cards-container');
+      container.innerHTML = '';
+      APEF_F1_DATA.news.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'f1-card';
+        card.onclick = () => openArticleModal(item);
+        card.innerHTML = `
+          <div class="f1-card-img-wrapper">
+            <span class="card-badge">${item.category}</span>
+            <img src="${item.image}" alt="${item.title}" class="f1-card-img" />
+          </div>
+          <div class="f1-card-content">
+            <div class="card-date">${item.date}</div>
+            <h3 class="card-title">${item.title}</h3>
+            <p class="card-excerpt">${item.excerpt}</p>
+            <div class="card-footer"><span class="card-read-more">Пълен анализ &rarr;</span></div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
 
-        document.getElementById("days").innerText = String(days).padStart(2, "0");
-        document.getElementById("hours").innerText = String(hours).padStart(2, "0");
-        document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
-        document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
-    }, 1000);
-}
+    function renderTech() {
+      const container = document.getElementById('tech-cards-container');
+      container.innerHTML = '';
+      APEF_F1_DATA.techAnalysis.forEach(tech => {
+        const card = document.createElement('div');
+        card.className = 'tech-card';
+        card.onclick = () => openArticleModal({
+          title: tech.title, category: tech.tag, date: "Технически доклад", image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=900&q=80", text: tech.text
+        });
+        card.innerHTML = `
+          <div class="tech-header"><span class="tech-indicator">● ${tech.tag}</span></div>
+          <h3 class="tech-title">${tech.title}</h3>
+          <p class="tech-desc">${tech.desc}</p>
+          <div class="telemetry-preview">
+            <div class="telemetry-item"><span>Параметър 1</span><strong>${tech.telemetry.param1}</strong></div>
+            <div class="telemetry-item"><span>Параметър 2</span><strong>${tech.telemetry.param2}</strong></div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
 
+    function renderCalendar() {
+      const container = document.getElementById('calendar-cards-container');
+      container.innerHTML = '';
+      APEF_F1_DATA.calendar.forEach(race => {
+        const card = document.createElement('div');
+        card.className = `race-card ${race.upcoming ? 'upcoming' : ''}`;
+        card.innerHTML = `
+          <div class="race-round">${race.round}</div>
+          <h3 class="race-country">${race.country}</h3>
+          <div class="race-circuit">${race.circuit}</div>
+          <div class="race-date-badge">${race.date}</div>
+        `;
+        container.appendChild(card);
+      });
+    }
 
+    function openArticleModal(item) {
+      document.getElementById('modal-img').src = item.image;
+      document.getElementById('modal-title').innerText = item.title;
+      document.getElementById('modal-tag').innerText = item.category;
+      document.getElementById('modal-date').innerText = item.date;
+      document.getElementById('modal-content').innerText = item.text;
+      document.getElementById('article-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
 
+    function closeArticleModal() {
+      document.getElementById('article-modal').classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
 
-
-
-        // --- INITIALIZATION ---
-        
-window.onload = function() {
-    renderNews();
-    renderCalendar();
-    document.querySelector('.control-btn.active').click();
-    startCountdown();
-};
-
-
-    </script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T9LBJ9E6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-S4T9LBJ9E6');
-</script>
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="535f28bb-94b2-410f-a587-b5bbea55db83" data-blockingmode="auto" type="text/javascript"></script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initCountdown();
+      renderNews();
+      renderStandings('drivers');
+      renderTech();
+      renderCalendar();
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
