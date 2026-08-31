@@ -3,23 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apef F1 Club | Премиум Формула 1 Преживяване</title>
+  <title>Apex F1 Club | Премиум Формула 1 Преживяване</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
-    /* ==========================================================================
-       1. ДИЗАЙН СИСТЕМА И ПРОМЕНЛИВИ (БЕЗ ЧИСТО ЧЕРНО #000000)
-       ========================================================================== */
     :root {
       --bg-main: #f8fafc;
       --bg-surface: #ffffff;
       --bg-subtle: #f1f5f9;
       --bg-glass: rgba(255, 255, 255, 0.88);
       
-      --navy-deep: #0b1329;       /* Тъмен нюанс вместо черно */
+      --navy-deep: #0b1329;
       --navy-card: #111e38;       
       --blue-royal: #1d4ed8;      
       --blue-electric: #2563eb;   
@@ -76,9 +73,6 @@
         radial-gradient(at 0% 100%, rgba(29, 78, 216, 0.05) 0px, transparent 50%);
     }
 
-    /* ==========================================================================
-       2. НАВИГАЦИЯ И ХЕДЪР
-       ========================================================================== */
     .navbar {
       position: sticky;
       top: 0;
@@ -167,9 +161,6 @@
       width: 100%;
     }
 
-    /* ==========================================================================
-       3. HERO СЕКЦИЯ С HUD ТАЙМЕР
-       ========================================================================== */
     .hero-section {
       position: relative;
       padding: 4.5rem 1.5rem 3.5rem;
@@ -329,9 +320,6 @@
       letter-spacing: 1px;
     }
 
-    /* ==========================================================================
-       4. ОБЩИ СТИЛОВЕ ЗА СЕКЦИИ И ТАБОВЕ
-       ========================================================================== */
     .container {
       max-width: 1280px;
       margin: 0 auto;
@@ -372,7 +360,7 @@
       margin-top: 4px;
     }
 
-    .filter-pills, .standings-toggle-group {
+    .standings-toggle-group {
       display: flex;
       gap: 10px;
       background: #e2e8f0;
@@ -380,7 +368,7 @@
       border-radius: var(--radius-full);
     }
 
-    .filter-btn, .standings-tab-btn {
+    .standings-tab-btn {
       background: transparent;
       border: none;
       padding: 8px 20px;
@@ -395,15 +383,12 @@
       letter-spacing: 0.5px;
     }
 
-    .filter-btn.active, .standings-tab-btn.active {
+    .standings-tab-btn.active {
       background: var(--blue-royal);
       color: var(--text-light);
       box-shadow: var(--shadow-glow-blue);
     }
 
-    /* ==========================================================================
-       5. КАРТИ ЗА НОВИНИ
-       ========================================================================== */
     .news-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -514,21 +499,19 @@
       color: var(--red-f1);
     }
 
-    /* ==========================================================================
-       6. КЛАСИРАНЕ (STANDINGS)
-       ========================================================================== */
     .standings-container {
       background: var(--bg-surface);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-md);
-      overflow: hidden;
+      overflow-x: auto;
     }
 
     .standings-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
+      min-width: 600px;
     }
 
     .standings-table th {
@@ -550,13 +533,8 @@
       transition: var(--transition);
     }
 
-    .standings-row {
-      transition: var(--transition);
-    }
-
     .standings-row:hover {
       background-color: rgba(241, 245, 249, 0.8);
-      transform: scale(1.002);
     }
 
     .pos-cell {
@@ -591,6 +569,7 @@
       width: 4px;
       height: 36px;
       border-radius: 4px;
+      flex-shrink: 0;
     }
 
     .driver-name-wrap {
@@ -636,7 +615,6 @@
       height: 100%;
       background: linear-gradient(90deg, var(--blue-royal), var(--blue-accent));
       border-radius: var(--radius-full);
-      transition: width 0.8s ease-in-out;
     }
 
     .points-total {
@@ -646,9 +624,6 @@
       color: var(--navy-deep);
     }
 
-    /* ==========================================================================
-       7. ТЕХНИЧЕСКИ АНАЛИЗ
-       ========================================================================== */
     .tech-section {
       background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
       border-top: 1px solid var(--border-subtle);
@@ -669,7 +644,6 @@
       border: 1px solid rgba(139, 92, 246, 0.2);
       box-shadow: var(--shadow-md);
       transition: var(--transition);
-      cursor: pointer;
     }
 
     .tech-card:hover {
@@ -733,9 +707,6 @@
       font-size: 1rem;
     }
 
-    /* ==========================================================================
-       8. КАЛЕНДАР
-       ========================================================================== */
     .calendar-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -797,9 +768,6 @@
       color: var(--navy-deep);
     }
 
-    /* ==========================================================================
-       9. МОДАЛ ЗА ЧЕТЕНЕ НА ПЪЛНА СТАТИЯ
-       ========================================================================== */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -892,10 +860,10 @@
 
     .modal-title {
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: var(--navy-deep);
-      line-height: 1.25;
+      line-height: 1.3;
       margin-bottom: 1.5rem;
     }
 
@@ -906,9 +874,6 @@
       white-space: pre-line;
     }
 
-    /* ==========================================================================
-       10. ФУТЪР
-       ========================================================================== */
     .footer {
       background: var(--navy-deep);
       color: var(--text-light);
@@ -956,12 +921,6 @@
       .nav-links {
         display: none;
       }
-      .standings-table th:nth-child(3),
-      .standings-table td:nth-child(3),
-      .standings-table th:nth-child(4),
-      .standings-table td:nth-child(4) {
-        display: none;
-      }
     }
   </style>
 </head>
@@ -996,7 +955,7 @@
       <div class="countdown-hud" id="countdown-hud">
         <div class="hud-header">
           <div>
-            <div class="hud-gp-title" id="hud-gp-name"> Formula 1 Pirelli Gran Premio d'Italia 2026</div>
+            <div class="hud-gp-title" id="hud-gp-name">Formula 1 Pirelli Gran Premio d'Italia 2026</div>
             <div class="hud-gp-location" id="hud-gp-circuit">Аутодромо Национале Монца</div>
           </div>
           <span class="hud-status-badge" id="hud-badge">Следващ Старт</span>
@@ -1030,9 +989,7 @@
         <h2 class="section-title">Последни Новини</h2>
         <p class="section-subtitle">Актуални събития от падока и пистата</p>
       </div>
-      
     </div>
-
     <div class="news-grid" id="news-cards-container"></div>
   </section>
 
@@ -1043,19 +1000,17 @@
         <p class="section-subtitle">Официално класиране при пилотите и конструкторите</p>
       </div>
       <div class="standings-toggle-group" id="standings-toggle">
-        <button class="standings-tab-btn active" data-type="drivers">🏎️ Пилоти</button>
-        <button class="standings-tab-btn" data-type="constructors">⚙️ Конструктори</button>
+        <button class="standings-tab-btn active" onclick="switchStandingsTab('drivers', this)">🏎️ Пилоти</button>
+        <button class="standings-tab-btn" onclick="switchStandingsTab('constructors', this)">⚙️ Конструктори</button>
       </div>
     </div>
 
     <div class="standings-container">
       <table class="standings-table">
         <thead>
-          <tr id="standings-table-head">
-            </tr>
+          <tr id="standings-table-head"></tr>
         </thead>
-        <tbody id="standings-table-body">
-          </tbody>
+        <tbody id="standings-table-body"></tbody>
       </table>
     </div>
   </section>
@@ -1088,7 +1043,8 @@
       <img src="" alt="" class="modal-image" id="modal-img" />
       <div class="modal-body">
         <div class="modal-meta">
-          <span class="modal-meta-tag" id="modal-tag">Новини</span>
+          <span class="modal-meta-tag" id="modal-tag">Формула 1</span>
+          <span id="modal-date"></span>
         </div>
         <h2 class="modal-title" id="modal-title">Заглавие</h2>
         <div class="modal-text" id="modal-content"></div>
@@ -1099,73 +1055,69 @@
   <footer class="footer">
     <div class="footer-container">
       <div>
-        <div class="brand-title" style="color: white; margin-bottom: 0.5rem;">APEF <span>F1 CLUB</span></div>
+        <div class="brand-title" style="color: white; margin-bottom: 0.5rem;">APEX <span>F1 CLUB</span></div>
         <p style="color: #94a3b8; font-size: 0.9rem; max-width: 400px;">
           Независим български портал за Формула 1 анализи, шампионатни данни и състезателни новини.
         </p>
       </div>
       <div style="font-family: var(--font-display); color: #38bdf8; font-weight: 700;">
-        #ApefF1 #Formula1Bulgaria
+        #ApexF1 #Formula1Bulgaria
       </div>
     </div>
     <div class="footer-copy">
-      &copy; 2026 Apef F1 Club. Всички права запазени.
+      &copy; 2026 Apex F1 Club. Всички права запазени.
     </div>
   </footer>
 
   <script>
-const APEF_F1_DATA = {
-    nextRace: {
-      title: "Formula 1 Pirelli Gran Premio d'Italia 2026",
-      circuit: "Аутодромо Национале Монца",
-      targetDate: new Date("2026-09-06T13:00:00.000Z").toISOString()
-    }, 
-
-
-
+    const APEF_F1_DATA = {
+      nextRace: {
+        title: "Formula 1 Pirelli Gran Premio d'Italia 2026",
+        circuit: "Аутодромо Национале Монца",
+        targetDate: "2026-09-06T13:00:00.000Z"
+      },
       standings: {
         drivers: [
- { "pos": 1, "name": "Кими Антонели", "team": "Mercedes", "number": "12", "teamColor": "#27f4d2", "wins": 7, "podiums": "10", "points": 242 },
-  { "pos": 2, "name": "Джордж Ръсел", "team": "Mercedes", "number": "63", "teamColor": "#27f4d2", "wins": 2, "podiums": "6", "points": 183 },
-  { "pos": 3, "name": "Люис Хамилтън", "team": "Ferrari", "number": "44", "teamColor": "#dc0000", "wins": 1, "podiums": "5", "points": 183 },
-  { "pos": 4, "name": "Ландо Норис", "team": "McLaren", "number": "1", "teamColor": "#ff8000", "wins": 2, "podiums": "4", "points": 159 },
-  { "pos": 5, "name": "Шарл Леклер", "team": "Ferrari", "number": "16", "teamColor": "#dc0000", "wins": 1, "podiums": "4", "points": 155 },
-  { "pos": 6, "name": "Макс Верстапен", "team": "Red Bull", "number": "3", "teamColor": "#1e41ff", "wins": 0, "podiums": "4", "points": 112 },
-  { "pos": 7, "name": "Оскар Пиастри", "team": "McLaren", "number": "81", "teamColor": "#ff8000", "wins": 0, "podiums": "2", "points": 104 },
-  { "pos": 8, "name": "Исак Хаджар", "team": "Red Bull", "number": "20", "teamColor": "#1e41ff", "wins": 0, "podiums": "N/A", "points": 68 },
-  { "pos": 9, "name": "Лиам Лоусън", "team": "Racing Bulls", "number": "30", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 49 },
-  { "pos": 10, "name": "Пиер Гасли", "team": "Alpine", "number": "10", "teamColor": "#0090ff", "wins": 0, "podiums": "1", "points": 44 },
-  { "pos": 11, "name": "Арвид Линдблад", "team": "Racing Bulls", "number": "41", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 23 },
-  { "pos": 12, "name": "Франко Колапинто", "team": "Alpine", "number": "43", "teamColor": "#0090ff", "wins": 0, "podiums": "N/A", "points": 19 },
-  { "pos": 13, "name": "Оливър Беърман", "team": "Haas", "number": "87", "teamColor": "#ffffff", "wins": 0, "podiums": "N/A", "points": 18 },
-  { "pos": 14, "name": "Габриел Борто-лето", "team": "Audi", "number": "5", "teamColor": "#8c0000", "wins": 0, "podiums": "N/A", "points": 10 },
-  { "pos": 15, "name": "Нико Хюлкенберг", "team": "Audi", "number": "27", "teamColor": "#8c0000", "wins": 0, "podiums": "N/A", "points": 6 },
-  { "pos": 16, "name": "Карлос Сайнц", "team": "Williams", "number": "55", "teamColor": "#00a0dd", "wins": 0, "podiums": "N/A", "points": 6 },
-  { "pos": 17, "name": "Александър Албон", "team": "Williams", "number": "23", "teamColor": "#00a0dd", "wins": 0, "podiums": "N/A", "points": 5 },
-  { "pos": 18, "name": "Естебан Окон", "team": "Haas", "number": "31", "teamColor": "#ffffff", "wins": 0, "podiums": "N/A", "points": 3 },
-  { "pos": 19, "name": "Фернандо Алонсо", "team": "Aston Martin", "number": "14", "teamColor": "#006f62", "wins": 0, "podiums": "N/A", "points": 3 },
-  { "pos": 20, "name": "Юки Цунода", "team": "Racing Bulls", "number": "22", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 0 },
-  { "pos": 21, "name": "Ланс Строл", "team": "Aston Martin", "number": "18", "teamColor": "#006f62", "wins": 0, "podiums": "N/A", "points": 0 },
-  { "pos": 22, "name": "Валтери Ботас", "team": "Cadillac", "number": "77", "teamColor": "#b30000", "wins": 0, "podiums": "N/A", "points": 0 },
-  { "pos": 23, "name": "Серхио Перес", "team": "Cadillac", "number": "11", "teamColor": "#b30000", "wins": 0, "podiums": "N/A", "points": 0 }
+          { "pos": 1, "name": "Кими Антонели", "team": "Mercedes", "number": "12", "teamColor": "#27f4d2", "wins": 7, "podiums": "10", "points": 242 },
+          { "pos": 2, "name": "Джордж Ръсел", "team": "Mercedes", "number": "63", "teamColor": "#27f4d2", "wins": 2, "podiums": "6", "points": 183 },
+          { "pos": 3, "name": "Люис Хамилтън", "team": "Ferrari", "number": "44", "teamColor": "#dc0000", "wins": 1, "podiums": "5", "points": 183 },
+          { "pos": 4, "name": "Ландо Норис", "team": "McLaren", "number": "1", "teamColor": "#ff8000", "wins": 2, "podiums": "4", "points": 159 },
+          { "pos": 5, "name": "Шарл Леклер", "team": "Ferrari", "number": "16", "teamColor": "#dc0000", "wins": 1, "podiums": "4", "points": 155 },
+          { "pos": 6, "name": "Макс Верстапен", "team": "Red Bull", "number": "3", "teamColor": "#1e41ff", "wins": 0, "podiums": "4", "points": 112 },
+          { "pos": 7, "name": "Оскар Пиастри", "team": "McLaren", "number": "81", "teamColor": "#ff8000", "wins": 0, "podiums": "2", "points": 104 },
+          { "pos": 8, "name": "Исак Хаджар", "team": "Red Bull", "number": "20", "teamColor": "#1e41ff", "wins": 0, "podiums": "N/A", "points": 68 },
+          { "pos": 9, "name": "Лиам Лоусън", "team": "Racing Bulls", "number": "30", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 49 },
+          { "pos": 10, "name": "Пиер Гасли", "team": "Alpine", "number": "10", "teamColor": "#0090ff", "wins": 0, "podiums": "1", "points": 44 },
+          { "pos": 11, "name": "Арвид Линдблад", "team": "Racing Bulls", "number": "41", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 23 },
+          { "pos": 12, "name": "Франко Колапинто", "team": "Alpine", "number": "43", "teamColor": "#0090ff", "wins": 0, "podiums": "N/A", "points": 19 },
+          { "pos": 13, "name": "Оливър Беърман", "team": "Haas", "number": "87", "teamColor": "#ffffff", "wins": 0, "podiums": "N/A", "points": 18 },
+          { "pos": 14, "name": "Габриел Бортолето", "team": "Audi", "number": "5", "teamColor": "#8c0000", "wins": 0, "podiums": "N/A", "points": 10 },
+          { "pos": 15, "name": "Нико Хюлкенберг", "team": "Audi", "number": "27", "teamColor": "#8c0000", "wins": 0, "podiums": "N/A", "points": 6 },
+          { "pos": 16, "name": "Карлос Сайнц", "team": "Williams", "number": "55", "teamColor": "#00a0dd", "wins": 0, "podiums": "N/A", "points": 6 },
+          { "pos": 17, "name": "Александър Албон", "team": "Williams", "number": "23", "teamColor": "#00a0dd", "wins": 0, "podiums": "N/A", "points": 5 },
+          { "pos": 18, "name": "Естебан Окон", "team": "Haas", "number": "31", "teamColor": "#ffffff", "wins": 0, "podiums": "N/A", "points": 3 },
+          { "pos": 19, "name": "Фернандо Алонсо", "team": "Aston Martin", "number": "14", "teamColor": "#006f62", "wins": 0, "podiums": "N/A", "points": 3 },
+          { "pos": 20, "name": "Юки Цунода", "team": "Racing Bulls", "number": "22", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 0 },
+          { "pos": 21, "name": "Ланс Строл", "team": "Aston Martin", "number": "18", "teamColor": "#006f62", "wins": 0, "podiums": "N/A", "points": 0 },
+          { "pos": 22, "name": "Валтери Ботас", "team": "Cadillac", "number": "77", "teamColor": "#b30000", "wins": 0, "podiums": "N/A", "points": 0 },
+          { "pos": 23, "name": "Серхио Перес", "team": "Cadillac", "number": "11", "teamColor": "#b30000", "wins": 0, "podiums": "N/A", "points": 0 }
         ],
         constructors: [
-             { "pos": 1, "team": "Mercedes-AMG Petronas", "engine": "Mercedes", "teamColor": "#27f4d2", "wins": 8, "podiums": 16, "points": 425 },
-  { "pos": 2, "team": "Scuderia Ferrari", "engine": "Ferrari", "teamColor": "#dc0000", "wins": 2, "podiums": 9, "points": 338 },
-  { "pos": 3, "team": "McLaren F1 Team", "engine": "Mercedes", "teamColor": "#ff8000", "wins": 2, "podiums": 6, "points": 263 },
-  { "pos": 4, "team": "Red Bull Racing", "engine": "Ford / RBPT", "teamColor": "#0254ec", "wins": 0, "podiums": 4, "points": 186 },
-  { "pos": 5, "team": "Racing Bulls", "engine": "Honda RBPT", "teamColor": "#1e5bc6", "wins": 0, "podiums": 0, "points": 66 },
-  { "pos": 6, "team": "Alpine F1 Team", "engine": "Renault", "teamColor": "#0090ff", "wins": 0, "podiums": 1, "points": 63 },
-  { "pos": 7, "team": "Haas F1 Team", "engine": "Ferrari", "teamColor": "#ffffff", "wins": 0, "podiums": 0, "points": 21 },
-  { "pos": 8, "team": "Audi Revolut F1 Team", "engine": "Audi", "teamColor": "#e10600", "wins": 0, "podiums": 0, "points": 16 },
-  { "pos": 9, "team": "Williams Racing", "engine": "Mercedes", "teamColor": "#00a0dd", "wins": 0, "podiums": 0, "points": 11 },
-  { "pos": 10, "team": "Aston Martin Aramco", "engine": "Honda", "teamColor": "#00665e", "wins": 0, "podiums": 0, "points": 3 },
-  { "pos": 11, "team": "Cadillac F1 Team", "engine": "Cadillac", "teamColor": "#b30000", "wins": 0, "podiums": 0, "points": 0 }
+          { "pos": 1, "team": "Mercedes-AMG Petronas", "engine": "Mercedes", "teamColor": "#27f4d2", "wins": 8, "podiums": 16, "points": 425 },
+          { "pos": 2, "team": "Scuderia Ferrari", "engine": "Ferrari", "teamColor": "#dc0000", "wins": 2, "podiums": 9, "points": 338 },
+          { "pos": 3, "team": "McLaren F1 Team", "engine": "Mercedes", "teamColor": "#ff8000", "wins": 2, "podiums": 6, "points": 263 },
+          { "pos": 4, "team": "Red Bull Racing", "engine": "Ford / RBPT", "teamColor": "#0254ec", "wins": 0, "podiums": 4, "points": 186 },
+          { "pos": 5, "team": "Racing Bulls", "engine": "Honda RBPT", "teamColor": "#1e5bc6", "wins": 0, "podiums": 0, "points": 66 },
+          { "pos": 6, "team": "Alpine F1 Team", "engine": "Renault", "teamColor": "#0090ff", "wins": 0, "podiums": 1, "points": 63 },
+          { "pos": 7, "team": "Haas F1 Team", "engine": "Ferrari", "teamColor": "#ffffff", "wins": 0, "podiums": 0, "points": 21 },
+          { "pos": 8, "team": "Audi Revolut F1 Team", "engine": "Audi", "teamColor": "#e10600", "wins": 0, "podiums": 0, "points": 16 },
+          { "pos": 9, "team": "Williams Racing", "engine": "Mercedes", "teamColor": "#00a0dd", "wins": 0, "podiums": 0, "points": 11 },
+          { "pos": 10, "team": "Aston Martin Aramco", "engine": "Honda", "teamColor": "#00665e", "wins": 0, "podiums": 0, "points": 3 },
+          { "pos": 11, "team": "Cadillac F1 Team", "engine": "Cadillac", "teamColor": "#b30000", "wins": 0, "podiums": 0, "points": 0 }
         ]
       },
-
       news: [
-           {
+              {
     title: "Анализ: Скритият ъпгрейд зад скока на Макларън в Зандвоорт – новите джанти и капаци отключиха потенциала на MCL40 през 2026",
     date: "2026-08-31",
     image: "https://i.pinimg.com/736x/65/ad/dc/65addcfe736e902119bedc20c3205237.jpg",
@@ -14688,17 +14640,11 @@ Red Bull и Верстапен ще са разочаровани — зад Mer
 `
   },
       ],
-
       techAnalysis: [
-  {
+        {
     id: "tech-1",
     tag: "Аеродинамика 2026",
     title: "Active Aero & Компактни крила",
-    desc: "Новият регламент премахва активната аеродинамика и намалява зависимостта от пода.",
-    telemetry: { 
-      param1: "Притискане: ~30% по-малко спрямо 2025", 
-      param2: "Ефективност: 2.1 L/D (ограничена)" 
-    },
     text: "Болидите за 2026 разчитат на по-малки крила, по-опростени елементи и намален ground effect. Целта е по-лесно следване и по-малко турбулентен въздух."
   },
 
@@ -14706,11 +14652,7 @@ Red Bull и Верстапен ще са разочаровани — зад Mer
     id: "tech-2",
     tag: "Гуми 2026",
     title: "По-тесни гуми & ново поведение",
-    desc: "Променена конструкция, по-ниско механично сцепление и по-динамично управление.",
-    telemetry: { 
-      param1: "Температурен прозорец: 10°C по-тесен", 
-      param2: "Grip Loss: ~18%" 
-    },
+
     text: "Новите гуми изискват по-прецизно дозиране на газ и спирачки. Болидите са по-нервни, а пилотите компенсират с по-агресивни корекции."
   },
 
@@ -14718,11 +14660,6 @@ Red Bull и Верстапен ще са разочаровани — зад Mer
     id: "tech-3",
     tag: "Телеметрия 2026",
     title: "Опростена ERS система",
-    desc: "MGU-H е премахнат, а електрическият компонент е увеличен.",
-    telemetry: { 
-      param1: "ERS Output: +50% електрическа мощност", 
-      param2: "MGU-K Recovery: ограничено" 
-    },
     text: "Екипите разполагат с по-малко данни в реално време, което увеличава ролята на пилота. Управлението на енергията става по-трудно и по-непредвидимо."
   },
 
@@ -14730,16 +14667,10 @@ Red Bull и Верстапен ще са разочаровани — зад Mer
     id: "tech-4",
     tag: "Инженеринг 2026",
     title: "Компактни болиди & ново охлаждане",
-    desc: "Болидите са по-къси, по-леки и с променени понтони.",
-    telemetry: { 
-      param1: "Маса: -30 kg", 
-      param2: "Охлаждане: +12% ефективност" 
-    },
+  
     text: "Екипите оптимизират въздушните канали, понтоните и охлаждането за новите силови агрегати. Балансът на болида е променен и изисква нови концепции."
   }
-],
-
-
+      ],
       calendar: [
 { round: "Кръг 01", country: "Австралия", circuit: "Мелбърн Парк", date: "06 - 08 Март", upcoming: false },
 { round: "Кръг 02", country: "Китай", circuit: "Шанхай Интернешънъл Съркюит", date: "13 - 15 Март", upcoming: false },
@@ -14769,203 +14700,194 @@ Red Bull и Верстапен ще са разочаровани — зад Mer
       ]
     };
 
-    function renderStandings(type = 'drivers') {
-      const thead = document.getElementById('standings-table-head');
-      const tbody = document.getElementById('standings-table-body');
-      tbody.innerHTML = '';
-
-      if (type === 'drivers') {
-        thead.innerHTML = `
-          <th style="width: 70px;">Поз.</th>
-          <th>Пилот & Отбор</th>
-          <th style="text-align: center;">Победи</th>
-          <th style="text-align: center;">Подиуми</th>
-          <th style="width: 220px; text-align: right;">Точки</th>
-        `;
-
-        const maxPoints = APEF_F1_DATA.standings.drivers[0].points;
-
-        APEF_F1_DATA.standings.drivers.forEach(d => {
-          const percentage = Math.round((d.points / maxPoints) * 100);
-          const tr = document.createElement('tr');
-          tr.className = `standings-row pos-${d.pos}`;
-          
-          tr.innerHTML = `
-            <td class="pos-cell">
-              <span class="pos-badge">${d.pos}</span>
-            </td>
-            <td>
-              <div class="driver-cell-content">
-                <div class="team-color-indicator" style="background-color: ${d.teamColor};"></div>
-                <div class="driver-name-wrap">
-                  <div class="driver-full-name">
-                    ${d.name} <span class="driver-racing-num">#${d.number}</span>
-                  </div>
-                  <span class="driver-team-sub">${d.team}</span>
-                </div>
-              </div>
-            </td>
-            <td style="text-align: center; font-family: var(--font-display); font-weight: 600;">${d.wins}</td>
-            <td style="text-align: center; font-family: var(--font-display); font-weight: 600;">${d.podiums}</td>
-            <td style="text-align: right;">
-              <div class="points-total">${d.points} PTS</div>
-              <div class="points-bar-container" style="margin-left: auto;">
-                <div class="points-bar-fill" style="width: ${percentage}%;"></div>
-              </div>
-            </td>
-          `;
-          tbody.appendChild(tr);
-        });
-      } else {
-        thead.innerHTML = `
-          <th style="width: 70px;">Поз.</th>
-          <th>Конструктор / Двигател</th>
-          <th style="text-align: center;">Победи</th>
-          <th style="text-align: center;">Подиуми</th>
-          <th style="width: 220px; text-align: right;">Точки</th>
-        `;
-
-        const maxPoints = APEF_F1_DATA.standings.constructors[0].points;
-
-        APEF_F1_DATA.standings.constructors.forEach(c => {
-          const percentage = Math.round((c.points / maxPoints) * 100);
-          const tr = document.createElement('tr');
-          tr.className = `standings-row pos-${c.pos}`;
-          
-          tr.innerHTML = `
-            <td class="pos-cell">
-              <span class="pos-badge">${c.pos}</span>
-            </td>
-            <td>
-              <div class="driver-cell-content">
-                <div class="team-color-indicator" style="background-color: ${c.teamColor};"></div>
-                <div class="driver-name-wrap">
-                  <div class="driver-full-name">${c.team}</div>
-                  <span class="driver-team-sub">Задвижващ агрегат: ${c.engine}</span>
-                </div>
-              </div>
-            </td>
-            <td style="text-align: center; font-family: var(--font-display); font-weight: 600;">${c.wins}</td>
-            <td style="text-align: center; font-family: var(--font-display); font-weight: 600;">${c.podiums}</td>
-            <td style="text-align: right;">
-              <div class="points-total">${c.points} PTS</div>
-              <div class="points-bar-container" style="margin-left: auto;">
-                <div class="points-bar-fill" style="width: ${percentage}%;"></div>
-              </div>
-            </td>
-          `;
-          tbody.appendChild(tr);
-        });
-      }
-    }
-
-    document.getElementById('standings-toggle').addEventListener('click', (e) => {
-      const btn = e.target.closest('.standings-tab-btn');
-      if (btn) {
-        document.querySelectorAll('.standings-tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderStandings(btn.dataset.type);
-      }
-    });
-
-    function initCountdown() {
-      const target = new Date(APEF_F1_DATA.nextRace.targetDate).getTime();
-      const updateTimer = () => {
-        const now = new Date().getTime();
-        const diff = target - now;
-        if (diff <= 0) return;
-
-        document.getElementById('timer-days').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
-        document.getElementById('timer-hours').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-        document.getElementById('timer-minutes').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-        document.getElementById('timer-seconds').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
-      };
-      updateTimer();
-      setInterval(updateTimer, 1000);
-    }
-
     function renderNews() {
       const container = document.getElementById('news-cards-container');
-      container.innerHTML = '';
-      APEF_F1_DATA.news.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'f1-card';
-        card.onclick = () => openArticleModal(item);
-        card.innerHTML = `
+      if (!container) return;
+      container.innerHTML = APEF_F1_DATA.news.map((item, index) => `
+        <article class="f1-card" onclick="openArticleModal(${index})">
           <div class="f1-card-img-wrapper">
-            <span class="card-badge">${item.category}</span>
-            <img src="${item.image}" alt="${item.title}" class="f1-card-img" />
+            <img src="${item.image}" alt="${item.title}" class="f1-card-img" onerror="this.src='https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600'">
+            <span class="card-badge">F1 Новини</span>
           </div>
           <div class="f1-card-content">
-            <div class="card-date">${item.date}</div>
+            <div class="card-date">📅 ${item.date}</div>
             <h3 class="card-title">${item.title}</h3>
-            <p class="card-excerpt">${item.excerpt}</p>
-            <div class="card-footer"><span class="card-read-more">Пълен анализ &rarr;</span></div>
+            <p class="card-excerpt">${item.text.replace(/\n+/g, ' ').substring(0, 140)}...</p>
+            <div class="card-footer">
+              <span class="card-read-more">Прочети повече &rarr;</span>
+            </div>
           </div>
-        `;
-        container.appendChild(card);
-      });
+        </article>
+      `).join('');
     }
 
-    function renderTech() {
-      const container = document.getElementById('tech-cards-container');
-      container.innerHTML = '';
-      APEF_F1_DATA.techAnalysis.forEach(tech => {
-        const card = document.createElement('div');
-        card.className = 'tech-card';
-        card.onclick = () => openArticleModal({
-          title: tech.title, category: tech.tag, date: "Технически доклад", image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=900&q=80", text: tech.text
-        });
-        card.innerHTML = `
-          <div class="tech-header"><span class="tech-indicator">● ${tech.tag}</span></div>
-          <h3 class="tech-title">${tech.title}</h3>
-          <p class="tech-desc">${tech.desc}</p>
-          <div class="telemetry-preview">
-            <div class="telemetry-item"><span>Параметър 1</span><strong>${tech.telemetry.param1}</strong></div>
-            <div class="telemetry-item"><span>Параметър 2</span><strong>${tech.telemetry.param2}</strong></div>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    function renderCalendar() {
-      const container = document.getElementById('calendar-cards-container');
-      container.innerHTML = '';
-      APEF_F1_DATA.calendar.forEach(race => {
-        const card = document.createElement('div');
-        card.className = `race-card ${race.upcoming ? 'upcoming' : ''}`;
-        card.innerHTML = `
-          <div class="race-round">${race.round}</div>
-          <h3 class="race-country">${race.country}</h3>
-          <div class="race-circuit">${race.circuit}</div>
-          <div class="race-date-badge">${race.date}</div>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    function openArticleModal(item) {
-      document.getElementById('modal-img').src = item.image;
-      document.getElementById('modal-title').innerText = item.title;
-      document.getElementById('modal-tag').innerText = item.category;
-      document.getElementById('modal-date').innerText = item.date;
-      document.getElementById('modal-content').innerText = item.text;
+    function openArticleModal(index) {
+      const article = APEF_F1_DATA.news[index];
+      if (!article) return;
+      document.getElementById('modal-img').src = article.image;
+      document.getElementById('modal-title').textContent = article.title;
+      document.getElementById('modal-date').textContent = '📅 ' + article.date;
+      document.getElementById('modal-content').textContent = article.text;
       document.getElementById('article-modal').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeArticleModal() {
+    function closeArticleModal(event) {
+      if (event && event.target !== event.currentTarget && !event.target.classList.contains('modal-close-btn')) {
+        return;
+      }
       document.getElementById('article-modal').classList.remove('open');
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeArticleModal();
+    });
+
+    function renderStandings(type = 'drivers') {
+      const thead = document.getElementById('standings-table-head');
+      const tbody = document.getElementById('standings-table-body');
+      if (!thead || !tbody) return;
+
+      if (type === 'drivers') {
+        thead.innerHTML = `
+          <th>Поз</th>
+          <th>Пилот / Отбор</th>
+          <th>Победи</th>
+          <th>Подиуми</th>
+          <th>Точки</th>
+        `;
+        const maxPts = Math.max(...APEF_F1_DATA.standings.drivers.map(d => d.points)) || 1;
+        tbody.innerHTML = APEF_F1_DATA.standings.drivers.map(d => `
+          <tr class="standings-row pos-${d.pos}">
+            <td class="pos-cell"><span class="pos-badge">${d.pos}</span></td>
+            <td>
+              <div class="driver-cell-content">
+                <span class="team-color-indicator" style="background-color: ${d.teamColor}"></span>
+                <div class="driver-name-wrap">
+                  <span class="driver-full-name">${d.name} <span class="driver-racing-num">#${d.number}</span></span>
+                  <span class="driver-team-sub">${d.team}</span>
+                </div>
+              </div>
+            </td>
+            <td>${d.wins}</td>
+            <td>${d.podiums}</td>
+            <td>
+              <div class="points-total">${d.points}</div>
+              <div class="points-bar-container">
+                <div class="points-bar-fill" style="width: ${(d.points / maxPts) * 100}%"></div>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+      } else {
+        thead.innerHTML = `
+          <th>Поз</th>
+          <th>Конструктор / Двигател</th>
+          <th>Победи</th>
+          <th>Подиуми</th>
+          <th>Точки</th>
+        `;
+        const maxPts = Math.max(...APEF_F1_DATA.standings.constructors.map(c => c.points)) || 1;
+        tbody.innerHTML = APEF_F1_DATA.standings.constructors.map(c => `
+          <tr class="standings-row pos-${c.pos}">
+            <td class="pos-cell"><span class="pos-badge">${c.pos}</span></td>
+            <td>
+              <div class="driver-cell-content">
+                <span class="team-color-indicator" style="background-color: ${c.teamColor}"></span>
+                <div class="driver-name-wrap">
+                  <span class="driver-full-name">${c.team}</span>
+                  <span class="driver-team-sub">Двигател: ${c.engine}</span>
+                </div>
+              </div>
+            </td>
+            <td>${c.wins}</td>
+            <td>${c.podiums}</td>
+            <td>
+              <div class="points-total">${c.points}</div>
+              <div class="points-bar-container">
+                <div class="points-bar-fill" style="width: ${(c.points / maxPts) * 100}%"></div>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+      }
+    }
+
+    function switchStandingsTab(type, btn) {
+      document.querySelectorAll('.standings-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderStandings(type);
+    }
+
+    function renderTechAndCalendar() {
+      const techContainer = document.getElementById('tech-cards-container');
+      if (techContainer) {
+        techContainer.innerHTML = APEF_F1_DATA.techAnalysis.map(item => `
+          <div class="tech-card">
+            <div class="tech-header">
+              <span class="tech-indicator">● Анализ</span>
+            </div>
+            <h3 class="tech-title">${item.title}</h3>
+            <p class="tech-desc">${item.desc}</p>
+            <div class="telemetry-preview">
+              <div class="telemetry-item">
+                <span>${item.stat1Label}</span>
+                <strong>${item.stat1Val}</strong>
+              </div>
+              <div class="telemetry-item">
+                <span>${item.stat2Label}</span>
+                <strong>${item.stat2Val}</strong>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const calContainer = document.getElementById('calendar-cards-container');
+      if (calContainer) {
+        calContainer.innerHTML = APEF_F1_DATA.calendar.map(race => `
+          <div class="race-card ${race.upcoming ? 'upcoming' : ''}">
+            <div class="race-round">${race.round}</div>
+            <div class="race-country">${race.country}</div>
+            <div class="race-circuit">${race.circuit}</div>
+            <span class="race-date-badge">🗓️ ${race.date}</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    function initCountdown() {
+      const targetDate = new Date(APEF_F1_DATA.nextRace.targetDate).getTime();
+      function update() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+        if (diff <= 0) {
+          document.getElementById('timer-days').innerText = '00';
+          document.getElementById('timer-hours').innerText = '00';
+          document.getElementById('timer-minutes').innerText = '00';
+          document.getElementById('timer-seconds').innerText = '00';
+          return;
+        }
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('timer-days').innerText = String(d).padStart(2, '0');
+        document.getElementById('timer-hours').innerText = String(h).padStart(2, '0');
+        document.getElementById('timer-minutes').innerText = String(m).padStart(2, '0');
+        document.getElementById('timer-seconds').innerText = String(s).padStart(2, '0');
+      }
+      update();
+      setInterval(update, 1000);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      initCountdown();
       renderNews();
       renderStandings('drivers');
-      renderTech();
-      renderCalendar();
+      renderTechAndCalendar();
+      initCountdown();
     });
   </script>
 </body>
