@@ -1215,9 +1215,12 @@
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
-  max-width: 380px; /* Ограничава максималния размер */
+  max-width: 320px; /* Може да намалите за още по-компактен размер */
   width: 100%;
-  margin: 0 auto;
+  
+  /* Позициониране вдясно: */
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .hero-media-card:hover {
@@ -1282,11 +1285,13 @@
     display: none;
   }
 
+  @media (max-width: 900px) {
   .hero-media-card {
     order: 3;
-    margin-top: 1.5rem;
-    max-width: 100%; /* Заема широчината на екрана с падинг */
+    margin: 1.5rem auto 0 auto; /* Центрира се автоматично на телефон */
+    max-width: 100%;
   }
+}
 }
     
   </style>
