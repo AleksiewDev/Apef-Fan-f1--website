@@ -1205,6 +1205,7 @@
 }
 
 /* Намерете съществуващия медиен блок и го допълнете така: */
+/* Добавете тези стилове за новата картичка */
 .hero-media-card {
   display: flex;
   flex-direction: column;
@@ -1216,12 +1217,11 @@
   transition: var(--transition);
   max-width: 320px;
   width: 100%;
-
-  /* Махаме това: */
-  /* margin-left: 0; */
-  /* margin-right: auto; */
+  
+  /* Позициониране вляво: */
+  margin-left: 0;
+  margin-right: auto;
 }
-
 
 .hero-media-card:hover {
   transform: translateY(-4px);
@@ -1278,20 +1278,22 @@
   .hero-container {
     grid-template-columns: 1fr;
   }
+  
   .hero-title {
     font-size: 2.3rem;
   }
+  
   .nav-links {
     display: none;
   }
 
-@media (max-width: 900px) {
   .hero-media-card {
-    order: 3;
-    margin: 1.5rem auto 0 auto; /* Запазва се центрирано за телефон */
+    order: unset;
+    margin-left: 0;
+    margin-right: 0;
     max-width: 100%;
+    width: 100%;
   }
-}
 }
     
   </style>
