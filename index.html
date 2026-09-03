@@ -1205,6 +1205,72 @@
 }
 
 /* Намерете съществуващия медиен блок и го допълнете така: */
+/* Добавете тези стилове за новата картичка */
+.hero-media-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  max-width: 380px; /* Ограничава максималния размер */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-media-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(29, 78, 216, 0.3);
+}
+
+.hero-media-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--red-f1);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  margin: 12px 12px 0 12px;
+  text-transform: uppercase;
+}
+
+.hero-media-link {
+  display: block;
+  width: 100%;
+  height: 180px; /* По-малък размер на изображението */
+  overflow: hidden;
+  padding: 8px 12px;
+}
+
+.hero-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  transition: transform 0.4s ease;
+}
+
+.hero-media-link:hover .hero-media-img {
+  transform: scale(1.03);
+}
+
+.hero-media-caption {
+  padding: 10px 14px 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy-deep);
+  line-height: 1.35;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Обновете медийната заявка за мобилни устройства */
 @media (max-width: 900px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -1216,54 +1282,11 @@
     display: none;
   }
 
-  /* Промени за мобилния изглед на Hero картичката */
   .hero-media-card {
-    order: 3; /* Поставя картичката под HUD брояча на мобилни устройства */
+    order: 3;
     margin-top: 1.5rem;
+    max-width: 100%; /* Заема широчината на екрана с падинг */
   }
-}
-
-/* Добавете тези стилове за новата картичка извън медийната заявка */
-.hero-media-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--navy-card);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-}
-
-.hero-media-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--blue-accent);
-}
-
-.hero-media-link {
-  display: block;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-
-.hero-media-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.hero-media-link:hover .hero-media-img {
-  transform: scale(1.05);
-}
-
-.hero-media-caption {
-  padding: 1rem 1.25rem;
-  font-size: 0.95rem;
-  color: #cbd5e1;
-  text-align: center;
-  background: rgba(11, 19, 41, 0.6);
 }
     
   </style>
