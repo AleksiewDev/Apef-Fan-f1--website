@@ -1204,18 +1204,66 @@
   line-height: 1.6;
 }
 
-@media (max-width: 860px) {
-  .f1-modal-shell {
+/* Намерете съществуващия медиен блок и го допълнете така: */
+@media (max-width: 900px) {
+  .hero-container {
     grid-template-columns: 1fr;
   }
-  .f1-modal-aside {
-    align-items: center;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .hero-title {
+    font-size: 2.3rem;
   }
-  .hud-specs-grid, .hud-stats-row {
-    grid-template-columns: 1fr;
+  .nav-links {
+    display: none;
   }
+
+  /* Промени за мобилния изглед на Hero картичката */
+  .hero-media-card {
+    order: 3; /* Поставя картичката под HUD брояча на мобилни устройства */
+    margin-top: 1.5rem;
+  }
+}
+
+/* Добавете тези стилове за новата картичка извън медийната заявка */
+.hero-media-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--navy-card);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.hero-media-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue-accent);
+}
+
+.hero-media-link {
+  display: block;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.hero-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-media-link:hover .hero-media-img {
+  transform: scale(1.05);
+}
+
+.hero-media-caption {
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  text-align: center;
+  background: rgba(11, 19, 41, 0.6);
 }
     
   </style>
@@ -1279,6 +1327,14 @@
         </div>
       </div>
     </div>
+    <div class="hero-media-card">
+  <a href="https://www.dubby.gg/?srsltid=AfmBOoozt5QP1MCcwgImFp-Gve9P4sW7p50ajvo27uK_Y_BIHxp7xRIW" target="_blank" rel="noopener noreferrer" class="hero-media-link">
+    <img src="https://i.pinimg.com/736x/2a/b1/db/2ab1db297918469d590acf1038d15a1b.jpg" alt="Hero Media" class="hero-media-img" />
+  </a>
+  <div class="hero-media-caption">
+    Текстът под снимката, който описва съдържанието или промоцията.
+  </div>Вече можете да използвате нашия код APEXF1 за 10% отстъпка при покупка в DUBBY.
+</div>
   </section>
 
   <section class="container" id="news-section">
