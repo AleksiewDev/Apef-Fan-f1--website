@@ -1215,12 +1215,12 @@
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
-  max-width: 320px; /* Може да намалите за още по-компактен размер */
+  max-width: 320px;
   width: 100%;
   
-  /* Позициониране вдясно: */
-  margin-left: auto;
-  margin-right: 0;
+  /* Позициониране вляво: */
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .hero-media-card:hover {
@@ -1285,10 +1285,10 @@
     display: none;
   }
 
-  @media (max-width: 900px) {
+@media (max-width: 900px) {
   .hero-media-card {
     order: 3;
-    margin: 1.5rem auto 0 auto; /* Центрира се автоматично на телефон */
+    margin: 1.5rem auto 0 auto; /* Запазва се центрирано за телефон */
     max-width: 100%;
   }
 }
@@ -1360,8 +1360,8 @@
     <img src="https://i.pinimg.com/736x/2a/b1/db/2ab1db297918469d590acf1038d15a1b.jpg" alt="Hero Media" class="hero-media-img" />
   </a>
   <div class="hero-media-caption">
-    Текстът под снимката, който описва съдържанието или промоцията.
-  </div>Вече можете да използвате нашия код APEXF1 за 10% отстъпка при покупка в DUBBY.
+    Вече можете да използвате нашия код APEXF1 за 10% отстъпка при покупка в DUBBY.
+  </div>
 </div>
   </section>
 
