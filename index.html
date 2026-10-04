@@ -187,7 +187,7 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: 1.2fr 1fr;
       gap: 3rem;
       align-items: center;
     }
@@ -233,7 +233,6 @@
     }
 
     .countdown-hud {
-      min-width: 0;
       background: rgba(17, 30, 56, 0.75);
       backdrop-filter: blur(25px);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -244,8 +243,6 @@
     }
 
     .hud-header {
-      flex-wrap: wrap;
-      gap: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -281,7 +278,7 @@
 
     .countdown-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 12px;
     }
 
@@ -306,7 +303,6 @@
     }
 
     .countdown-number {
-      font-variant-numeric: tabular-nums;
       font-family: var(--font-display);
       font-size: 2.2rem;
       font-weight: 700;
@@ -1299,18 +1295,6 @@
   }
 }
     
-
-    /* Keep the timer readable when the countdown card becomes narrow. */
-    .hud-header > div { min-width: 0; flex: 1 1 220px; }
-    .hud-status-badge { flex-shrink: 0; }
-    .countdown-hud { container-type: inline-size; }
-    @container (max-width: 380px) {
-      .countdown-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 480px) {
-      .countdown-hud { padding: 1.25rem; }
-      .countdown-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
   </style>
 </head>
 <body>
@@ -1346,8 +1330,8 @@
       <div class="countdown-hud" id="countdown-hud">
         <div class="hud-header">
           <div>
-            <div class="hud-gp-title" id="hud-gp-name">FORMULA 1 GULF AIR BAHRAIN GRAND PRIX IN MALAYSIA 2026</div>
-            <div class="hud-gp-location" id="hud-gp-circuit">Сепанг Интернешънал</div>
+            <div class="hud-gp-title" id="hud-gp-name">Formula 1 Singapore Airlines Singapore Grand Prix 2026</div>
+            <div class="hud-gp-location" id="hud-gp-circuit">Марина Бей/div>
           </div>
           <span class="hud-status-badge" id="hud-badge">Следващ Старт</span>
         </div>
@@ -1500,51 +1484,78 @@
   <script>
     const APEF_F1_DATA = {
       nextRace: {
-  title: "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX IN MALAYSIA 2026",
-  circuit: "Сепанг Интернешънал",
-  targetDate: "2026-10-04T07:00:00.000Z"
+  title: "Formula 1 Singapore Airlines Singapore Grand Prix 2026",
+  circuit: "Марина Бей",
+  targetDate: "2026-10-11T12:00:00.000Z"
 },
       standings: {
         drivers: [
-          { "pos": 1, "name": "Кими Антонели", "team": "Mercedes", "number": "12", "teamColor": "#27f4d2", "wins": 8, "podiums": "10", "points": 302 },
-          { "pos": 2, "name": "Джордж Ръсел", "team": "Mercedes", "number": "63", "teamColor": "#27f4d2", "wins": 3, "podiums": "6", "points": 236 },
-          { "pos": 3, "name": "Люис Хамилтън", "team": "Ferrari", "number": "44", "teamColor": "#dc0000", "wins": 1, "podiums": "5", "points": 199 },
-          { "pos": 4, "name": "Ландо Норис", "team": "McLaren", "number": "1", "teamColor": "#ff8000", "wins": 2, "podiums": "5", "points": 186 },
-          { "pos": 5, "name": "Шарл Леклер", "team": "Ferrari", "number": "16", "teamColor": "#dc0000", "wins": 1, "podiums": "4", "points": 179 },
-          { "pos": 6, "name": "Макс Верстапен", "team": "Red Bull", "number": "3", "teamColor": "#1e41ff", "wins": 0, "podiums": "6", "points": 163 },
-          { "pos": 7, "name": "Оскар Пиастри", "team": "McLaren", "number": "81", "teamColor": "#ff8000", "wins": 0, "podiums": "2", "points": 120 },
-          { "pos": 8, "name": "Исак Хаджар", "team": "Red Bull", "number": "20", "teamColor": "#1e41ff", "wins": 0, "podiums": "3", "points": 86},
-          { "pos": 9, "name": "Лиам Лоусън", "team": "Racing Bulls", "number": "30", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 59 },
+          { "pos": 1, "name": "Кими Антонели", "team": "Mercedes", "number": "12", "teamColor": "#27f4d2", "wins": 8, "podiums": "15", "points": 320 },
+          { "pos": 2, "name": "Джордж Ръсел", "team": "Mercedes", "number": "63", "teamColor": "#27f4d2", "wins": 3, "podiums": "8", "points": 236 },
+          { "pos": 3, "name": "Люис Хамилтън", "team": "Ferrari", "number": "44", "teamColor": "#dc0000", "wins": 1, "podiums": "5", "points": 214 },
+          { "pos": 4, "name": "Шарл Леклер", "team": "Ferrari", "number": "16", "teamColor": "#dc0000", "wins": 1, "podiums": "4", "points": 191 },
+          { "pos": 5, "name": "Ландо Норис", "team": "McLaren", "number": "1", "teamColor": "#ff8000", "wins": 2, "podiums": "5", "points": 188 },
+          { "pos": 6, "name": "Макс Верстапен", "team": "Red Bull", "number": "3", "teamColor": "#1e41ff", "wins": 1, "podiums": "6", "points": 188 },
+          { "pos": 7, "name": "Оскар Пиастри", "team": "McLaren", "number": "81", "teamColor": "#ff8000", "wins": 0, "podiums": "2", "points": 128 },
+          { "pos": 8, "name": "Исак Хаджар", "team": "Red Bull", "number": "20", "teamColor": "#1e41ff", "wins": 0, "podiums": "3", "points": 96},
+          { "pos": 9, "name": "Лиам Лоусън", "team": "Racing Bulls", "number": "30", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 65 },
           { "pos": 10, "name": "Пиер Гасли", "team": "Alpine", "number": "10", "teamColor": "#0090ff", "wins": 0, "podiums": "N/A", "points": 41 },
-          { "pos": 11, "name": "Арвид Линдблад", "team": "Racing Bulls", "number": "41", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 37 },
+          { "pos": 11, "name": "Арвид Линдблад", "team": "Racing Bulls", "number": "41", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 38 },
           { "pos": 12, "name": "Франко Колапинто", "team": "Alpine", "number": "43", "teamColor": "#0090ff", "wins": 0, "podiums": "N/A", "points": 27 },
           { "pos": 13, "name": "Оливър Беърман", "team": "Haas", "number": "87", "teamColor": "#ffffff", "wins": 0, "podiums": "N/A", "points": 20 },
           { "pos": 14, "name": "Габриел Бортолето", "team": "Audi", "number": "5", "teamColor": "#8c0000", "wins": 0, "podiums": "N/A", "points": 10 },
           { "pos": 15, "name": "Нико Хюлкенберг", "team": "Audi", "number": "27", "teamColor": "#8c0000", "wins": 0, "podiums": "N/A", "points": 7 },
           { "pos": 16, "name": "Естебан Окон", "team": "Haas", "number": "31", "teamColor": "#ffffff", "wins": 0, "podiums": "N/A", "points": 7 },
-          { "pos": 17, "name": "Карлос Сайнц", "team": "Williams", "number": "55", "teamColor": "#00a0dd", "wins": 0, "podiums": "N/A", "points": 7 },
-          { "pos": 18, "name": "Александър Албон", "team": "Williams", "number": "23", "teamColor": "#00a0dd", "wins": 0, "podiums": "N/A", "points": 5 },
-          { "pos": 19, "name": "Фернандо Алонсо", "team": "Aston Martin", "number": "14", "teamColor": "#006f62", "wins": 0, "podiums": "N/A", "points": 3 },
+          { "pos": 17, "name": "Фернандо Алонсо", "team": "Aston Martin", "number": "14", "teamColor": "#006f62", "wins": 0, "podiums": "N/A", "points": 7 },
+          { "pos": 18, "name": "Карлос Сайнц", "team": "Williams", "number": "55", "teamColor": "#00a0dd", "wins": 0, "podiums": "N/A", "points": 7 },
+          { "pos": 19, "name": "Александър Албон", "team": "Williams", "number": "23", "teamColor": "#00a0dd", "wins": 0, "podiums": "N/A", "points": 5 },
           { "pos": 20, "name": "Юки Цунода", "team": "Racing Bulls", "number": "22", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 1 },
           { "pos": 21, "name": "Ланс Строл", "team": "Aston Martin", "number": "18", "teamColor": "#006f62", "wins": 0, "podiums": "N/A", "points": 0 },
           { "pos": 22, "name": "Валтери Ботас", "team": "Cadillac", "number": "77", "teamColor": "#b30000", "wins": 0, "podiums": "N/A", "points": 0 },
           { "pos": 23, "name": "Серхио Перес", "team": "Cadillac", "number": "11", "teamColor": "#b30000", "wins": 0, "podiums": "N/A", "points": 0 }
         ],
         constructors: [
-          { "pos": 1, "team": "Mercedes-AMG Petronas", "engine": "Mercedes", "teamColor": "#27f4d2", "wins": 11, "podiums": 20, "points": 538 },
-          { "pos": 2, "team": "Scuderia Ferrari", "engine": "Ferrari", "teamColor": "#dc0000", "wins": 2, "podiums": 9, "points": 378},
-          { "pos": 3, "team": "McLaren F1 Team", "engine": "Mercedes", "teamColor": "#ff8000", "wins": 2, "podiums": 7, "points": 306 },
-          { "pos": 4, "team": "Red Bull Racing", "engine": "Ford / RBPT", "teamColor": "#0254ec", "wins": 0, "podiums": 8, "points": 263 },
-          { "pos": 5, "team": "Racing Bulls", "engine": "Honda RBPT", "teamColor": "#1e5bc6", "wins": 0, "podiums": 0, "points": 83 },
+          { "pos": 1, "team": "Mercedes-AMG Petronas", "engine": "Mercedes", "teamColor": "#27f4d2", "wins": 11, "podiums": 21, "points": 556 },
+          { "pos": 2, "team": "Scuderia Ferrari", "engine": "Ferrari", "teamColor": "#dc0000", "wins": 2, "podiums": 10, "points": 405},
+          { "pos": 3, "team": "McLaren F1 Team", "engine": "Mercedes", "teamColor": "#ff8000", "wins": 2, "podiums": 7, "points": 316 },
+          { "pos": 4, "team": "Red Bull Racing", "engine": "Ford / RBPT", "teamColor": "#0254ec", "wins": 1, "podiums": 9, "points": 298 },
+          { "pos": 5, "team": "Racing Bulls", "engine": "Honda RBPT", "teamColor": "#1e5bc6", "wins": 0, "podiums": 0, "points": 90 },
           { "pos": 6, "team": "Alpine F1 Team", "engine": "Renault", "teamColor": "#0090ff", "wins": 0, "podiums": 1, "points": 68 },
           { "pos": 7, "team": "Haas F1 Team", "engine": "Ferrari", "teamColor": "#ffffff", "wins": 0, "podiums": 0, "points": 27 },
           { "pos": 8, "team": "Audi Revolut F1 Team", "engine": "Audi", "teamColor": "#e10600", "wins": 0, "podiums": 0, "points": 17 },
           { "pos": 9, "team": "Williams Racing", "engine": "Mercedes", "teamColor": "#00a0dd", "wins": 0, "podiums": 0, "points": 12 },
-          { "pos": 10, "team": "Aston Martin Aramco", "engine": "Honda", "teamColor": "#00665e", "wins": 0, "podiums": 0, "points": 3 },
+          { "pos": 10, "team": "Aston Martin Aramco", "engine": "Honda", "teamColor": "#00665e", "wins": 0, "podiums": 0, "points": 7 },
           { "pos": 11, "team": "Cadillac F1 Team", "engine": "Cadillac", "teamColor": "#b30000", "wins": 0, "podiums": 0, "points": 0 }
         ]
       },
       news: [
+             {
+    title: "Верстапен покори хаоса под дъжда и триумфира в Гран При на Бахрейн в Малайзия, Антонели увеличи аванса си след драмата с Ръсел",
+    date: "2026-10-04",
+    image: "https://i.pinimg.com/736x/bb/be/a7/bbbea7ad38b01b551e601bd948c3413e.jpg",
+    text: `Макс Верстапен се завърна на върха по впечатляващ начин, след като спечели изпълнената с обрати и тежки атмосферни условия Гран При на Бахрейн в Малайзия. Нидерландецът успя да наложи темпото си в едно от най-непредсказуемите състезания за сезон 2026 и да донесе първи успех за Ред Бул през кампанията. Зад него завърши Кими Антонели, а големият повратен момент в битката за шампионата настъпи в заключителната фаза, когато Джордж Ръсел отпадна и загуби ценни точки в преследването на своя съотборник.
+
+Още преди старта състезателният ден се превърна в истинско изпитание за пилотите, инженерите и организаторите. Силният дъжд над пистата "Сепанг" създаде изключително сложни условия и доведе до сериозни закъснения. Видимостта беше ограничена, сцеплението постоянно се променяше, а отборите бяха принудени да вземат решения в условия на пълна несигурност. Вместо традиционно развитие, надпреварата започна под знака на хаоса и тактическите компромиси.
+
+Когато действието най-после стартира, Верстапен не успя да запази първата позиция. Двамата пилоти на Мерцедес се възползваха по-добре от условията и още в началните моменти излязоха напред. Антонели поведе колоната, а Ръсел се настани непосредствено зад него, докато световният шампион трябваше да реагира и да търси начин да си върне контрола над състезанието.
+
+Именно тук пролича класата на Верстапен. Вместо да прибързва и да поема излишни рискове върху мокрия асфалт, пилотът на Ред Бул запази спокойствие и постепенно започна да намалява изоставането си. След като намери правилния ритъм и се възползва максимално от развитието на трасето, той успя да се справи първо с Ръсел, а след това и с Антонели. Веднъж излязъл начело, Верстапен изглеждаше напълно уверен и контролираше случващото се зад себе си.
+
+Особено важна роля изиграха решенията около гумите. Променящите се условия превърнаха стратегията в решаващ фактор. Някои отбори избраха по-смели варианти, докато други заложиха на по-консервативен подход. В течение на надпреварата стана ясно, че правилното разчитане на момента за преминаване към подходящия тип гуми е една от причините за разместванията в челната група. Отборът на Ред Бул успя да държи ситуацията под контрол и да предостави на своя пилот най-добрата възможна платформа за атака и последващо управление на преднината.
+
+Антонели отново демонстрира зрелост, която впечатлява през целия сезон. Италианецът се движеше сред лидерите от самото начало и показа отлична адаптация към трудните условия. Макар да не успя да отговори на темпото на Верстапен след загубата на първата позиция, той запази концентрация и доведе автомобила до второто място, без да допуска сериозна грешка. Представянето му още веднъж потвърди защо той продължава да бъде основният фаворит в шампионата.
+
+Зад водещата двойка вниманието постепенно се насочи към Ръсел. Британецът изглеждаше по пътя към ценен резултат и солиден актив за генералното класиране. Той се задържа в челото през голяма част от състезанието и изглеждаше способен да ограничи загубите спрямо Антонели. Вместо това съдбата му поднесе болезнен удар. В последните обиколки автомобилът му загуби мощност и той беше принуден да спре, което сложи край на надеждите му за подиум и превърна доброто представяне в огромно разочарование.
+
+Отпадането на Ръсел промени изцяло настроението в лагера на Мерцедес. Докато Антонели напусна Малайзия със сериозно увеличение на преднината си в шампионата, неговият съотборник загуби една от последните възможности да остане плътно в борбата за титлата. Това развитие може да се окаже един от ключовите моменти на сезона, особено предвид ограничените възможности за наваксване в оставащите състезателни уикенди.
+
+За Верстапен този триумф има значение далеч отвъд самата победа. След период, в който Ред Бул често оставаше в сянката на преките си конкуренти, успехът в Малайзия изпрати ясно послание към останалите претенденти. Световният шампион показа, че все още разполага със скоростта, увереността и способността да печели в най-трудните условия. Когато трасето поставя пилотите на изпитание и грешките струват скъпо, Верстапен отново доказа защо е сред най-опасните състезатели на стартовата решетка.
+
+Гран При на Бахрейн в Малайзия ще остане запомнена като надпревара, белязана от дъжд, стратегически дилеми, драматични обрати и решаващ момент в битката за титлата. В края на деня най-големият победител беше Верстапен, който превърна трудния уикенд в триумф, докато Антонели направи още една голяма крачка към шампионската корона, а Ръсел си тръгна с едно от най-болезнените разочарования на сезон 2026.
+
+`
+                 },
+        
          {
     title: "Ланс Строл: Двигателят на Хонда прави Астън Мартин по-бавен с две секунди на обиколка, докато отборът потвърди Строл и Алонсо за 2027",
     date: "2026-10-01",
@@ -16109,7 +16120,7 @@ const DRIVERS_2026 = [
     firstPodium: "ГП на Канада 2025",
     championships: "Шампион FRECA (2023), Шампион F4 Италия & ADAC (2022), 2x CIK-FIA Картинг Шампион",
     wins: 8,
-    podiums: 15,
+    podiums: 16,
     fastestLaps: 6,
     previousTeams: "Дебют с Mercedes",
     bio: "Вундеркиндът от академията на Mercedes, преминал директно от FRECA във Формула 2, който замени Люис Хамилтън в отбора от 2025 г. и бързо се утвърди като водещ претендент за световната титла."
@@ -16145,7 +16156,7 @@ const DRIVERS_2026 = [
   firstPodium: "ГП на Австралия 2007",
   championships: "7x Световен F1 Шампион (2008, 2014, 2015, 2017, 2018, 2019, 2020), GP2 (2006)",
   wins: 106,
-  podiums: 207,
+  podiums: 208,
   fastestLaps: 69,
   previousTeams: "McLaren (2007-2012), Mercedes (2013-2024)",
   bio: "Най-титулуваният пилот в историята на Формула 1, търсещ рекордната 8-а титла в емблематичното червено на Ferrari."
@@ -16218,9 +16229,9 @@ const DRIVERS_2026 = [
     firstWin: "ГП на Испания 2016",
     firstPodium: "ГП на Испания 2016",
     championships: "4x Световен Шампион F1 (2021, 2022, 2023, 2024), Световен KZ Картинг Шампион (2013)",
-    wins: 71,
-    podiums: 134,
-    fastestLaps: 37,
+    wins: 72,
+    podiums: 135,
+    fastestLaps: 38,
     previousTeams: "Toro Rosso (2015-2016)",
     bio: "Един от най-безпощадните и доминантни пилоти в историята на Формула 1, емблема на отбора на Ред Бул."
   },
