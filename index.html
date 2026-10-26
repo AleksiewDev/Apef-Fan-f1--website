@@ -1330,8 +1330,8 @@
       <div class="countdown-hud" id="countdown-hud">
         <div class="hud-header">
           <div>
-            <div class="hud-gp-title" id="hud-gp-name">Formula 1 MSC Cruises United States Grand Prix 2026</div>
-            <div class="hud-gp-location" id="hud-gp-circuit"> Circuit of The Americas (COTA)/div>
+            <div class="hud-gp-title" id="hud-gp-name"></div>
+            <div class="hud-gp-location" id="hud-gp-circuit"> Formula 1 Gran Premio de la Ciudad de México 2026 </div>
           </div>
           <span class="hud-status-badge" id="hud-badge">Следващ Старт</span>
         </div>
@@ -1484,22 +1484,22 @@
   <script>
     const APEF_F1_DATA = {
       nextRace: {
-  title: "Formula 1 MSC Cruises United States Grand Prix 2026",
-  circuit: "Circuit of The Americas (COTA",
-  targetDate: "2026-10-25T19:00:00.000Z"
+  title: "Formula 1 Gran Premio de la Ciudad de México 2026",
+  circuit: "Rodríguez",
+  targetDate: "2026-11-01T19:00:00.000Z"
 },
       standings: {
         drivers: [
-          { "pos": 1, "name": "Кими Антонели", "team": "Mercedes", "number": "12", "teamColor": "#27f4d2", "wins": 8, "podiums": "16", "points": 340 },
-          { "pos": 2, "name": "Джордж Ръсел", "team": "Mercedes", "number": "63", "teamColor": "#27f4d2", "wins": 3, "podiums": "8", "points": 238 },
-          { "pos": 3, "name": "Люис Хамилтън", "team": "Ferrari", "number": "44", "teamColor": "#dc0000", "wins": 1, "podiums": "5", "points": 229 },
-          { "pos": 4, "name": "Макс Верстапен", "team": "Red Bull", "number": "3", "teamColor": "#1e41ff", "wins": 2, "podiums": "7", "points": 221 },
-          { "pos": 4, "name": "Шарл Леклер", "team": "Ferrari", "number": "16", "teamColor": "#dc0000", "wins": 1, "podiums": "5", "points": 215 },
-          { "pos": 5, "name": "Ландо Норис", "team": "McLaren", "number": "1", "teamColor": "#ff8000", "wins": 2, "podiums": "5", "points": 201 },
-          { "pos": 7, "name": "Оскар Пиастри", "team": "McLaren", "number": "81", "teamColor": "#ff8000", "wins": 0, "podiums": "2", "points": 128 },
-          { "pos": 8, "name": "Исак Хаджар", "team": "Red Bull", "number": "6", "teamColor": "#1e41ff", "wins": 0, "podiums": "3", "points": 97},
-          { "pos": 9, "name": "Лиам Лоусън", "team": "Racing Bulls", "number": "30", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 75 },
-          { "pos": 10, "name": "Пиер Гасли", "team": "Alpine", "number": "10", "teamColor": "#0090ff", "wins": 0, "podiums": "N/A", "points": 41 },
+          { "pos": 1, "name": "Кими Антонели", "team": "Mercedes", "number": "12", "teamColor": "#27f4d2", "wins": 9, "podiums": "17", "points": 365 },
+          { "pos": 2, "name": "Джордж Ръсел", "team": "Mercedes", "number": "63", "teamColor": "#27f4d2", "wins": 3, "podiums": "8", "points": 242 },
+          { "pos": 3, "name": "Люис Хамилтън", "team": "Ferrari", "number": "44", "teamColor": "#dc0000", "wins": 1, "podiums": "5", "points": 241 },
+          { "pos": 4, "name": "Макс Верстапен", "team": "Red Bull", "number": "3", "teamColor": "#1e41ff", "wins": 2, "podiums": "8", "points": 236 },
+          { "pos": 4, "name": "Шарл Леклер", "team": "Ferrari", "number": "16", "teamColor": "#dc0000", "wins": 1, "podiums": "7", "points": 233 },
+          { "pos": 5, "name": "Ландо Норис", "team": "McLaren", "number": "1", "teamColor": "#ff8000", "wins": 2, "podiums": "5", "points": 211 },
+          { "pos": 7, "name": "Оскар Пиастри", "team": "McLaren", "number": "81", "teamColor": "#ff8000", "wins": 0, "podiums": "2", "points": 144 },
+          { "pos": 8, "name": "Исак Хаджар", "team": "Red Bull", "number": "6", "teamColor": "#1e41ff", "wins": 0, "podiums": "3", "points": 105},
+          { "pos": 9, "name": "Лиам Лоусън", "team": "Racing Bulls", "number": "30", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 77 },
+          { "pos": 10, "name": "Пиер Гасли", "team": "Alpine", "number": "10", "teamColor": "#0090ff", "wins": 0, "podiums": "N/A", "points": 42 },
           { "pos": 11, "name": "Арвид Линдблад", "team": "Racing Bulls", "number": "41", "teamColor": "#2b4562", "wins": 0, "podiums": "N/A", "points": 38 },
           { "pos": 12, "name": "Франко Колапинто", "team": "Alpine", "number": "43", "teamColor": "#0090ff", "wins": 0, "podiums": "N/A", "points": 27 },
           { "pos": 13, "name": "Оливър Беърман", "team": "Haas", "number": "87", "teamColor": "#ffffff", "wins": 0, "podiums": "N/A", "points": 23 },
@@ -1515,20 +1515,41 @@
           { "pos": 23, "name": "Серхио Перес", "team": "Cadillac", "number": "11", "teamColor": "#b30000", "wins": 0, "podiums": "N/A", "points": 0 }
         ],
         constructors: [
-          { "pos": 1, "team": "Mercedes-AMG Petronas", "engine": "Mercedes", "teamColor": "#27f4d2", "wins": 11, "podiums": 22, "points": 578 },
-          { "pos": 2, "team": "Scuderia Ferrari", "engine": "Ferrari", "teamColor": "#dc0000", "wins": 2, "podiums": 11, "points": 444},
-          { "pos": 3, "team": "McLaren F1 Team", "engine": "Mercedes", "teamColor": "#ff8000", "wins": 2, "podiums": 7, "points": 339 },
-          { "pos": 4, "team": "Red Bull Racing", "engine": "Ford / RBPT", "teamColor": "#0254ec", "wins": 2, "podiums": 10, "points": 332 },
-          { "pos": 5, "team": "Racing Bulls", "engine": "Honda RBPT", "teamColor": "#1e5bc6", "wins": 0, "podiums": 0, "points": 100 },
-          { "pos": 6, "team": "Alpine F1 Team", "engine": "Renault", "teamColor": "#0090ff", "wins": 0, "podiums": 1, "points": 68 },
+          { "pos": 1, "team": "Mercedes-AMG Petronas", "engine": "Mercedes", "teamColor": "#27f4d2", "wins": 12, "podiums": 23, "points": 607 },
+          { "pos": 2, "team": "Scuderia Ferrari", "engine": "Ferrari", "teamColor": "#dc0000", "wins": 2, "podiums": 11, "points": 474},
+          { "pos": 3, "team": "Red Bull Racing", "engine": "Ford / RBPT", "teamColor": "#0254ec", "wins": 2, "podiums": 10, "points": 355 },
+          { "pos": 4, "team": "McLaren F1 Team", "engine": "Mercedes", "teamColor": "#ff8000", "wins": 2, "podiums": 7, "points": 355 },
+          { "pos": 5, "team": "Racing Bulls", "engine": "Honda RBPT", "teamColor": "#1e5bc6", "wins": 0, "podiums": 0, "points": 102 },
+          { "pos": 6, "team": "Alpine F1 Team", "engine": "Mercedes", "teamColor": "#0090ff", "wins": 0, "podiums": 1, "points": 69 },
           { "pos": 7, "team": "Haas F1 Team", "engine": "Ferrari", "teamColor": "#ffffff", "wins": 0, "podiums": 0, "points": 30 },
-          { "pos": 8, "team": "Audi Revolut F1 Team", "engine": "Audi", "teamColor": "#e10600", "wins": 0, "podiums": 0, "points": 32 },
+          { "pos": 8, "team": "Audi Revolut F1 Team", "engine": "Audi", "teamColor": "#e10600", "wins": 0, "podiums": 0, "points": 23 },
           { "pos": 9, "team": "Williams Racing", "engine": "Mercedes", "teamColor": "#00a0dd", "wins": 0, "podiums": 0, "points": 12 },
           { "pos": 10, "team": "Aston Martin Aramco", "engine": "Honda", "teamColor": "#00665e", "wins": 0, "podiums": 0, "points": 7 },
           { "pos": 11, "team": "Cadillac F1 Team", "engine": "Cadillac", "teamColor": "#b30000", "wins": 0, "podiums": 0, "points": 0 }
         ]
       },
       news: [
+            {
+    title: "Антонели покори Остин и доближи короната след поредното си зряло представяне",
+    date: "2026-10-25",
+     image: "https://i.pinimg.com/736x/8b/6b/e6/8b6be6fcdf1bf00bd077f4c9409471d6.jpg",
+    text: `Андреа Кими Антонели направи още една огромна крачка към световната титла във Формула 1, след като спечели Гран при на Съединените щати на пистата в Остин с впечатляващо и напълно контролирано представяне. Италианецът диктуваше темпото през целия състезателен уикенд и затвърди усещането, че именно той е човекът, около когото се върти шампионската битка през сезон 2026. Победата му в Тексас не беше просто пореден успех, а демонстрация на увереност, хладнокръвие и способност да управлява ситуацията във всеки етап от надпреварата.
+
+Още от самото начало пилотът на Мерцедес показа, че разполага с необходимото темпо, за да контролира събитията. Стартът му беше изключително силен и му позволи да запази първата позиция въпреки натиска зад него. Докато конкурентите му се опитваха да намерят правилния баланс между скорост и стратегия, Антонели остана спокоен и последователен, като постепенно започна да изгражда преднина. Именно това отличава бъдещите шампиони от останалите претенденти. Когато възможността за победа е налице, те не оставят място за съмнение и превръщат добрата позиция в категоричен резултат.
+
+Състезанието в Остин още веднъж показа колко зрял е станал младият италианец. Вместо да влиза в ненужни рискове и директни дуели, той избра разумния подход. Управляваше гумите си ефективно, пазеше ритъма си стабилен и реагираше безупречно на развитието на стратегическата битка. В моментите, когато други пилоти губеха време в трафик или се бореха с износването на гумите, Антонели изглеждаше напълно спокоен зад волана на своя болид.
+
+Ферари отново се представи силно и Шарл Льоклер успя да се утвърди като най-близкия преследвач на победителя. Монегаскът направи бързо и агресивно състезание, особено в заключителната част, когато атакуваше позициите пред себе си. Въпреки това разликата между него и лидера ясно показа колко убедително е било темпото на Мерцедес в този ден. Льоклер нямаше реална възможност да постави под сериозно напрежение Антонели, който през цялото време държеше инициативата в свои ръце.
+
+На подиума се качи и Макс Верстапен, който опита различен подход в търсене на победата. Световният шампион от предишните години разчиташе на по-агресивна стратегия, но тя не се оказа достатъчна, за да неутрализира скоростта на Мерцедес. Верстапен демонстрира характерната си борбеност и успя да остане сред водещите състезатели през целия следобед, но в крайна сметка трябваше да приеме, че този път Антонели разполагаше с по-бързия пакет и по-добрия контрол над състезанието.
+
+Интересна беше и битката зад първите места. Люис Хамилтън направи поредно стабилно състезание и остана непосредствено зад подиума, като до последните обиколки натискът в челото не стихна. Това подчерта колко конкурентна остава Формула 1 през 2026, въпреки че Антонели постепенно се откъсва в шампионата. Докато различни отбори успяват да показват силни моменти в отделни надпревари, единствено младият италианец демонстрира постоянство на ниво, което му позволява да трупа предимство почти всеки уикенд.
+
+Най-важният извод след състезанието в Остин е, че титлата изглежда все по-близо. Въпреки че официалното решаване на битката бе отложено, шампионатната картина става все по-ясна. Антонели не просто печели състезания. Той го прави по начин, който показва пълно разбиране на всички аспекти на модерната Формула 1 – управление на темпото, работа с гумите, стратегическо мислене и способност да остане спокоен под напрежение. Именно тези качества превърнаха сезона му в един от най-впечатляващите за млад пилот в последните години.
+
+След Остин усещането е, че въпросът вече не е дали Антонели ще стане световен шампион, а кога ще бъде официално потвърден този успех. Всеки следващ уикенд носи нови възможности пред съперниците му, но италианецът продължава да отговаря с победи, силни резултати и представяния, които напомнят на най-добрите периоди на великите имена в спорта. Ако запази същото ниво и в оставащите състезания, сезон 2026 ще бъде запомнен като годината, в която Формула 1 получи своя нов водещ талант и бъдещ шампион
+`
+                 },
          {
     title: "Ландо Норис рискува нежелан рекорд във Формула 1, докато защитата на титлата му се превръща в кошмар",
     date: "2026-10-22",
@@ -16512,8 +16533,8 @@ const DRIVERS_2026 = [
     firstWin: "ГП на Китай 2026",
     firstPodium: "ГП на Канада 2025",
     championships: "Шампион FRECA (2023), Шампион F4 Италия & ADAC (2022), 2x CIK-FIA Картинг Шампион",
-    wins: 8,
-    podiums: 17,
+    wins: 9,
+    podiums: 18,
     fastestLaps: 6,
     previousTeams: "Дебют с Mercedes",
     bio: "Вундеркиндът от академията на Mercedes, преминал директно от FRECA във Формула 2, който замени Люис Хамилтън в отбора от 2025 г. и бързо се утвърди като водещ претендент за световната титла."
@@ -16550,7 +16571,7 @@ const DRIVERS_2026 = [
   championships: "7x Световен F1 Шампион (2008, 2014, 2015, 2017, 2018, 2019, 2020), GP2 (2006)",
   wins: 106,
   podiums: 208,
-  fastestLaps: 69,
+  fastestLaps: 70,
   previousTeams: "McLaren (2007-2012), Mercedes (2013-2024)",
   bio: "Най-титулуваният пилот в историята на Формула 1, търсещ рекордната 8-а титла в емблематичното червено на Ferrari."
 },
@@ -16567,7 +16588,7 @@ const DRIVERS_2026 = [
   firstPodium: "ГП на Бахрейн 2019",
   championships: "0 (Шампион във Формула 2 през 2017 г., Шампион в GP3 през 2016 г.)",
   wins: 9,
-  podiums: 55,
+  podiums: 56,
   fastestLaps: 13,
   polePositions: 27,
   previousTeams: "Sauber (2018)",
@@ -16623,7 +16644,7 @@ const DRIVERS_2026 = [
     firstPodium: "ГП на Испания 2016",
     championships: "4x Световен Шампион F1 (2021, 2022, 2023, 2024), Световен KZ Картинг Шампион (2013)",
     wins: 73,
-    podiums: 136,
+    podiums: 137,
     fastestLaps: 39,
     previousTeams: "Toro Rosso (2015-2016)",
     bio: "Един от най-безпощадните и доминантни пилоти в историята на Формула 1, емблема на отбора на Ред Бул."
@@ -16914,9 +16935,9 @@ const TEAMS_2026 = [
   "image": "https://i.pinimg.com/736x/64/29/dd/6429ddad8d84e780dd527b23474873c9.jpg",
   "wcc": 8,
   "wdc": 9,
-  "wins": 133,
-  "podiums": 306,
-  "poles": 141,
+  "wins": 134,
+  "podiums": 307,
+  "poles": 142,
   "topDrivers": "Люис Хамилтън, Нико Розберг, Хуан Мануел Фанджо, Валтери Ботас",
   "drivers": [
     {
@@ -16943,7 +16964,7 @@ const TEAMS_2026 = [
   "wcc": 16,
   "wdc": 15,
   "wins": 250,
-  "podiums": 846,
+  "podiums": 847,
   "poles": 254,
   "topDrivers": "Михаел Шумахер, Ники Лауда, Алберто Аскари, Хуан Мануел Фанджо, Кими Райконен",
   "drivers": [
@@ -16991,7 +17012,7 @@ const TEAMS_2026 = [
   wcc: 6,
   wdc: 8,
   wins: 131,
-  podiums: 307,
+  podiums: 308,
   poles: 112,
   topDrivers: "Себастиан Фетел, Макс Верстапен, Марк Уебър, Даниел Рикардо",
   drivers: [
